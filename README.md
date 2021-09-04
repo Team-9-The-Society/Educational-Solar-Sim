@@ -29,7 +29,9 @@ Educational application that takes a drawn or provided rough image of a solar sy
 	**/
     ```
     - All Others 
-        > // Should be used for variable & function calls/operations if needed the line above the operation 
+        ```
+        // Should be used for variable & function calls/operations if needed the line above the operation 
+        ```
 6. Branches & Features 
     - Features should be branched off of the develop branch 
     - Naming convention for features should be feature-[featureName]
