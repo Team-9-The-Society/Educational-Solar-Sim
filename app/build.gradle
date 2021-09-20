@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.society.demo2"
+        applicationId "com.project.demo2"
         minSdk 27
         targetSdk 31
         versionCode 1

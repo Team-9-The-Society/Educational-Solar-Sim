@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Kacey\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\.cxx\\Debug\\2e13j2y2\\armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Kacey\\AppData\\Local\\Android\\Sdk\\cmake\\3.18.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\.cxx\\Debug\\2e13j2y2\\armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "demo2::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "demo2",
+      "output": "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\build\\intermediates\\cxx\\Debug\\2e13j2y2\\obj\\armeabi-v7a\\libdemo2.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "C:\\Users\\Kacey\\AppData\\Local\\Android\\Sdk\\ndk\\23.0.7599858\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\Kacey\\AppData\\Local\\Android\\Sdk\\ndk\\23.0.7599858\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

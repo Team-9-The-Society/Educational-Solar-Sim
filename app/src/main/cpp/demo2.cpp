@@ -20,7 +20,7 @@
 
 extern "C" {
 JNIEXPORT jint JNICALL
-Java_com_society_demo2_NativeJNI_Add(JNIEnv *env, jobject thiz, jint first, jint second)
+Java_com_project_demo2_NativeJNI_Add(JNIEnv *env, jobject thiz, jint first, jint second)
 {
     return first + second;
 }
