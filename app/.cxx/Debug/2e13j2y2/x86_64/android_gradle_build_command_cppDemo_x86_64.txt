@@ -1,0 +1,7 @@
+Executable : C:\Users\Kacey\AppData\Local\Android\Sdk\cmake\3.18.1\bin\ninja.exe
+arguments : 
+-C
+C:\Users\Kacey\Desktop\Educational-Solar-Sim\app\.cxx\Debug\2e13j2y2\x86_64
+cppDemo
+jvmArgs : 
+

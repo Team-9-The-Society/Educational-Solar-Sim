@@ -2,7 +2,7 @@ package com.project.solarsim;
 
 public class NativeJNI {
     static {
-      System.loadLibrary("demo2");
+      System.loadLibrary("cppDemo");
     }
 
     public native int Add(int a, int b);

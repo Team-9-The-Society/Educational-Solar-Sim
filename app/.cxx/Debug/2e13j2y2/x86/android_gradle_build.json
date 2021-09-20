@@ -17,11 +17,11 @@
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
-    "demo2::@6890427a1f51a3e7e1df": {
+    "cppDemo::@6890427a1f51a3e7e1df": {
       "toolchain": "toolchain",
       "abi": "x86",
-      "artifactName": "demo2",
-      "output": "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\build\\intermediates\\cxx\\Debug\\2e13j2y2\\obj\\x86\\libdemo2.so",
+      "artifactName": "cppDemo",
+      "output": "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\build\\intermediates\\cxx\\Debug\\2e13j2y2\\obj\\x86\\libcppDemo.so",
       "runtimeFiles": []
     }
   },

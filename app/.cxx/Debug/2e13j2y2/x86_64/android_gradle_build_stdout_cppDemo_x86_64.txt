@@ -1,0 +1,3 @@
+ninja: Entering directory `C:\Users\Kacey\Desktop\Educational-Solar-Sim\app\.cxx\Debug\2e13j2y2\x86_64'
+[1/2] Building CXX object CMakeFiles/cppDemo.dir/cppDemo.cpp.o
+[2/2] Linking CXX shared library C:\Users\Kacey\Desktop\Educational-Solar-Sim\app\build\intermediates\cxx\Debug\2e13j2y2\obj\x86_64\libcppDemo.so
