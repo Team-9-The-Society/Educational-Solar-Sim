@@ -1,4 +1,4 @@
-package com.project.demo2;
+package com.project.solarsim;
 
 public class NativeJNI {
     static {

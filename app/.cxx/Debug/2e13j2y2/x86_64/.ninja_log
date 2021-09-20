@@ -1,5 +1,3 @@
 # ninja log v5
-1	90	653813808	CMakeFiles/demo2.dir/demo2.cpp.o	9e75db2d1fb60045
-91	1560	653813810	C:/Users/Kacey/Desktop/Educational-Solar-Sim/app/build/intermediates/cxx/Debug/2e13j2y2/obj/x86_64/libdemo2.so	23e9e829d1c982ac
-1	97	653814084	CMakeFiles/demo2.dir/demo2.cpp.o	9e75db2d1fb60045
-97	1432	653814086	C:/Users/Kacey/Desktop/Educational-Solar-Sim/app/build/intermediates/cxx/Debug/2e13j2y2/obj/x86_64/libdemo2.so	23e9e829d1c982ac
+0	83	653816212	CMakeFiles/demo2.dir/demo2.cpp.o	9e75db2d1fb60045
+83	190	653816213	C:/Users/Kacey/Desktop/Educational-Solar-Sim/app/build/intermediates/cxx/Debug/2e13j2y2/obj/x86_64/libdemo2.so	23e9e829d1c982ac

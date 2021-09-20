@@ -1,4 +1,4 @@
-package com.project.demo2;
+package com.project.solarsim;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.project.demo2.databinding.FragmentFirstBinding;
+import com.project.solarsim.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
