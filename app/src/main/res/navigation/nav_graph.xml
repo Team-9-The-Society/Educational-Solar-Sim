@@ -20,7 +20,19 @@
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_HomeFragment_to_SecondFragment"
+            android:id="@+id/action_HomeFragment_to_SimFragment"
             app:destination="@id/SimFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_HelpFragment"
+            app:destination="@id/HelpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HelpFragment"
+        android:name="com.project.solarsim.HelpFragment"
+        android:label="@string/help_fragment_label"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_HelpFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
     </fragment>
 </navigation>
