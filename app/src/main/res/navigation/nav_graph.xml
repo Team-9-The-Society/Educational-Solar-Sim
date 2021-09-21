@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/HomeFragment">
 
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.project.solarsim.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/SimFragment"
+        android:name="com.project.solarsim.SimFragment"
+        android:label="@string/sim_fragment_label"
+        tools:layout="@layout/fragment_sim">
         <action
-            android:id="@+id/action_SecondFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_SimFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/HomeFragment"
         android:name="com.project.solarsim.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_HomeFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SimFragment" />
     </fragment>
 </navigation>

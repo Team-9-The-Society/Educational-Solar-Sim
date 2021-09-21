@@ -1,15 +1,17 @@
 <resources>
     <string name="app_name">SolarSim</string>
     <string name="action_settings">Settings</string>
+
     <!-- Strings used for fragments for navigation -->
-    <string name="home_fragment_label">Home Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="home_fragment_label">Home</string>
+    <string name="sim_fragment_label">N-Body Simulation</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="mobile_n_body_simulator">N-Body Simulator</string>
-    <string name="help">Help</string>
+    <!-- Strings used for TextView -->
+    <string name="home_fragment_text">N-Body Simulator</string>
 
-    <string name="startNewSimButtonText">Start New Simulator</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Strings used for Button Text -->
+    <string name="help_button_text">Help</string>
+    <string name="start_sim_button_text">Start New Simulator</string>
 </resources>
