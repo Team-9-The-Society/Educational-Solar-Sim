@@ -1,7 +1,0 @@
-[
-{
-  "directory": "C:/Users/Kacey/Desktop/Educational-Solar-Sim/app/.cxx/Debug/2e13j2y2/x86",
-  "command": "C:\\Users\\Kacey\\AppData\\Local\\Android\\Sdk\\ndk\\23.0.7599858\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android27 --gcc-toolchain=C:/Users/Kacey/AppData/Local/Android/Sdk/ndk/23.0.7599858/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/Kacey/AppData/Local/Android/Sdk/ndk/23.0.7599858/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DcppDemo_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC -o CMakeFiles\\cppDemo.dir\\cppDemo.cpp.o -c C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\src\\main\\cpp\\cppDemo.cpp",
-  "file": "C:\\Users\\Kacey\\Desktop\\Educational-Solar-Sim\\app\\src\\main\\cpp\\cppDemo.cpp"
-}
-]
