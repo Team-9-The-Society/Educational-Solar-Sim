@@ -3,26 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/HomeFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.society.demo2.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/SimFragment"
+        android:name="com.project.solarsim.SimFragment"
+        android:label="@string/sim_fragment_label"
+        tools:layout="@layout/fragment_sim">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_SimFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.society.demo2.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/HomeFragment"
+        android:name="com.project.solarsim.HomeFragment"
+        android:label="@string/home_fragment_label"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_HomeFragment_to_SimFragment"
+            app:destination="@id/SimFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_HelpFragment"
+            app:destination="@id/HelpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/HelpFragment"
+        android:name="com.project.solarsim.HelpFragment"
+        android:label="@string/help_fragment_label"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_HelpFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
     </fragment>
 </navigation>

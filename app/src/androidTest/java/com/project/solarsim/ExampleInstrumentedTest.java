@@ -1,4 +1,4 @@
-package com.society.demo2;
+package com.project.solarsim;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.society.demo2", appContext.getPackageName());
+        assertEquals("com.project.solarsim", appContext.getPackageName());
     }
 }

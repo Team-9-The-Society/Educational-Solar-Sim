@@ -1,12 +1,44 @@
 <resources>
-    <string name="app_name">Demo2</string>
+    <string name="app_name">SolarSim</string>
     <string name="action_settings">Settings</string>
+
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="home_fragment_label">Home</string>
+    <string name="sim_fragment_label">N-Body Simulation</string>
+    <string name="help_fragment_label">Help/Info</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Strings used for Button Text -->
+    <string name="help_button_text">Help/Info</string>
+    <string name="start_sim_button_text">Start New Simulator</string>
+
+    <!-- Strings used for TextView -->
+    <string name="home_fragment_text">N-Body Simulator</string>
+
+    <!-- HTML strings to display in fragments -->
+    <string name="help_fragment_html">
+        <![CDATA[
+            <h1>Team 9: The Society</h1>
+            <h3>Fall 2021 - Spring 2022</h3>
+            <br></br>
+            <h5>Team Members</h5>
+            <ul>
+                <li>Ryan Derr</li>
+                <li>Logan Edmund</li>
+                <li>Sam Gurka</li>
+                <li>Sam Ketner</li>
+                <li>Kacy Luker</li>
+                <li>Brendan Moore</li>
+                <li>Dale Peasley</li>
+            </ul>
+            <br></br>
+            <p>For further information about the N-Body problem, visit:</p>
+            <a href="https://en.wikipedia.org/wiki/N-body_simulation">https://en.wikipedia.org/wiki/N-body_simulation</a>
+            <br></br>
+            <br></br>
+            <p>To see the code of this app please visit the GitHub:</p>
+            <a href="https://github.com/Team-9-The-Society/Educational-Solar-Sim">https://github.com/Team-9-The-Society/Educational-Solar-Sim</a>
+        ]]>
+    </string>
 </resources>

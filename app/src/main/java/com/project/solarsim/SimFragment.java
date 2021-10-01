@@ -1,4 +1,4 @@
-package com.society.demo2;
+package com.project.solarsim;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.society.demo2.databinding.FragmentSecondBinding;
+import com.project.solarsim.databinding.FragmentSimBinding;
 
-public class SecondFragment extends Fragment {
+public class SimFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentSimBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentSimBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,11 +29,11 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        binding.buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                NavHostFragment.findNavController(SimFragment.this)
+                        .navigate(R.id.action_SimFragment_to_HomeFragment);
             }
         });
     }

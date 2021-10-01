@@ -1,4 +1,4 @@
-package com.society.demo2;
+package com.project.solarsim;
 
 import org.junit.Test;
 

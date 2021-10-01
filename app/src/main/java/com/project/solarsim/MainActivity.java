@@ -1,4 +1,4 @@
-package com.society.demo2;
+package com.project.solarsim;
 
 import android.os.Bundle;
 
@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.society.demo2.databinding.ActivityMainBinding;
+import com.project.solarsim.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //if (id == R.id.action_settings) {
+          //  return true;
+        //}
 
         return super.onOptionsItemSelected(item);
     }

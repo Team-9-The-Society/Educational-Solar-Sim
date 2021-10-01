@@ -1,42 +1,35 @@
-package com.society.demo2;
+package com.project.solarsim;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.society.demo2.databinding.FragmentFirstBinding;
+import com.project.solarsim.databinding.FragmentHelpBinding;
+import com.project.solarsim.databinding.FragmentHomeBinding;
 
-public class FirstFragment extends Fragment {
+public class HelpFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    private FragmentHelpBinding binding;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = FragmentHelpBinding.inflate(inflater, container, false);
+        binding.textView.setText(Html.fromHtml(getString(R.string.help_fragment_html)));
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-            }
-        });
 
     }
 

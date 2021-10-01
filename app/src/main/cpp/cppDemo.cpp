@@ -6,22 +6,22 @@
 //
 // In MainActivity.java:
 //    static {
-//       System.loadLibrary("demo2");
+//       System.loadLibrary("cppDemo");
 //    }
 //
 // Or, in MainActivity.kt:
 //    companion object {
 //      init {
-//         System.loadLibrary("demo2")
+//         System.loadLibrary("cppDemo")
 //      }
 //    }
 #include <jni.h>
+#include <iosfwd>
 
 
 extern "C" {
-JNIEXPORT jint JNICALL
-Java_com_society_demo2_NativeJNI_Add(JNIEnv *env, jobject thiz, jint first, jint second)
-{
-    return first + second;
-}
+    JNIEXPORT jint JNICALL Java_com_project_solarsim_NativeJNI_Add(JNIEnv *env, jobject thiz, jint first, jint second)
+    {
+        return first + second;
+    }
 }
