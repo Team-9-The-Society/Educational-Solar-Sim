@@ -1,0 +1,2 @@
+#define CPPLIBRARY_API __declspec(dllexport)
+#define CPPLIBRARY_API __declspec(dllimport)
