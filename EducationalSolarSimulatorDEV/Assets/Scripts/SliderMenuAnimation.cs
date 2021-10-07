@@ -8,14 +8,9 @@ public class SliderMenuAnimation : MonoBehaviour
     public GameObject PanelMenu;
     public void ShowIdleMenu()
     {
-        if(PanelMenu!= null)
-        {
             Animator animator = PanelMenu.GetComponent<Animator>();
-            if (animator!=null)
-            {
-                bool isOpen = animator.GetBool("showAnimation");
-                animator.SetBool("showAnimation", !isOpen);
-            }
-        }
+           
+            bool isOpen = animator.GetBool("show");
+            animator.SetBool("show", !isOpen);
     }
 }
