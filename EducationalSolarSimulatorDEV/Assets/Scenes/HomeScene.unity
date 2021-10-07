@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17948294, g: 0.21936417, b: 0.27532914, a: 1}
+  m_IndirectSpecularColor: {r: 0.17948273, g: 0.21936372, b: 0.27532852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 496230395}
   - component: {fileID: 496230394}
   - component: {fileID: 496230393}
+  - component: {fileID: 496230396}
   m_Layer: 5
   m_Name: StartSimulationButton
   m_TagString: Untagged
@@ -343,7 +344,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.0760057, g: 0.21693438, b: 0.3301887, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -363,7 +364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 496230394}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 496230396}
+        m_TargetAssemblyTypeName: SimulationScreenTransition, Assembly-CSharp
+        m_MethodName: ToSimulationScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ToInformationScreen
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &496230394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +415,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496230391}
   m_CullTransparentMesh: 1
+--- !u!114 &496230396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496230391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745e92ccb51c0f547b7efba1c99eabd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757904513
 GameObject:
   m_ObjectHideFlags: 0
