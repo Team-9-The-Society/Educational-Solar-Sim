@@ -226,7 +226,7 @@ MonoBehaviour:
     Tips:\r\n</b></u></style>\r\nHere is a short YouTube video demonstrating how
     to use our app:\r\n\r\n<b><style=\"h2\"><u>Contact Information:\r\n</b></u></style>\r\nIf
     you have any questions, or want to learn more about the N-Body simulation click
-    <link=\"https://github.com/Team-9-The-Society/Educational-Solar-Sim\"><i>here</i></link>
+    <link=\"https://physics.princeton.edu//~fpretori/Nbody/intro.htm\"><i>here</i></link>
     for more information pertaining to the N-Body Simulation. \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
