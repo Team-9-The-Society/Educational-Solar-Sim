@@ -104,6 +104,7 @@ class BodyInfo
 		}
 		void toString()
 		{
+			/*
 			printf("ID: %d\n", id);
 			printf("Mass: %e\n", mass);
 			printf("Radius: %e\n", radius);
@@ -122,6 +123,7 @@ class BodyInfo
 			{
 				printf("%e ", acceleration[i]);
 			}
+			*/
 			printf("\nForce:");
 			for(int i=0; i<3; i++)
 			{
@@ -132,6 +134,11 @@ class BodyInfo
 };
 
 vector<BodyInfo> globalBodies; 
+vector<double> xPos;
+vector<double> yPos;
+vector<double> zPos;
+vector<double> mass;
+vector<vector<double>> force;
 /*
 Parameters: None required, it will just update the global vector of bodies
 Method Purpose: When called, the method will update all the bodies acceleration in each cordinate plane based only on positions 
@@ -168,6 +175,60 @@ void updateAccel()
 		}
 		globalBodies.at(i).setAcceleration(accel);
 	}
+}
+void updateAccel2()
+{
+	double distance = 0;
+	for(int i = 0; i < mass.size(); i++)
+	{
+		double accel[3] = {0, 0, 0};
+		for(int j = 0; j < mass.size(); j++)
+		{
+			if(i == j)
+			{
+				continue;
+			}
+			//X coordinates
+			distance = (xPos.at(i) - xPos.at(j));
+			if(distance > 0)
+			{
+				accel[0] += -1 * (gravitationalConstant * mass.at(j))/pow(distance, 2);
+			}
+			else if(distance < 0)
+			{
+				accel[0] += (gravitationalConstant * mass.at(j))/pow(distance, 2);
+			}
+			
+			//Y coordinates
+			distance = (yPos.at(i) - yPos.at(j));
+			if(distance > 0)
+			{
+				accel[1] += -1 * (gravitationalConstant * mass.at(j))/pow(distance, 2);
+			}
+			else if(distance < 0)
+			{
+				accel[1] += (gravitationalConstant * mass.at(j))/pow(distance, 2);
+			}
+			
+			//Z coordinates
+			distance = (zPos.at(i) - zPos.at(j));
+			if(distance > 0)
+			{
+				accel[2] += -1 * (gravitationalConstant * mass.at(j))/pow(distance, 2);
+			}
+			else if(distance < 0)
+			{
+				accel[2] += (gravitationalConstant * mass.at(j))/pow(distance, 2);
+			}			
+		}
+		for(int j = 0; j < mass.size(); j++){
+			force[j][0] = xPos.at(j) * mass.at(j);
+			force[j][1] = yPos.at(j) * mass.at(j);
+			force[j][2] = zPos.at(j) * mass.at(j);
+		}
+		//free(accel);
+	}
+	
 }
 /*
 Parameters: None required, it will just update the global vector of bodies
@@ -224,7 +285,7 @@ void updateForce()
 }
 
 //Main method is only for testing purposes 
-int main()
+int main(int argc, char **argv)
 {
 	
 	double pos1[3] = {0,0,0};
@@ -239,25 +300,39 @@ int main()
 	globalBodies.push_back(arg);
 	globalBodies.push_back(arg1);
 	
-	for(int i=0; i<globalBodies.size(); i++)
-	{
-		globalBodies.at(i).toString();
-	}
-	printf("---------------------------------------\n");
-	
 	int time = 2.828 * pow(10,6);
 	for(int j =0; j<time; j+=3600)
 	{
 		updateAccel();
-		updateVelc(3600);
-		updatePos(3600);
+		//updateVelc(3600);
+		//updatePos(3600);
 		updateForce();
-		for(int i=0; i<globalBodies.size(); i++)
+	}
+	for(int i=0; i<globalBodies.size(); ++i)
 		{
 			globalBodies.at(i).toString();
 		}
-		printf("---------------------------------------\n");
+	printf("---------------------------------------\n");
+	
+	char *eptr;
+	int numBodies = strtol(argv[5], &eptr, 10);
+	
+	printf("%f\n", argv[1][1]);
+	printf("%f\n", argv[1][2]);
+	printf("%f\n", argv[2][1]);
+	printf("%f\n", argv[2][2]);
+	
+	for (int i = 0; i < numBodies; i++){
+		xPos.push_back(argv[1][i]);
+		yPos.push_back(argv[2][i]);
+		zPos.push_back(argv[3][i]);
+		mass.push_back(argv[4][i]);
 	}
+	updateAccel2;
+	for(int i = 0; i < numBodies; i++){
+		printf("Body %d forces (x, y, z): %f, %f, %f\n", i, force[i][0], force[i][1], force[i][2]);
+	}
+	
 	
 	return 0;
 }
