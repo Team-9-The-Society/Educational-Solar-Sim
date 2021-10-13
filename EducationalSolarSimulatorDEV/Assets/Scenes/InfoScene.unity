@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.3044, y: -567.119}
-  m_SizeDelta: {x: 756.18, y: 2395.7432}
+  m_AnchoredPosition: {x: -14.607, y: -488.7351}
+  m_SizeDelta: {x: 770.79, y: 2238.9756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236447766
 MonoBehaviour:
@@ -218,16 +218,15 @@ MonoBehaviour:
     Luker </indent>\r\n<indent=2%>\u2022Brendan Moore </indent>\r\n<indent=2%>\u2022Dale
     Peasley </indent>\r\n\r\n<b><style=\"h2\"><u>GitHub Repositroy: \r\n</b></u></style>\r\nA
     link to our GitHub repository can be found <link=\"https://github.com/Team-9-The-Society/Educational-Solar-Sim\"><i>here</i></link>\r\n\r\n<b><style=\"h2\"><u>App
-    Designer: \r\n</b></u></style>\r\n\r(Give a little info about her sister, and
-    then insert Kacy\u2019s sister\u2019s instagram @ here)\r\n\n<b><style=\"h2\"><u>Physics
+    Designer: \r\n</b></u></style>\r\n\r\n(Give a little info about her sister, and
+    then insert Kacy\u2019s sister\u2019s instagram @ here)\r\n\r\n<b><style=\"h2\"><u>Physics
     Expert:\r\n</b></u></style>\r\nMr. Jerry McCoy helped out with physics calculations
     and forces. Mr. McCoy obtained his MS, and teaches physics at the University
-    of Tulsa. More information about Mr. McCoy can be found <link=\"https://faculty.utulsa.edu/faculty/jerry-mccoy/\"><i>here</i></link>.\r\n\r\n<b><style=\"h2\"><u>Helpful
-    Tips:\r\n</b></u></style>\r\nHere is a short YouTube video demonstrating how
-    to use our app:\r\n\r\n<b><style=\"h2\"><u>Contact Information:\r\n</b></u></style>\r\nIf
-    you have any questions, or want to learn more about the N-Body simulation click
-    <link=\"https://physics.princeton.edu//~fpretori/Nbody/intro.htm\"><i>here</i></link>
-    for more information pertaining to the N-Body Simulation. \r\n"
+    of Tulsa. More information about Mr. McCoy can be found <link=\"https://faculty.utulsa.edu/faculty/jerry-mccoy/\"><i>here</i></link>.\r\n\r\n\r\n<b><style=\"h2\"><u>Resource
+    Information:\r\n</b></u></style>\r\nIf you have any questions, or want to learn
+    more about the N-Body simulation click <link=\"https://physics.princeton.edu//~fpretori/Nbody/intro.htm\"><i>here</i></link>
+    for more information pertaining to the N-Body Simulation or <link=https://en.wikipedia.org/wiki/N-body_simulation><i>here</link><i>.
+    \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -856,8 +855,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1977452631}
   m_HandleRect: {fileID: 1977452630}
   m_Direction: 2
-  m_Value: 0.99999774
-  m_Size: 0.52655894
+  m_Value: 0.99999726
+  m_Size: 0.5634273
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

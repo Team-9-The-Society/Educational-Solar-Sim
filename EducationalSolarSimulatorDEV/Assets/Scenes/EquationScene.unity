@@ -461,8 +461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.3044, y: -567.119}
-  m_SizeDelta: {x: 756.18, y: 2395.7432}
+  m_AnchoredPosition: {x: -7.3071, y: -994.8601}
+  m_SizeDelta: {x: 756.18, y: 3251.2246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233869206
 MonoBehaviour:
@@ -511,26 +511,45 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b><style=\"h2\"><u>Description: \r\n</b></u></style>\r\nThis app is designed
-    to be an educational app about the N-Body simulation. An N-body simulation approximates
-    the motion of particles, often specifically particles that interact with one
-    another through some type of physical forces. One example of a physical force
-    is gravity. \r\n\r\n<b><style=\"h2\"><u>Creators: \r\n</b></u></style>\r\n<indent=2%>\u2022Ryan
-    Derr</indent>\r\n<indent=2%>\u2022Logan Edmund </indent>\r\n<indent=2%>\u2022Sam
-    Gurka </indent>\r\n<indent=2%>\u2022Sam Ketner </indent>\r\n<indent=2%>\u2022Kacy
-    Luker </indent>\r\n<indent=2%>\u2022Brendan Moore </indent>\r\n<indent=2%>\u2022Dale
-    Peasley </indent>\r\n\r\n<b><style=\"h2\"><u>GitHub Repositroy: \r\n</b></u></style>\r\nA
-    link to our GitHub repository can be found <link=\"https://github.com/Team-9-The-Society/Educational-Solar-Sim\"><i>here</i></link>\r\n\r\n<b><style=\"h2\"><u>App
-    Designer: \r\n</b></u></style>\r\n\r(Give a little info about her sister, and
-    then insert Kacy\u2019s sister\u2019s instagram @ here)\r\n\n<b><style=\"h2\"><u>Physics
-    Expert:\r\n</b></u></style>\r\nMr. Jerry McCoy helped out with physics calculations
-    and forces. Mr. McCoy obtained his MS, and teaches physics at the University
-    of Tulsa. More information about Mr. McCoy can be found <link=\"https://faculty.utulsa.edu/faculty/jerry-mccoy/\"><i>here</i></link>.\r\n\r\n<b><style=\"h2\"><u>Helpful
-    Tips:\r\n</b></u></style>\r\nHere is a short YouTube video demonstrating how
-    to use our app:\r\n\r\n<b><style=\"h2\"><u>Contact Information:\r\n</b></u></style>\r\nIf
-    you have any questions, or want to learn more about the N-Body simulation click
-    <link=\"https://physics.princeton.edu//~fpretori/Nbody/intro.htm\"><i>here</i></link>
-    for more information pertaining to the N-Body Simulation. \r\n"
+  m_text: "<b><style=\"h2\"><u>1. v = v\u2092 + at \r\n</b></u></style>\r\nThis equation
+    is used to find a final velocity over time. The output v represents the final
+    velocity calculated, the input v\u2092 represents the initial velocity of an
+    object, a represents acceleration which is a change in velocity over time, and
+    lastly t represents the time period calculated over. \r\n<b><style=\"h2\"><u>2.
+    v\xB2 = v\u2092\xB2 + 2ax \r\n</b></u></style>\r\nThis equation is used describe
+    the final velocity over a displacement [The value multiplied by itself]. The
+    output v\xB2 represents the square of the final velocity, the input v\u2092\xB2
+    represents the initial velocity of an object, a still represents the acceleration
+    which is a change in the velocity over time, and lastly x represents the displacement
+    of the object.\r\n<b><style=\"h2\"><u>3. \u0394x = (v + v\u2092)/2*t \r\n</b></u></style>\r\nThis
+    equation is used to describe the displacement of an object. The output \u0394x
+    represents the displacement [Change from starting position from final position]
+    of the object, the input v represents the final velocity, v\u2092 still represents
+    the inital velocity of an object, and the input t still represents the overall
+    measured time. \r\n<b><style=\"h2\"><u>3. \u0394x = v\u2092t + (1/2)*a*t\xB2
+    \r\n</b></u></style>\r\nThis equation is used to describe the displacement of
+    an object. The output \u0394x represents the displacement [Change from starting
+    position from final position] of the object, the input v\u2092 still represents
+    the initial velocity of an object, and the input t still represents the overall
+    measured time, and a still represents the acceleration which is a change in the
+    velocity over time. \r\n<b><style=\"h2\"><u>4. F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThis
+    equation is used to describe the Force of gravity. The output F represents the
+    Force of gravity on the object, the input G is the gravitational constant [SEE
+    FOOT NOTE], m is the mass of the current object, M is the mass of the second
+    object (not itself), and r represents the radius between the two objects.\r\n<b><style=\"h2\"><u>
+    F = ma \r\n</b></u></style>\r\nThis equation is used to describe a Force. The
+    output F represents the Force of the object, the input m represents the mass
+    of the object, and a represents the acceleration of the object.\r\n<b><style=\"h2\"><u>Units
+    in the Metric System\r\n</b></u></style>\r\n1. Time is measured in seconds\r\n2.
+    Distance is measured in meters\r\n3. Velocity is measured in meters per second\r\n4.
+    Acceleration is measured in meters per second per second \r\n5. Force is measured
+    in <link=https://en.wikipedia.org/wiki/Newton_(unit)><i>newtons</i></link>\r\n6.
+    Mass is measured in kilograms\r\n<b><style=\"h2\"><u>Notes\r\n</b></u></style>\r\n1.
+    t makes a very similar format as a <link=https://www.mathsisfun.com/algebra/quadratic-equation.html><i>quadratic
+    equation</i></link> for formula 3. \r\n2. G is the gravitational constant which
+    is equal to  6.67408 \xD7 10e-11.\r\n3. The <link=https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas><i>kinematic
+    equations</i></link> used.\r\n4. The <link=https://www.physicsclassroom.com/class/circles/Lesson-3/Newton-s-Law-of-Universal-Gravitation><i>gravitational
+    force equation</i></link>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -593,7 +612,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 9.05545, w: 0}
+  m_margin: {x: 0, y: 0, z: 9.05545, w: 24.63061}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -935,8 +954,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2074230004}
   m_HandleRect: {fileID: 2074230003}
   m_Direction: 2
-  m_Value: 0.99999774
-  m_Size: 0.52655894
+  m_Value: 0.99999887
+  m_Size: 0.38800764
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
