@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfoScene.unity
     guid: fd70b291151cf3443bd2cb61292ae3f4
+  - enabled: 1
+    path: Assets/Scenes/SimulationScene.unity
+    guid: b058c03f87efcaa40b2d80a57f3db312
+  - enabled: 1
+    path: Assets/Scenes/EquationScene.unity
+    guid: 10e309d43e3cda845b14377572ace744
   m_configObjects: {}
