@@ -23,6 +23,15 @@ public class UIBodyInformationPanel : MonoBehaviour
     public TMP_Text yVelocityDisplay;
     public TMP_Text zVelocityDisplay;
 
+
+    private GameManager gameManagerReference;
+    public void SetGameManRef(GameManager gm)
+    {
+        gameManagerReference = gm;
+    }
+
+
+
     public void Update()
     {
         if (highlightedBody != null)
@@ -60,6 +69,9 @@ public class UIBodyInformationPanel : MonoBehaviour
         highlightedBodyRB = null;
     }
 
-
+    public void DeleteBody()
+    {
+        gameManagerReference.DeleteBody(highlightedBody);
+    }
 
 }

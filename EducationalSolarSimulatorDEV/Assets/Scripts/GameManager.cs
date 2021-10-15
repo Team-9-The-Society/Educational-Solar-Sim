@@ -15,10 +15,24 @@ public class GameManager : MonoBehaviour
 {
     public UIBodyInformationPanel BodyInfoPanel;
 
+    private int tapCount = 0;
+
+    private void Awake()
+    {
+        if (BodyInfoPanel != null)
+        {
+            BodyInfoPanel.SetGameManRef(this);
+            BodyInfoPanel.gameObject.SetActive(false);
+        }
+    }
+
+
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            tapCount++;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
@@ -30,20 +44,29 @@ public class GameManager : MonoBehaviour
                         BodyInfoPanel.gameObject.SetActive(true);
                         BodyInfoPanel.SetHighlightedBody((hit.collider.gameObject.GetComponent<Body>()));
                         Debug.Log("clicked body");
+                        tapCount = 0;
                     }
                 }
             }
             else
             {
                 Debug.Log("Clicked Nothing");
-                BodyInfoPanel.ClearHighlightedBody();
-                BodyInfoPanel.gameObject.SetActive(false);
+                if (tapCount > 1)
+                {
+                    BodyInfoPanel.ClearHighlightedBody();
+                    BodyInfoPanel.gameObject.SetActive(false);
+                }
 
             }
         }
     }
 
-
+    public void DeleteBody(Body b)
+    {
+        Destroy(b.gameObject);
+        BodyInfoPanel.ClearHighlightedBody();
+        BodyInfoPanel.gameObject.SetActive(false);
+    }
 
 
 }
