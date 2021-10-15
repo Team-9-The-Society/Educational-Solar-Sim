@@ -16,6 +16,7 @@ using TMPro;
 public class UIBodyInformationPanel : MonoBehaviour
 {
     public Body highlightedBody;
+    private Rigidbody highlightedBodyRB;
 
     public TMP_Text BodyNameDisplay;
     public TMP_Text xVelocityDisplay;
@@ -24,12 +25,18 @@ public class UIBodyInformationPanel : MonoBehaviour
 
     public void Update()
     {
-        
+        if (highlightedBody != null)
+            UpdateDisplay();
     }
 
     public void UpdateDisplay()
     {
-        .ToString("#.00");
+        BodyNameDisplay.text = highlightedBody.bodyName;
+
+        xVelocityDisplay.text = "X Velocity: " + highlightedBodyRB.velocity.x.ToString("#.00");
+        yVelocityDisplay.text = "Y Velocity: " + highlightedBodyRB.velocity.y.ToString("#.00");
+        zVelocityDisplay.text = "Z Velocity: " + highlightedBodyRB.velocity.z.ToString("#.00");
+
     }
 
     public void ClearDisplay()
@@ -39,6 +46,18 @@ public class UIBodyInformationPanel : MonoBehaviour
         yVelocityDisplay.text = "Y Velocity: 00.00";
         zVelocityDisplay.text = "Z Velocity: 00.00";
 
+    }
+
+    public void SetHighlightedBody(Body b)
+    {
+        highlightedBody = b;
+        highlightedBodyRB = b.GetComponent<Rigidbody>();
+    }
+
+    public void ClearHighlightedBody()
+    {
+        highlightedBody = null;
+        highlightedBodyRB = null;
     }
 
 

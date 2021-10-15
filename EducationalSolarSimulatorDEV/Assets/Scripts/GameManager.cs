@@ -13,8 +13,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    //Reference to body display panel script
+    public UIBodyInformationPanel BodyInfoPanel;
 
     void Update()
     {
@@ -28,7 +27,8 @@ public class GameManager : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<Body>() != null)
                     {
-
+                        BodyInfoPanel.gameObject.SetActive(true);
+                        BodyInfoPanel.SetHighlightedBody((hit.collider.gameObject.GetComponent<Body>()));
                         Debug.Log("clicked body");
                     }
                 }
@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log("Clicked Nothing");
+                BodyInfoPanel.ClearHighlightedBody();
+                BodyInfoPanel.gameObject.SetActive(false);
+
             }
         }
     }
