@@ -21,7 +21,7 @@ public class Body : MonoBehaviour
 
     private void Awake()
     {
-        rb = GameObject.getComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
 
@@ -32,11 +32,8 @@ public class Body : MonoBehaviour
 
     public void ApplyForce()
     {
-        
+        rb.AddForce(new Vector3(xVelocity, yVelocity, zVelocity), ForceMode.Acceleration);
     }
-
-
-
 
 
 }
