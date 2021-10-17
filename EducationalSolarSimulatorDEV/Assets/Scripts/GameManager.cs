@@ -10,23 +10,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("UI References")]
     public UIBodyInformationPanel BodyInfoPanel;
+    public UISliderMenu SliderMenu;
+
+    [Header("Body Prefab References")]
+    public GameObject emptyBodyPrefab;
+
+
+    [Header("Management Variables")]
+    public int BodyCount = 0;
+
+
 
     private int tapCount = 0;
 
+
+    public static GameManager Instance { get; set; }
+
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else if (Instance == null && Instance != this)
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(this);
+
+
         if (BodyInfoPanel != null)
         {
             BodyInfoPanel.SetGameManRef(this);
             BodyInfoPanel.gameObject.SetActive(false);
         }
+
+        if (SliderMenu != null)
+        {
+            SliderMenu.SetGameManRef(this);
+            SliderMenu.gameObject.SetActive(true);
+        }
     }
-
-
 
     void Update()
     {
@@ -61,12 +91,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void TrySpawnNewBody()
+    {
+        if (BodyCount < 12)
+        {
+            GameObject b = Instantiate(emptyBodyPrefab, null, true);
+            BodyCount++;
+
+            b.transform.position.Set(0f, 0f, 0f);
+        }
+    }
+
     public void DeleteBody(Body b)
     {
         Destroy(b.gameObject);
+        BodyCount--;
         BodyInfoPanel.ClearHighlightedBody();
         BodyInfoPanel.gameObject.SetActive(false);
     }
 
+    public void LoadNewScene(SceneHandler.Scene targetScene)
+    {
+        SceneHandler.Load(targetScene); 
+    }
 
 }
