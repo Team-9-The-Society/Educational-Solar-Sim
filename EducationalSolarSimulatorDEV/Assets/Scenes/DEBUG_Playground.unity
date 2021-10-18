@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 549787247}
   - component: {fileID: 549787246}
   - component: {fileID: 549787245}
+  - component: {fileID: 549787248}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -466,6 +467,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &549787248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549787244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3e5f51e31f79c4fb340e92ffc286e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeedNormal: 10
+  rotSpeedFast: 50
+  moveSpeedNormal: 10
+  moveSpeedFast: 40
+  mouseSensitivityX: 5
+  mouseSensitivityY: 5
 --- !u!224 &680481904 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5093924175976552781, guid: 18054e349a90dd14d9bd13c0a9590673,
@@ -528,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BodyInfoPanel: {fileID: 680481907}
-  AddBodyPanel: {fileID: 1193581254}
+  SliderMenu: {fileID: 0}
   emptyBodyPrefab: {fileID: 8631874588233353076, guid: dd4986cb7898df84c98f330d291e7db3,
     type: 3}
   BodyCount: 0
@@ -538,18 +557,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2063278605886389833}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1193581254 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2063278604931949711, guid: 73664fd11cb7ee24f96088f850470358,
-    type: 3}
-  m_PrefabInstance: {fileID: 2063278605886389833}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f843c8ede165d7043bae2fd53eb30a5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1628590666
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,5 +957,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Empty Body
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6605863165464786167, guid: dd4986cb7898df84c98f330d291e7db3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd4986cb7898df84c98f330d291e7db3, type: 3}
