@@ -40,4 +40,12 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference.LoadNewScene(SceneHandler.Scene.HomeScene);
     }
 
+
+
+    public void NotImplemented()
+    {
+        Debug.LogWarning("This function has not been implemented yet!");
+    }
+
+
 }
