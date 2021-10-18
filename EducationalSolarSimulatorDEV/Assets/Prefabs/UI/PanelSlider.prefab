@@ -199,7 +199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2630625498690250570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: NotImplemented
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2630625498708228041
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +332,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2630625498708228042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: NotImplemented
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2630625498716603323
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +759,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2630625499221431467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: NotImplemented
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2630625499364727330
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +787,7 @@ GameObject:
   - component: {fileID: 2630625499364727334}
   m_Layer: 5
   m_Name: PanelSlider
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1404,9 +1440,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2630625499954930561}
-        m_TargetAssemblyTypeName: PlanetCreator, Assembly-CSharp
-        m_MethodName: createBody
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: NotImplemented
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1682,7 +1718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2630625500046077720}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: NotImplemented
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2630625500157595996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,9 +2087,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2630625500433685681}
-        m_TargetAssemblyTypeName: HomeScreneTransition, Assembly-CSharp
-        m_MethodName: ToHomeScene
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: LoadHomeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2185,9 +2233,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2630625500486490313}
-        m_TargetAssemblyTypeName: PlanetCreator, Assembly-CSharp
-        m_MethodName: createBody
+      - m_Target: {fileID: 2630625499364727334}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: SpawnNewBody
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

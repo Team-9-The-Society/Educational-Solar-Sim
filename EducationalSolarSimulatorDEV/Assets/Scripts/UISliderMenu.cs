@@ -9,6 +9,19 @@ public class UISliderMenu : MonoBehaviour
     private GameManager gameManagerReference;
 
 
+
+
+    private void Awake()
+    {
+        if (gameManagerReference == null)
+        {
+            GameObject g = GameObject.FindGameObjectWithTag("GameController");
+            if (g != null)
+                SetGameManRef(g.GetComponent<GameManager>());
+        }
+    }
+
+
     //Sets the reference to the game manager
     public void SetGameManRef(GameManager gm)
     {
@@ -39,5 +52,13 @@ public class UISliderMenu : MonoBehaviour
     {
         gameManagerReference.LoadNewScene(SceneHandler.Scene.HomeScene);
     }
+
+
+
+    public void NotImplemented()
+    {
+        Debug.LogWarning("This function has not been implemented yet!");
+    }
+
 
 }
