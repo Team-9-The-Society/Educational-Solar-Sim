@@ -25,6 +25,23 @@ public class UIBodyInformationPanel : MonoBehaviour
 
 
     private GameManager gameManagerReference;
+
+
+    private void Awake()
+    {
+        if (gameManagerReference == null)
+        {
+            GameObject g = GameObject.FindGameObjectWithTag("GameController");
+            if (g != null)
+            {
+                SetGameManRef(g.GetComponent<GameManager>());
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+
+
     public void SetGameManRef(GameManager gm)
     {
         gameManagerReference = gm;

@@ -50,5 +50,4 @@ public static class SceneHandler
             onLoaderCallback = null;
         }
     }
-
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet1
   - Sun
+  - UI
   layers:
   - Default
   - TransparentFX

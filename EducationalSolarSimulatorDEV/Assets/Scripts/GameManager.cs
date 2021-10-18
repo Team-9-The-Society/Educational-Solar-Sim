@@ -11,6 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,12 +51,31 @@ public class GameManager : MonoBehaviour
             BodyInfoPanel.SetGameManRef(this);
             BodyInfoPanel.gameObject.SetActive(false);
         }
+        else
+        {
+            TryLocateBodyInfoPanel();
+        }
 
         if (SliderMenu != null)
         {
             SliderMenu.SetGameManRef(this);
             SliderMenu.gameObject.SetActive(true);
         }
+        else
+        {
+            TryLocateSliderPanel();
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Running OnSceneLoaded");
+        TryLocateBodyInfoPanel();
+        TryLocateSliderPanel();
     }
 
     void Update()
@@ -71,9 +91,13 @@ public class GameManager : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<Body>() != null)
                     {
-                        BodyInfoPanel.gameObject.SetActive(true);
-                        BodyInfoPanel.SetHighlightedBody((hit.collider.gameObject.GetComponent<Body>()));
                         Debug.Log("clicked body");
+                        if (BodyInfoPanel != null)
+                        {
+                            BodyInfoPanel.gameObject.SetActive(true);
+                            BodyInfoPanel.SetHighlightedBody((hit.collider.gameObject.GetComponent<Body>()));
+                        }
+
                         tapCount = 0;
                     }
                 }
@@ -81,7 +105,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log("Clicked Nothing");
-                if (tapCount > 1)
+                if (tapCount > 1 && BodyInfoPanel != null)
                 {
                     BodyInfoPanel.ClearHighlightedBody();
                     BodyInfoPanel.gameObject.SetActive(false);
@@ -112,7 +136,57 @@ public class GameManager : MonoBehaviour
 
     public void LoadNewScene(SceneHandler.Scene targetScene)
     {
+        ClearUIReferences();
         SceneHandler.Load(targetScene); 
+    }
+
+    private void TryLocateBodyInfoPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for BodyInfoPanel");
+
+            if (BodyInfoPanel == null)
+            {
+                UIBodyInformationPanel b = g.GetComponent<UIBodyInformationPanel>();
+
+                if (b != null)
+                {
+                    BodyInfoPanel = b;
+                    BodyInfoPanel.SetGameManRef(this);
+                    Debug.Log("Found Body Info Panel");
+                }
+            }
+        }
+    }
+
+    private void TryLocateSliderPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for SliderPanel");
+
+            if (SliderMenu == null)
+            {
+                UISliderMenu b = g.GetComponent<UISliderMenu>();
+                if (b != null)
+                {
+                    SliderMenu = b;
+                    SliderMenu.SetGameManRef(this);
+                    Debug.Log("Found Slider Menu");
+                }
+            }
+
+            
+        }
+    }
+
+    private void ClearUIReferences()
+    {
+        BodyInfoPanel = null;
+        SliderMenu = null;
     }
 
 }
