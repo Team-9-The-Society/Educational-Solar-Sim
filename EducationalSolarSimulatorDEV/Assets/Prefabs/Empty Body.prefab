@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8631874588233353078}
   - component: {fileID: 8631874588233353077}
   - component: {fileID: 7089590755226626701}
+  - component: {fileID: 5201621182087815438}
   - component: {fileID: 8631874588233353074}
   m_Layer: 0
   m_Name: Empty Body
@@ -126,6 +127,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0626a98a7150194784902a933fe6ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5201621182087815438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8631874588233353076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4a4e1d5807c144d99665c2615fcbc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitingPlanet: {fileID: 8631874588233353073}
+  newX: -1
+  newY: 5
+  check: 1
+  orbitProgress: 0.538
+  orbitPeriod: 3
+  orbitActive: 1
 --- !u!114 &8631874588233353074
 MonoBehaviour:
   m_ObjectHideFlags: 0
