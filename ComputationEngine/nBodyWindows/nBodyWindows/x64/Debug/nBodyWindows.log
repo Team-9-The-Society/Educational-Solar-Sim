@@ -1,4 +1,0 @@
-﻿  NBodyEngine.cpp
-connector.obj : error LNK2005: "int __cdecl engine::updateForce(double *,double *,double *,double * *,double *,int)" (?updateForce@engine@@YAHPEAN00PEAPEAN0H@Z) already defined in NBodyEngine.obj
-     Creating library C:\Users\Shogoth\Documents\SolarSim\Educational-Solar-Sim\ComputationEngine\nBodyWindows\x64\Debug\nBodyWindows.lib and object C:\Users\Shogoth\Documents\SolarSim\Educational-Solar-Sim\ComputationEngine\nBodyWindows\x64\Debug\nBodyWindows.exp
-C:\Users\Shogoth\Documents\SolarSim\Educational-Solar-Sim\ComputationEngine\nBodyWindows\x64\Debug\nBodyWindows.dll : fatal error LNK1169: one or more multiply defined symbols found
