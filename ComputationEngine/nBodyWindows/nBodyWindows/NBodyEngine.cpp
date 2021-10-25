@@ -2,10 +2,12 @@
 #include <stdlib.h>
 
 #include "pch.h"
+#include "framework.h"
+#include "NBodyEngine.h"
+
 #include <math.h>
 
-namespace engine {
-	using namespace std;
+
 	//Defines the gravitational constant in m^3kg^-1s^-2
 	
 	/*
@@ -75,4 +77,3 @@ namespace engine {
 
 		return 1;
 	}
-}
