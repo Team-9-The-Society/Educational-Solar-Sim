@@ -32,9 +32,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="connector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="NBodyEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
