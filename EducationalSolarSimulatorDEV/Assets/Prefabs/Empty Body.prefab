@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157837504914746124}
-  m_LocalRotation: {x: 0.0076676393, y: -0.000000017191727, z: 1.3182384e-10, w: 0.9999706}
+  m_LocalRotation: {x: 0.0076676384, y: -0.000000017221678, z: 1.320535e-10, w: 0.9999706}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -550,7 +550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101566083543216561}
-  m_LocalRotation: {x: 0.05747037, y: -4.4335523e-16, z: -2.2336038e-18, w: 0.9983472}
+  m_LocalRotation: {x: 0.05747037, y: -6.6539986e-16, z: 2.5521973e-17, w: 0.9983472}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -879,9 +879,7 @@ MonoBehaviour:
   xVelocity: 0
   yVelocity: 0
   zVelocity: 0
-Feature-CameraUpgrade
- planetCam: {fileID: 3141264369209881861}
- frontend
+  planetCam: {fileID: 3141264369209881861}
 --- !u!114 &2623832404433044523
 MonoBehaviour:
   m_ObjectHideFlags: 0
