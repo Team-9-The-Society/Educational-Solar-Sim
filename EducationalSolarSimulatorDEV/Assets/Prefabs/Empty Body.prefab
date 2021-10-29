@@ -879,7 +879,9 @@ MonoBehaviour:
   xVelocity: 0
   yVelocity: 0
   zVelocity: 0
-  planetCam: {fileID: 3141264369209881861}
+Feature-CameraUpgrade
+ planetCam: {fileID: 3141264369209881861}
+ frontend
 --- !u!114 &2623832404433044523
 MonoBehaviour:
   m_ObjectHideFlags: 0
