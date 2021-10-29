@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -526,17 +526,17 @@ MonoBehaviour:
     represents the displacement [Change from starting position from final position]
     of the object, the input v represents the final velocity, v\u2092 still represents
     the inital velocity of an object, and the input t still represents the overall
-    measured time. \r\n<b><style=\"h2\"><u>3. \u0394x = v\u2092t + (1/2)*a*t\xB2
+    measured time. \r\n<b><style=\"h2\"><u>4. \u0394x = v\u2092t + (1/2)*a*t\xB2
     \r\n</b></u></style>\r\nThis equation is used to describe the displacement of
     an object. The output \u0394x represents the displacement [Change from starting
     position from final position] of the object, the input v\u2092 still represents
     the initial velocity of an object, and the input t still represents the overall
     measured time, and a still represents the acceleration which is a change in the
-    velocity over time. \r\n<b><style=\"h2\"><u>4. F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThis
+    velocity over time. \r\n<b><style=\"h2\"><u>5. F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThis
     equation is used to describe the Force of gravity. The output F represents the
     Force of gravity on the object, the input G is the gravitational constant [SEE
     FOOT NOTE], m is the mass of the current object, M is the mass of the second
-    object (not itself), and r represents the radius between the two objects.\r\n<b><style=\"h2\"><u>
+    object (not itself), and r represents the radius between the two objects.\r\n<b><style=\"h2\"><u>6.
     F = ma \r\n</b></u></style>\r\nThis equation is used to describe a Force. The
     output F represents the Force of the object, the input m represents the mass
     of the object, and a represents the acceleration of the object.\r\n<b><style=\"h2\"><u>Units
