@@ -8,9 +8,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Body : MonoBehaviour
 {
+    [Header("Planet name and velocities")]
     public string bodyName;
 
     public float xVelocity;
@@ -18,6 +20,9 @@ public class Body : MonoBehaviour
     public float zVelocity;
 
     private Rigidbody rb;
+
+    [Header("Reference to Planet's Orbiting Camera")]
+    public CinemachineFreeLook planetCam;
 
     private void Awake()
     {
@@ -34,6 +39,8 @@ public class Body : MonoBehaviour
     {
         rb.AddForce(new Vector3(xVelocity, yVelocity, zVelocity), ForceMode.Acceleration);
     }
+
+    
 
 
 }

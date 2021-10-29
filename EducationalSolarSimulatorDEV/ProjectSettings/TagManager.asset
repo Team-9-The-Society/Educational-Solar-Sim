@@ -7,6 +7,8 @@ TagManager:
   - Planet1
   - Sun
   - UI
+  - UniverseCam
+  - PlanetCam
   layers:
   - Default
   - TransparentFX

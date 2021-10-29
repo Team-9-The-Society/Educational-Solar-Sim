@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157837504914746124}
-  m_LocalRotation: {x: 0.007667641, y: 0.000000019680838, z: -1.5091002e-10, w: 0.9999706}
+  m_LocalRotation: {x: 0.0076676393, y: -0.000000017191727, z: 1.3182384e-10, w: 0.9999706}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -476,7 +476,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517374595335785924}
-  m_LocalRotation: {x: 0.049612153, y: 0.00000002976562, z: -0.0000000014785573, w: 0.99876857}
+  m_LocalRotation: {x: -0.041184112, y: 0.000000010937063, z: 4.508157e-10, w: 0.9991516}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -550,7 +550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101566083543216561}
-  m_LocalRotation: {x: 0.057470374, y: 0.0000000037191332, z: -2.1409383e-10, w: 0.9983472}
+  m_LocalRotation: {x: 0.05747037, y: -4.4335523e-16, z: -2.2336038e-18, w: 0.9983472}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -879,6 +879,7 @@ MonoBehaviour:
   xVelocity: 0
   yVelocity: 0
   zVelocity: 0
+  planetCam: {fileID: 3141264369209881861}
 --- !u!114 &2623832404433044523
 MonoBehaviour:
   m_ObjectHideFlags: 0

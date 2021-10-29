@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,11 +20,16 @@ public class GameManager : MonoBehaviour
     public UIBodyInformationPanel BodyInfoPanel;
     public UISliderMenu SliderMenu;
 
+    [Header("Camera References")]
+    public CinemachineFreeLook UniverseCam;
+    public CinemachineFreeLook ActivePlanetCam;
+
     [Header("Body Prefab References")]
     public GameObject emptyBodyPrefab;
 
 
     [Header("Management Variables")]
+    public List<Body> SimBodies;
     public int BodyCount = 0;
 
 
@@ -45,6 +51,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this);
 
+        SimBodies = new List<Body>();
 
         if (BodyInfoPanel != null)
         {
@@ -76,6 +83,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Running OnSceneLoaded");
         TryLocateBodyInfoPanel();
         TryLocateSliderPanel();
+        UniverseCam = GameObject.FindGameObjectWithTag("UniverseCam").GetComponent<CinemachineFreeLook>();
     }
 
     void Update()
@@ -89,13 +97,13 @@ public class GameManager : MonoBehaviour
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject.GetComponent<Body>() != null)
+                    Body b = hit.collider.gameObject.GetComponent<Body>();
+                    if (b != null)
                     {
                         Debug.Log("clicked body");
                         if (BodyInfoPanel != null)
                         {
-                            BodyInfoPanel.gameObject.SetActive(true);
-                            BodyInfoPanel.SetHighlightedBody((hit.collider.gameObject.GetComponent<Body>()));
+                            FocusOnBody(b);
                         }
 
                         tapCount = 0;
@@ -107,29 +115,59 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Clicked Nothing");
                 if (tapCount > 1 && BodyInfoPanel != null)
                 {
-                    BodyInfoPanel.ClearHighlightedBody();
-                    BodyInfoPanel.gameObject.SetActive(false);
+                    FocusOnUniverse();
                 }
 
             }
         }
     }
 
+    //Sets a focused body and switches to the camera orbiting it
+    public void FocusOnBody(Body b)
+    {
+        BodyInfoPanel.gameObject.SetActive(true);
+        BodyInfoPanel.SetHighlightedBody(b);
+        ActivatePlanetCam(b.planetCam);
+    }
+
+    //Unfocuses on a selected body, if any, and zooms out to a universe view
+    public void FocusOnUniverse()
+    {
+        BodyInfoPanel.ClearHighlightedBody();
+        BodyInfoPanel.gameObject.SetActive(false);
+        ActivateUniverseCam();
+    }
+
+    //Attemps to spawn a new body at 0,0,0 if the max number of planets has not been reached.
     public void TrySpawnNewBody()
     {
         if (BodyCount < 12)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
+            Body bodyRef = b.GetComponent<Body>();
+
+            ActivatePlanetCam(bodyRef.planetCam);
+
+            BodyInfoPanel.gameObject.SetActive(true);
+            BodyInfoPanel.SetHighlightedBody(bodyRef);
+
+            SimBodies.Add(bodyRef);
             BodyCount++;
 
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
 
+    //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
-        Destroy(b.gameObject);
+        SimBodies.Remove(b);
         BodyCount--;
+        ActivateUniverseCam();
+
+        Destroy(b.gameObject);
+
+
         BodyInfoPanel.ClearHighlightedBody();
         BodyInfoPanel.gameObject.SetActive(false);
     }
@@ -187,6 +225,25 @@ public class GameManager : MonoBehaviour
     {
         BodyInfoPanel = null;
         SliderMenu = null;
+    }
+
+    //Changes the priority to favor a particular planet cam over the universe cam
+    public void ActivatePlanetCam(CinemachineFreeLook cam)
+    {
+        cam.Priority = 5;
+        ActivePlanetCam = cam;
+        UniverseCam.Priority = 4;
+    }
+
+    //Changes the priority to favor the universe over a particular planet
+    public void ActivateUniverseCam()
+    {
+        if (ActivePlanetCam != null)
+        {
+            ActivePlanetCam.Priority = 4;
+            ActivePlanetCam = null;
+        }
+        UniverseCam.Priority = 5;
     }
 
 }
