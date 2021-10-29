@@ -24,7 +24,6 @@ namespace ComputationEngineLibrary
 
 		for(int i = 0; i < numBodies; i++)
 		{
-			double accel[3] = {0, 0, 0};
 			for(int j = 0; j < numBodies; j++)
 			{
 				if(i == j)
