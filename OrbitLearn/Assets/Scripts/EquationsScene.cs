@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class InfoScreneTransition : MonoBehaviour
+public class EquationsScene : MonoBehaviour
 {
-   public void ToInfoScene()
+    public void ToEquationScene()
     {
-        SceneManager.LoadScene("InfoScene");
+        SceneManager.LoadScene("EquationScene");
     }
 }

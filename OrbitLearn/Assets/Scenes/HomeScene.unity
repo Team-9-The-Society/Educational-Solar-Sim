@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.04315195, g: 0.044534776, b: 0.05877426, a: 1}
+  m_IndirectSpecularColor: {r: 0.043143097, g: 0.044520944, b: 0.058756135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -795,7 +795,8 @@ PrefabInstance:
       propertyPath: m_Text
       value: EQUATIONS
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9024307252783168540, guid: 30dfdf8d91a878a4dbcbb75e70467f7f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 30dfdf8d91a878a4dbcbb75e70467f7f, type: 3}
 --- !u!1 &1180704493
 GameObject:
@@ -806,7 +807,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180704495}
-  - component: {fileID: 1180704494}
   m_Layer: 0
   m_Name: InfoButtonTransition
   m_TagString: Untagged
@@ -814,18 +814,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1180704494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180704493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c9fa59f6020f84e8dc84e18be85c91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1180704495
 Transform:
   m_ObjectHideFlags: 0
