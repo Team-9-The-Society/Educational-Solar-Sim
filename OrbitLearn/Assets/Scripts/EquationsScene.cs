@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class EquationsScrene : MonoBehaviour
+public class EquationsScene : MonoBehaviour
 {
     public void ToEquationScene()
     {
