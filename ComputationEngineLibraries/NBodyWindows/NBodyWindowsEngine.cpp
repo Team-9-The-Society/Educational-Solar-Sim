@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "pch.h"
 #include "framework.h"
-#include "NBodyEngine.h"
+#include "NBodyWindowsEngine.h"
 #include <math.h>
 #include <iostream>
 
@@ -14,7 +14,7 @@ namespace ComputationEngineLibrary
 	Method Purpose: Calculates force and update the array
 	Output: 1 for succes, 0 for failure. the "real" output is the modified memory at the location of the force pointer
 	*/
-	int updateForce(double* xPos, double* yPos, double* zPos, double** force, double* mass, int numBodies)
+	__declspec(dllexport) int updateForce(double* xPos, double* yPos, double* zPos, double** force, double* mass, int numBodies)
 	{
 		//Defines the gravitational constant in m^3kg^-1s^-2
 		double gravitationalConstant = 6.67408 * pow(10, -11);

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nBodyWindows", "nBodyWindows\nBodyWindows.vcxproj", "{6FFABCA0-E064-4735-AFB2-26DFBE7DA9F8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NBodyWindows", "nBodyWindows\nBodyWindows.vcxproj", "{6FFABCA0-E064-4735-AFB2-26DFBE7DA9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F0F2B195-3C5F-4717-802F-4A50FCFE7F64}
+		SolutionGuid = {40334F4A-5029-4614-B296-17191394CEFC}
 	EndGlobalSection
 EndGlobal
