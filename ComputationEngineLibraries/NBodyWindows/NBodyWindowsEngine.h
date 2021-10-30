@@ -1,7 +1,7 @@
 #ifdef COMPUTATIONENGINELIBRARY_EXPORTS
-#define COMPUTATIONENGINELIBRARY_API __declspec(dllexport)
+#	define COMPUTATIONENGINELIBRARY_API __declspec(dllexport)
 #else
-#define COMPUTATIONENGINELIBRARY_API __declspec(dllimport)
+#	define COMPUTATIONENGINELIBRARY_API __declspec(dllimport)
 #endif
 
 // Export Methods Here
