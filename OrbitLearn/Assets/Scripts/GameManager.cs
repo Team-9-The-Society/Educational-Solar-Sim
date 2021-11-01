@@ -32,7 +32,17 @@ public class GameManager : MonoBehaviour
     public List<Body> SimBodies;
     public int BodyCount = 0;
 
-
+    public static RuntimePlatform platform
+    {
+        get
+        {
+#if UNITY_ANDROID
+                 return RuntimePlatform.Android;
+#elif UNITY_STANDALONE_WIN
+                 return RuntimePlatform.WindowsPlayer;
+#endif
+        }
+    }
 
     private int tapCount = 0;
 
@@ -245,14 +255,38 @@ public class GameManager : MonoBehaviour
             i++;
         }
 
+        /* Can be uncommented once libraries are functional
+        try{
+            switch(ApplicationUtil.platform)
+            {
+                case RuntimePlatform.Android:
+                    //Android library
+                    break;
+                case RuntimePlatform.WindowsPlayer:
+                    //DLL library
+                    break;
+                default:
+                    force = nBody.UpdateForce(position, mass, numBodies);
+                    break;
+            }
+        }
+        //Catch case if the libraries fail
+        catch
+        {
+            force = nBody.UpdateForce(position, mass, numBodies);
+        }
+        */
+        
+        //once libraries are added, remove this line
         force = nBody.UpdateForce(position, mass, numBodies);
-
         i = 0;
         foreach (Body b in SimBodies)
         {
-            //Apply the output of force[] to each body using ForceMode.Force;
+            b.ApplyForce(force[i, 0], force[i, 1], force[i, 2]);
+            i++;
         }
 
+        return;
     }
 
     //Changes the priority to favor a particular planet cam over the universe cam

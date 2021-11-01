@@ -15,10 +15,6 @@ public class Body : MonoBehaviour
     [Header("Planet name and velocities")]
     public string bodyName;
 
-    public float xVelocity;
-    public float yVelocity;
-    public float zVelocity;
-
     private Rigidbody rb;
 
     [Header("Reference to Planet's Orbiting Camera")]
@@ -32,15 +28,11 @@ public class Body : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyForce();
+        //ApplyForce();
     }
 
-    public void ApplyForce()
+    public void ApplyForce(double xForce, double yForce, double zForce)
     {
-        rb.AddForce(new Vector3(xVelocity, yVelocity, zVelocity), ForceMode.Acceleration);
+        rb.AddForce(new Vector3((float)xForce, (float)yForce, (float)zForce), ForceMode.Force);
     }
-
-    
-
-
 }
