@@ -227,6 +227,34 @@ public class GameManager : MonoBehaviour
         SliderMenu = null;
     }
 
+    public void UpdateForces()
+    {
+        NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder
+        int numBodies = SimBodies.Count;
+        double[] mass = new double[numBodies];
+        double[,] position = new double[numBodies, 3];
+        double[,] force;
+
+        int i = 0;
+        foreach (Body b in SimBodies)
+        {
+            mass[i] = b.gameObject.GetComponent<Rigidbody>().mass;
+            position[i, 0] = b.gameObject.transform.position.x;
+            position[i, 1] = b.gameObject.transform.position.y;
+            position[i, 2] = b.gameObject.transform.position.z;
+            i++;
+        }
+
+        force = nBody.UpdateForce(position, mass, numBodies);
+
+        i = 0;
+        foreach (Body b in SimBodies)
+        {
+            //Apply the output of force[] to each body using ForceMode.Force;
+        }
+
+    }
+
     //Changes the priority to favor a particular planet cam over the universe cam
     public void ActivatePlanetCam(CinemachineFreeLook cam)
     {
