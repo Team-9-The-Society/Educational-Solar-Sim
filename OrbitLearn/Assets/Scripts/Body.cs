@@ -28,7 +28,6 @@ public class Body : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //ApplyForce();
     }
 
     public void ApplyForce(double xForce, double yForce, double zForce)
