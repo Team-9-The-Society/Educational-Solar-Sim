@@ -32,7 +32,17 @@ public class GameManager : MonoBehaviour
     public List<Body> SimBodies;
     public int BodyCount = 0;
 
-
+    public static RuntimePlatform platform
+    {
+        get
+        {
+#if UNITY_ANDROID
+                 return RuntimePlatform.Android;
+#elif UNITY_STANDALONE_WIN
+                 return RuntimePlatform.WindowsPlayer;
+#endif
+        }
+    }
 
     private int tapCount = 0;
 
@@ -225,6 +235,58 @@ public class GameManager : MonoBehaviour
     {
         BodyInfoPanel = null;
         SliderMenu = null;
+    }
+
+    public void UpdateForces()
+    {
+        NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder
+        int numBodies = SimBodies.Count;
+        double[] mass = new double[numBodies];
+        double[,] position = new double[numBodies, 3];
+        double[,] force;
+
+        int i = 0;
+        foreach (Body b in SimBodies)
+        {
+            mass[i] = b.gameObject.GetComponent<Rigidbody>().mass;
+            position[i, 0] = b.gameObject.transform.position.x;
+            position[i, 1] = b.gameObject.transform.position.y;
+            position[i, 2] = b.gameObject.transform.position.z;
+            i++;
+        }
+
+        /* Can be uncommented once libraries are functional
+        try{
+            switch(ApplicationUtil.platform)
+            {
+                case RuntimePlatform.Android:
+                    //Android library
+                    break;
+                case RuntimePlatform.WindowsPlayer:
+                    //DLL library
+                    break;
+                default:
+                    force = nBody.UpdateForce(position, mass, numBodies);
+                    break;
+            }
+        }
+        //Catch case if the libraries fail
+        catch
+        {
+            force = nBody.UpdateForce(position, mass, numBodies);
+        }
+        */
+        
+        //once libraries are added, remove this line
+        force = nBody.UpdateForce(position, mass, numBodies);
+        i = 0;
+        foreach (Body b in SimBodies)
+        {
+            b.ApplyForce(force[i, 0], force[i, 1], force[i, 2]);
+            i++;
+        }
+
+        return;
     }
 
     //Changes the priority to favor a particular planet cam over the universe cam
