@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UISliderMenu : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class UISliderMenu : MonoBehaviour
     [Header("Game Manager Reference")]
     private GameManager gameManagerReference;
 
+    public Animator animator;
 
-
+    [Header("Panel References")]
+    public GameObject PanelMenu;
+    public GameObject BodyInfoInputPanel;
 
     private void Awake()
     {
@@ -19,6 +23,11 @@ public class UISliderMenu : MonoBehaviour
             if (g != null)
                 SetGameManRef(g.GetComponent<GameManager>());
         }
+
+        animator = this.gameObject.GetComponent<Animator>();
+
+        BodyInfoInputPanel.SetActive(false);
+
     }
 
 
@@ -30,11 +39,8 @@ public class UISliderMenu : MonoBehaviour
 
 
     //Triggers the panel sliding in/out of the frame
-    public GameObject PanelMenu;
     public void ShowIdleMenu()
     {
-            Animator animator = PanelMenu.GetComponent<Animator>();
-           
             bool isOpen = animator.GetBool("show");
             animator.SetBool("show", !isOpen);
     }
@@ -46,7 +52,16 @@ public class UISliderMenu : MonoBehaviour
     {
         gameManagerReference.TrySpawnNewBody();
     }
+    
+    public void ShowContextPanel()
+    {
+        BodyInfoInputPanel.SetActive(true);
+    }
 
+    public void HideContextPanel()
+    {
+        BodyInfoInputPanel.SetActive(false);
+    }
 
     public void LoadHomeScene()
     {
