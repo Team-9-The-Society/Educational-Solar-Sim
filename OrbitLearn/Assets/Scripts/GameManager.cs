@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     public UIBodyInformationPanel BodyInfoPanel;
     public UISliderMenu SliderMenu;
+    public BodyPromptScript BodyInputPanel;
 
     [Header("Camera References")]
     public CinemachineFreeLook UniverseCam;
@@ -72,6 +73,11 @@ public class GameManager : MonoBehaviour
         {
             TryLocateSliderPanel();
         }
+
+        if (BodyInputPanel != null)
+        {
+            BodyInputPanel.SetGameManRef(this);
+        }
     }
 
     private void OnEnable()
@@ -83,6 +89,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Running OnSceneLoaded");
         TryLocateBodyInfoPanel();
         TryLocateSliderPanel();
+        TryLocateBodyInputPanel();
         UniverseCam = GameObject.FindGameObjectWithTag("UniverseCam").GetComponent<CinemachineFreeLook>();
     }
 
@@ -158,6 +165,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel)
+    {
+        if (BodyCount < 12)
+        {
+            GameObject b = Instantiate(emptyBodyPrefab, null, true);
+            Body bodyRef = b.GetComponent<Body>();
+
+            ActivatePlanetCam(bodyRef.planetCam);
+
+            BodyInfoPanel.gameObject.SetActive(true);
+            BodyInfoPanel.SetHighlightedBody(bodyRef);
+
+            SimBodies.Add(bodyRef);
+            BodyCount++;
+
+            Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
+
+            b.transform.position.Set((float)xLoc, (float)yLoc, (float)zLoc);
+            r.mass = (float)mass;
+            r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
+        }
+    }
+
+
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
@@ -199,6 +230,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void TryLocateBodyInputPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for BodyInputPanel");
+
+            if (BodyInfoPanel == null)
+            {
+                BodyPromptScript b = g.GetComponent<BodyPromptScript>();
+
+                if (b != null)
+                {
+                    BodyInputPanel = b;
+                    BodyInputPanel.SetGameManRef(this);
+                    Debug.Log("Found Body Input Panel");
+                }
+            }
+        }
+    }
+
     private void TryLocateSliderPanel()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
@@ -225,6 +277,7 @@ public class GameManager : MonoBehaviour
     {
         BodyInfoPanel = null;
         SliderMenu = null;
+        BodyInputPanel = null;
     }
 
     //Changes the priority to favor a particular planet cam over the universe cam

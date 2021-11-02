@@ -3870,7 +3870,7 @@ GameObject:
   - component: {fileID: 5277512691928964499}
   m_Layer: 5
   m_Name: BodyInfoPrompt
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4088,21 +4088,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
-        m_MethodName: SpawnNewBody
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BodyPanelActive, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 5277512691928964499}
+        m_TargetAssemblyTypeName: BodyPromptScript, Assembly-CSharp
+        m_MethodName: SubmitNewBody
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4233,9 +4221,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BodyPanelActive, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 5277512691928964499}
+        m_TargetAssemblyTypeName: BodyPromptScript, Assembly-CSharp
+        m_MethodName: CancelNewBody
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

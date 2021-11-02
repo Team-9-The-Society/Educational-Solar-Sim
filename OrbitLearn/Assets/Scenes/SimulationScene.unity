@@ -1683,6 +1683,11 @@ PrefabInstance:
       propertyPath: BodyInfoPanel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7873659840201853094, guid: 5535e65e5b62b754b8b022a02978ee4b,
+        type: 3}
+      propertyPath: BodyInputPanel
+      value: 
+      objectReference: {fileID: 1414320797}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5535e65e5b62b754b8b022a02978ee4b, type: 3}
 --- !u!1001 &1968472542

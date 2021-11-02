@@ -7,6 +7,8 @@ using TMPro;
 
 public class BodyPromptScript : MonoBehaviour
 {
+    private GameManager GameManagerReference;
+
     [Header("Input Field References")]
     public TMP_InputField massInput;
 
@@ -30,19 +32,50 @@ public class BodyPromptScript : MonoBehaviour
     public double yVel;
     public double zVel;
 
-    public void showPrompt()
+    public void SetGameManRef(GameManager g)
     {
-        this.gameObject.SetActive(true);
+        GameManagerReference = g;
     }
 
-    public void hidePrompt()
+    public void HidePanel()
     {
         this.gameObject.SetActive(false);
     }
 
+    public void CancelNewBody()
+    {
+        ClearInputsAndValues();
+        HidePanel();
+    }
+
+    public void SubmitNewBody()
+    {
+        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel);
+        ClearInputsAndValues();
+        HidePanel();
+    }
+
+
     public void ClearInputsAndValues()
     {
+        massInput.text = "";
 
+        xPosInput.text = "";
+        yPosInput.text = "";
+        zPosInput.text = "";
+
+        xVelInput.text = "";
+        yVelInput.text = "";
+        zVelInput.text = "";
+
+        mass = 0;
+        xPos = 0;
+        yPos = 0;
+        zPos = 0;
+
+        xVel = 0;
+        yVel = 0;
+        zVel = 0;
     }
 
     public double StringToDouble(string s)
