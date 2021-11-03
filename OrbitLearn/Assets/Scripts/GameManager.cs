@@ -10,6 +10,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
@@ -31,7 +32,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Management Variables")]
     public List<Body> SimBodies;
+    public Body focusedBody;
     public int BodyCount = 0;
+    private int tapCount = 0;
 
     public static RuntimePlatform platform
     {
@@ -45,10 +48,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int tapCount = 0;
 
 
     public static GameManager Instance { get; set; }
+
+
+    #region Scene Management + Misc.
 
     private void Awake()
     {
@@ -94,6 +99,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    
+    
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Running OnSceneLoaded");
@@ -101,52 +108,60 @@ public class GameManager : MonoBehaviour
         TryLocateSliderPanel();
         TryLocateBodyInputPanel();
         UniverseCam = GameObject.FindGameObjectWithTag("UniverseCam").GetComponent<CinemachineFreeLook>();
+
     }
+
+
+    public void LoadNewScene(SceneHandler.Scene targetScene)
+    {
+        ClearUIReferences();
+        SceneHandler.Load(targetScene);
+    }
+
+
+    #endregion
 
     void Update()
     {
+        RefreshUniverseCam();
+        //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
+
         if (Input.GetMouseButtonDown(0))
         {
+            //Increment taps
             tapCount++;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                //If a body has been tapped
                 if (hit.collider != null)
                 {
+                    //Attempts to get reference to Body component
                     Body b = hit.collider.gameObject.GetComponent<Body>();
-                    if (b != null)
+                    if (tapCount >= 2 && focusedBody == b)
                     {
-                        Debug.Log("clicked body");
-                        if (BodyInfoPanel != null)
-                        {
-                            FocusOnBody(b);
-                        }
-
-                        tapCount = 0;
+                        ActivatePlanetCam(b.planetCam);
+                    }
+                    else if (tapCount == 1 && b != null)
+                    {
+                        focusedBody = b;
+                        ShowBodyInfo(b);
                     }
                 }
             }
+            //Otherwise, if the focused body is not equal to null
+            else if (focusedBody != null)
+            {
+                focusedBody = null;
+            }
             else
             {
-                Debug.Log("Clicked Nothing");
-                if (tapCount > 1 && BodyInfoPanel != null)
-                {
-                    FocusOnUniverse();
-                }
-
+                tapCount = 0;
+                HideBodyInfo();
+                FocusOnUniverse();
             }
         }
-
-        RefreshUniverseCam();
-    }
-
-    //Sets a focused body and switches to the camera orbiting it
-    public void FocusOnBody(Body b)
-    {
-        BodyInfoPanel.gameObject.SetActive(true);
-        BodyInfoPanel.SetHighlightedBody(b);
-        ActivatePlanetCam(b.planetCam);
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
@@ -194,9 +209,11 @@ public class GameManager : MonoBehaviour
 
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
 
-            b.transform.position.Set((float)xLoc, (float)yLoc, (float)zLoc);
+            b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
+
+            focusedBody = bodyRef;
         }
     }
 
@@ -214,13 +231,6 @@ public class GameManager : MonoBehaviour
         BodyInfoPanel.ClearHighlightedBody();
         BodyInfoPanel.gameObject.SetActive(false);
     }
-
-    public void LoadNewScene(SceneHandler.Scene targetScene)
-    {
-        ClearUIReferences();
-        SceneHandler.Load(targetScene); 
-    }
-
 
     public void UpdateForces()
     {
@@ -274,6 +284,9 @@ public class GameManager : MonoBehaviour
         return;
     }
 
+
+
+    #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
     public void ActivatePlanetCam(CinemachineFreeLook cam)
     {
@@ -322,7 +335,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    #region UI Detection
+    #endregion
+
+    #region UI Detection and Manipulation
 
 
     private void TryLocateBodyInfoPanel()
@@ -394,8 +409,55 @@ public class GameManager : MonoBehaviour
         BodyInfoPanel = null;
         SliderMenu = null;
         BodyInputPanel = null;
+        focusedBody = null;
     }
 
+
+    //Displays the Body Info Panel for the input Body
+    public void ShowBodyInfo(Body b)
+    {
+        BodyInfoPanel.gameObject.SetActive(true);
+        BodyInfoPanel.SetHighlightedBody(b);
+    }
+
+    //Hides Body Info Panel
+    public void HideBodyInfo()
+    {
+        BodyInfoPanel.ClearHighlightedBody();
+        focusedBody = null;
+        BodyInfoPanel.gameObject.SetActive(false);
+    }
+
+
+
+    #endregion
+
+    #region Return if Pointer is over a UI Element
+    ///Returns 'true' if we touched or hovering on Unity UI element.
+    public static bool IsPointerOverUIElement()
+    {
+        return IsPointerOverUIElement(GetEventSystemRaycastResults());
+    }
+    ///Returns 'true' if we touched or hovering on Unity UI element.
+    public static bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
+    {
+        for (int index = 0; index < eventSystemRaysastResults.Count; index++)
+        {
+            RaycastResult curRaysastResult = eventSystemRaysastResults[index];
+            if (curRaysastResult.gameObject.GetComponent<Canvas>() == null && curRaysastResult.gameObject.layer == LayerMask.NameToLayer("UI"))
+                return true;
+        }
+        return false;
+    }
+    ///Gets all event systen raycast results of current mouse or touch position.
+    static List<RaycastResult> GetEventSystemRaycastResults()
+    {
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = Input.mousePosition;
+        List<RaycastResult> raysastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, raysastResults);
+        return raysastResults;
+    }
     #endregion
 
 }
