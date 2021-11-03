@@ -137,6 +137,8 @@ public class GameManager : MonoBehaviour
 
             }
         }
+
+        RefreshUniverseCam();
     }
 
     //Sets a focused body and switches to the camera orbiting it
@@ -219,76 +221,6 @@ public class GameManager : MonoBehaviour
         SceneHandler.Load(targetScene); 
     }
 
-    private void TryLocateBodyInfoPanel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
-        foreach (GameObject g in objs)
-        {
-            Debug.Log("Scanning " + g.name + " for BodyInfoPanel");
-
-            if (BodyInfoPanel == null)
-            {
-                UIBodyInformationPanel b = g.GetComponent<UIBodyInformationPanel>();
-
-                if (b != null)
-                {
-                    BodyInfoPanel = b;
-                    BodyInfoPanel.SetGameManRef(this);
-                    Debug.Log("Found Body Info Panel");
-                }
-            }
-        }
-    }
-
-    private void TryLocateBodyInputPanel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
-        foreach (GameObject g in objs)
-        {
-            Debug.Log("Scanning " + g.name + " for BodyInputPanel");
-
-            if (BodyInfoPanel == null)
-            {
-                BodyPromptScript b = g.GetComponent<BodyPromptScript>();
-
-                if (b != null)
-                {
-                    BodyInputPanel = b;
-                    BodyInputPanel.SetGameManRef(this);
-                    Debug.Log("Found Body Input Panel");
-                }
-            }
-        }
-    }
-
-    private void TryLocateSliderPanel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
-        foreach (GameObject g in objs)
-        {
-            Debug.Log("Scanning " + g.name + " for SliderPanel");
-
-            if (SliderMenu == null)
-            {
-                UISliderMenu b = g.GetComponent<UISliderMenu>();
-                if (b != null)
-                {
-                    SliderMenu = b;
-                    SliderMenu.SetGameManRef(this);
-                    Debug.Log("Found Slider Menu");
-                }
-            }
-
-            
-        }
-    }
-
-    private void ClearUIReferences()
-    {
-        BodyInfoPanel = null;
-        SliderMenu = null;
-        BodyInputPanel = null;
-    }
 
     public void UpdateForces()
     {
@@ -360,5 +292,110 @@ public class GameManager : MonoBehaviour
         }
         UniverseCam.Priority = 5;
     }
+
+    //Increase the size of the Universe Cam orbit based on planetary positions
+    public void RefreshUniverseCam()
+    {
+        float maxDist = 25;
+        foreach (Body b in SimBodies)
+        {
+            float distance = Vector3.Distance(b.gameObject.transform.position, Vector3.zero);
+            if (maxDist < distance)
+            {
+                maxDist = distance;
+            }
+        }
+        maxDist += 5;
+
+        Debug.Log("MaxDist = " + maxDist);
+
+        /*
+        CinemachineFreeLook.Orbit t = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+        CinemachineFreeLook.Orbit m = new CinemachineFreeLook.Orbit(0, maxDist);
+        CinemachineFreeLook.Orbit l = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+        */
+
+        UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+        UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+        UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+
+    }
+
+
+    #region UI Detection
+
+
+    private void TryLocateBodyInfoPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for BodyInfoPanel");
+
+            if (BodyInfoPanel == null)
+            {
+                UIBodyInformationPanel b = g.GetComponent<UIBodyInformationPanel>();
+
+                if (b != null)
+                {
+                    BodyInfoPanel = b;
+                    BodyInfoPanel.SetGameManRef(this);
+                    Debug.Log("Found Body Info Panel");
+                }
+            }
+        }
+    }
+
+    private void TryLocateBodyInputPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for BodyInputPanel");
+
+            if (BodyInfoPanel == null)
+            {
+                BodyPromptScript b = g.GetComponent<BodyPromptScript>();
+
+                if (b != null)
+                {
+                    BodyInputPanel = b;
+                    BodyInputPanel.SetGameManRef(this);
+                    Debug.Log("Found Body Input Panel");
+                }
+            }
+        }
+    }
+
+    private void TryLocateSliderPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for SliderPanel");
+
+            if (SliderMenu == null)
+            {
+                UISliderMenu b = g.GetComponent<UISliderMenu>();
+                if (b != null)
+                {
+                    SliderMenu = b;
+                    SliderMenu.SetGameManRef(this);
+                    Debug.Log("Found Slider Menu");
+                }
+            }
+
+
+        }
+    }
+
+    private void ClearUIReferences()
+    {
+        BodyInfoPanel = null;
+        SliderMenu = null;
+        BodyInputPanel = null;
+    }
+
+    #endregion
 
 }

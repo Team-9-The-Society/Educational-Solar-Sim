@@ -752,7 +752,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 12
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1756,6 +1756,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UniverseCenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.098537646
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689151798298187087, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c, type: 3}
