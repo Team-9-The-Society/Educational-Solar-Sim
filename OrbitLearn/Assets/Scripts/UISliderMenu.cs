@@ -14,6 +14,7 @@ public class UISliderMenu : MonoBehaviour
     [Header("Panel References")]
     public GameObject PanelMenu;
     public GameObject BodyInfoInputPanel;
+    public GameObject BodiesDescriptionPanel;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class UISliderMenu : MonoBehaviour
         animator = this.gameObject.GetComponent<Animator>();
 
         BodyInfoInputPanel.SetActive(false);
+        BodiesDescriptionPanel.SetActive(false);
 
     }
 
@@ -52,7 +54,11 @@ public class UISliderMenu : MonoBehaviour
     {
         gameManagerReference.TrySpawnNewBody();
     }
-    
+    //Enables the bodies description panel to appear
+    public void ShowBodiesPanel()
+    {
+        BodiesDescriptionPanel.SetActive(true);
+    }
     public void ShowContextPanel()
     {
         BodyInfoInputPanel.SetActive(true);
