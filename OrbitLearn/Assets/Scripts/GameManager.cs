@@ -93,10 +93,13 @@ public class GameManager : MonoBehaviour
         if (BodyInputPanel != null)
         {
             BodyInputPanel.SetGameManRef(this);
+            BodyInputPanel.gameObject.SetActive(false);
+            
         }
         if (BodiesPanel != null)
         {
             BodiesPanel.SetGameManRef(this);
+            BodiesPanel.gameObject.SetActive(false);
         }
         else
         {
@@ -333,7 +336,7 @@ public class GameManager : MonoBehaviour
         }
         maxDist += 5;
 
-        Debug.Log("MaxDist = " + maxDist);
+       // Debug.Log("MaxDist = " + maxDist);
 
         /*
         CinemachineFreeLook.Orbit t = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
@@ -459,9 +462,12 @@ public class GameManager : MonoBehaviour
     //Hides Body Info Panel
     public void HideBodyInfo()
     {
-        BodyInfoPanel.ClearHighlightedBody();
-        focusedBody = null;
-        BodyInfoPanel.gameObject.SetActive(false);
+        if (BodyInfoPanel != null)
+        {
+            BodyInfoPanel.ClearHighlightedBody();
+            focusedBody = null;
+            BodyInfoPanel.gameObject.SetActive(false);
+        }
     }
 
 
