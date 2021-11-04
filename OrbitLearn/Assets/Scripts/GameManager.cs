@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("UI References")]
     public UIBodyInformationPanel BodyInfoPanel;
+    public BodiesInfoButton BodiesPanel;
     public UISliderMenu SliderMenu;
     public BodyPromptScript BodyInputPanel;
 
@@ -93,8 +94,19 @@ public class GameManager : MonoBehaviour
         {
             BodyInputPanel.SetGameManRef(this);
         }
+        if (BodiesPanel != null)
+        {
+            BodiesPanel.SetGameManRef(this);
+        }
+        else
+        {
+            TryLocateBodiesPanel();
+        }
     }
-
+    public List<Body> getList()
+    {
+        return SimBodies;
+    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -107,6 +119,7 @@ public class GameManager : MonoBehaviour
         TryLocateBodyInfoPanel();
         TryLocateSliderPanel();
         TryLocateBodyInputPanel();
+        TryLocateBodiesPanel();
         UniverseCam = GameObject.FindGameObjectWithTag("UniverseCam").GetComponent<CinemachineFreeLook>();
 
     }
@@ -381,7 +394,29 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// ///////////////////////////////////
+    /// </summary>
+    private void TryLocateBodiesPanel()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        foreach (GameObject g in objs)
+        {
+            Debug.Log("Scanning " + g.name + " for BodiesPanel");
 
+            if (BodiesPanel == null)
+            {
+                BodiesInfoButton b = g.GetComponent<BodiesInfoButton>();
+
+                if (b != null)
+                {
+                    BodiesPanel = b;
+                    BodiesPanel.SetGameManRef(this);
+                    Debug.Log("Found Bodies Panel");
+                }
+            }
+        }
+    }
     private void TryLocateSliderPanel()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
@@ -409,6 +444,7 @@ public class GameManager : MonoBehaviour
         BodyInfoPanel = null;
         SliderMenu = null;
         BodyInputPanel = null;
+        BodiesPanel = null;
         focusedBody = null;
     }
 

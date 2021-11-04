@@ -26,7 +26,7 @@ public class UISliderMenu : MonoBehaviour
         }
 
         animator = this.gameObject.GetComponent<Animator>();
-
+      
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
 
@@ -57,6 +57,7 @@ public class UISliderMenu : MonoBehaviour
     //Enables the bodies description panel to appear
     public void ShowBodiesPanel()
     {
+     
         BodiesDescriptionPanel.SetActive(true);
     }
     public void ShowContextPanel()
