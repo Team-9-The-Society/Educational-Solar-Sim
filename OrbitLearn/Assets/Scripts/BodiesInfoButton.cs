@@ -22,39 +22,37 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void displayBodies()
     {
-       // List<Body> display = gameManagerReference.SimBodies.GetClone(); //is the error with how c sharp does shallow copies?***
+        // List<Body> display = gameManagerReference.SimBodies.GetClone(); //is the error with how c sharp does shallow copies?***
 
         //if (gameManagerReference != null)
         //{
-            foreach (Body b in gameManagerReference.SimBodies)
-            {
-
-            displayTxt.text += returnText(b, 3);
-            displayTxt.text += returnText(b, 0);
-            displayTxt.text += returnText(b, 1);
-
-            /*
-                Rigidbody br = b.GetComponent<Rigidbody>();
-                 displayTxt.text += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") + "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "\n";
-                displayTxt.text += "X Velocity: " + br.velocity.x.ToString("#.00") + "Y Velocity: " + br.velocity.y.ToString("#.00") + "Z Velocity: " + br.velocity.z.ToString("#.00") + "\n";
-
-            mass[i] = b.gameObject.GetComponent<Rigidbody>().mass;
-            position[i, 0] = b.gameObject.transform.position.x;
-            position[i, 1] = b.gameObject.transform.position.y;
-            position[i, 2] = b.gameObject.transform.position.z;
-            i++;
-            */
-        }
+        displayTxt.text = iterateBodies();
+            
         //}
     }
+    public string iterateBodies()
+    {
+        string totalDisplay = "";
+        int count = 1;
+        foreach (Body b in gameManagerReference.SimBodies)
+        {
+            totalDisplay += "Body Number " +count + "\n";
+            totalDisplay += returnText(b, 3);
+            totalDisplay += returnText(b, 0);
+            
+            totalDisplay+= returnText(b, 1);
+            count++;
+        }
+        return totalDisplay;
 
+    }
     public string returnText(Body b, int mode)
     {
         string shipped = "";
         switch (mode)
         {
             case 0:
-                shipped += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") +"\n"+ "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "\n" + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "\n";
+                shipped += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") + "\n"+ "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "\n" + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "\n";
                 break;
             case 1:
                 shipped += "X Position: " + b.gameObject.transform.position.x.ToString("#.00") + "\n" + "Y Position: " + b.gameObject.transform.position.y.ToString("#.00") + "\n" + "Z Position: " + b.gameObject.transform.position.z.ToString("#.00") + "\n";
