@@ -1257,6 +1257,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1268627245}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1268627247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3482902809764287550, guid: fe740d39a5c3e004489c7889b1b4def7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1268627245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268627246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64c3efd92bd17d4d94b2c857dc4ff74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1342960379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,6 +1789,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &1894006264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5093924175976552782, guid: 18054e349a90dd14d9bd13c0a9590673,
+    type: 3}
+  m_PrefabInstance: {fileID: 991992079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d4d9d439f32b14694b4e6aeb1ba644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910700848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1851,9 +1875,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873659840201853094, guid: 5535e65e5b62b754b8b022a02978ee4b,
         type: 3}
+      propertyPath: BodiesPanel
+      value: 
+      objectReference: {fileID: 1268627247}
+    - target: {fileID: 7873659840201853094, guid: 5535e65e5b62b754b8b022a02978ee4b,
+        type: 3}
       propertyPath: BodyInfoPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1894006264}
     - target: {fileID: 7873659840201853094, guid: 5535e65e5b62b754b8b022a02978ee4b,
         type: 3}
       propertyPath: BodyInputPanel
