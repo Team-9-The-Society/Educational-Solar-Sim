@@ -5,8 +5,9 @@ using TMPro;
 
 public class BodiesInfoButton : MonoBehaviour
 {
-    public GameManager gameManagerReference;
+    private GameManager gameManagerReference;
     
+    [Header("Output Field References")]
     public TMP_Text displayTxt;
 
     void Update()
