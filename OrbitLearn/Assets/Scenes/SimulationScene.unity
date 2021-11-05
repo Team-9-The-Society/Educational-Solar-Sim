@@ -1266,6 +1266,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body_List_Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 5276716799211018903, guid: fe740d39a5c3e004489c7889b1b4def7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5744187795873587029, guid: fe740d39a5c3e004489c7889b1b4def7,
         type: 3}
       propertyPath: m_Pivot.x
