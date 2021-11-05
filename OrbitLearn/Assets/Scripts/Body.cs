@@ -51,4 +51,8 @@ public class Body : MonoBehaviour
         rb.velocity = new Vector3((float)dxVel, (float)dyVel, (float)dzVel);
         DebugSetNewVelocity = false;
     }
+    public Rigidbody returnRigBody()
+    {
+        return rb;
+    }
 }
