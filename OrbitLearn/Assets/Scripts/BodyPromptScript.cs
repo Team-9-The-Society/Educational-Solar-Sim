@@ -99,6 +99,11 @@ public class BodyPromptScript : MonoBehaviour
                 break;
             case "mass":
                 mass = Convert.ToDouble(massInput.text);
+                if (mass == 0)
+                {
+                    mass = 1;
+                    throwPopUpError();
+                }
                 break;
             case "xVel":
                 xVel = Convert.ToDouble(xVelInput.text);
@@ -110,6 +115,10 @@ public class BodyPromptScript : MonoBehaviour
                 zVel = Convert.ToDouble(zVelInput.text);
                 break;
         }
+    }
+    public void throwPopUpError()
+    {
+
     }
 
 
