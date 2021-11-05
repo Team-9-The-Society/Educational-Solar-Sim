@@ -32,6 +32,11 @@ public class BodyPromptScript : MonoBehaviour
     public double yVel;
     public double zVel;
 
+    public void ActivateUIElement(GameManager g)
+    {
+        SetGameManRef(g.GetComponent<GameManager>());
+    }
+
     public void SetGameManRef(GameManager g)
     {
         GameManagerReference = g;

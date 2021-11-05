@@ -17,6 +17,14 @@ using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
+    /*
+    [Header("UI Prefab References")]
+    public GameObject BodyInfoPanelPrefab;
+    public GameObject BodiesPanelPrefab;
+    public GameObject UISliderMenuPrefab;
+    public GameObject BodyInputPanelPrefab;
+    */
+
     [Header("UI References")]
     public UIBodyInformationPanel BodyInfoPanel;
     public BodiesInfoButton BodiesPanel;
@@ -70,41 +78,7 @@ public class GameManager : MonoBehaviour
 
         SimBodies = new List<Body>();
 
-        if (BodyInfoPanel != null)
-        {
-            BodyInfoPanel.SetGameManRef(this);
-            BodyInfoPanel.gameObject.SetActive(false);
-        }
-        else
-        {
-            TryLocateBodyInfoPanel();
-        }
-
-        if (SliderMenu != null)
-        {
-            SliderMenu.SetGameManRef(this);
-            SliderMenu.gameObject.SetActive(true);
-        }
-        else
-        {
-            TryLocateSliderPanel();
-        }
-
-        if (BodyInputPanel != null)
-        {
-            BodyInputPanel.SetGameManRef(this);
-            BodyInputPanel.gameObject.SetActive(false);
-            
-        }
-        if (BodiesPanel != null)
-        {
-            BodiesPanel.SetGameManRef(this);
-            BodiesPanel.gameObject.SetActive(false);
-        }
-        else
-        {
-            TryLocateBodiesPanel();
-        }
+        TryLocateUIReferences();
     }
     public List<Body> getList()
     {
@@ -115,15 +89,17 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     
-    
+
+
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Running OnSceneLoaded");
-        TryLocateBodyInfoPanel();
-        TryLocateSliderPanel();
-        TryLocateBodyInputPanel();
-        TryLocateBodiesPanel();
-        UniverseCam = GameObject.FindGameObjectWithTag("UniverseCam").GetComponent<CinemachineFreeLook>();
+
+        TryLocateUIReferences();
+
+        if (GameObject.FindGameObjectWithTag("UniverseCam") != null)
+            UniverseCam = GameObject.FindGameObjectWithTag("UniverseCam").GetComponent<CinemachineFreeLook>();
 
     }
 
@@ -131,6 +107,7 @@ public class GameManager : MonoBehaviour
     public void LoadNewScene(SceneHandler.Scene targetScene)
     {
         ClearUIReferences();
+        SimBodies.Clear();
         SceneHandler.Load(targetScene);
     }
 
@@ -139,7 +116,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        RefreshUniverseCam();
+        if (UniverseCam != null)
+            RefreshUniverseCam();
         //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
 
         if (Input.GetMouseButtonDown(0))
@@ -175,7 +153,8 @@ public class GameManager : MonoBehaviour
             {
                 tapCount = 0;
                 HideBodyInfo();
-                FocusOnUniverse();
+                if (UniverseCam != null)
+                    FocusOnUniverse();
             }
         }
     }
@@ -248,16 +227,6 @@ public class GameManager : MonoBehaviour
         BodyInfoPanel.gameObject.SetActive(false);
     }
 
-
-    public void DeleteBodyAll()
-    {
-        while (BodyCount > 0)
-        {
-            DeleteBody(SimBodies[0]);
-        }
-
-    }
-
     public void UpdateForces()
     {
         NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder
@@ -309,7 +278,6 @@ public class GameManager : MonoBehaviour
 
         return;
     }
-
 
 
     #region Camera Functions
@@ -365,90 +333,35 @@ public class GameManager : MonoBehaviour
 
     #region UI Detection and Manipulation
 
-
-    private void TryLocateBodyInfoPanel()
+    private void TryLocateUIReferences()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
         foreach (GameObject g in objs)
         {
-            Debug.Log("Scanning " + g.name + " for BodyInfoPanel");
+            Debug.Log("Scanning " + g.name + " for UIReferences");
 
-            if (BodyInfoPanel == null)
+            UIRefHandler b = g.GetComponent<UIRefHandler>();
+
+            if (b != null)
             {
-                UIBodyInformationPanel b = g.GetComponent<UIBodyInformationPanel>();
+                Debug.Log("Found ReferenceHandler");
+                SliderMenu = b.SliderRef;
+                SliderMenu.ActivateUIElement(this);
+                SliderMenu.gameObject.SetActive(true);
 
-                if (b != null)
-                {
-                    BodyInfoPanel = b;
-                    BodyInfoPanel.SetGameManRef(this);
-                    Debug.Log("Found Body Info Panel");
-                }
+                BodyInfoPanel = b.BodiesInfoPanelRef;
+                BodyInfoPanel.ActivateUIElement(this);
+                BodyInfoPanel.gameObject.SetActive(false);
+
+                BodyInputPanel = b.BodyInputPanelRef;
+                BodyInputPanel.ActivateUIElement(this);
+                BodyInputPanel.gameObject.SetActive(false);
+
+                BodiesPanel = b.BodiesInfoButtonRef;
+                BodiesPanel.ActivateUIElement(this);
+                BodiesPanel.gameObject.SetActive(false);
+
             }
-        }
-    }
-
-    private void TryLocateBodyInputPanel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
-        foreach (GameObject g in objs)
-        {
-            Debug.Log("Scanning " + g.name + " for BodyInputPanel");
-
-            if (BodyInfoPanel == null)
-            {
-                BodyPromptScript b = g.GetComponent<BodyPromptScript>();
-
-                if (b != null)
-                {
-                    BodyInputPanel = b;
-                    BodyInputPanel.SetGameManRef(this);
-                    Debug.Log("Found Body Input Panel");
-                }
-            }
-        }
-    }
-    /// <summary>
-    /// ///////////////////////////////////
-    /// </summary>
-    private void TryLocateBodiesPanel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
-        foreach (GameObject g in objs)
-        {
-            Debug.Log("Scanning " + g.name + " for BodiesPanel");
-
-            if (BodiesPanel == null)
-            {
-                BodiesInfoButton b = g.GetComponent<BodiesInfoButton>();
-
-                if (b != null)
-                {
-                    BodiesPanel = b;
-                    BodiesPanel.SetGameManRef(this);
-                    Debug.Log("Found Bodies Panel");
-                }
-            }
-        }
-    }
-    private void TryLocateSliderPanel()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
-        foreach (GameObject g in objs)
-        {
-            Debug.Log("Scanning " + g.name + " for SliderPanel");
-
-            if (SliderMenu == null)
-            {
-                UISliderMenu b = g.GetComponent<UISliderMenu>();
-                if (b != null)
-                {
-                    SliderMenu = b;
-                    SliderMenu.SetGameManRef(this);
-                    Debug.Log("Found Slider Menu");
-                }
-            }
-
-
         }
     }
 

@@ -18,20 +18,17 @@ public class UISliderMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (gameManagerReference == null)
-        {
-            GameObject g = GameObject.FindGameObjectWithTag("GameController");
-            if (g != null)
-                SetGameManRef(g.GetComponent<GameManager>());
-        }
-
         animator = this.gameObject.GetComponent<Animator>();
       
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
-
     }
 
+
+    public void ActivateUIElement(GameManager g)
+    {
+        SetGameManRef(g.GetComponent<GameManager>());
+    }
 
     //Sets the reference to the game manager
     public void SetGameManRef(GameManager gm)
@@ -41,15 +38,9 @@ public class UISliderMenu : MonoBehaviour
    
 
 
-    public void ResetOptions()
+    public void ResetScene()
     {
-
-     
-        if (gameManagerReference.SimBodies != null)
-        {
-        
-            gameManagerReference.DeleteBodyAll();
-        }
+        gameManagerReference.LoadNewScene(SceneHandler.Scene.SimulationScene);
     }
 
 

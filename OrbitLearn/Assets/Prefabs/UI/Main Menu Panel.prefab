@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 9024307252783168539}
   - component: {fileID: 9024307252783168538}
   - component: {fileID: 9024307252783168537}
-  - component: {fileID: 9024307252783168540}
   m_Layer: 5
   m_Name: StartSimulationButton
   m_TagString: Untagged
@@ -386,18 +385,6 @@ MonoBehaviour:
           m_StringArgument: ToInformationScreen
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9024307252783168540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9024307252783168535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745e92ccb51c0f547b7efba1c99eabd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9024307252808512255
 GameObject:
   m_ObjectHideFlags: 0

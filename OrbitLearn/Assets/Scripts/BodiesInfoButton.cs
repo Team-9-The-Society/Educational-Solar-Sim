@@ -14,6 +14,10 @@ public class BodiesInfoButton : MonoBehaviour
     {
         displayBodies();
     }
+    public void ActivateUIElement(GameManager g)
+    {
+        SetGameManRef(g.GetComponent<GameManager>());
+    }
 
     public void SetGameManRef(GameManager gm)
     {
