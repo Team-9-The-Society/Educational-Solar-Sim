@@ -157,6 +157,9 @@ public class GameManager : MonoBehaviour
                     FocusOnUniverse();
             }
         }
+
+        UpdateForces();
+
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
