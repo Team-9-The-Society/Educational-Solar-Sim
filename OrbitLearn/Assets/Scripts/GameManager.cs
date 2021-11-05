@@ -248,6 +248,16 @@ public class GameManager : MonoBehaviour
         BodyInfoPanel.gameObject.SetActive(false);
     }
 
+
+    public void DeleteBodyAll()
+    {
+        while (BodyCount > 0)
+        {
+            DeleteBody(SimBodies[0]);
+        }
+
+    }
+
     public void UpdateForces()
     {
         NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder

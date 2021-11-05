@@ -709,6 +709,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311649095}
   m_CullTransparentMesh: 1
+--- !u!114 &331711273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2630625499364727334, guid: 624719b68fdf33543b092fed9b7fda83,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762184146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf069dfc62bc1e4a9ff587263825c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &399462903 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5744187795873587029, guid: fe740d39a5c3e004489c7889b1b4def7,
@@ -1855,6 +1867,46 @@ PrefabInstance:
       propertyPath: BodiesDescriptionPanel
       value: 
       objectReference: {fileID: 1268627246}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 331711273}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetOptions
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowIdleMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UISliderMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624719b68fdf33543b092fed9b7fda83, type: 3}
 --- !u!1 &1815556291

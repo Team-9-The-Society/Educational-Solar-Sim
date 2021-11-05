@@ -38,6 +38,19 @@ public class UISliderMenu : MonoBehaviour
     {
         gameManagerReference = gm;
     }
+   
+
+
+    public void ResetOptions()
+    {
+
+     
+        if (gameManagerReference.SimBodies != null)
+        {
+        
+            gameManagerReference.DeleteBodyAll();
+        }
+    }
 
 
     //Triggers the panel sliding in/out of the frame
@@ -64,6 +77,8 @@ public class UISliderMenu : MonoBehaviour
     {
         BodyInfoInputPanel.SetActive(true);
     }
+
+
 
     public void HideContextPanel()
     {
