@@ -37,11 +37,11 @@ public class BodiesInfoButton : MonoBehaviour
         int count = 1;
         foreach (Body b in gameManagerReference.SimBodies)
         {
-            totalDisplay += "Body Number " +count + "\n";
+            totalDisplay += "<u><b>Body Number " +count + "</u></b>\n";
             totalDisplay += returnText(b, 3);
             totalDisplay += returnText(b, 0);
-            
             totalDisplay+= returnText(b, 1);
+            totalDisplay += "\n";
             count++;
         }
         return totalDisplay;
