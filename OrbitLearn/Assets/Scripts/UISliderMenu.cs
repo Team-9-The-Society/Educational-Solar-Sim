@@ -14,27 +14,33 @@ public class UISliderMenu : MonoBehaviour
     [Header("Panel References")]
     public GameObject PanelMenu;
     public GameObject BodyInfoInputPanel;
+    public GameObject BodiesDescriptionPanel;
 
     private void Awake()
     {
-        if (gameManagerReference == null)
-        {
-            GameObject g = GameObject.FindGameObjectWithTag("GameController");
-            if (g != null)
-                SetGameManRef(g.GetComponent<GameManager>());
-        }
-
         animator = this.gameObject.GetComponent<Animator>();
-
+      
         BodyInfoInputPanel.SetActive(false);
-
+        BodiesDescriptionPanel.SetActive(false);
     }
 
+
+    public void ActivateUIElement(GameManager g)
+    {
+        SetGameManRef(g.GetComponent<GameManager>());
+    }
 
     //Sets the reference to the game manager
     public void SetGameManRef(GameManager gm)
     {
         gameManagerReference = gm;
+    }
+   
+
+
+    public void ResetScene()
+    {
+        gameManagerReference.LoadNewScene(SceneHandler.Scene.SimulationScene);
     }
 
 
@@ -52,11 +58,18 @@ public class UISliderMenu : MonoBehaviour
     {
         gameManagerReference.TrySpawnNewBody();
     }
-    
+    //Enables the bodies description panel to appear
+    public void ShowBodiesPanel()
+    {
+     
+        BodiesDescriptionPanel.SetActive(true);
+    }
     public void ShowContextPanel()
     {
         BodyInfoInputPanel.SetActive(true);
     }
+
+
 
     public void HideContextPanel()
     {
