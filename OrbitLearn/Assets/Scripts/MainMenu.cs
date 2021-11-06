@@ -53,6 +53,11 @@ public class MainMenu : MonoBehaviour
         gameManagerReference.LoadNewScene(SceneHandler.Scene.EquationScene);
     }
 
+    public void LoadPresetScene()
+    {
+        gameManagerReference.LoadNewScene(SceneHandler.Scene.PresetSimScene);
+    }
+
     public void NotImplemented()
     {
         Debug.LogWarning("This method has not been implemented yet!");
