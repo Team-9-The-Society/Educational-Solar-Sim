@@ -55,7 +55,7 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
     {
-        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel);
+        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, true);
         ClearInputsAndValues();
         HidePanel();
     }
