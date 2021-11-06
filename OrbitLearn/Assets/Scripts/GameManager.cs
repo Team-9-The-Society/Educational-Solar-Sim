@@ -245,6 +245,9 @@ public class GameManager : MonoBehaviour
             position[i, 0] = b.gameObject.transform.position.x;
             position[i, 1] = b.gameObject.transform.position.y;
             position[i, 2] = b.gameObject.transform.position.z;
+
+            Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
+
             i++;
         }
 
@@ -269,7 +272,7 @@ public class GameManager : MonoBehaviour
             force = nBody.UpdateForce(position, mass, numBodies);
         }
         */
-        
+
         //once libraries are added, remove this line
         force = nBody.UpdateForce(position, mass, numBodies);
         i = 0;
