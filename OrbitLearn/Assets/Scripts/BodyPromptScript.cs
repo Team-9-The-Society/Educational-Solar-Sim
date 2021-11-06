@@ -20,6 +20,7 @@ public class BodyPromptScript : MonoBehaviour
     public TMP_InputField yVelInput;
     public TMP_InputField zVelInput;
 
+    public Slider sizeInput;
 
     [Header("Input Variables")]
     public double mass;
@@ -31,6 +32,8 @@ public class BodyPromptScript : MonoBehaviour
     public double xVel;
     public double yVel;
     public double zVel;
+
+    public double size;
 
     public void ActivateUIElement(GameManager g)
     {
@@ -55,7 +58,7 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
     {
-        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel);
+        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size);
         ClearInputsAndValues();
         HidePanel();
     }
@@ -81,6 +84,8 @@ public class BodyPromptScript : MonoBehaviour
         xVel = 0;
         yVel = 0;
         zVel = 0;
+
+        size = 1;
     }
 
     public double StringToDouble(string s)
@@ -118,6 +123,9 @@ public class BodyPromptScript : MonoBehaviour
                 break;
             case "zVel":
                 zVel = Convert.ToDouble(zVelInput.text);
+                break;
+            case "size":
+                size = Convert.ToDouble(sizeInput.value);
                 break;
         }
     }
