@@ -41,7 +41,7 @@ public class UISliderMenu : MonoBehaviour
 
     public void ResetScene()
     {
-        gameManagerReference.LoadNewScene(SceneHandler.Scene.SimulationScene);
+        gameManagerReference.DeleteAllBodies();
     }
 
 
