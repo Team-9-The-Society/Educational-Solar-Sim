@@ -61,7 +61,7 @@ public class UISliderMenu : MonoBehaviour
     //Enables the bodies description panel to appear
     public void ShowBodiesPanel()
     {
-     
+        
         BodiesDescriptionPanel.SetActive(true);
     }
     public void ShowContextPanel()
