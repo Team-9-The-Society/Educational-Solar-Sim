@@ -164,6 +164,8 @@ public class GameManager : MonoBehaviour
             PresetSimulations.Simulation1();
         }
 
+        UpdateForces();
+
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
@@ -194,7 +196,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, bool shouldFocus)
+    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus)
     {
         if (BodyCount < 12)
         {

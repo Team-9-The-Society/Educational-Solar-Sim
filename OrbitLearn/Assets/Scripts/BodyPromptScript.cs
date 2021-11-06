@@ -32,6 +32,8 @@ public class BodyPromptScript : MonoBehaviour
     public double yVel;
     public double zVel;
 
+    public double size;
+
     public void ActivateUIElement(GameManager g)
     {
         SetGameManRef(g.GetComponent<GameManager>());
@@ -55,7 +57,7 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
     {
-        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, true);
+        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
         ClearInputsAndValues();
         HidePanel();
     }
