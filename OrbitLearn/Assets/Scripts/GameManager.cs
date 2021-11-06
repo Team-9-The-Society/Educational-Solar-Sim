@@ -206,10 +206,8 @@ public class GameManager : MonoBehaviour
             BodyCount++;
 
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
-            SphereCollider s = b.gameObject.GetComponent<SphereCollider>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
-            s.radius = (float)(scal / 2);
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
 

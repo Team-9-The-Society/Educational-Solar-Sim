@@ -15,6 +15,7 @@ public class UISliderMenu : MonoBehaviour
     public GameObject PanelMenu;
     public GameObject BodyInfoInputPanel;
     public GameObject BodiesDescriptionPanel;
+    public GameObject BodyInfoPane;
 
     private void Awake()
     {
@@ -74,6 +75,13 @@ public class UISliderMenu : MonoBehaviour
     public void HideContextPanel()
     {
         BodyInfoInputPanel.SetActive(false);
+    }
+
+    public void HideAllPanels()
+    {
+        BodyInfoInputPanel.SetActive(false);
+        BodiesDescriptionPanel.SetActive(false);
+        BodyInfoPane.SetActive(false);
     }
 
     public void LoadHomeScene()
