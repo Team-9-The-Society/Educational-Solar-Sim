@@ -159,10 +159,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             PresetSimulations.Simulation1();
         }
+
 
         UpdateForces();
 
@@ -216,8 +218,8 @@ public class GameManager : MonoBehaviour
             BodyCount++;
 
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
-
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
+            b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
 
@@ -271,6 +273,9 @@ public class GameManager : MonoBehaviour
             position[i, 0] = b.gameObject.transform.position.x;
             position[i, 1] = b.gameObject.transform.position.y;
             position[i, 2] = b.gameObject.transform.position.z;
+
+            Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
+
             i++;
         }
 
@@ -295,7 +300,7 @@ public class GameManager : MonoBehaviour
             force = nBody.UpdateForce(position, mass, numBodies);
         }
         */
-        
+
         //once libraries are added, remove this line
         force = nBody.UpdateForce(position, mass, numBodies);
         i = 0;

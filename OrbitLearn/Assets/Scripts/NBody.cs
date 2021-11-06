@@ -4,7 +4,7 @@ using System.Diagnostics;
 public class NBody
 {
 	//Defines the gravitational constant in m^3/(kg*s^2)
-	public double GravitationalConstant { get; } = 6.67408 * Math.Pow(10, -11);
+	public double GravitationalConstant { get; } = 6.67408 * Math.Pow(10, -11) * 5000;
 
 	public double[,] UpdateForce(double[,] pos, double[] mass, int numBodies, string mode = "Meters")
 	{
