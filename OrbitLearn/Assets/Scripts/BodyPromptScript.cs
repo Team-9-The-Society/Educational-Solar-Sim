@@ -76,6 +76,8 @@ public class BodyPromptScript : MonoBehaviour
         yVelInput.text = "";
         zVelInput.text = "";
 
+        sizeInput.value = 1;
+
         mass = 0;
         xPos = 0;
         yPos = 0;
