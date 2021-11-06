@@ -110,7 +110,8 @@ public class BodyPromptScript : MonoBehaviour
                 zPos = Convert.ToDouble(zPosInput.text);
                 break;
             case "mass":
-                mass = Convert.ToDouble(massInput.text);
+                //this takes scientific notation and converts it to a double. Input: 1E+-X (1E-4)(1E+8) where if no sign is entered it's assumed positive
+                double.TryParse(massInput.text, out mass);
                 if (mass == 0)
                 {
                     mass = 1;
