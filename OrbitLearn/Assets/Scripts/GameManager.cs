@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public BodiesInfoButton BodiesPanel;
     public UISliderMenu SliderMenu;
     public BodyPromptScript BodyInputPanel;
+    public UIPresetSimulations PresetSimulations;
 
     [Header("Camera References")]
     public CinemachineFreeLook UniverseCam;
@@ -158,6 +159,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PresetSimulations.Simulation1();
+        }
+
+
         UpdateForces();
 
     }
@@ -190,17 +198,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal)
+    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus)
     {
         if (BodyCount < 12)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();
 
-            ActivatePlanetCam(bodyRef.planetCam);
+            if (shouldFocus)
+            {
+                ActivatePlanetCam(bodyRef.planetCam);
+                focusedBody = bodyRef;
+                BodyInfoPanel.gameObject.SetActive(true);
+                BodyInfoPanel.SetHighlightedBody(bodyRef);
+            }
 
-            BodyInfoPanel.gameObject.SetActive(true);
-            BodyInfoPanel.SetHighlightedBody(bodyRef);
 
             SimBodies.Add(bodyRef);
             BodyCount++;
@@ -211,7 +223,6 @@ public class GameManager : MonoBehaviour
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
 
-            focusedBody = bodyRef;
         }
     }
 
@@ -228,6 +239,23 @@ public class GameManager : MonoBehaviour
 
         BodyInfoPanel.ClearHighlightedBody();
         BodyInfoPanel.gameObject.SetActive(false);
+    }
+
+    public void DeleteAllBodies()
+    {
+        Body[] bodies = new Body[SimBodies.Count];
+
+        int i = 0;
+        foreach (Body b in SimBodies)
+        {
+            bodies[i] = b;
+            i++;
+        }
+        for (int j = 0; j < bodies.Length; j++)
+        {
+            DeleteBody(bodies[j]);
+        }
+        SimBodies = new List<Body>();
     }
 
     public void UpdateForces()
@@ -351,21 +379,40 @@ public class GameManager : MonoBehaviour
             if (b != null)
             {
                 Debug.Log("Found ReferenceHandler");
-                SliderMenu = b.SliderRef;
-                SliderMenu.ActivateUIElement(this);
-                SliderMenu.gameObject.SetActive(true);
+                if (b.SliderRef != null)
+                {
+                    SliderMenu = b.SliderRef;
+                    SliderMenu.ActivateUIElement(this);
+                    SliderMenu.gameObject.SetActive(true);
+                }
 
-                BodyInfoPanel = b.BodiesInfoPanelRef;
-                BodyInfoPanel.ActivateUIElement(this);
-                BodyInfoPanel.gameObject.SetActive(false);
+                if (b.BodiesInfoPanelRef != null)
+                {
+                    BodyInfoPanel = b.BodiesInfoPanelRef;
+                    BodyInfoPanel.ActivateUIElement(this);
+                    BodyInfoPanel.gameObject.SetActive(false);
+                }
 
-                BodyInputPanel = b.BodyInputPanelRef;
-                BodyInputPanel.ActivateUIElement(this);
-                BodyInputPanel.gameObject.SetActive(false);
+                if (b.BodyInputPanelRef != null)
+                {
+                    BodyInputPanel = b.BodyInputPanelRef;
+                    BodyInputPanel.ActivateUIElement(this);
+                    BodyInputPanel.gameObject.SetActive(false);
+                }
 
-                BodiesPanel = b.BodiesInfoButtonRef;
-                BodiesPanel.ActivateUIElement(this);
-                BodiesPanel.gameObject.SetActive(false);
+                if (b.BodiesInfoButtonRef != null)
+                {
+                    BodiesPanel = b.BodiesInfoButtonRef;
+                    BodiesPanel.ActivateUIElement(this);
+                    BodiesPanel.gameObject.SetActive(false);
+                }
+
+                if (b.PresetSimulationsRef != null)
+                {
+                    PresetSimulations = b.PresetSimulationsRef;
+                    PresetSimulations.ActivateUIElement(this);
+                    //Set PresetSimulations menu to inactive
+                }
 
             }
         }
@@ -378,6 +425,7 @@ public class GameManager : MonoBehaviour
         BodyInputPanel = null;
         BodiesPanel = null;
         focusedBody = null;
+        PresetSimulations = null;
     }
 
 
@@ -430,5 +478,6 @@ public class GameManager : MonoBehaviour
         return raysastResults;
     }
     #endregion
+
 
 }

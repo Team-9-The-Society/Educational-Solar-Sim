@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157837504914746124}
-  m_LocalRotation: {x: 0.2570792, y: 0.000000015574603, z: -0.0000000041431556, w: 0.9663904}
+  m_LocalRotation: {x: 0.25707924, y: 1e-45, z: -0, w: 0.9663904}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -476,8 +476,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517374595335785924}
-  m_LocalRotation: {x: -0.02783204, y: 6.7608945e-24, z: 1.5037806e-25, w: 0.9996126}
-  m_LocalPosition: {x: 0, y: -2.0596032, z: 0}
+  m_LocalRotation: {x: 0.20956998, y: -0.000000016391544, z: 0.0000000035131908, w: 0.9777937}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7818367478616052890}
@@ -550,7 +550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101566083543216561}
-  m_LocalRotation: {x: 0.30489954, y: -0.000000023885807, z: 0.000000007646881, w: 0.95238453}
+  m_LocalRotation: {x: 0.30489954, y: -0.000000016413113, z: 0.000000005254548, w: 0.95238453}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -650,7 +650,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 4
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 8631874588233353073}
   m_Follow: {fileID: 8631874588233353073}
@@ -877,6 +877,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyName: Body
   planetCam: {fileID: 3141264369209881861}
+  dxVel: 0
+  dyVel: 0
+  dzVel: 0
+  DebugSetNewVelocity: 0
 --- !u!114 &2623832404433044523
 MonoBehaviour:
   m_ObjectHideFlags: 0
