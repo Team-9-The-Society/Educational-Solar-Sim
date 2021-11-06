@@ -21,7 +21,8 @@ public static class SceneHandler
         EquationScene,
         HomeScene,
         InfoScene,
-        SimulationScene
+        SimulationScene,
+        PresetSimScene
     }
 
     private static Action onLoaderCallback;
