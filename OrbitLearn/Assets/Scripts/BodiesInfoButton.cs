@@ -52,7 +52,7 @@ public class BodiesInfoButton : MonoBehaviour
             panelRedaction = calculateStepHeight();
             if (panelRedaction > 0)
             {
-                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -370);
+                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -390);
                 
             }
 
