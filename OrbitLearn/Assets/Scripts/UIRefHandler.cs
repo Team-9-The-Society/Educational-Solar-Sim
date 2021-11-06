@@ -1,4 +1,5 @@
 /*Created by Logan Edmund, 11/5/21
+ * Modified 11/6/21
  * 
  * Holds references to UI elements 
  * 
@@ -16,4 +17,5 @@ public class UIRefHandler : MonoBehaviour
     public BodiesInfoButton BodiesInfoButtonRef;
     public UIBodyInformationPanel BodiesInfoPanelRef;
     public BodyPromptScript BodyInputPanelRef;
+    public UIPresetSimulations PresetSimulationsRef;
 }
