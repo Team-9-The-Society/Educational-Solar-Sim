@@ -43,7 +43,7 @@ public class Body : MonoBehaviour
 
     public void ApplyForce(double xForce, double yForce, double zForce)
     {
-        Debug.Log(" forced applied to " + gameObject.name + ": " + xForce + " " + yForce + " " + zForce);
+        Debug.Log($"Forced applied to {gameObject.name}: {xForce}, {yForce}, {zForce}");
         rb.AddForce(new Vector3((float)xForce, (float)yForce, (float)zForce), ForceMode.Force);
     }
 
