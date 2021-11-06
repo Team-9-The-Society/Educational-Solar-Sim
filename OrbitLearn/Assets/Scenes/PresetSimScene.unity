@@ -1797,7 +1797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad42d58b36c15f74e989a068d5155de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManagerReference: {fileID: 0}
 --- !u!4 &1478322155
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,6 +2065,11 @@ PrefabInstance:
       propertyPath: BodiesInfoButtonRef
       value: 
       objectReference: {fileID: 1268627247}
+    - target: {fileID: 2636981943483640809, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: PresetSimulationsRef
+      value: 
+      objectReference: {fileID: 1478322154}
     - target: {fileID: 3689151797772466574, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_RootOrder
