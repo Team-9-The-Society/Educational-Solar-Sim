@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
     //Attemps to spawn a new body at 0,0,0 if the max number of planets has not been reached.
     public void TrySpawnNewBody()
     {
-        if (BodyCount < 12)
+        if (BodyCount < 50)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();
@@ -200,7 +200,7 @@ public class GameManager : MonoBehaviour
 
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus)
     {
-        if (BodyCount < 12)
+        if (BodyCount < 50)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();

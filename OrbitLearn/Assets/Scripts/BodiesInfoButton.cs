@@ -6,6 +6,8 @@ using TMPro;
 public class BodiesInfoButton : MonoBehaviour
 {
     private GameManager gameManagerReference;
+    public int panelExpansion;
+    public int panelRedaction;
     
     [Header("Output Field References")]
     public TMP_Text displayTxt;
@@ -16,6 +18,8 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public void ActivateUIElement(GameManager g)
     {
+        panelExpansion = 0;
+        panelRedaction = 0;
         SetGameManRef(g.GetComponent<GameManager>());
     }
 
@@ -35,8 +39,25 @@ public class BodiesInfoButton : MonoBehaviour
             
         //}
     }
+    public int calculateStepHeight()
+    {
+        return gameManagerReference.BodyCount - 6 - panelRedaction;
+
+    }
     public string iterateBodies()
     {
+        if (gameManagerReference.BodyCount > 6 && panelExpansion ==0)
+        {
+            panelExpansion = 1;
+            panelRedaction = calculateStepHeight();
+            if (panelRedaction > 0)
+            {
+                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -390);
+                
+            }
+
+            //rect transform text of scrollbar add -220.3
+        }
         string totalDisplay = "";
         int count = 1;
         foreach (Body b in gameManagerReference.SimBodies)
@@ -72,7 +93,7 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void HidePanel()
     {
-        
+        panelExpansion = 0;
         this.gameObject.SetActive(false);
 
     }
