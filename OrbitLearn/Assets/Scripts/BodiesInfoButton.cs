@@ -78,14 +78,14 @@ public class BodiesInfoButton : MonoBehaviour
         switch (mode)
         {
             case 0:
-                shipped += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") + "\n"+ "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "\n" + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "\n";
+                shipped += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") + "m/s\n"+ "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "m/s\n" + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "m/s\n";
                 break;
             case 1:
-                shipped += "X Position: " + b.gameObject.transform.position.x.ToString("#.00") + "\n" + "Y Position: " + b.gameObject.transform.position.y.ToString("#.00") + "\n" + "Z Position: " + b.gameObject.transform.position.z.ToString("#.00") + "\n";
+                shipped += "X Position: " + b.gameObject.transform.position.x.ToString("#.00") + "m\n" + "Y Position: " + b.gameObject.transform.position.y.ToString("#.00") + "m\n" + "Z Position: " + b.gameObject.transform.position.z.ToString("#.00") + "m\n";
 
                 break;
             default:
-                shipped += "Mass " + b.returnRigBody().mass + "\n";
+                shipped += "Mass " + b.returnRigBody().mass.ToString("E2") + "kg\n";
                 break;
         }
         return shipped;
