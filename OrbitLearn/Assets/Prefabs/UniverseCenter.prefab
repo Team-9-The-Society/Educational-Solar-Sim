@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3689151797772466574}
   - component: {fileID: 2636981943483640809}
+  - component: {fileID: -4791136349079628720}
   m_Layer: 0
   m_Name: UniverseCenter
   m_TagString: Untagged
@@ -122,6 +123,19 @@ MonoBehaviour:
   BodiesInfoButtonRef: {fileID: 0}
   BodiesInfoPanelRef: {fileID: 0}
   BodyInputPanelRef: {fileID: 0}
+  PresetSimulationsRef: {fileID: 0}
+--- !u!114 &-4791136349079628720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3689151797772466577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b820e6b4f786b2549bbc46e720a9d093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3689151797793819354
 GameObject:
   m_ObjectHideFlags: 3
