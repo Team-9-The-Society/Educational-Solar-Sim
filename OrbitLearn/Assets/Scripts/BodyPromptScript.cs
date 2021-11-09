@@ -149,9 +149,6 @@ public class BodyPromptScript : MonoBehaviour
             inputRef.textComponent.color = Color.red;
             goodInput = false;
         }
-
-        goodInput = true;
-
     }
 
     public void parseToDouble(ref TMP_InputField inputRef, ref double output)
