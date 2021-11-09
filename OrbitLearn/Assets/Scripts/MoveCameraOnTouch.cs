@@ -11,7 +11,7 @@ public class MoveCameraOnTouch: MonoBehaviour
     }
     public float GetAxisCustom(string axisName)
     {
-        Touch touch = Input.GetTouch(0);
+        //Touch touch = Input.GetTouch(0);
 
 
         if (axisName == "Mouse X")
