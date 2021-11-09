@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/EquationScene.unity
     guid: 10e309d43e3cda845b14377572ace744
   - enabled: 1
-    path: Assets/Scenes/Debug_Playground.unity
+    path: Assets/Scenes/DEBUG_Playground.unity
     guid: 248046fe8b17cc245895601bd544004a
+  - enabled: 1
+    path: Assets/Scenes/PresetSimScene.unity
+    guid: e69ac5ee45610914a8d3ec2d7427c3b8
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 9a348c2d977f7f84e97eeb3b54bb85b5

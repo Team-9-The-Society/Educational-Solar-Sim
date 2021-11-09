@@ -23,17 +23,18 @@ public class BodyPromptScript : MonoBehaviour
     public Slider sizeInput;
 
     [Header("Input Variables")]
-    public double mass;
+    public double mass = 0;
 
-    public double xPos;
-    public double yPos;
-    public double zPos;
+    public double xPos = 0;
+    public double yPos = 0;
+    public double zPos = 0;
 
-    public double xVel;
-    public double yVel;
-    public double zVel;
+    public double xVel = 0;
+    public double yVel = 0;
+    public double zVel = 0;
 
-    public double size;
+    public double size = 1;
+    public bool goodInput = true;
 
     public void ActivateUIElement(GameManager g)
     {
@@ -58,11 +59,13 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
   {
-
-        GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
-
-        ClearInputsAndValues();
-        HidePanel();
+        bool checkValid = checkInput();
+        if(checkValid && goodInput)
+        {
+            GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
+            ClearInputsAndValues();
+            HidePanel();
+        }
     }
 
 
@@ -103,41 +106,56 @@ public class BodyPromptScript : MonoBehaviour
         switch (variable)
         {
             case "xPos":
-                xPos = Convert.ToDouble(xPosInput.text);
+                parseToDouble(ref xPosInput, ref xPos);
                 break;
             case "yPos":
-                yPos = Convert.ToDouble(yPosInput.text);
+                parseToDouble(ref yPosInput, ref yPos);
                 break;
             case "zPos":
-                zPos = Convert.ToDouble(zPosInput.text);
+                parseToDouble(ref zPosInput, ref zPos);
                 break;
             case "mass":
                 //this takes scientific notation and converts it to a double. Input: 1E+-X (1E-4)(1E+8) where if no sign is entered it's assumed positive
-                double.TryParse(massInput.text, out mass);
-                if (mass == 0)
-                {
-                    mass = 1;
-                    throwPopUpError();
-                }
+                parseToDouble(ref massInput, ref mass);
                 break;
             case "xVel":
-                xVel = Convert.ToDouble(xVelInput.text);
+                parseToDouble(ref xVelInput, ref xVel);
                 break;
             case "yVel":
-                yVel = Convert.ToDouble(yVelInput.text);
+                parseToDouble(ref yVelInput, ref yVel);
                 break;
             case "zVel":
-                zVel = Convert.ToDouble(zVelInput.text);
+                parseToDouble(ref zVelInput, ref zVel);
                 break;
             case "size":
                 size = Convert.ToDouble(sizeInput.value);
                 break;
         }
     }
-    public void throwPopUpError()
-    {
 
+    public bool checkInput()
+    {
+        bool validInput = true;
+        if(mass <= 0 || mass > (Math.Pow(10,9)))
+        {
+            validInput = false;
+        }
+
+        return validInput;
     }
 
+    public void parseToDouble(ref TMP_InputField inputRef, ref double output)
+    {
+        try
+        {
+            double.TryParse(inputRef.text, out output);
+        }
+        catch
+        {
+            inputRef.text = "Invalid Input";
+            inputRef.textComponent.color = Color.red;
+            goodInput = false;
+        }
+    }
 
 }
