@@ -105,26 +105,33 @@ public class BodyPromptScript : MonoBehaviour
         switch (variable)
         {
             case "xPos":
+                xPosInput.textComponent.color = Color.black;
                 parseToDouble(ref xPosInput, ref xPos);
                 break;
             case "yPos":
+                yPosInput.textComponent.color = Color.black;
                 parseToDouble(ref yPosInput, ref yPos);
                 break;
             case "zPos":
+                zPosInput.textComponent.color = Color.black;
                 parseToDouble(ref zPosInput, ref zPos);
                 break;
             case "mass":
                 //this takes scientific notation and converts it to a double. Input: 1E+-X (1E-4)(1E+8) where if no sign is entered it's assumed positive
+                massInput.textComponent.color = Color.black;
                 parseToDouble(ref massInput, ref mass);
                 checkInput(ref massInput, ref mass);
                 break;
             case "xVel":
+                xVelInput.textComponent.color = Color.black;
                 parseToDouble(ref xVelInput, ref xVel);
                 break;
             case "yVel":
+                yVelInput.textComponent.color = Color.black;
                 parseToDouble(ref yVelInput, ref yVel);
                 break;
             case "zVel":
+                zVelInput.textComponent.color = Color.black;
                 parseToDouble(ref zVelInput, ref zVel);
                 break;
             case "size":
