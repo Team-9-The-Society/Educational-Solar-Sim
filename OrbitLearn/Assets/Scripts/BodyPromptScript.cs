@@ -59,8 +59,7 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
   {
-        bool checkValid = checkInput();
-        if(checkValid && goodInput)
+        if(goodInput)
         {
             GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
             ClearInputsAndValues();
@@ -117,6 +116,7 @@ public class BodyPromptScript : MonoBehaviour
             case "mass":
                 //this takes scientific notation and converts it to a double. Input: 1E+-X (1E-4)(1E+8) where if no sign is entered it's assumed positive
                 parseToDouble(ref massInput, ref mass);
+                checkInput(ref massInput, ref mass);
                 break;
             case "xVel":
                 parseToDouble(ref xVelInput, ref xVel);
@@ -133,24 +133,29 @@ public class BodyPromptScript : MonoBehaviour
         }
     }
 
-    public bool checkInput()
+    public void checkInput(ref TMP_InputField inputRef, ref double mass)
     {
-        bool validInput = true;
-        if(mass <= 0 || mass > (Math.Pow(10,9)))
+        if((mass <= 0 || mass > (Math.Pow(10,9))) && !inputRef.text.Equals(""))
         {
-            validInput = false;
+            inputRef.text = "Invalid Input";
+            inputRef.textComponent.color = Color.red;
+            goodInput = false;
         }
 
-        return validInput;
+        goodInput = true;
+
     }
 
     public void parseToDouble(ref TMP_InputField inputRef, ref double output)
     {
-        try
+
+        bool test = double.TryParse(inputRef.text, out output);
+     
+        if (test || inputRef.text.Equals(""))
         {
             double.TryParse(inputRef.text, out output);
         }
-        catch
+        else
         {
             inputRef.text = "Invalid Input";
             inputRef.textComponent.color = Color.red;
