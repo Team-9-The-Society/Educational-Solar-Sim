@@ -65,6 +65,7 @@ public class BodyPromptScript : MonoBehaviour
             ClearInputsAndValues();
             HidePanel();
         }
+        goodInput = true;
     }
 
 
