@@ -8,6 +8,7 @@ public class BodiesInfoButton : MonoBehaviour
     private GameManager gameManagerReference;
     public int panelExpansion;
     public int panelRedaction;
+    public int buttonSpawn;
 
     [Header("Input Field References")]
     public GameObject buttonPrefab;
@@ -23,6 +24,7 @@ public class BodiesInfoButton : MonoBehaviour
     {
         panelExpansion = 0;
         panelRedaction = 0;
+        buttonSpawn = 0;
         SetGameManRef(g.GetComponent<GameManager>());
     }
 
@@ -47,21 +49,28 @@ public class BodiesInfoButton : MonoBehaviour
         return gameManagerReference.BodyCount - 6 - panelRedaction;
 
     }
-    public void spawnButtons()
+    public void spawnButtons(int count)
     {
 
-        
-        GameObject button = (GameObject)Instantiate(buttonPrefab);
-        button.transform.SetParent(buttonPanel.transform);//Setting button parent
-       
-        button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";//Changing text
-        
+
+
+        for (int loopCount = 0; loopCount < count; loopCount++)
+        {
+            GameObject button = (GameObject)Instantiate(buttonPrefab);
+            button.transform.SetParent(buttonPanel.transform);//Setting button parent
+
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -370 * (loopCount) + 2216);//Changing text
+            button.GetComponentInChildren<TMP_Text>().text = "Body " + (loopCount+1);
+        }
     }
     public string iterateBodies()
     {
+        int knownBodyCount = gameManagerReference.BodyCount;
+       
         if (gameManagerReference.BodyCount > 6 && panelExpansion ==0)
         {
             panelExpansion = 1;
+            buttonSpawn = 0;
             panelRedaction = calculateStepHeight();
             if (panelRedaction > 0)
             {
@@ -69,10 +78,16 @@ public class BodiesInfoButton : MonoBehaviour
                 
             }
 
-            spawnButtons();
+           
 
             //rect transform text of scrollbar add -220.3
         }
+        if (buttonSpawn == 0 && knownBodyCount > 0)
+        {
+            buttonSpawn = 1;
+            spawnButtons(knownBodyCount);
+        }
+
         string totalDisplay = "";
         int count = 1;
         foreach (Body b in gameManagerReference.SimBodies)
@@ -109,6 +124,7 @@ public class BodiesInfoButton : MonoBehaviour
     public void HidePanel()
     {
         panelExpansion = 0;
+        buttonSpawn = 0;
         this.gameObject.SetActive(false);
 
     }
