@@ -32,9 +32,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         gameManagerReference.DeleteAllBodies();
 
-        gameManagerReference.TrySpawnNewBody(100000000000, 10, 0, 0, 0, 0, 0, 1, false);
+        gameManagerReference.TrySpawnNewBody(100000000000, 0, 0, 0, 0, 0, 0, 5.906, false);
 
-        gameManagerReference.TrySpawnNewBody(100000000000, -10, 0, 0, 0, 0, 0, 1, false);
+        gameManagerReference.TrySpawnNewBody(10000000000, 20, 0, 0, 0, 10, 0, 3.458, false);
 
         gameManagerReference.FocusOnUniverse();
     }
