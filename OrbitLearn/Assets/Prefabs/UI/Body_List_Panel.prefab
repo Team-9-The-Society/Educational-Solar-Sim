@@ -655,7 +655,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64c3efd92bd17d4d94b2c857dc4ff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelExpansion: 0
+  panelRedaction: 0
+  buttonPrefab: {fileID: 1707403802545233896, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+    type: 3}
   displayTxt: {fileID: 7045803773692108309}
+  buttonPanel: {fileID: 5276716799211018903}
 --- !u!1 &5843176387444877497
 GameObject:
   m_ObjectHideFlags: 0

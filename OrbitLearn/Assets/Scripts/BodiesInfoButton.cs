@@ -8,10 +8,13 @@ public class BodiesInfoButton : MonoBehaviour
     private GameManager gameManagerReference;
     public int panelExpansion;
     public int panelRedaction;
+
+    [Header("Input Field References")]
+    public GameObject buttonPrefab;
     
     [Header("Output Field References")]
     public TMP_Text displayTxt;
-
+    public GameObject buttonPanel;
     void Update()
     {
         displayBodies();
@@ -44,6 +47,16 @@ public class BodiesInfoButton : MonoBehaviour
         return gameManagerReference.BodyCount - 6 - panelRedaction;
 
     }
+    public void spawnButtons()
+    {
+
+        
+        GameObject button = (GameObject)Instantiate(buttonPrefab);
+        button.transform.SetParent(buttonPanel.transform);//Setting button parent
+       
+        button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";//Changing text
+        
+    }
     public string iterateBodies()
     {
         if (gameManagerReference.BodyCount > 6 && panelExpansion ==0)
@@ -55,6 +68,8 @@ public class BodiesInfoButton : MonoBehaviour
                 displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -390);
                 
             }
+
+            spawnButtons();
 
             //rect transform text of scrollbar add -220.3
         }
