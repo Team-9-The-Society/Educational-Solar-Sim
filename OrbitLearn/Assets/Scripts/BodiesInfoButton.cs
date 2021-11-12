@@ -64,7 +64,7 @@ public class BodiesInfoButton : MonoBehaviour
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -375 * (loopCount - panelExpansionCount) + 2216);//+ buttonPanel.GetComponent<RectTransform>());//Changing text
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -372 * (loopCount - panelExpansionCount) + 2195+ (float)7.8 * panelExpansionCount);//Changing text
                 
           
 
@@ -85,7 +85,7 @@ public class BodiesInfoButton : MonoBehaviour
             panelRedaction = calculateStepHeight();
             if (panelRedaction > 0)
             {
-                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -390);
+                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -380);
                 panelExpansionCount+= panelRedaction;
                 panelLastCount = gameManagerReference.BodyCount -6;
             }
