@@ -255,20 +255,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 865410445325159951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3482902809764287550, guid: fe740d39a5c3e004489c7889b1b4def7,
-          type: 3}
-        m_TargetAssemblyTypeName: BodiesInfoButton, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &940317693266638418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,17 +270,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3482902809764287550, guid: fe740d39a5c3e004489c7889b1b4def7,
-          type: 3}
-        m_TargetAssemblyTypeName: BodiesInfoButton, Assembly-CSharp
-        m_MethodName: HidePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

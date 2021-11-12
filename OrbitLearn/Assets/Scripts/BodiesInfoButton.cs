@@ -8,7 +8,11 @@ public class BodiesInfoButton : MonoBehaviour
     private GameManager gameManagerReference;
     public int panelExpansion;
     public int panelRedaction;
+    public int panelLastCount = 0;
     public int buttonSpawn;
+    public int panelExpansionCount = 0;
+    public int buttonCount = 0;
+    public List<GameObject> Buttons;
 
     [Header("Input Field References")]
     public GameObject buttonPrefab;
@@ -45,8 +49,8 @@ public class BodiesInfoButton : MonoBehaviour
         //}
     }
     public int calculateStepHeight()
-    {
-        return gameManagerReference.BodyCount - 6 - panelRedaction;
+    {//DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
+        return gameManagerReference.BodyCount - 6 - panelLastCount;
 
     }
     public void spawnButtons(int count)
@@ -58,24 +62,32 @@ public class BodiesInfoButton : MonoBehaviour
         {
             GameObject button = (GameObject)Instantiate(buttonPrefab);
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
+            
+            //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -370*(loopCount-panelExpansionCount) + 2216);//Changing text
+                
+          
 
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -370 * (loopCount) + 2216);//Changing text
             button.GetComponentInChildren<TMP_Text>().text = "Body " + (loopCount+1);
+            Buttons.Add(button);
+            buttonCount++;
+            //////
         }
     }
     public string iterateBodies()
-    {
+    { //DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
         int knownBodyCount = gameManagerReference.BodyCount;
        
         if (gameManagerReference.BodyCount > 6 && panelExpansion ==0)
         {
             panelExpansion = 1;
-            buttonSpawn = 0;
+            
             panelRedaction = calculateStepHeight();
             if (panelRedaction > 0)
             {
                 displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -390);
-                
+                panelExpansionCount+= panelRedaction;
+                panelLastCount = gameManagerReference.BodyCount -6;
             }
 
            
@@ -120,11 +132,24 @@ public class BodiesInfoButton : MonoBehaviour
         }
         return shipped;
     }
+    public void killButton(ref GameObject b)
+    {
+        Buttons.Remove(b);
+        Destroy(b);
+        Debug.Log(name +" killed", this);
+        buttonCount--;
+    }
 
     public void HidePanel()
     {
+        while (buttonCount > 0)
+        {
+            GameObject dumb = Buttons[0];
+            killButton(ref dumb);
+        }
         panelExpansion = 0;
         buttonSpawn = 0;
+        Debug.Log(name + " Game Object Hidden!", this);
         this.gameObject.SetActive(false);
 
     }
