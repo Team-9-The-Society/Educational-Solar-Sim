@@ -731,6 +731,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 96664987}
     m_Modifications:
+    - target: {fileID: 1956871165387882031, guid: 9a67b55d07467964d80b88ac460cbb55,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6419409499267471719, guid: 9a67b55d07467964d80b88ac460cbb55,
         type: 3}
       propertyPath: m_AnchorMax.y

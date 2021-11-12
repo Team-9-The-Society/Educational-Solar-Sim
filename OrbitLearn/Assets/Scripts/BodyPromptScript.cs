@@ -64,6 +64,7 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
   {
+        finalCheck();
         if (!editMode)
         {
             if (goodInput)
@@ -210,4 +211,14 @@ public class BodyPromptScript : MonoBehaviour
         sizeInput.value = passedBody.transform.localScale.x;
     }
 
+    public void finalCheck()
+    {
+        SetInput("xPos");
+        SetInput("yPos");
+        SetInput("zPos");
+        SetInput("yVel");
+        SetInput("xVel");
+        SetInput("zVel");
+        SetInput("mass");
+    }
 }
