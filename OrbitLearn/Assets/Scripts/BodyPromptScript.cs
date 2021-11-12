@@ -8,7 +8,7 @@ using TMPro;
 public class BodyPromptScript : MonoBehaviour
 {
     private GameManager GameManagerReference;
-
+    public Body passedBody;
     [Header("Input Field References")]
     public TMP_InputField massInput;
 
@@ -166,6 +166,19 @@ public class BodyPromptScript : MonoBehaviour
             inputRef.textComponent.color = Color.red;
             goodInput = false;
         }
+    }
+
+    public void beginEdit(ref Body b)
+    {
+        passedBody = b;
+        xVelInput.text = passedBody.returnRigBody().velocity.x.ToString("#.00");
+        yVelInput.text = passedBody.returnRigBody().velocity.y.ToString("#.00");
+        zVelInput.text = passedBody.returnRigBody().velocity.z.ToString("#.00");
+        xPosInput.text = passedBody.gameObject.transform.position.x.ToString("#.00");
+        yPosInput.text = passedBody.gameObject.transform.position.y.ToString("#.00");
+        zPosInput.text = passedBody.gameObject.transform.position.z.ToString("#.00");
+        massInput.text = passedBody.returnRigBody().mass.ToString("E2");
+        //sizeInput.value = passedBody.gameObject.transform.scale.x.ToString("#.00");
     }
 
 }
