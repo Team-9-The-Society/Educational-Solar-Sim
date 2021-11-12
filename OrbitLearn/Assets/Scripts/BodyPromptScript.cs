@@ -4,11 +4,13 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Cinemachine;
 
 public class BodyPromptScript : MonoBehaviour
 {
     private GameManager GameManagerReference;
     public Body passedBody;
+
     [Header("Input Field References")]
     public TMP_InputField massInput;
 
@@ -36,9 +38,12 @@ public class BodyPromptScript : MonoBehaviour
     public double size = 1;
     public bool goodInput = true;
 
+    public bool editMode = false;
+
     public void ActivateUIElement(GameManager g)
     {
         SetGameManRef(g.GetComponent<GameManager>());
+        ClearInputsAndValues();
     }
 
     public void SetGameManRef(GameManager g)
@@ -59,13 +64,40 @@ public class BodyPromptScript : MonoBehaviour
 
     public void SubmitNewBody()
   {
-        if(goodInput)
+        if (!editMode)
         {
-            GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
-            ClearInputsAndValues();
-            HidePanel();
+            if (goodInput)
+            {
+                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
+                ClearInputsAndValues();
+                HidePanel();
+            }
+            goodInput = true;
         }
-        goodInput = true;
+        else
+        {
+            if (goodInput)
+            {
+
+                Rigidbody r = passedBody.gameObject.GetComponent<Rigidbody>();
+                passedBody.transform.position = new Vector3((float)xPos, (float)yPos, (float)zPos);
+                passedBody.transform.localScale = new Vector3((float)size, (float)size, (float)size);
+
+                float camOrbit = (float)((size * 8) + 27) / 7;
+                passedBody.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
+                passedBody.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
+                passedBody.planetCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-camOrbit, 0.1f);
+
+                r.mass = (float)mass;
+                r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
+
+                ClearInputsAndValues();
+                HidePanel();
+                editMode = false;
+                passedBody = null;
+            }
+            goodInput = true;
+        }
     }
 
 
@@ -170,6 +202,7 @@ public class BodyPromptScript : MonoBehaviour
 
     public void beginEdit(ref Body b)
     {
+        editMode = true;
         passedBody = b;
         xVelInput.text = passedBody.returnRigBody().velocity.x.ToString("#.00");
         yVelInput.text = passedBody.returnRigBody().velocity.y.ToString("#.00");
@@ -178,6 +211,7 @@ public class BodyPromptScript : MonoBehaviour
         yPosInput.text = passedBody.gameObject.transform.position.y.ToString("#.00");
         zPosInput.text = passedBody.gameObject.transform.position.z.ToString("#.00");
         massInput.text = passedBody.returnRigBody().mass.ToString("E2");
+        sizeInput.value = passedBody.transform.localScale.x;
         //sizeInput.value = passedBody.gameObject.transform.scale.x.ToString("#.00");
     }
 
