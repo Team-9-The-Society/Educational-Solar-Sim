@@ -14,6 +14,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -197,7 +198,12 @@ public class GameManager : MonoBehaviour
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
-
+    public void SpawnNewButton(GameObject prefab, GameObject spawnPanel)
+    {
+        GameObject button = Instantiate(prefab, null, true);
+        button.transform.SetParent(spawnPanel.transform);
+        button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
+    }
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus)
     {
         if (BodyCount < 50)
