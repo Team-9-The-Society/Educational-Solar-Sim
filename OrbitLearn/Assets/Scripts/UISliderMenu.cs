@@ -96,5 +96,8 @@ public class UISliderMenu : MonoBehaviour
         Debug.LogWarning("This function has not been implemented yet!");
     }
 
-
+    public void TogglePause()
+    {
+        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+    }
 }
