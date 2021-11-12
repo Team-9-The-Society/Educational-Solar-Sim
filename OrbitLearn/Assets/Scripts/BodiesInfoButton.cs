@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class BodiesInfoButton : MonoBehaviour
 {
     private GameManager gameManagerReference;
+
     public int panelExpansion;
     public int panelRedaction;
     public int panelLastCount = 0;
@@ -55,12 +57,12 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public void spawnButtons(int count)
     {
-
-
-
         for (int loopCount = 0; loopCount < count; loopCount++)
         {
-            GameObject button = (GameObject)Instantiate(buttonPrefab);
+            int num = loopCount;
+            GameObject button = Instantiate(buttonPrefab);
+
+            button.GetComponent<Button>().onClick.AddListener(() => FocusOnPlanet(num));
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
             
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
@@ -154,6 +156,20 @@ public class BodiesInfoButton : MonoBehaviour
 
     }
 
+    public void FocusOnPlanet(int i)
+    {
+        try
+        {
+            Debug.LogWarning("Running FocusOnPlanet for i=" + i);
+            gameManagerReference.ShowBodyInfo(gameManagerReference.SimBodies[i]);
+            gameManagerReference.ActivatePlanetCam(gameManagerReference.SimBodies[i].planetCam);
 
+            HidePanel();
+        }
+        catch
+        {
+            Debug.LogError("Error -- Invalid Index " + i);
+        }
+    }
 
 }
