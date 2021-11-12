@@ -25,15 +25,15 @@ public class BodyPromptScript : MonoBehaviour
     public Slider sizeInput;
 
     [Header("Input Variables")]
-    public double mass = 0;
+    public double mass;
 
-    public double xPos = 0;
-    public double yPos = 0;
-    public double zPos = 0;
+    public double xPos;
+    public double yPos;
+    public double zPos;
 
-    public double xVel = 0;
-    public double yVel = 0;
-    public double zVel = 0;
+    public double xVel;
+    public double yVel;
+    public double zVel;
 
     public double size = 1;
     public bool goodInput = true;
@@ -127,45 +127,39 @@ public class BodyPromptScript : MonoBehaviour
         size = 1;
     }
 
-    public double StringToDouble(string s)
-    {
-        return Convert.ToDouble(s);
-    }
-
-
     public void SetInput(string variable)
     {
         switch (variable)
         {
             case "xPos":
                 xPosInput.textComponent.color = Color.black;
-                parseToDouble(ref xPosInput, ref xPos);
+                xPos = parseToDouble(ref xPosInput);
                 break;
             case "yPos":
                 yPosInput.textComponent.color = Color.black;
-                parseToDouble(ref yPosInput, ref yPos);
+                yPos = parseToDouble(ref yPosInput);
                 break;
             case "zPos":
                 zPosInput.textComponent.color = Color.black;
-                parseToDouble(ref zPosInput, ref zPos);
+                zPos =  parseToDouble(ref zPosInput);
                 break;
             case "mass":
                 //this takes scientific notation and converts it to a double. Input: 1E+-X (1E-4)(1E+8) where if no sign is entered it's assumed positive
                 massInput.textComponent.color = Color.black;
-                parseToDouble(ref massInput, ref mass);
+                mass = parseToDouble(ref massInput);
                 checkInput(ref massInput, ref mass);
                 break;
             case "xVel":
                 xVelInput.textComponent.color = Color.black;
-                parseToDouble(ref xVelInput, ref xVel);
+                xVel = parseToDouble(ref xVelInput);
                 break;
             case "yVel":
                 yVelInput.textComponent.color = Color.black;
-                parseToDouble(ref yVelInput, ref yVel);
+               yVel = parseToDouble(ref yVelInput);
                 break;
             case "zVel":
                 zVelInput.textComponent.color = Color.black;
-                parseToDouble(ref zVelInput, ref zVel);
+                zVel = parseToDouble(ref zVelInput);
                 break;
             case "size":
                 size = Convert.ToDouble(sizeInput.value);
@@ -183,20 +177,22 @@ public class BodyPromptScript : MonoBehaviour
         }
     }
 
-    public void parseToDouble(ref TMP_InputField inputRef, ref double output)
+    public double parseToDouble(ref TMP_InputField inputRef)
     {
-
+        double output;
         bool test = double.TryParse(inputRef.text, out output);
      
         if (test || inputRef.text.Equals(""))
         {
             double.TryParse(inputRef.text, out output);
+            return output;
         }
         else
         {
             inputRef.text = "Invalid Input";
             inputRef.textComponent.color = Color.red;
             goodInput = false;
+            return 0;
         }
     }
 
@@ -212,7 +208,6 @@ public class BodyPromptScript : MonoBehaviour
         zPosInput.text = passedBody.gameObject.transform.position.z.ToString("#.00");
         massInput.text = passedBody.returnRigBody().mass.ToString("E2");
         sizeInput.value = passedBody.transform.localScale.x;
-        //sizeInput.value = passedBody.gameObject.transform.scale.x.ToString("#.00");
     }
 
 }
