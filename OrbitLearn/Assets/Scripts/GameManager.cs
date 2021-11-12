@@ -141,7 +141,6 @@ public class GameManager : MonoBehaviour
                     }
                     else if (tapCount == 1 && b != null)
                     {
-                        focusedBody = b;
                         ShowBodyInfo(b);
                     }
                 }
@@ -168,7 +167,6 @@ public class GameManager : MonoBehaviour
 
 
         UpdateForces();
-
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
@@ -446,6 +444,7 @@ public class GameManager : MonoBehaviour
     //Displays the Body Info Panel for the input Body
     public void ShowBodyInfo(Body b)
     {
+        focusedBody = b;
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
     }
