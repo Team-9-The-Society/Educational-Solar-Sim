@@ -62,9 +62,9 @@ public class BodiesInfoButton : MonoBehaviour
         {
             GameObject button = (GameObject)Instantiate(buttonPrefab);
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
-            
+
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -370*(loopCount-panelExpansionCount) + 2216);//Changing text
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -375 * (loopCount - panelExpansionCount) + 2216);//+ buttonPanel.GetComponent<RectTransform>());//Changing text
                 
           
 
