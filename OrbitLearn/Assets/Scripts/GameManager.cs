@@ -230,8 +230,6 @@ public class GameManager : MonoBehaviour
             bodyRef.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
             bodyRef.planetCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-camOrbit, 0.1f);
 
-
-
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
 

@@ -15,6 +15,7 @@ using TMPro;
 
 public class UIBodyInformationPanel : MonoBehaviour
 {
+    public GameObject editPanel;
     public Body highlightedBody;
     private Rigidbody highlightedBodyRB;
 
@@ -81,6 +82,13 @@ public class UIBodyInformationPanel : MonoBehaviour
     public void DeleteBody()
     {
         gameManagerReference.DeleteBody(highlightedBody);
+    }
+
+    public void EditBody()
+    {
+        this.gameObject.SetActive(false);
+        editPanel.SetActive(true);
+        editPanel.GetComponent<BodyPromptScript>().beginEdit(ref highlightedBody);
     }
 
 }
