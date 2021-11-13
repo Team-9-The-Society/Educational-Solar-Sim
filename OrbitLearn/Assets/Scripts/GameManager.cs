@@ -14,6 +14,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -140,7 +141,6 @@ public class GameManager : MonoBehaviour
                     }
                     else if (tapCount == 1 && b != null)
                     {
-                        focusedBody = b;
                         ShowBodyInfo(b);
                     }
                 }
@@ -167,7 +167,6 @@ public class GameManager : MonoBehaviour
 
 
         UpdateForces();
-
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
@@ -197,7 +196,12 @@ public class GameManager : MonoBehaviour
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
-
+    public void SpawnNewButton(GameObject prefab, GameObject spawnPanel)
+    {
+        GameObject button = Instantiate(prefab, null, true);
+        button.transform.SetParent(spawnPanel.transform);
+        button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
+    }
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus)
     {
         if (BodyCount < 50)
@@ -438,6 +442,7 @@ public class GameManager : MonoBehaviour
     //Displays the Body Info Panel for the input Body
     public void ShowBodyInfo(Body b)
     {
+        focusedBody = b;
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
     }

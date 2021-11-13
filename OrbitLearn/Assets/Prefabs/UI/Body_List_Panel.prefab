@@ -491,7 +491,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853290138984939667}
   m_HandleRect: {fileID: 4101135871847186900}
   m_Direction: 2
-  m_Value: 0.99999714
+  m_Value: 0.99999726
   m_Size: 0.56342727
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -583,7 +583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5744187795873587029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -655,7 +655,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64c3efd92bd17d4d94b2c857dc4ff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelExpansion: 0
+  panelRedaction: 0
+  buttonSpawn: 0
+  buttonPrefab: {fileID: 1707403802545233896, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+    type: 3}
   displayTxt: {fileID: 7045803773692108309}
+  buttonPanel: {fileID: 3520819647165824174}
 --- !u!1 &5843176387444877497
 GameObject:
   m_ObjectHideFlags: 0
