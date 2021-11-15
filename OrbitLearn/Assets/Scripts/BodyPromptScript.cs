@@ -13,11 +13,10 @@ public class BodyPromptScript : MonoBehaviour
 
     [Header("Input Field References")]
     public TMP_InputField massInput;
-
+    public TMP_InputField nameInput;
     public TMP_InputField xPosInput;
     public TMP_InputField yPosInput;
     public TMP_InputField zPosInput;
-
     public TMP_InputField xVelInput;
     public TMP_InputField yVelInput;
     public TMP_InputField zVelInput;
@@ -26,7 +25,7 @@ public class BodyPromptScript : MonoBehaviour
 
     [Header("Input Variables")]
     public double mass;
-
+    public string name;
     public double xPos;
     public double yPos;
     public double zPos;
@@ -69,7 +68,7 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
-                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true);
+                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, name);
                 ClearInputsAndValues();
                 HidePanel();
             }
@@ -83,7 +82,7 @@ public class BodyPromptScript : MonoBehaviour
                 Rigidbody r = passedBody.gameObject.GetComponent<Rigidbody>();
                 passedBody.transform.position = new Vector3((float)xPos, (float)yPos, (float)zPos);
                 passedBody.transform.localScale = new Vector3((float)size, (float)size, (float)size);
-
+                passedBody.bodyName = name;
                 float camOrbit = (float)((size * 8) + 27) / 7;
                 passedBody.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
                 passedBody.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
@@ -105,7 +104,7 @@ public class BodyPromptScript : MonoBehaviour
     public void ClearInputsAndValues()
     {
         massInput.text = "";
-
+        nameInput.text =  "";
         xPosInput.text = "";
         yPosInput.text = "";
         zPosInput.text = "";
@@ -165,6 +164,9 @@ public class BodyPromptScript : MonoBehaviour
             case "size":
                 size = Convert.ToDouble(sizeInput.value);
                 break;
+            case "name":
+                name = nameInput.text;
+                break;
         }
     }
 
@@ -201,6 +203,7 @@ public class BodyPromptScript : MonoBehaviour
     {
         editMode = true;
         passedBody = b;
+        nameInput.text = b.bodyName;
         xVelInput.text = passedBody.returnRigBody().velocity.x.ToString("#.00");
         yVelInput.text = passedBody.returnRigBody().velocity.y.ToString("#.00");
         zVelInput.text = passedBody.returnRigBody().velocity.z.ToString("#.00");
@@ -214,6 +217,7 @@ public class BodyPromptScript : MonoBehaviour
     public void finalCheck()
     {
         SetInput("xPos");
+        SetInput("name");
         SetInput("yPos");
         SetInput("zPos");
         SetInput("yVel");
