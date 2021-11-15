@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157837504914746124}
-  m_LocalRotation: {x: 0.25707924, y: 1e-45, z: -0, w: 0.9663904}
+  m_LocalRotation: {x: 0.2570792, y: 0.0000000056639387, z: -0.000000001506721, w: 0.9663904}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -476,7 +476,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517374595335785924}
-  m_LocalRotation: {x: 0.20956996, y: -0.000000018771145, z: 0.0000000040232093, w: 0.9777937}
+  m_LocalRotation: {x: 0.20956996, y: -0.000000018810129, z: 0.000000004031564, w: 0.9777937}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -550,7 +550,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101566083543216561}
-  m_LocalRotation: {x: 0.30489954, y: 0.00000001638708, z: -0.0000000052462132, w: 0.95238453}
+  m_LocalRotation: {x: 0.30489954, y: -0.000000011163707, z: 0.0000000035739864, w: 0.95238453}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -902,6 +902,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 7d6b1c791e404d94a83bac06f07fc1bc, type: 2}
   - {fileID: 2100000, guid: f737660152bde084c9030b3a3adaa0a6, type: 2}
   - {fileID: 2100000, guid: 8e409f621ff459249a2c2532fac5acea, type: 2}
+  tail: {fileID: 5858256224340202020}
 --- !u!96 &5858256224340202020
 TrailRenderer:
   serializedVersion: 2
@@ -973,23 +974,23 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5977661, g: 0.75733054, b: 0.9528302, a: 1}
-      key1: {r: 0.5977661, g: 0.75733054, b: 0.9528302, a: 1}
+      key0: {r: 0, g: 0.4505496, b: 1, a: 1}
+      key1: {r: 0, g: 0.4505496, b: 1, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 2313
-      ctime1: 16769
+      ctime0: 0
+      ctime1: 65535
       ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 17926
+      atime0: 0
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -997,8 +998,8 @@ TrailRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 3
+      m_Mode: 1
+      m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
