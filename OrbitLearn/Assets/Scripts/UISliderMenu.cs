@@ -96,5 +96,8 @@ public class UISliderMenu : MonoBehaviour
         Debug.LogWarning("This function has not been implemented yet!");
     }
 
-
+    public void TogglePause()
+    {
+        gameManagerReference.TogglePause();
+    }
 }
