@@ -36,6 +36,7 @@ public class UIPresetSimulations : MonoBehaviour
 
         gameManagerReference.TrySpawnNewBody(10000000000, 20, 0, 0, 0, 10, 0, 3.458, false, "body2");
 
+
         gameManagerReference.FocusOnUniverse();
     }
 }

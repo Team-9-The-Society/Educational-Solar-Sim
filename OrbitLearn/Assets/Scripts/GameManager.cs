@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public Body focusedBody;
     public int BodyCount = 0;
     private int tapCount = 0;
+    public bool gamePaused = false;
 
     public static RuntimePlatform platform
     {
@@ -165,8 +166,11 @@ public class GameManager : MonoBehaviour
             PresetSimulations.Simulation1();
         }
 
-
-        UpdateForces();
+        if (gamePaused == false)
+        {
+            UpdateForces();
+        }
+       
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
@@ -321,6 +325,12 @@ public class GameManager : MonoBehaviour
         }
 
         return;
+    }
+
+    public void TogglePause()
+    {
+        gamePaused = !gamePaused;
+        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
     }
 
 
