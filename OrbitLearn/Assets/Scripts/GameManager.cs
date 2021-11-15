@@ -142,7 +142,6 @@ public class GameManager : MonoBehaviour
                     }
                     else if (tapCount == 1 && b != null)
                     {
-                        focusedBody = b;
                         ShowBodyInfo(b);
                     }
                 }
@@ -171,8 +170,7 @@ public class GameManager : MonoBehaviour
         {
             UpdateForces();
         }
-        
-
+       
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
@@ -235,8 +233,6 @@ public class GameManager : MonoBehaviour
             bodyRef.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
             bodyRef.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
             bodyRef.planetCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-camOrbit, 0.1f);
-
-
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
@@ -456,6 +452,7 @@ public class GameManager : MonoBehaviour
     //Displays the Body Info Panel for the input Body
     public void ShowBodyInfo(Body b)
     {
+        focusedBody = b;
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
     }

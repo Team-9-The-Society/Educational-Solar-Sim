@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 2890652510710438790}
   - component: {fileID: 865410445325159951}
   - component: {fileID: 2312839976373002124}
-  - component: {fileID: 940317693266638418}
   m_Layer: 5
   m_Name: ButtonCosmetic
   m_TagString: Untagged
@@ -254,20 +253,5 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 865410445325159951}
   m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &940317693266638418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707403802545233896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dd6916fa568904469611f42ab9770ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onClick:
     m_PersistentCalls:
       m_Calls: []
