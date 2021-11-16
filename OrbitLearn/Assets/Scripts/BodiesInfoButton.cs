@@ -42,13 +42,7 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void displayBodies()
     {
-        // List<Body> display = gameManagerReference.SimBodies.GetClone(); //is the error with how c sharp does shallow copies?***
-
-        //if (gameManagerReference != null)
-        //{
         displayTxt.text = iterateBodies();
-            
-        //}
     }
     public int calculateStepHeight()
     {//DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
@@ -57,7 +51,13 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public void spawnButtons(int count)
     {
-        for (int loopCount = 0; loopCount < count; loopCount++)
+        List<Body> tmp = new List<Body>();
+        foreach (Body b in gameManagerReference.SimBodies)
+        {
+            tmp.Add(b);
+        }
+
+        for(int loopCount = 0;loopCount<count;loopCount++)
         {
             int num = loopCount;
             GameObject button = Instantiate(buttonPrefab);
@@ -70,7 +70,7 @@ public class BodiesInfoButton : MonoBehaviour
                 
           
 
-            button.GetComponentInChildren<TMP_Text>().text = "Body " + (loopCount+1);
+            button.GetComponentInChildren<TMP_Text>().text = "Body " + (loopCount+1)+": \n"+ tmp[loopCount].bodyName;
             Buttons.Add(button);
             buttonCount++;
             //////
