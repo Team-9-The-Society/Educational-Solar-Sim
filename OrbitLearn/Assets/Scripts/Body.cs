@@ -15,14 +15,17 @@ public class Body : MonoBehaviour
     [Header("Planet name and velocities")]
     public string bodyName;
 
-    public float xVelocity;
-    public float yVelocity;
-    public float zVelocity;
-
     private Rigidbody rb;
 
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
+
+
+    [Header("Debug - Force Change Current Velocity")]
+    public double dxVel;
+    public double dyVel;
+    public double dzVel;
+    public bool DebugSetNewVelocity;
 
     private void Awake()
     {
@@ -32,15 +35,25 @@ public class Body : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyForce();
+        if (DebugSetNewVelocity)
+        {
+            DEBUGForceVelocityUpdate();
+        }
     }
 
-    public void ApplyForce()
+    public void ApplyForce(double xForce, double yForce, double zForce)
     {
-        rb.AddForce(new Vector3(xVelocity, yVelocity, zVelocity), ForceMode.Acceleration);
+        Debug.Log($"Forced applied to {gameObject.name}: {xForce}, {yForce}, {zForce}");
+        rb.AddForce(new Vector3((float)xForce, (float)yForce, (float)zForce), ForceMode.Force);
     }
 
-    
-
-
+    public void DEBUGForceVelocityUpdate()
+    {
+        rb.velocity = new Vector3((float)dxVel, (float)dyVel, (float)dzVel);
+        DebugSetNewVelocity = false;
+    }
+    public Rigidbody returnRigBody()
+    {
+        return rb;
+    }
 }

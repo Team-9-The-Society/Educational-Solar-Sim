@@ -15,6 +15,7 @@ using TMPro;
 
 public class UIBodyInformationPanel : MonoBehaviour
 {
+    public GameObject editPanel;
     public Body highlightedBody;
     private Rigidbody highlightedBodyRB;
 
@@ -22,24 +23,16 @@ public class UIBodyInformationPanel : MonoBehaviour
     public TMP_Text xVelocityDisplay;
     public TMP_Text yVelocityDisplay;
     public TMP_Text zVelocityDisplay;
+    public TMP_Text massDisplay;
 
 
     private GameManager gameManagerReference;
 
 
-    private void Awake()
+    public void ActivateUIElement(GameManager g)
     {
-        if (gameManagerReference == null)
-        {
-            GameObject g = GameObject.FindGameObjectWithTag("GameController");
-            if (g != null)
-            {
-                SetGameManRef(g.GetComponent<GameManager>());
-                gameObject.SetActive(false);
-            }
-        }
+        SetGameManRef(g.GetComponent<GameManager>());
     }
-
 
 
     public void SetGameManRef(GameManager gm)
@@ -59,10 +52,10 @@ public class UIBodyInformationPanel : MonoBehaviour
     {
         BodyNameDisplay.text = highlightedBody.bodyName;
 
-        xVelocityDisplay.text = "X Velocity: " + highlightedBodyRB.velocity.x.ToString("#.00");
-        yVelocityDisplay.text = "Y Velocity: " + highlightedBodyRB.velocity.y.ToString("#.00");
-        zVelocityDisplay.text = "Z Velocity: " + highlightedBodyRB.velocity.z.ToString("#.00");
-
+        xVelocityDisplay.text = "X Velocity: " + highlightedBodyRB.velocity.x.ToString("#.00") + "m/s";
+        yVelocityDisplay.text = "Y Velocity: " + highlightedBodyRB.velocity.y.ToString("#.00") + "m/s";
+        zVelocityDisplay.text = "Z Velocity: " + highlightedBodyRB.velocity.z.ToString("#.00") + "m/s";
+        massDisplay.text = "Mass: " + highlightedBodyRB.mass.ToString("E2") + "kg";
     }
 
     public void ClearDisplay()
@@ -89,6 +82,13 @@ public class UIBodyInformationPanel : MonoBehaviour
     public void DeleteBody()
     {
         gameManagerReference.DeleteBody(highlightedBody);
+    }
+
+    public void EditBody()
+    {
+        this.gameObject.SetActive(false);
+        editPanel.SetActive(true);
+        editPanel.GetComponent<BodyPromptScript>().beginEdit(ref highlightedBody);
     }
 
 }

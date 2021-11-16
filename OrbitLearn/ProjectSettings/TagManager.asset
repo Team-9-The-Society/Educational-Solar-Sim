@@ -9,6 +9,7 @@ TagManager:
   - UI
   - UniverseCam
   - PlanetCam
+  - EventSystem
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Light Source
   - Water
   - UI
-  - 
+  - Bodies
   - 
   - 
   - 
