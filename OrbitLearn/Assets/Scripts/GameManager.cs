@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour
         button.transform.SetParent(spawnPanel.transform);
         button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
     }
-    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus)
+    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name)
     {
         if (BodyCount < 50)
         {
@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
-
+            bodyRef.bodyName = name;
             float camOrbit = (float)((scal * 8) + 27) / 7;
             bodyRef.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
             bodyRef.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
