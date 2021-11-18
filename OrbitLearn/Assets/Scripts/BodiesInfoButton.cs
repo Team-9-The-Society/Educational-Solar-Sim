@@ -56,8 +56,13 @@ public class BodiesInfoButton : MonoBehaviour
         {
             tmp.Add(b);
         }
+        float screenplier = ((((float)Screen.height) / ((float)Screen.width)) / ((float)1920/1080));
+        screenplier = screenplier - 2*(screenplier - 1) / 5;
+        //1.778 is the ratio of height to width that has a favored starting offset.
+        // this needs to and accounts for different phone sizes for button initial offset.
+       
 
-        for(int loopCount = 0;loopCount<count;loopCount++)
+        for (int loopCount = 0;loopCount<count;loopCount++)
         {
             int num = loopCount;
             GameObject button = Instantiate(buttonPrefab);
@@ -66,7 +71,7 @@ public class BodiesInfoButton : MonoBehaviour
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -372 * (loopCount - panelExpansionCount) + 2195+ (float)7.8 * panelExpansionCount);//Changing text
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(432, -372 *(loopCount - panelExpansionCount) + 2195 *screenplier + (float)7.8 * panelExpansionCount);//Changing text
                 
           
 
