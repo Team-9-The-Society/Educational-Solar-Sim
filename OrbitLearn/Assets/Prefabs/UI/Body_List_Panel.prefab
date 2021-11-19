@@ -491,8 +491,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853290138984939667}
   m_HandleRect: {fileID: 4101135871847186900}
   m_Direction: 2
-  m_Value: 0.99999726
-  m_Size: 0.56342727
+  m_Value: 0.9999974
+  m_Size: 0.5634273
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -532,7 +532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: 0.0022278}
+  m_AnchoredPosition: {x: 0, y: 0.0021972656}
   m_SizeDelta: {x: 800, y: 1261.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3467966483611434200
@@ -583,7 +583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5744187795873587029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -657,7 +657,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelExpansion: 0
   panelRedaction: 0
+  panelLastCount: 0
   buttonSpawn: 0
+  panelExpansionCount: 0
+  buttonCount: 0
+  Buttons: []
   buttonPrefab: {fileID: 1707403802545233896, guid: 47a684e0e79aa684b9aa0fab56749b1a,
     type: 3}
   displayTxt: {fileID: 7045803773692108309}
@@ -698,8 +702,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37, y: -150.30396}
-  m_SizeDelta: {x: -102, y: -42.136963}
+  m_AnchoredPosition: {x: -60, y: -164.61774}
+  m_SizeDelta: {x: -120, y: -70.76453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2789324998236346305
 CanvasRenderer:
