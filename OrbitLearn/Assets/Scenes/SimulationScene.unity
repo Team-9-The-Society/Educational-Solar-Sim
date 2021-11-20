@@ -38,7 +38,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0014415674, g: 0.0013888229, b: 0.0013739478, a: 1}
+
+  m_IndirectSpecularColor: {r: 0.0014371083, g: 0.001384888, b: 0.0013701947, a: 1}
+
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1157,8 +1159,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7873659840201853094, guid: 5535e65e5b62b754b8b022a02978ee4b,
+        type: 3}
+      propertyPath: simulationCenter
+      value: 
+      objectReference: {fileID: 584495941}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5535e65e5b62b754b8b022a02978ee4b, type: 3}
+--- !u!1 &584495941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3689151797772466577, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1968472542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &608564377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1257,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
+--- !u!114 &608564381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608564377}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3e5f51e31f79c4fb340e92ffc286e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeedNormal: 10
+  rotSpeedFast: 50
+  moveSpeedNormal: 10
+  moveSpeedFast: 40
+  mouseSensitivityX: 5
+  mouseSensitivityY: 5
+
 --- !u!114 &608564382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,8 +1296,8 @@ MonoBehaviour:
   m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
+    m_Style: 2
+    m_Time: 1.5
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -2397,6 +2430,11 @@ PrefabInstance:
       propertyPath: SliderRef
       value: 
       objectReference: {fileID: 879353357}
+    - target: {fileID: 2636981943483640809, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: UniverseCenter
+      value: 
+      objectReference: {fileID: 584495941}
     - target: {fileID: 2636981943483640809, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: BodyInputPanelRef
