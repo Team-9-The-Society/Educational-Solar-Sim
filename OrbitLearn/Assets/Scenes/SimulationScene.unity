@@ -38,7 +38,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+
   m_IndirectSpecularColor: {r: 0.0014371083, g: 0.001384888, b: 0.0013701947, a: 1}
+
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -295,6 +297,71 @@ PrefabInstance:
       propertyPath: BodiesDescriptionPanel
       value: 
       objectReference: {fileID: 1268627246}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1268627247}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 879353357}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HidePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: HideAllPanels
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BodiesInfoButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UISliderMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630625499624361299, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2630625500046077721, guid: 624719b68fdf33543b092fed9b7fda83,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1116,7 +1183,6 @@ GameObject:
   - component: {fileID: 608564380}
   - component: {fileID: 608564379}
   - component: {fileID: 608564378}
-  - component: {fileID: 608564381}
   - component: {fileID: 608564382}
   - component: {fileID: 608564383}
   m_Layer: 0
@@ -1191,6 +1257,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!114 &608564381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,6 +1276,7 @@ MonoBehaviour:
   moveSpeedFast: 40
   mouseSensitivityX: 5
   mouseSensitivityY: 5
+
 --- !u!114 &608564382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,7 +1293,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 1
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 2
@@ -2352,6 +2420,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4791136349079628720, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2636981943483640809, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: SliderRef
@@ -2456,6 +2529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689151798298187084, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
+        type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798298187087, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}

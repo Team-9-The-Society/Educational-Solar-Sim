@@ -18,13 +18,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    /*
-    [Header("UI Prefab References")]
-    public GameObject BodyInfoPanelPrefab;
-    public GameObject BodiesPanelPrefab;
-    public GameObject UISliderMenuPrefab;
-    public GameObject BodyInputPanelPrefab;
-    */
 
     [Header("UI References")]
     public UIBodyInformationPanel BodyInfoPanel;
