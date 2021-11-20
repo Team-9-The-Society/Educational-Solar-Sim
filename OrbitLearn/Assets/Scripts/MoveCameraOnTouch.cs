@@ -8,11 +8,12 @@ public class MoveCameraOnTouch: MonoBehaviour
     void Start()
     {
         CinemachineCore.GetInputAxis = GetAxisCustom;
+        CinemachineImpulseManager.Instance.IgnoreTimeScale = true;
+
     }
     public float GetAxisCustom(string axisName)
     {
         //Touch touch = Input.GetTouch(0);
-
 
         if (axisName == "Mouse X")
         {
