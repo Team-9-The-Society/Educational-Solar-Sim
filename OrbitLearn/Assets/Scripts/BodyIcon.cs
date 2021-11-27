@@ -27,12 +27,12 @@ public class BodyIcon : MonoBehaviour
         if (Vector3.Distance(cam.position, this.transform.position) < turnOffDistance)
         {
             rend.enabled = false;
-            planetCollider.radius = 0.5f;
+            //planetCollider.radius = 0.5f;
         }
         else
         {
             rend.enabled = true;
-            planetCollider.radius = 3;
+            //planetCollider.radius = 3;
         }
 
 
