@@ -1,0 +1,1128 @@
+fileFormatVersion: 2
+guid: fcf95bc5e6deca342a67818fcca2a2a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4319606996077439658
+    second: App buttons transparent PNG_0
+  - first:
+      213: -3948263953147635982
+    second: App buttons transparent PNG_1
+  - first:
+      213: -2965617894336213428
+    second: App buttons transparent PNG_2
+  - first:
+      213: -2682577546521661100
+    second: App buttons transparent PNG_3
+  - first:
+      213: 756976347343300755
+    second: App buttons transparent PNG_4
+  - first:
+      213: 419506312484682918
+    second: App buttons transparent PNG_5
+  - first:
+      213: 7786451091028464438
+    second: App buttons transparent PNG_6
+  - first:
+      213: 4178959705331503694
+    second: App buttons transparent PNG_7
+  - first:
+      213: -2135962834070435868
+    second: App buttons transparent PNG_8
+  - first:
+      213: -7704084031986213418
+    second: App buttons transparent PNG_9
+  - first:
+      213: 2238197371424020459
+    second: App buttons transparent PNG_10
+  - first:
+      213: 1308617962784271016
+    second: App buttons transparent PNG_11
+  - first:
+      213: -6071694993259916396
+    second: App buttons transparent PNG_12
+  - first:
+      213: -7099948725137609159
+    second: App buttons transparent PNG_13
+  - first:
+      213: -8235550794194983468
+    second: App buttons transparent PNG_14
+  - first:
+      213: -7760889037709153970
+    second: App buttons transparent PNG_15
+  - first:
+      213: -3817688254452898333
+    second: App buttons transparent PNG_16
+  - first:
+      213: 3486974807050672379
+    second: App buttons transparent PNG_17
+  - first:
+      213: -4272019837263646189
+    second: App buttons transparent PNG_18
+  - first:
+      213: 7956052471436822156
+    second: App buttons transparent PNG_19
+  - first:
+      213: -6555365505565061378
+    second: App buttons transparent PNG_20
+  - first:
+      213: 4702901638359422644
+    second: App buttons transparent PNG_21
+  - first:
+      213: 7664234989787232800
+    second: App buttons transparent PNG_22
+  - first:
+      213: 7529677316623924602
+    second: App buttons transparent PNG_23
+  - first:
+      213: -3515845664055088539
+    second: App buttons transparent PNG_24
+  - first:
+      213: 9031136996491968077
+    second: App buttons transparent PNG_25
+  - first:
+      213: 329012373241360807
+    second: App buttons transparent PNG_26
+  - first:
+      213: -503081659778653141
+    second: App buttons transparent PNG_27
+  - first:
+      213: -6875539638082629338
+    second: App buttons transparent PNG_28
+  - first:
+      213: -8611627588875951784
+    second: App buttons transparent PNG_29
+  - first:
+      213: 4983309418756160002
+    second: App buttons transparent PNG_30
+  - first:
+      213: 5410038412236361480
+    second: App buttons transparent PNG_31
+  - first:
+      213: -5650176958754466684
+    second: App buttons transparent PNG_32
+  - first:
+      213: -1102230008704106490
+    second: App buttons transparent PNG_33
+  - first:
+      213: 5028184520130455326
+    second: App buttons transparent PNG_34
+  - first:
+      213: 7222194620992459484
+    second: App buttons transparent PNG_35
+  - first:
+      213: 2519976016192952387
+    second: App buttons transparent PNG_36
+  - first:
+      213: 8220509544945118427
+    second: App buttons transparent PNG_37
+  - first:
+      213: -926484104235033757
+    second: App buttons transparent PNG_38
+  - first:
+      213: 2494041643653592293
+    second: App buttons transparent PNG_39
+  - first:
+      213: -7525378845198197868
+    second: App buttons transparent PNG_40
+  - first:
+      213: -4205616873295706680
+    second: App buttons transparent PNG_41
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 3880, w: 1902}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: App buttons transparent PNG_0
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 9195
+        width: 103
+        height: 1182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6551385c25cad04c0800000000000000
+      internalID: -4319606996077439658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_1
+      rect:
+        serializedVersion: 2
+        x: 4810
+        y: 9252
+        width: 1467
+        height: 1161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6d7297ad2f439c0800000000000000
+      internalID: -3948263953147635982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_2
+      rect:
+        serializedVersion: 2
+        x: 7866
+        y: 9067
+        width: 1295
+        height: 1374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e4c84dc3208d6d0800000000000000
+      internalID: -2965617894336213428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_3
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 8099
+        width: 2706
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45133213fe195cad0800000000000000
+      internalID: -2682577546521661100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_4
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 8042
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39825ce2af1518a00800000000000000
+      internalID: 756976347343300755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_5
+      rect:
+        serializedVersion: 2
+        x: 7281
+        y: 7985
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acfea0c4c262d500800000000000000
+      internalID: 419506312484682918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_6
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 7188
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63354bd43080f0c60800000000000000
+      internalID: 7786451091028464438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_7
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 7088
+        width: 2817
+        height: 786
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4294fef5b5aef930800000000000000
+      internalID: 4178959705331503694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_8
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 7038
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e78bc58e198b52e0800000000000000
+      internalID: -2135962834070435868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_9
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 6240
+        width: 2702
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddd3b11468951590800000000000000
+      internalID: -7704084031986213418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_10
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 6976
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be711fc96acaf0f10800000000000000
+      internalID: 2238197371424020459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_11
+      rect:
+        serializedVersion: 2
+        x: 2870
+        y: 6977
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aaa3729a15292210800000000000000
+      internalID: 1308617962784271016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_12
+      rect:
+        serializedVersion: 2
+        x: 3984
+        y: 6221
+        width: 2813
+        height: 788
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4939936a2910dbba0800000000000000
+      internalID: -6071694993259916396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_13
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 6212
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e6faa604ae77d90800000000000000
+      internalID: -7099948725137609159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_14
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 5301
+        width: 2705
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5625ebf2275bd80800000000000000
+      internalID: -8235550794194983468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_15
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 5743
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e496f160a88cb4490800000000000000
+      internalID: -7760889037709153970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_16
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 5331
+        width: 2812
+        height: 788
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5672272c8d40bc0800000000000000
+      internalID: -3817688254452898333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_17
+      rect:
+        serializedVersion: 2
+        x: 7402
+        y: 5329
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8ddfabc19346030800000000000000
+      internalID: 3486974807050672379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_18
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 4389
+        width: 2709
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3127a76979cb6b4c0800000000000000
+      internalID: -4272019837263646189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_19
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 5126
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c864c5ed193996e60800000000000000
+      internalID: 7956052471436822156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_20
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 4354
+        width: 2812
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe02f3fdc9a605a0800000000000000
+      internalID: -6555365505565061378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_21
+      rect:
+        serializedVersion: 2
+        x: 7402
+        y: 4382
+        width: 2813
+        height: 790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b614008f10144140800000000000000
+      internalID: 4702901638359422644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_22
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 3549
+        width: 2706
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a3369cd15dc5a60800000000000000
+      internalID: 7664234989787232800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_23
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 4286
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d7fa220a9ce7860800000000000000
+      internalID: 7529677316623924602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_24
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 4286
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a26ec0ff4353fc0800000000000000
+      internalID: -3515845664055088539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_25
+      rect:
+        serializedVersion: 2
+        x: 4034
+        y: 3556
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ebac1df3b055d70800000000000000
+      internalID: 9031136996491968077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_26
+      rect:
+        serializedVersion: 2
+        x: 4034
+        y: 2674
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a172c1a203e09400800000000000000
+      internalID: 329012373241360807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_27
+      rect:
+        serializedVersion: 2
+        x: 7452
+        y: 3442
+        width: 2813
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2421e755e1b409f0800000000000000
+      internalID: -503081659778653141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_28
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 2645
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62197f8902d2590a0800000000000000
+      internalID: -6875539638082629338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_29
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 2553
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8516813955a5d7880800000000000000
+      internalID: -8611627588875951784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_30
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1677
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ab1de7385482540800000000000000
+      internalID: 4983309418756160002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_31
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 2414
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f0196b541541b40800000000000000
+      internalID: 5410038412236361480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_32
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 1791
+        width: 2812
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484d75fedf98691b0800000000000000
+      internalID: -5650176958754466684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_33
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 1727
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6008a6e95a714b0f0800000000000000
+      internalID: -1102230008704106490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_34
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 901
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e176e7b3e23b7c540800000000000000
+      internalID: 5028184520130455326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_35
+      rect:
+        serializedVersion: 2
+        x: 5063
+        y: 1011
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd21ef23eb36a3460800000000000000
+      internalID: 7222194620992459484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_36
+      rect:
+        serializedVersion: 2
+        x: 5067
+        y: 894
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3485fa7d5d0c8f220800000000000000
+      internalID: 2519976016192952387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_37
+      rect:
+        serializedVersion: 2
+        x: 5879
+        y: 894
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc692380ed151270800000000000000
+      internalID: 8220509544945118427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_38
+      rect:
+        serializedVersion: 2
+        x: 4276
+        y: 125
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b560dad977423f0800000000000000
+      internalID: -926484104235033757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_39
+      rect:
+        serializedVersion: 2
+        x: 5054
+        y: 233
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4f00139ad9c9220800000000000000
+      internalID: 2494041643653592293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_40
+      rect:
+        serializedVersion: 2
+        x: 5067
+        y: 118
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bd8bbbfcb709790800000000000000
+      internalID: -7525378845198197868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent PNG_41
+      rect:
+        serializedVersion: 2
+        x: 5871
+        y: 118
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c502dd6cb5a2a5c0800000000000000
+      internalID: -4205616873295706680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
