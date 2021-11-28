@@ -21,15 +21,14 @@ jobs:
         with: 
           distribution: 'temurin'
           java-version: '11'
-          cache: gradle
   
       - name: Build with Gradle
         id: build
-        run: gradlew build
+        run: ./gradlew build
   
       - name: Build Release AAB
         id: buildRelease
-        run: gradlew bundleRelease
+        run: ./gradlew bundleRelease
       
   release:
     runs-on: ubuntu-latest
