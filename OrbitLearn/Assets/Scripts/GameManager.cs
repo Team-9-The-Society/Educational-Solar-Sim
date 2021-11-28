@@ -463,7 +463,7 @@ public class GameManager : MonoBehaviour
                 {
                     PresetSimulations = b.PresetSimulationsRef;
                     PresetSimulations.ActivateUIElement(this);
-                    //Set PresetSimulations menu to inactive
+                    PresetSimulations.gameObject.SetActive(false);
                 }
 
                 simulationCenter = b.UniverseCenter;

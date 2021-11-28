@@ -15,7 +15,8 @@ public class UISliderMenu : MonoBehaviour
     public GameObject PanelMenu;
     public GameObject BodyInfoInputPanel;
     public GameObject BodiesDescriptionPanel;
-    public GameObject BodyInfoPane;
+    public GameObject BodyInfoPanel;
+    public GameObject PresetSimulationsPanel;
 
     private void Awake()
     {
@@ -70,6 +71,24 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoInputPanel.SetActive(true);
     }
 
+    //Shows the list of preset simulations
+    public void ShowPresetSimsPanel()
+    {
+        if (PresetSimulationsPanel != null)
+            PresetSimulationsPanel.SetActive(true);
+        else
+            Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
+    }
+
+    //Hides the list of preset simulations
+    public void HidePresetSimsPanel()
+    {
+        if (PresetSimulationsPanel != null)
+            PresetSimulationsPanel.SetActive(false);
+        else
+            Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
+    }
+
 
 
     public void HideContextPanel()
@@ -81,7 +100,7 @@ public class UISliderMenu : MonoBehaviour
     {
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
-        BodyInfoPane.SetActive(false);
+        BodyInfoPanel.SetActive(false);
     }
 
     public void LoadHomeScene()
