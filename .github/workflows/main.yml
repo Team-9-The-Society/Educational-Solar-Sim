@@ -14,7 +14,10 @@ jobs:
         uses: actions/checkout@v2
         
       - name: cd into Unity App
-        run: cd */OrbitLearn
+        run: cd ./
+        
+      - name: tree
+        run: tree
   
       - name: Set Up JDK 1.8
         uses: actions/setup-java@v2
