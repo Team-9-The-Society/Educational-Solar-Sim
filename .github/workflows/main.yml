@@ -18,6 +18,12 @@ jobs:
         with: 
           java-version: 1.8
           
+      - name: Printing $PATH
+        run: echo $PATH
+        
+      - name: Look for gradlew
+        run: find / -type f -name "gradlew" 2>/dev/null
+          
       - name: Grant Rights
         run: chmod +x build.gradle
   
