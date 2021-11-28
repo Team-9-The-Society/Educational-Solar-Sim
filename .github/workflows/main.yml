@@ -4,7 +4,7 @@ name: Deploy App CI
 on:
   push:
     branches: [ main, develop ]
-# Test1
+# Test2
 # .github/workflows/main.yml
 jobs:
   buildForAndroidPlatform:
