@@ -19,6 +19,7 @@ jobs:
           key: Library-Android
       - uses: game-ci/unity-builder@v2
         with:
+          projectPath: ./OrbitLearn
           targetPlatform: Android
           androidAppBundle: true
           androidKeystoreName: user.keystore
