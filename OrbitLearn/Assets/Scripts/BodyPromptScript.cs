@@ -225,4 +225,9 @@ public class BodyPromptScript : MonoBehaviour
         SetInput("zVel");
         SetInput("mass");
     }
+
+    void Update()
+    {
+        nameInput.characterLimit = 7;
+    }
 }
