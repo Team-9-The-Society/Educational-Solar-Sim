@@ -22,7 +22,7 @@ jobs:
         run: echo $PATH
         
       - name: Look for gradlew
-        run: run which gradlew
+        run: which gradlew
           
       - name: Grant Rights
         run: chmod +x build.gradle
