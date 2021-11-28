@@ -3,9 +3,10 @@ name: Deploy App CI
 
 on:
   push:
+    paths:
+      - 'OrbitLearn/**'
     branches: [ main, develop ]
-# Test2
-# .github/workflows/main.yml
+
 jobs:
   buildForAndroidPlatform:
     name: Build For Android Platform
