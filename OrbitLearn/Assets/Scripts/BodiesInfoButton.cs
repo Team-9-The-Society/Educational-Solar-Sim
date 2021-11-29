@@ -59,7 +59,7 @@ public class BodiesInfoButton : MonoBehaviour
         }
         float screenplier = ((((float)Screen.height) / ((float)Screen.width)) / ((float)1920/1080));
         screenplier = screenplier - 2 * (screenplier - 1) / 5;
-        int xPosition = 432;
+        int xPosition = 422;
 
         if (presetFilm == 1)
         {
