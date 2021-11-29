@@ -650,7 +650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RESET
+  m_Text: CLEAR
 --- !u!1 &2630625498733901716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,7 +1121,8 @@ MonoBehaviour:
   PanelMenu: {fileID: 2630625499364727330}
   BodyInfoInputPanel: {fileID: 0}
   BodiesDescriptionPanel: {fileID: 0}
-  BodyInfoPane: {fileID: 0}
+  BodyInfoPanel: {fileID: 0}
+  PresetSimulationsPanel: {fileID: 0}
 --- !u!1 &2630625499624361297
 GameObject:
   m_ObjectHideFlags: 0
