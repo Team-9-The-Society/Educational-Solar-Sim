@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public UISliderMenu SliderMenu;
     public BodyPromptScript BodyInputPanel;
     public UIPresetSimulations PresetSimulations;
+    public UIHintDisplay HintDisplay;
+    public GameObject PauseIcon;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -103,6 +105,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadNewScene(SceneHandler.Scene targetScene)
     {
+        if (gamePaused)
+            TogglePause();
+
         ClearUIReferences();
         SimBodies.Clear();
         SceneHandler.Load(targetScene);
@@ -326,11 +331,30 @@ public class GameManager : MonoBehaviour
         gamePaused = !gamePaused;
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
 
-        if (gamePaused) 
+        if (gamePaused)
+        {
             Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.LateUpdate;
+            PauseIcon.SetActive(true);
+        }
         else
+        {
             Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.FixedUpdate;
+            PauseIcon.SetActive(false);
+        }
 
+    }
+
+    public void DisplayHintMessage(string msg1, string msg2)
+    {
+        HintDisplay.gameObject.SetActive(true);
+        HintDisplay.SetMessageText(msg1, msg2);
+
+    }
+
+    public void HideHintMessage()
+    {
+        HintDisplay.ClearMessageText();
+        HintDisplay.gameObject.SetActive(false);
     }
 
 
@@ -341,6 +365,7 @@ public class GameManager : MonoBehaviour
         cam.Priority = 5;
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
+        DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
     }
 
     //Changes the priority to favor the universe over a particular planet
@@ -351,6 +376,8 @@ public class GameManager : MonoBehaviour
             ActivePlanetCam.Priority = 4;
             ActivePlanetCam = null;
         }
+        if (HintDisplay != null)
+            HideHintMessage();
         UniverseCam.Priority = 5;
     }
 
@@ -466,6 +493,18 @@ public class GameManager : MonoBehaviour
                     PresetSimulations.gameObject.SetActive(false);
                 }
 
+                if (b.HintDisplayRef != null)
+                {
+                    HintDisplay = b.HintDisplayRef;
+                    HintDisplay.gameObject.SetActive(false);
+                }
+
+                if (b.PauseDisplayRef != null)
+                {
+                    PauseIcon = b.PauseDisplayRef;
+                    PauseIcon.SetActive(false);
+                }
+
                 simulationCenter = b.UniverseCenter;
 
 
@@ -491,6 +530,7 @@ public class GameManager : MonoBehaviour
         focusedBody = b;
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
+        DisplayHintMessage("Quickly tap on the body again to focus.", "");
     }
 
     //Hides Body Info Panel
@@ -502,6 +542,8 @@ public class GameManager : MonoBehaviour
             focusedBody = null;
             BodyInfoPanel.gameObject.SetActive(false);
         }
+        if (HintDisplay != null)
+            HideHintMessage();
     }
 
 
