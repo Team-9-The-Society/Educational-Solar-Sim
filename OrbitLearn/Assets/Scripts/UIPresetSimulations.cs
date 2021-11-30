@@ -90,10 +90,8 @@ public class UIPresetSimulations : MonoBehaviour
     }
     public int MassPower(int massBase, int power)
     {
-        int mass = 1;
-        for (int slot = 0; slot < power; slot++)
-            mass = mass * massBase;
-        return mass;
+
+        return Math.pow(massBase, power);
     }
     public void HidePanel()
     {
