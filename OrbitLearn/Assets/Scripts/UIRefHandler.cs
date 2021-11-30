@@ -20,4 +20,5 @@ public class UIRefHandler : MonoBehaviour
     public UIPresetSimulations PresetSimulationsRef;
     public GameObject UniverseCenter;
     public UIHintDisplay HintDisplayRef;
+    public GameObject PauseDisplayRef;
 }

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public BodyPromptScript BodyInputPanel;
     public UIPresetSimulations PresetSimulations;
     public UIHintDisplay HintDisplay;
+    public GameObject PauseIcon;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -104,6 +105,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadNewScene(SceneHandler.Scene targetScene)
     {
+        if (gamePaused)
+            TogglePause();
+
         ClearUIReferences();
         SimBodies.Clear();
         SceneHandler.Load(targetScene);
@@ -327,10 +331,16 @@ public class GameManager : MonoBehaviour
         gamePaused = !gamePaused;
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
 
-        if (gamePaused) 
+        if (gamePaused)
+        {
             Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.LateUpdate;
+            PauseIcon.SetActive(true);
+        }
         else
+        {
             Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.FixedUpdate;
+            PauseIcon.SetActive(false);
+        }
 
     }
 
@@ -487,6 +497,12 @@ public class GameManager : MonoBehaviour
                 {
                     HintDisplay = b.HintDisplayRef;
                     HintDisplay.gameObject.SetActive(false);
+                }
+
+                if (b.PauseDisplayRef != null)
+                {
+                    PauseIcon = b.PauseDisplayRef;
+                    PauseIcon.SetActive(false);
                 }
 
                 simulationCenter = b.UniverseCenter;
