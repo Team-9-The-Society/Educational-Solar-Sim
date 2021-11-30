@@ -82,9 +82,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 4, false, "StaticB");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 8, false, "StaticB");
 
-        GameManager.Instance.TrySpawnNewBody(100000, 10, 0, 0, 0, 10, 0, 4, false, "MovingB");
+        GameManager.Instance.TrySpawnNewBody(100000, 10, 0, 0, 0, 7.5, 0, 4, false, "MovingB");
 
         GameManager.Instance.FocusOnUniverse();
     }
