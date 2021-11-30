@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     public UISliderMenu SliderMenu;
     public BodyPromptScript BodyInputPanel;
     public UIPresetSimulations PresetSimulations;
-
     [Header("Camera References")]
     public GameObject simulationCenter;
     public CinemachineFreeLook UniverseCam;
@@ -133,10 +132,12 @@ public class GameManager : MonoBehaviour
                     if (tapCount >= 2 && focusedBody == b)
                     {
                         ActivatePlanetCam(b.planetCam);
+
                     }
                     else if (tapCount == 1 && b != null)
                     {
                         ShowBodyInfo(b);
+
                     }
                 }
             }
