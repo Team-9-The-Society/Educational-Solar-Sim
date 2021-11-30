@@ -88,4 +88,9 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.FocusOnUniverse();
     }
+
+    public void HidePanel()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
