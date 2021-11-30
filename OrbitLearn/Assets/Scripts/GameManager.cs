@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public UISliderMenu SliderMenu;
     public BodyPromptScript BodyInputPanel;
     public UIPresetSimulations PresetSimulations;
+    public UIHintDisplay HintDisplay;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -333,6 +334,19 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void DisplayHintMessage(string msg1, string msg2)
+    {
+        HintDisplay.gameObject.SetActive(true);
+        HintDisplay.SetMessageText(msg1, msg2);
+
+    }
+
+    public void HideHintMessage()
+    {
+        HintDisplay.ClearMessageText();
+        HintDisplay.gameObject.SetActive(false);
+    }
+
 
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
@@ -341,6 +355,7 @@ public class GameManager : MonoBehaviour
         cam.Priority = 5;
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
+        DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
     }
 
     //Changes the priority to favor the universe over a particular planet
@@ -351,6 +366,8 @@ public class GameManager : MonoBehaviour
             ActivePlanetCam.Priority = 4;
             ActivePlanetCam = null;
         }
+        if (HintDisplay != null)
+            HideHintMessage();
         UniverseCam.Priority = 5;
     }
 
@@ -466,6 +483,12 @@ public class GameManager : MonoBehaviour
                     PresetSimulations.gameObject.SetActive(false);
                 }
 
+                if (b.HintDisplayRef != null)
+                {
+                    HintDisplay = b.HintDisplayRef;
+                    HintDisplay.gameObject.SetActive(false);
+                }
+
                 simulationCenter = b.UniverseCenter;
 
 
@@ -491,6 +514,7 @@ public class GameManager : MonoBehaviour
         focusedBody = b;
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
+        DisplayHintMessage("Quickly tap on the body again to focus.", "");
     }
 
     //Hides Body Info Panel
@@ -502,6 +526,8 @@ public class GameManager : MonoBehaviour
             focusedBody = null;
             BodyInfoPanel.gameObject.SetActive(false);
         }
+        if (HintDisplay != null)
+            HideHintMessage();
     }
 
 

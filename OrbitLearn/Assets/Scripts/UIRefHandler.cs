@@ -19,4 +19,5 @@ public class UIRefHandler : MonoBehaviour
     public BodyPromptScript BodyInputPanelRef;
     public UIPresetSimulations PresetSimulationsRef;
     public GameObject UniverseCenter;
+    public UIHintDisplay HintDisplayRef;
 }
