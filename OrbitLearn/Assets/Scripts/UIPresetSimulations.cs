@@ -88,11 +88,11 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.FocusOnUniverse();
     }
-    public int MassPower(int power)
+    public int MassPower(int massBase, int power)
     {
-        int mass = 1;
+        int mass = massBase;
         for (int slot = 0; slot < power; slot++)
-            mass = mass * 10;
+            mass = mass * massBase;
         return mass;
     }
     public void HidePanel()
