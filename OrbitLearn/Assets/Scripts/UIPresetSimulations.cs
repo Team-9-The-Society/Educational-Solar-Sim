@@ -84,11 +84,17 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 8, false, "StaticB");
 
-        GameManager.Instance.TrySpawnNewBody(100000, 10, 0, 0, 0, 7.5, 0, 4, false, "MovingB");
+        GameManager.Instance.TrySpawnNewBody(100000, 10, 0, 10, 0, 7.5, 0, 8, false, "MovingB");
 
         GameManager.Instance.FocusOnUniverse();
     }
-
+    public int MassPower(int power)
+    {
+        int mass = 1;
+        for (int slot = 0; slot < power; slot++)
+            mass = mass * 10;
+        return mass;
+    }
     public void HidePanel()
     {
         this.gameObject.SetActive(false);
