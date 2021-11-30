@@ -32,7 +32,7 @@ public class UIPresetSimulations : MonoBehaviour
 
 
     public void Simulation1() //current preset orbit
-    { 
+    {
 
 
         GameManager.Instance.DeleteAllBodies();
@@ -60,9 +60,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(0.000000001, -10, 0, 0, 0, 0, 0, 1, false, "SmlStat");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 4, false, "Steven");
 
-        GameManager.Instance.TrySpawnNewBody(0.000000001, 10, 0, 0, -5, 0, 0, 1, false, "SmlMove");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 10, 0, 0, 0, 0, 0, 4, false, "Robert");
 
         GameManager.Instance.FocusOnUniverse();
     }
@@ -71,9 +71,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(0.000000001, -10, 0, 0, 0, 0, 0, 1, false, "SmlStat");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 4, false, "StaticB");
 
-        GameManager.Instance.TrySpawnNewBody(1000000000, 10, 0, 0, -5, 0, 0, 8, false, "LrgMove");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 10, 0, 0, -10, 0, 0, 4, false, "MovingB");
 
         GameManager.Instance.FocusOnUniverse();
     }
@@ -82,9 +82,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 5.906, false, "LrgStat");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 0, 0, 0, 0, 0, 0, 4, false, "StaticB");
 
-        GameManager.Instance.TrySpawnNewBody(100000000, 20, 0, 0, 0, 10, 0, 3.458, false, "LrgMove");
+        GameManager.Instance.TrySpawnNewBody(1000000000, 10, 0, 0, 0, 13, 0, 4, false, "MovingB");
 
         GameManager.Instance.FocusOnUniverse();
     }
