@@ -1,0 +1,1152 @@
+fileFormatVersion: 2
+guid: 438413353da229d43acb752cf179b5af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7396710240065390323
+    second: App buttons transparent with stars_0
+  - first:
+      213: -3879771018340260945
+    second: App buttons transparent with stars_1
+  - first:
+      213: 3071188505351600235
+    second: App buttons transparent with stars_2
+  - first:
+      213: 9123754908454095531
+    second: App buttons transparent with stars_3
+  - first:
+      213: -7483376755041904863
+    second: App buttons transparent with stars_4
+  - first:
+      213: -6164633848100481711
+    second: App buttons transparent with stars_5
+  - first:
+      213: 5386009605429058590
+    second: App buttons transparent with stars_6
+  - first:
+      213: -3032063969117701977
+    second: App buttons transparent with stars_7
+  - first:
+      213: -5866282426236968778
+    second: App buttons transparent with stars_8
+  - first:
+      213: -4204341556111925331
+    second: App buttons transparent with stars_9
+  - first:
+      213: -1877141857848259268
+    second: App buttons transparent with stars_10
+  - first:
+      213: -1049480383774404982
+    second: App buttons transparent with stars_11
+  - first:
+      213: 437747450726987012
+    second: App buttons transparent with stars_12
+  - first:
+      213: 112497183140409665
+    second: App buttons transparent with stars_13
+  - first:
+      213: -4172408356848998679
+    second: App buttons transparent with stars_14
+  - first:
+      213: 1229892004925352680
+    second: App buttons transparent with stars_15
+  - first:
+      213: 7121792927652871397
+    second: App buttons transparent with stars_16
+  - first:
+      213: -8895254189860952450
+    second: App buttons transparent with stars_17
+  - first:
+      213: -7068521113779811759
+    second: App buttons transparent with stars_18
+  - first:
+      213: 5890067700480868968
+    second: App buttons transparent with stars_19
+  - first:
+      213: 8450425256152522195
+    second: App buttons transparent with stars_20
+  - first:
+      213: -7494903656173399449
+    second: App buttons transparent with stars_21
+  - first:
+      213: 7704611360827335303
+    second: App buttons transparent with stars_22
+  - first:
+      213: 4884693340705790200
+    second: App buttons transparent with stars_23
+  - first:
+      213: -7774935919072772262
+    second: App buttons transparent with stars_24
+  - first:
+      213: -1346925146419859520
+    second: App buttons transparent with stars_25
+  - first:
+      213: 768118778229801379
+    second: App buttons transparent with stars_26
+  - first:
+      213: -2285048362616891595
+    second: App buttons transparent with stars_27
+  - first:
+      213: 6938339073112836342
+    second: App buttons transparent with stars_28
+  - first:
+      213: -6276061883171003028
+    second: App buttons transparent with stars_29
+  - first:
+      213: -8275625090637982548
+    second: App buttons transparent with stars_30
+  - first:
+      213: -926234921678590768
+    second: App buttons transparent with stars_31
+  - first:
+      213: -216078221464854560
+    second: App buttons transparent with stars_32
+  - first:
+      213: -1789018939545600007
+    second: App buttons transparent with stars_33
+  - first:
+      213: -897164225182383430
+    second: App buttons transparent with stars_34
+  - first:
+      213: 1571508824233600749
+    second: App buttons transparent with stars_35
+  - first:
+      213: -7354720111123863082
+    second: App buttons transparent with stars_36
+  - first:
+      213: -2380756760794730923
+    second: App buttons transparent with stars_37
+  - first:
+      213: 6307722734508606774
+    second: App buttons transparent with stars_38
+  - first:
+      213: 8023818201845074343
+    second: App buttons transparent with stars_39
+  - first:
+      213: 6489725508406606362
+    second: App buttons transparent with stars_40
+  - first:
+      213: -3576600681878969469
+    second: App buttons transparent with stars_41
+  - first:
+      213: -7795154926002294178
+    second: App buttons transparent with stars_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: App buttons transparent with stars_0
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 9195
+        width: 103
+        height: 1182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6879d16c466a660800000000000000
+      internalID: 7396710240065390323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_1
+      rect:
+        serializedVersion: 2
+        x: 4810
+        y: 9252
+        width: 1467
+        height: 1161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa329f190d8482ac0800000000000000
+      internalID: -3879771018340260945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_2
+      rect:
+        serializedVersion: 2
+        x: 7866
+        y: 9067
+        width: 1295
+        height: 1374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68bebb7cad0f9a20800000000000000
+      internalID: 3071188505351600235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_3
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 8099
+        width: 2706
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa0220efb61e9e70800000000000000
+      internalID: 9123754908454095531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_4
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 8042
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127df4b6d74b52890800000000000000
+      internalID: -7483376755041904863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_5
+      rect:
+        serializedVersion: 2
+        x: 7281
+        y: 7985
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1551f914d22d27aa0800000000000000
+      internalID: -6164633848100481711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_6
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 7188
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cd0782333feba40800000000000000
+      internalID: 5386009605429058590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_7
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 7088
+        width: 2817
+        height: 786
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a87a7872e1fbe5d0800000000000000
+      internalID: -3032063969117701977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_8
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 7038
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b06708d637c69ea0800000000000000
+      internalID: -5866282426236968778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_9
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 6240
+        width: 2702
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf198951ad27a5c0800000000000000
+      internalID: -4204341556111925331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_10
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 6976
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d00f10d6d03f5e0800000000000000
+      internalID: -1877141857848259268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_11
+      rect:
+        serializedVersion: 2
+        x: 2870
+        y: 6977
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ec26eb62f7f61f0800000000000000
+      internalID: -1049480383774404982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_12
+      rect:
+        serializedVersion: 2
+        x: 3984
+        y: 6221
+        width: 2813
+        height: 788
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4053ae5bcf0331600800000000000000
+      internalID: 437747450726987012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_13
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 6212
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 141f05f879baf8100800000000000000
+      internalID: 112497183140409665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_14
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 5301
+        width: 2705
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6e420b4b0a816c0800000000000000
+      internalID: -4172408356848998679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_15
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 5743
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea2ba12344711110800000000000000
+      internalID: 1229892004925352680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_16
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 5331
+        width: 2812
+        height: 788
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec73a05fe0b5d260800000000000000
+      internalID: 7121792927652871397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_17
+      rect:
+        serializedVersion: 2
+        x: 7402
+        y: 5329
+        width: 2813
+        height: 789
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7668828175bd8480800000000000000
+      internalID: -8895254189860952450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_18
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 5130
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a4ec56f7197ed90800000000000000
+      internalID: -7068521113779811759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_19
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 5126
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8620a2edd59bdb150800000000000000
+      internalID: 5890067700480868968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_20
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 4354
+        width: 2812
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddd5f98ff0f54570800000000000000
+      internalID: 8450425256152522195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_21
+      rect:
+        serializedVersion: 2
+        x: 7402
+        y: 4382
+        width: 2813
+        height: 790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762120c95d0ccf790800000000000000
+      internalID: -7494903656173399449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_22
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 4389
+        width: 2709
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7826d8e36374cea60800000000000000
+      internalID: 7704611360827335303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_23
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 3549
+        width: 2706
+        height: 741
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f81c7196bae9c340800000000000000
+      internalID: 4884693340705790200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_24
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 4286
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ffd3899f0e91490800000000000000
+      internalID: -7774935919072772262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_25
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 4286
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf6a9437b2ce4de0800000000000000
+      internalID: -1346925146419859520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_26
+      rect:
+        serializedVersion: 2
+        x: 4034
+        y: 3556
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1c1b985f7e8aa00800000000000000
+      internalID: 768118778229801379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_27
+      rect:
+        serializedVersion: 2
+        x: 4034
+        y: 2674
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537d1a3fe90e940e0800000000000000
+      internalID: -2285048362616891595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_28
+      rect:
+        serializedVersion: 2
+        x: 7452
+        y: 3442
+        width: 2813
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f88a1840aee94060800000000000000
+      internalID: 6938339073112836342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_29
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 2645
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65293128f2f6e8a0800000000000000
+      internalID: -6276061883171003028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_30
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 2553
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4963283d2172d80800000000000000
+      internalID: -8275625090637982548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_31
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1677
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc29c20f3a5523f0800000000000000
+      internalID: -926234921678590768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_32
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 2414
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef93ed9006500df0800000000000000
+      internalID: -216078221464854560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_33
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 1791
+        width: 2812
+        height: 783
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff30fbc0c02c27e0800000000000000
+      internalID: -1789018939545600007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_34
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 1720
+        width: 2813
+        height: 790
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2c0dcf3e1ac83f0800000000000000
+      internalID: -897164225182383430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_35
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 901
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6e5dd03fe1fc510800000000000000
+      internalID: 1571508824233600749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_36
+      rect:
+        serializedVersion: 2
+        x: 5063
+        y: 1011
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d96a02a609cee990800000000000000
+      internalID: -7354720111123863082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_37
+      rect:
+        serializedVersion: 2
+        x: 5067
+        y: 894
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e6830075ad5fed0800000000000000
+      internalID: -2380756760794730923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_38
+      rect:
+        serializedVersion: 2
+        x: 5879
+        y: 894
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6358a044868898750800000000000000
+      internalID: 6307722734508606774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_39
+      rect:
+        serializedVersion: 2
+        x: 4276
+        y: 125
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a90a4f74245a5f60800000000000000
+      internalID: 8023818201845074343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_40
+      rect:
+        serializedVersion: 2
+        x: 5054
+        y: 233
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1afd5247f2201a50800000000000000
+      internalID: 6489725508406606362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_41
+      rect:
+        serializedVersion: 2
+        x: 5067
+        y: 118
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3832f2521ac5d5ec0800000000000000
+      internalID: -3576600681878969469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: App buttons transparent with stars_42
+      rect:
+        serializedVersion: 2
+        x: 5871
+        y: 118
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e523f7235eb02d390800000000000000
+      internalID: -7795154926002294178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d6ac6ea374681b240b9502d4115d9ac6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

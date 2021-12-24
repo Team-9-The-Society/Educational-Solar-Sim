@@ -25,7 +25,7 @@ public class BodyPromptScript : MonoBehaviour
 
     [Header("Input Variables")]
     public double mass;
-    public string name;
+    public string bodyName;
     public double xPos;
     public double yPos;
     public double zPos;
@@ -68,7 +68,7 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
-                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, name);
+                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName);
                 ClearInputsAndValues();
                 HidePanel();
             }
@@ -82,7 +82,7 @@ public class BodyPromptScript : MonoBehaviour
                 Rigidbody r = passedBody.gameObject.GetComponent<Rigidbody>();
                 passedBody.transform.position = new Vector3((float)xPos, (float)yPos, (float)zPos);
                 passedBody.transform.localScale = new Vector3((float)size, (float)size, (float)size);
-                passedBody.bodyName = name;
+                passedBody.bodyName = bodyName;
                 float camOrbit = (float)((size * 8) + 27) / 7;
                 passedBody.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
                 passedBody.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
@@ -165,7 +165,7 @@ public class BodyPromptScript : MonoBehaviour
                 size = Convert.ToDouble(sizeInput.value);
                 break;
             case "name":
-                name = nameInput.text;
+                bodyName = nameInput.text;
                 break;
         }
     }
@@ -224,5 +224,10 @@ public class BodyPromptScript : MonoBehaviour
         SetInput("xVel");
         SetInput("zVel");
         SetInput("mass");
+    }
+
+    void Update()
+    {
+        nameInput.characterLimit = 7;
     }
 }

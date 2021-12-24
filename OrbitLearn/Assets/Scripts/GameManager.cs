@@ -18,13 +18,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    /*
-    [Header("UI Prefab References")]
-    public GameObject BodyInfoPanelPrefab;
-    public GameObject BodiesPanelPrefab;
-    public GameObject UISliderMenuPrefab;
-    public GameObject BodyInputPanelPrefab;
-    */
 
     [Header("UI References")]
     public UIBodyInformationPanel BodyInfoPanel;
@@ -32,8 +25,11 @@ public class GameManager : MonoBehaviour
     public UISliderMenu SliderMenu;
     public BodyPromptScript BodyInputPanel;
     public UIPresetSimulations PresetSimulations;
+    public UIHintDisplay HintDisplay;
+    public GameObject PauseIcon;
 
     [Header("Camera References")]
+    public GameObject simulationCenter;
     public CinemachineFreeLook UniverseCam;
     public CinemachineFreeLook ActivePlanetCam;
 
@@ -61,7 +57,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-
     public static GameManager Instance { get; set; }
 
 
@@ -69,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -109,6 +105,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadNewScene(SceneHandler.Scene targetScene)
     {
+        if (gamePaused)
+            TogglePause();
+
         ClearUIReferences();
         SimBodies.Clear();
         SceneHandler.Load(targetScene);
@@ -331,6 +330,31 @@ public class GameManager : MonoBehaviour
     {
         gamePaused = !gamePaused;
         Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+
+        if (gamePaused)
+        {
+            Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.LateUpdate;
+            PauseIcon.SetActive(true);
+        }
+        else
+        {
+            Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.FixedUpdate;
+            PauseIcon.SetActive(false);
+        }
+
+    }
+
+    public void DisplayHintMessage(string msg1, string msg2)
+    {
+        HintDisplay.gameObject.SetActive(true);
+        HintDisplay.SetMessageText(msg1, msg2);
+
+    }
+
+    public void HideHintMessage()
+    {
+        HintDisplay.ClearMessageText();
+        HintDisplay.gameObject.SetActive(false);
     }
 
 
@@ -341,6 +365,7 @@ public class GameManager : MonoBehaviour
         cam.Priority = 5;
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
+        DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
     }
 
     //Changes the priority to favor the universe over a particular planet
@@ -351,34 +376,68 @@ public class GameManager : MonoBehaviour
             ActivePlanetCam.Priority = 4;
             ActivePlanetCam = null;
         }
+        if (HintDisplay != null)
+            HideHintMessage();
         UniverseCam.Priority = 5;
     }
 
     //Increase the size of the Universe Cam orbit based on planetary positions
     public void RefreshUniverseCam()
     {
-        float maxDist = 25;
-        foreach (Body b in SimBodies)
+        //Set position of the UniverseCenter
+        if (SimBodies.Count == 0)
         {
-            float distance = Vector3.Distance(b.gameObject.transform.position, Vector3.zero);
-            if (maxDist < distance)
-            {
-                maxDist = distance;
-            }
+            simulationCenter.transform.position = new Vector3(0, 0, 0);
+            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
         }
-        maxDist += 5;
+        else if (SimBodies.Count == 1)
+        {
+            simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
+            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+        }
+        else
+        {
+            float massMax = 0;
+            float xCenter = 0;
+            float yCenter = 0;
+            float zCenter = 0;
 
-       // Debug.Log("MaxDist = " + maxDist);
+            foreach (Body b in SimBodies)
+            {
+                xCenter += (b.gameObject.transform.position.x);
+                yCenter += (b.gameObject.transform.position.y);
+                zCenter += (b.gameObject.transform.position.z);
+            }
 
-        /*
-        CinemachineFreeLook.Orbit t = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-        CinemachineFreeLook.Orbit m = new CinemachineFreeLook.Orbit(0, maxDist);
-        CinemachineFreeLook.Orbit l = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
-        */
+            xCenter = xCenter / SimBodies.Count;
+            yCenter = yCenter / SimBodies.Count;
+            zCenter = zCenter / SimBodies.Count;
 
-        UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-        UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
-        UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+
+            float maxDist = 25;
+            foreach (Body b in SimBodies)
+            {
+                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                if (maxDist < distance)
+                {
+                    maxDist = distance;
+                }
+            }
+            maxDist += 50;
+
+            simulationCenter.transform.position = centroid;
+
+            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+
+        }
+
 
     }
 
@@ -431,8 +490,23 @@ public class GameManager : MonoBehaviour
                 {
                     PresetSimulations = b.PresetSimulationsRef;
                     PresetSimulations.ActivateUIElement(this);
-                    //Set PresetSimulations menu to inactive
+                    PresetSimulations.gameObject.SetActive(false);
                 }
+
+                if (b.HintDisplayRef != null)
+                {
+                    HintDisplay = b.HintDisplayRef;
+                    HintDisplay.gameObject.SetActive(false);
+                }
+
+                if (b.PauseDisplayRef != null)
+                {
+                    PauseIcon = b.PauseDisplayRef;
+                    PauseIcon.SetActive(false);
+                }
+
+                simulationCenter = b.UniverseCenter;
+
 
             }
         }
@@ -446,6 +520,7 @@ public class GameManager : MonoBehaviour
         BodiesPanel = null;
         focusedBody = null;
         PresetSimulations = null;
+        simulationCenter = null;
     }
 
 
@@ -455,6 +530,7 @@ public class GameManager : MonoBehaviour
         focusedBody = b;
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
+        DisplayHintMessage("Quickly tap on the body again to focus.", "");
     }
 
     //Hides Body Info Panel
@@ -466,6 +542,8 @@ public class GameManager : MonoBehaviour
             focusedBody = null;
             BodyInfoPanel.gameObject.SetActive(false);
         }
+        if (HintDisplay != null)
+            HideHintMessage();
     }
 
 
