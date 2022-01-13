@@ -249,7 +249,7 @@ public class GameManager : MonoBehaviour
 
         Destroy(b.gameObject);
 
-
+        BodyCount--;
         BodyInfoPanel.ClearHighlightedBody();
         BodyInfoPanel.gameObject.SetActive(false);
     }
@@ -267,6 +267,7 @@ public class GameManager : MonoBehaviour
         for (int j = 0; j < bodies.Length; j++)
         {
             DeleteBody(bodies[j]);
+            
         }
         SimBodies = new List<Body>();
     }
