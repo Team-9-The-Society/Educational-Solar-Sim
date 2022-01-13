@@ -267,7 +267,6 @@ public class GameManager : MonoBehaviour
         for (int j = 0; j < bodies.Length; j++)
         {
             DeleteBody(bodies[j]);
-            
         }
         SimBodies = new List<Body>();
     }
