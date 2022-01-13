@@ -249,7 +249,7 @@ public class GameManager : MonoBehaviour
 
         Destroy(b.gameObject);
 
-
+        BodyCount--;
         BodyInfoPanel.ClearHighlightedBody();
         BodyInfoPanel.gameObject.SetActive(false);
     }
