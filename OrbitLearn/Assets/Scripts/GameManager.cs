@@ -164,12 +164,16 @@ public class GameManager : MonoBehaviour
         {
             PresetSimulations.Simulation1();
         }
+       
+    }
 
+    //uses a fixed update cycle to keep physics consistent
+    void FixedUpdate()
+    {
         if (gamePaused == false)
         {
             UpdateForces();
         }
-       
     }
 
     //Unfocuses on a selected body, if any, and zooms out to a universe view
