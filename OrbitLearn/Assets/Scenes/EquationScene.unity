@@ -511,7 +511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n<b><style=\"h2\"><u>1. v = v\u2092 + at \r\n</b></u></style>\r\nThis
+  m_text: "\n\n\n\n<b><style=\"h2\"><u>1. v = v\u2092 + at \r\n</b></u></style>\r\nThis
     equation is used to find a final velocity over time. The output v represents
     the final velocity calculated, the input v\u2092 represents the initial velocity
     of an object, a represents acceleration which is a change in velocity over time,
@@ -1025,7 +1025,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Equations Sheet</b>
+  m_text: '
+
+    <b>Equations Sheet</b>
 
 '
   m_isRightToLeft: 0

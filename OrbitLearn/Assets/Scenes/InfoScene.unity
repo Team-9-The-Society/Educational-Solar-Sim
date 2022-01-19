@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,11 +277,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b><style=\"h2\"><u>Description: \r\n</b></u></style>\r\nThis app is designed
-    to be an educational app about the N-Body simulation. An N-body simulation approximates
-    the motion of particles, often specifically particles that interact with one
-    another through some type of physical forces. One example of a physical force
-    is gravity. \r\n\r\n<b><style=\"h2\"><u>Creators: \r\n</b></u></style>\r\n<indent=2%>\u2022Ryan
+  m_text: "\n\n<b><style=\"h2\"><u>Description: \r\n</b></u></style>\r\nThis app
+    is designed to be an educational app about the N-Body simulation. An N-body simulation
+    approximates the motion of particles, often specifically particles that interact
+    with one another through some type of physical forces. One example of a physical
+    force is gravity. \r\n\r\n<b><style=\"h2\"><u>Creators: \r\n</b></u></style>\r\n<indent=2%>\u2022Ryan
     Derr</indent>\r\n<indent=2%>\u2022Logan Edmund </indent>\r\n<indent=2%>\u2022Sam
     Gurka </indent>\r\n<indent=2%>\u2022Sam Ketner </indent>\r\n<indent=2%>\u2022Kacy
     Luker </indent>\r\n<indent=2%>\u2022Brendan Moore </indent>\r\n<indent=2%>\u2022Dale
@@ -1107,7 +1107,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Information</b>
+  m_text: '
+
+    <b>Information</b>
 
 '
   m_isRightToLeft: 0
