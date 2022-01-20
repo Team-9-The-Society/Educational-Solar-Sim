@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -328,7 +328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 76, y: -99}
+  m_AnchoredPosition: {x: 79, y: -116}
   m_SizeDelta: {x: 150, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155332634
@@ -511,40 +511,40 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b><style=\"h2\"><u>1. v = v\u2092 + at \r\n</b></u></style>\r\nThis equation
-    is used to find a final velocity over time. The output v represents the final
-    velocity calculated, the input v\u2092 represents the initial velocity of an
-    object, a represents acceleration which is a change in velocity over time, and
-    lastly t represents the time period calculated over. \r\n<b><style=\"h2\"><u>2.
+  m_text: "\n<b><style=\"h2\"><u>1. v = v\u2092 + at \r\n</b></u></style>\r\nThis
+    equation is used to find a final velocity over time. The output v represents
+    the final velocity calculated, the input v\u2092 represents the initial velocity
+    of an object, a represents acceleration which is a change in velocity over time,
+    and lastly t represents the time period calculated over.\n \r\n<b><style=\"h2\"><u>2.
     v\xB2 = v\u2092\xB2 + 2ax \r\n</b></u></style>\r\nThis equation is used describe
     the final velocity over a displacement [The value multiplied by itself]. The
     output v\xB2 represents the square of the final velocity, the input v\u2092\xB2
     represents the initial velocity of an object, a still represents the acceleration
     which is a change in the velocity over time, and lastly x represents the displacement
-    of the object.\r\n<b><style=\"h2\"><u>3. \u0394x = (v + v\u2092)/2*t \r\n</b></u></style>\r\nThis
+    of the object.\r\n\n<b><style=\"h2\"><u>3. \u0394x = (v + v\u2092)/2*t \r\n</b></u></style>\r\nThis
     equation is used to describe the displacement of an object. The output \u0394x
     represents the displacement [Change from starting position from final position]
     of the object, the input v represents the final velocity, v\u2092 still represents
     the inital velocity of an object, and the input t still represents the overall
-    measured time. \r\n<b><style=\"h2\"><u>4. \u0394x = v\u2092t + (1/2)*a*t\xB2
+    measured time. \r\n\n<b><style=\"h2\"><u>4. \u0394x = v\u2092t + (1/2)*a*t\xB2
     \r\n</b></u></style>\r\nThis equation is used to describe the displacement of
     an object. The output \u0394x represents the displacement [Change from starting
     position from final position] of the object, the input v\u2092 still represents
     the initial velocity of an object, and the input t still represents the overall
     measured time, and a still represents the acceleration which is a change in the
-    velocity over time. \r\n<b><style=\"h2\"><u>5. F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThis
+    velocity over time. \r\n\n<b><style=\"h2\"><u>5. F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThis
     equation is used to describe the Force of gravity. The output F represents the
     Force of gravity on the object, the input G is the gravitational constant [SEE
     FOOT NOTE], m is the mass of the current object, M is the mass of the second
-    object (not itself), and r represents the radius between the two objects.\r\n<b><style=\"h2\"><u>6.
+    object (not itself), and r represents the radius between the two objects.\r\n\n<b><style=\"h2\"><u>6.
     F = ma \r\n</b></u></style>\r\nThis equation is used to describe a Force. The
     output F represents the Force of the object, the input m represents the mass
-    of the object, and a represents the acceleration of the object.\r\n<b><style=\"h2\"><u>Units
+    of the object, and a represents the acceleration of the object.\r\n\n<b><style=\"h2\"><u>Units
     in the Metric System\r\n</b></u></style>\r\n1. Time is measured in seconds\r\n2.
     Distance is measured in meters\r\n3. Velocity is measured in meters per second\r\n4.
     Acceleration is measured in meters per second per second \r\n5. Force is measured
     in <link=https://en.wikipedia.org/wiki/Newton_(unit)><i>newtons</i></link>\r\n6.
-    Mass is measured in kilograms\r\n<b><style=\"h2\"><u>Notes\r\n</b></u></style>\r\n1.
+    Mass is measured in kilograms\r\n\n<b><style=\"h2\"><u>Notes\r\n</b></u></style>\r\n1.
     t makes a very similar format as a <link=https://www.mathsisfun.com/algebra/quadratic-equation.html><i>quadratic
     equation</i></link> for formula 3. \r\n2. G is the gravitational constant which
     is equal to  6.67408 \xD7 10e-11.\r\n3. The <link=https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas><i>kinematic
@@ -924,8 +924,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2074230004}
   m_HandleRect: {fileID: 2074230003}
   m_Direction: 2
-  m_Value: 0.99999887
-  m_Size: 0.38800764
+  m_Value: 0.99999875
+  m_Size: 0.38800758
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1002,7 +1002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 9, y: -29}
+  m_AnchoredPosition: {x: 9, y: -20}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448467858
@@ -1025,7 +1025,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Equations Sheet</b>
+  m_text: '
+
+    Equations
 
 '
   m_isRightToLeft: 0
@@ -1360,8 +1362,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.887}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 0, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2008516048
 MonoBehaviour:
