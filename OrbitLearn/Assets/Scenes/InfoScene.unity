@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n<b><style=\"h2\"><u>Description: \r\n</b></u></style>\r\nThis app
+  m_text: "\n\n\n<b><style=\"h2\"><u>Description: \r\n</b></u></style>\r\nThis app
     is designed to be an educational app about the N-Body simulation. An N-body simulation
     approximates the motion of particles, often specifically particles that interact
     with one another through some type of physical forces. One example of a physical
@@ -501,7 +501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 79, y: -106}
+  m_AnchoredPosition: {x: 79, y: -104}
   m_SizeDelta: {x: 150, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &269245790
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6307722734508606774, guid: 438413353da229d43acb752cf179b5af,
+  m_Sprite: {fileID: -2380756760794730923, guid: 438413353da229d43acb752cf179b5af,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1084,7 +1084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -42}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307332854
