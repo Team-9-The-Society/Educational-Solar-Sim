@@ -71,12 +71,12 @@ public class BodiesInfoButton : MonoBehaviour
             screenplier = 2195 * screenplier;
             xPosition = 465;
         }
-        
-        
+
+
         //1.778 is the ratio of height to width that has a favored starting offset.
         // this needs to and accounts for different phone sizes for button initial offset.
-       
 
+        int bodyNullDisplayCounter = 1;
         for (int loopCount = 0;loopCount<count;loopCount++)
         {
             int num = loopCount;
@@ -87,12 +87,20 @@ public class BodiesInfoButton : MonoBehaviour
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
             button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, -372 *(loopCount - panelExpansionCount) + screenplier + (float)7.8 * panelExpansionCount);//Changing text
-                
-          
 
-            button.GetComponentInChildren<TMP_Text>().text = "Body " + (loopCount+1)+": \n"+ tmp[loopCount].bodyName;
+
+            if (tmp[num].bodyName == "")
+            {
+                tmp[num].bodyName = "Body " + bodyNullDisplayCounter;
+            }
+            else
+            {
+                bodyNullDisplayCounter--;
+            }
+            button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
             Buttons.Add(button);
             buttonCount++;
+            bodyNullDisplayCounter++;
             //////
         }
     }
@@ -126,7 +134,8 @@ public class BodiesInfoButton : MonoBehaviour
         int count = 1;
         foreach (Body b in gameManagerReference.SimBodies)
         {
-            totalDisplay += "<u><b>Body Name: " +b.bodyName + "</u></b>\n";
+            totalDisplay += "<u><b>Body Name:</u></b>\n" + b.bodyName +"\n";
+          
             totalDisplay += returnText(b, 3);
             totalDisplay += returnText(b, 0);
             totalDisplay+= returnText(b, 1);
@@ -136,20 +145,24 @@ public class BodiesInfoButton : MonoBehaviour
         return totalDisplay;
 
     }
+
+
+
+
     public string returnText(Body b, int mode)
     {
         string shipped = "";
         switch (mode)
         {
             case 0:
-                shipped += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") + "m/s\n"+ "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "m/s\n" + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "m/s\n";
+                shipped += "X Velocity: " + b.returnRigBody().velocity.x.ToString("#.00") + "m/s\n"+ "Y Velocity: " + b.returnRigBody().velocity.y.ToString("#.00") + "m/s\n" + "Z Velocity: " + b.returnRigBody().velocity.z.ToString("#.00") + "m/s\n\n";
                 break;
             case 1:
                 shipped += "X Position: " + b.gameObject.transform.position.x.ToString("#.00") + "m\n" + "Y Position: " + b.gameObject.transform.position.y.ToString("#.00") + "m\n" + "Z Position: " + b.gameObject.transform.position.z.ToString("#.00") + "m\n";
 
                 break;
             default:
-                shipped += "Mass " + b.returnRigBody().mass.ToString("E2") + "kg\n";
+                shipped += "Mass " + b.returnRigBody().mass.ToString("E2") + "kg\n\n";
                 break;
         }
         return shipped;
