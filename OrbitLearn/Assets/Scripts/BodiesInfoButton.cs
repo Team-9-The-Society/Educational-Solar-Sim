@@ -72,7 +72,11 @@ public class BodiesInfoButton : MonoBehaviour
             xPosition = 465;
         }
 
+        float baseHeightDisplay = 150, baseWidthDisplay = 320;
+        float textSizeIndex = (float)320/68;
 
+        float offsetHeight = baseHeightDisplay * (float)Screen.height / 1920;
+        float offsetWidth = baseWidthDisplay * (float)Screen.width / 1080;
         //1.778 is the ratio of height to width that has a favored starting offset.
         // this needs to and accounts for different phone sizes for button initial offset.
 
@@ -87,7 +91,7 @@ public class BodiesInfoButton : MonoBehaviour
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
             button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, -372 *(loopCount - panelExpansionCount) + screenplier + (float)7.8 * panelExpansionCount);//Changing text
-
+            button.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
 
             if (tmp[num].bodyName == "")
             {
@@ -98,6 +102,7 @@ public class BodiesInfoButton : MonoBehaviour
                 bodyNullDisplayCounter--;
             }
             button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
+            button.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth/textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
             Buttons.Add(button);
             buttonCount++;
             bodyNullDisplayCounter++;
