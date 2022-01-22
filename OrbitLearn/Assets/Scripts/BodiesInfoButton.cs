@@ -60,7 +60,7 @@ public class BodiesInfoButton : MonoBehaviour
         }
         float screenplier = ((((float)Screen.height) / ((float)Screen.width)) / ((float)1920/1080));
         screenplier = screenplier - 2 * (screenplier - 1) / 5;
-        int xPosition = 422;
+        int xPosition = 412;
 
         if (presetFilm == 1)
         {
@@ -91,7 +91,7 @@ public class BodiesInfoButton : MonoBehaviour
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);//372
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, -450 *(loopCount - panelExpansionCount) + screenplier + (float)7.8 * panelExpansionCount);//Changing text
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, (float)-455.5 * (loopCount - panelExpansionCount) - 1500 + screenplier + (float)2.8 * panelExpansionCount);//Changing text
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
 
             if (tmp[num].bodyName == "")
