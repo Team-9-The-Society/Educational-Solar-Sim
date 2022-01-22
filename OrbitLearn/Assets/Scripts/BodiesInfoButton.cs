@@ -136,8 +136,14 @@ public class BodiesInfoButton : MonoBehaviour
             buttonSpawn = 1;
             spawnButtons(knownBodyCount);
         }
-
         string totalDisplay = "";
+        if (knownBodyCount == 0)
+        {
+            totalDisplay += "No Bodies are currently displayed. Please add a body for their information to be displayed promply here.";
+        }
+
+
+        
         int count = 1;
         foreach (Body b in gameManagerReference.SimBodies)
         {
