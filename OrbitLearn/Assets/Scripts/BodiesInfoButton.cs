@@ -15,6 +15,7 @@ public class BodiesInfoButton : MonoBehaviour
     public int panelExpansionCount = 0;
     public int buttonCount = 0;
     public int presetFilm = 0;
+    public int defaultBodyCountDisplayNum = 1;
     public List<GameObject> Buttons;
 
     [Header("Input Field References")]
@@ -80,7 +81,7 @@ public class BodiesInfoButton : MonoBehaviour
         //1.778 is the ratio of height to width that has a favored starting offset.
         // this needs to and accounts for different phone sizes for button initial offset.
 
-        int bodyNullDisplayCounter = 1;
+
         for (int loopCount = 0;loopCount<count;loopCount++)
         {
             int num = loopCount;
@@ -89,23 +90,24 @@ public class BodiesInfoButton : MonoBehaviour
             button.GetComponent<Button>().onClick.AddListener(() => FocusOnPlanet(num));
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
 
-            //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, -372 *(loopCount - panelExpansionCount) + screenplier + (float)7.8 * panelExpansionCount);//Changing text
+            //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);//372
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, -450 *(loopCount - panelExpansionCount) + screenplier + (float)7.8 * panelExpansionCount);//Changing text
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
 
             if (tmp[num].bodyName == "")
             {
-                tmp[num].bodyName = "Body " + bodyNullDisplayCounter;
+                tmp[num].bodyName = "Body " + defaultBodyCountDisplayNum;
+                defaultBodyCountDisplayNum++;
             }
-            else
+           /* else
             {
                 bodyNullDisplayCounter--;
-            }
+            }*/
             button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
             button.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth/textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
             Buttons.Add(button);
             buttonCount++;
-            bodyNullDisplayCounter++;
+            
             //////
         }
     }
@@ -139,7 +141,7 @@ public class BodiesInfoButton : MonoBehaviour
         int count = 1;
         foreach (Body b in gameManagerReference.SimBodies)
         {
-            totalDisplay += "<u><b>Body Name:</u></b>\n" + b.bodyName +"\n";
+            totalDisplay += "<u><b>Body Name:</u></b> " + b.bodyName +"\n";
           
             totalDisplay += returnText(b, 3);
             totalDisplay += returnText(b, 0);
