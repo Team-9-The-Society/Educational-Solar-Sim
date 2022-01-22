@@ -48,7 +48,7 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public int calculateStepHeight()
     {//DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
-        return gameManagerReference.BodyCount - 6 - panelLastCount;
+        return gameManagerReference.BodyCount - 1 - panelLastCount;//- 6 -
 
     }
     public void spawnButtons(int count)
@@ -115,16 +115,16 @@ public class BodiesInfoButton : MonoBehaviour
     { //DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
         int knownBodyCount = gameManagerReference.BodyCount;
        
-        if (gameManagerReference.BodyCount > 6 && panelExpansion ==0)
+        if (gameManagerReference.BodyCount > 1 && panelExpansion ==0)
         {
             panelExpansion = 1;
             
             panelRedaction = calculateStepHeight();
             if (panelRedaction > 0)
             {
-                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -380);
+                displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -458);
                 panelExpansionCount+= panelRedaction;
-                panelLastCount = gameManagerReference.BodyCount -6;
+                panelLastCount = gameManagerReference.BodyCount -1;
             }
 
            
