@@ -13,6 +13,7 @@ public class UISliderMenu : MonoBehaviour
 
     [Header("Panel References")]
     public GameObject PanelMenu;
+    public GameObject PanelHideHint;
     public GameObject BodyInfoInputPanel;
     public GameObject BodiesDescriptionPanel;
     public GameObject BodyInfoPanel;
@@ -101,6 +102,8 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
         BodyInfoPanel.SetActive(false);
+        PanelHideHint.SetActive(false);
+
     }
 
     public void LoadHomeScene()

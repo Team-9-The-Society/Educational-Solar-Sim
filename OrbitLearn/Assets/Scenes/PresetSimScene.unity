@@ -1112,6 +1112,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1268627245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &459915916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8940642032806179993, guid: a04fc2805f561b44e8b0038b4fde3f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1670128923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &507867367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1742,6 +1748,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2630625499430499869}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1044892788}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HideAllPanels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: EditBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UISliderMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UIBodyInformationPanel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874692228646001833, guid: 18054e349a90dd14d9bd13c0a9590673,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8120890056778655692, guid: 18054e349a90dd14d9bd13c0a9590673,
         type: 3}
@@ -3105,7 +3161,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1670128923}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 459915916}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a8493caf84a853468697a029c6449dc, type: 3}
@@ -3658,7 +3714,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -3.1298227e-20
+      value: 3.1298227e-20
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -3668,7 +3724,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.790675e-25
+      value: 5.790675e-25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c, type: 3}
@@ -5016,6 +5072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2630625499430499858}
   PanelMenu: {fileID: 2630625499430499865}
+  PanelHideHint: {fileID: 459915916}
   BodyInfoInputPanel: {fileID: 1414320795}
   BodiesDescriptionPanel: {fileID: 1268627246}
   BodyInfoPanel: {fileID: 991992081}
