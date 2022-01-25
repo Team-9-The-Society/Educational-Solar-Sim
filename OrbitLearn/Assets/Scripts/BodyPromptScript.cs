@@ -68,6 +68,10 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
+                if(bodyName == "")
+                {
+                    bodyName = "Body " + (GameManagerReference.BodyCount + 1);
+                }
                 GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName);
                 ClearInputsAndValues();
                 HidePanel();
@@ -82,6 +86,10 @@ public class BodyPromptScript : MonoBehaviour
                 Rigidbody r = passedBody.gameObject.GetComponent<Rigidbody>();
                 passedBody.transform.position = new Vector3((float)xPos, (float)yPos, (float)zPos);
                 passedBody.transform.localScale = new Vector3((float)size, (float)size, (float)size);
+                if (bodyName == "")
+                {
+                    bodyName = "Body" + (GameManagerReference.BodyCount);
+                }
                 passedBody.bodyName = bodyName;
                 float camOrbit = (float)((size * 8) + 27) / 7;
                 passedBody.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
