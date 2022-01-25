@@ -261,36 +261,6 @@ PlayerSettings:
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
-      m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: bb76e162a645dbd40a3d261fe9d61ffe, type: 3}
       m_Width: 192
@@ -327,44 +297,74 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
+      m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: bb76e162a645dbd40a3d261fe9d61ffe, type: 3}
-      - {fileID: 2800000, guid: bb76e162a645dbd40a3d261fe9d61ffe, type: 3}
+      - {fileID: 2800000, guid: b30780574cfae174e87b2d8737c4666f, type: 3}
+      - {fileID: 2800000, guid: b3a20e32e5160de45a339774e03e342b, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 080549776d361bf47a5d1bdd644da115, type: 3}
-      - {fileID: 2800000, guid: 080549776d361bf47a5d1bdd644da115, type: 3}
+      - {fileID: 2800000, guid: b30780574cfae174e87b2d8737c4666f, type: 3}
+      - {fileID: 2800000, guid: b3a20e32e5160de45a339774e03e342b, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: d2cb96f5c4815334ba07169f078e0147, type: 3}
-      - {fileID: 2800000, guid: d2cb96f5c4815334ba07169f078e0147, type: 3}
+      - {fileID: 2800000, guid: b30780574cfae174e87b2d8737c4666f, type: 3}
+      - {fileID: 2800000, guid: b3a20e32e5160de45a339774e03e342b, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: c4ba02ca1ceb15f47b250e6aa6beca01, type: 3}
-      - {fileID: 2800000, guid: c4ba02ca1ceb15f47b250e6aa6beca01, type: 3}
+      - {fileID: 2800000, guid: b30780574cfae174e87b2d8737c4666f, type: 3}
+      - {fileID: 2800000, guid: b3a20e32e5160de45a339774e03e342b, type: 3}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 8e96596e8b2de1f4fb3686d3c5903981, type: 3}
-      - {fileID: 2800000, guid: 8e96596e8b2de1f4fb3686d3c5903981, type: 3}
+      - {fileID: 2800000, guid: b30780574cfae174e87b2d8737c4666f, type: 3}
+      - {fileID: 2800000, guid: b3a20e32e5160de45a339774e03e342b, type: 3}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 8ac3d98fad4f93446ae2433ae9044b45, type: 3}
-      - {fileID: 2800000, guid: 8ac3d98fad4f93446ae2433ae9044b45, type: 3}
+      - {fileID: 2800000, guid: b30780574cfae174e87b2d8737c4666f, type: 3}
+      - {fileID: 2800000, guid: b3a20e32e5160de45a339774e03e342b, type: 3}
       m_Width: 81
       m_Height: 81
       m_Kind: 2
@@ -796,7 +796,7 @@ PlayerSettings:
   cloudProjectId: 8b52694d-84b4-4ac0-9643-009bb8c53c37
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: EducationalSolarSimulator
+  projectName: OrbitLearn
   organizationId: kacyluker_unity
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
