@@ -15,7 +15,7 @@ public class BodiesInfoButton : MonoBehaviour
     public int panelExpansionCount = 0;
     public int buttonCount = 0;
     public int presetFilm = 0;
-    public int defaultBodyCountDisplayNum = 1;
+    
     public List<GameObject> Buttons;
 
     [Header("Input Field References")]
@@ -94,15 +94,7 @@ public class BodiesInfoButton : MonoBehaviour
             button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, (float)-455.5 * (loopCount - panelExpansionCount) - 1500 + screenplier + (float)2.8 * panelExpansionCount);//Changing text
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
 
-            if (tmp[num].bodyName == "")
-            {
-                tmp[num].bodyName = "Body " + defaultBodyCountDisplayNum;
-                defaultBodyCountDisplayNum++;
-            }
-           /* else
-            {
-                bodyNullDisplayCounter--;
-            }*/
+          
             button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
             button.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth/textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
             Buttons.Add(button);

@@ -70,7 +70,7 @@ public class BodyPromptScript : MonoBehaviour
             {
                 if(bodyName == "")
                 {
-                    bodyName = "Body" + (GameManagerReference.BodyCount + 1);
+                    bodyName = "Body " + (GameManagerReference.BodyCount + 1);
                 }
                 GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName);
                 ClearInputsAndValues();
