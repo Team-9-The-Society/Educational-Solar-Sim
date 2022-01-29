@@ -20,7 +20,7 @@ public class BodyPromptScript : MonoBehaviour
     public TMP_InputField xVelInput;
     public TMP_InputField yVelInput;
     public TMP_InputField zVelInput;
-
+    public Toggle glowToggle;
     public Slider sizeInput;
 
     [Header("Input Variables")]
@@ -72,7 +72,7 @@ public class BodyPromptScript : MonoBehaviour
                 {
                     bodyName = "Body " + (GameManagerReference.BodyCount + 1);
                 }
-                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName);
+                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName, glowToggle);
                 ClearInputsAndValues();
                 HidePanel();
             }
