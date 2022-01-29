@@ -1,9 +1,3 @@
-/*  Created by Logan Edmund, 10/14/21
- *  
- *  Object classifier for planetary bodies.
- * 
- * 
- */
 
 using System.Collections;
 using System.Collections.Generic;
@@ -14,12 +8,13 @@ public class Body : MonoBehaviour
 {
     [Header("Planet name and velocities")]
     public string bodyName;
-
     private Rigidbody rb;
 
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
 
+
+    public Light[] lightArray;
 
     [Header("Debug - Force Change Current Velocity")]
     public double dxVel;
@@ -45,6 +40,14 @@ public class Body : MonoBehaviour
     {
         Debug.Log($"Forced applied to {gameObject.name}: {xForce}, {yForce}, {zForce}");
         rb.AddForce(new Vector3((float)xForce, (float)yForce, (float)zForce), ForceMode.Force);
+    }
+
+    public void flipLight()
+    {
+        foreach(Light l in lightArray)
+        {
+            l.enabled = !l.enabled;
+        }
     }
 
     public void DEBUGForceVelocityUpdate()

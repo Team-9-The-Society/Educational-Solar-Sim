@@ -72,7 +72,7 @@ public class BodyPromptScript : MonoBehaviour
                 {
                     bodyName = "Body " + (GameManagerReference.BodyCount + 1);
                 }
-                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName, glowToggle);
+                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName, glowToggle.isOn);
                 ClearInputsAndValues();
                 HidePanel();
             }
@@ -82,7 +82,10 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
-
+                if(passedBody.lightArray[0].enabled != glowToggle.isOn)
+                {
+                    passedBody.flipLight();
+                }
                 Rigidbody r = passedBody.gameObject.GetComponent<Rigidbody>();
                 passedBody.transform.position = new Vector3((float)xPos, (float)yPos, (float)zPos);
                 passedBody.transform.localScale = new Vector3((float)size, (float)size, (float)size);

@@ -231,6 +231,12 @@ public class GameManager : MonoBehaviour
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
+            Debug.Log("State "+ glowState);
+            if(glowState)
+            {
+                bodyRef.flipLight();
+
+            }
             bodyRef.bodyName = name;
             float camOrbit = (float)((scal * 8) + 27) / 7;
             bodyRef.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
