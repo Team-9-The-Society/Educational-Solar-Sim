@@ -85,6 +85,10 @@ public class BodiesInfoButton : MonoBehaviour
 
     public float buttonYPlacement(int loopCount, float screenplier)
     {
+        if (presetFilm == 1)
+        {
+            return (float)-455.5 * (loopCount - panelExpansionCount) - 1325 + screenplier + (float)2.8 * panelExpansionCount;
+        }
         return (float)-455.5 * (loopCount - panelExpansionCount) - 1500 + screenplier + (float)2.8 * panelExpansionCount;
     }
 
