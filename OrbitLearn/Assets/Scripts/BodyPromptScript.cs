@@ -125,7 +125,7 @@ public class BodyPromptScript : MonoBehaviour
         zVelInput.text = "";
 
         sizeInput.value = 1;
-
+        glowToggle.isOn = true;
         mass = 0;
         xPos = 0;
         yPos = 0;
