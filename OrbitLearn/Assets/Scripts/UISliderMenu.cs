@@ -39,7 +39,19 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference = gm;
     }
    
+    public void ChangePanelPrior()
+    {
+        gameManagerReference.ChangePanelPriority();
+    }
 
+    public void MaybeChangePanelPrior()
+    {
+        //This method only changes panel priority if uipanelpriority is true. Only use for hamburger button.
+        if (gameManagerReference.uiPanelPriority)
+        {
+            gameManagerReference.ChangePanelPriority();
+        }
+    }
 
     public void ResetScene()
     {

@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public int BodyCount = 0;
     private int tapCount = 0;
     public bool gamePaused = false;
+    public bool uiPanelPriority = false;
 
     public static RuntimePlatform platform
     {
@@ -122,13 +123,13 @@ public class GameManager : MonoBehaviour
             RefreshUniverseCam();
         //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
             //Increment taps
             tapCount++;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && !uiPanelPriority)//////
             {
                 //If a body has been tapped
                 if (hit.collider != null)
@@ -243,6 +244,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Flips the panel priority bool
+    public void ChangePanelPriority()
+    {
+        uiPanelPriority = !uiPanelPriority;
+    }
 
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
