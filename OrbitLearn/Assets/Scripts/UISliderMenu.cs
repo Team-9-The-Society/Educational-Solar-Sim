@@ -39,7 +39,10 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference = gm;
     }
    
-
+    public void ChangePanelPrior()
+    {
+        gameManagerReference.ChangePanelPriority();
+    }
 
     public void ResetScene()
     {
