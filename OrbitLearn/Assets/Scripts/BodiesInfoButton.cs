@@ -244,7 +244,7 @@ public class BodiesInfoButton : MonoBehaviour
             Debug.LogWarning("Running FocusOnPlanet for i=" + i);
             gameManagerReference.ShowBodyInfo(gameManagerReference.SimBodies[i]);
             gameManagerReference.ActivatePlanetCam(gameManagerReference.SimBodies[i].planetCam);
-
+            gameManagerReference.ChangePanelPriority();
             HidePanel();
         }
         catch
