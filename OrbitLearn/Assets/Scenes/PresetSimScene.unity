@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0014371083, g: 0.001384888, b: 0.0013701947, a: 1}
+  m_IndirectSpecularColor: {r: 0.0014415674, g: 0.0013888229, b: 0.0013739478, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4150,6 +4150,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2630625499430499869}
+        m_TargetAssemblyTypeName: UISliderMenu, Assembly-CSharp
+        m_MethodName: DisplayPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1217500572396956028
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4675,6 +4687,8 @@ MonoBehaviour:
   BodiesDescriptionPanel: {fileID: 1268627246}
   BodyInfoPanel: {fileID: 991992081}
   PresetSimulationsPanel: {fileID: 1726274066}
+  PauseButton: {fileID: 1968783080007383751}
+  paused: 0
 --- !u!224 &2630625499430499870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5448,4 +5462,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSE/PLAY
+  m_Text: PAUSE

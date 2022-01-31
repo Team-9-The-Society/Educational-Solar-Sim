@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSE/PLAY
+  m_Text: PAUSE
 --- !u!1 &1968783080075826940
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,10 +725,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2630625499364727337}
   PanelMenu: {fileID: 2630625499364727330}
+  PanelHideHint: {fileID: 0}
   BodyInfoInputPanel: {fileID: 0}
   BodiesDescriptionPanel: {fileID: 0}
   BodyInfoPanel: {fileID: 0}
   PresetSimulationsPanel: {fileID: 0}
+  PauseButton: {fileID: 0}
+  paused: 0
 --- !u!1 &2630625499624361297
 GameObject:
   m_ObjectHideFlags: 0
