@@ -210,7 +210,7 @@ public class GameManager : MonoBehaviour
         button.transform.SetParent(spawnPanel.transform);
         button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
     }
-    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name)
+    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name, bool glowState)
     {
         if (BodyCount < 50)
         {
@@ -228,7 +228,6 @@ public class GameManager : MonoBehaviour
 
             SimBodies.Add(bodyRef);
             BodyCount++;
-
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
@@ -240,6 +239,11 @@ public class GameManager : MonoBehaviour
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
+            if (glowState!= bodyRef.lightArray[0].enabled)
+            {
+                bodyRef.flipLight();
+
+            }
 
         }
     }
