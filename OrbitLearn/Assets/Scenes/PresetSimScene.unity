@@ -3714,7 +3714,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 3.1298227e-20
+      value: -3.1298227e-20
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -3724,7 +3724,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.790675e-25
+      value: -5.790675e-25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c, type: 3}
@@ -3954,6 +3954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 311817774939699187, guid: e747f7848da9e0240b5cc68000b8aea4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 311817774939699190, guid: e747f7848da9e0240b5cc68000b8aea4,
         type: 3}
