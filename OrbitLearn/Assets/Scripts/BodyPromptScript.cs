@@ -20,7 +20,7 @@ public class BodyPromptScript : MonoBehaviour
     public TMP_InputField xVelInput;
     public TMP_InputField yVelInput;
     public TMP_InputField zVelInput;
-
+    public Toggle glowToggle;
     public Slider sizeInput;
 
     [Header("Input Variables")]
@@ -72,7 +72,7 @@ public class BodyPromptScript : MonoBehaviour
                 {
                     bodyName = "Body " + (GameManagerReference.BodyCount + 1);
                 }
-                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName);
+                GameManagerReference.TrySpawnNewBody(mass, xPos, yPos, zPos, xVel, yVel, zVel, size, true, bodyName, glowToggle.isOn);
                 ClearInputsAndValues();
                 HidePanel();
             }
@@ -82,7 +82,10 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
-
+                if (passedBody.lightArray[0].enabled != glowToggle.isOn)
+                {
+                    passedBody.flipLight();
+                }
                 Rigidbody r = passedBody.gameObject.GetComponent<Rigidbody>();
                 passedBody.transform.position = new Vector3((float)xPos, (float)yPos, (float)zPos);
                 passedBody.transform.localScale = new Vector3((float)size, (float)size, (float)size);
@@ -133,6 +136,7 @@ public class BodyPromptScript : MonoBehaviour
         zVel = 0;
 
         size = 1;
+        glowToggle.isOn = true;
     }
 
     public void SetInput(string variable)
