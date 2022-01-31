@@ -39,9 +39,9 @@ public class UIPresetSimulations : MonoBehaviour
         GameManager.Instance.DeleteAllBodies();
 
         //(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name)
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,9), 0, 0, 0, 0, 0, 0, 5.906, false, "LrgStat");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,9), 0, 0, 0, 0, 0, 0, 5.906, false, "LrgStat", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,8), 20, 15, 0, 0, 0, 5, 3.458, false, "LrgMove");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,8), 20, 15, 0, 0, 0, 5, 3.458, false, "LrgMove", false);
 
         GameManager.Instance.FocusOnUniverse();
     }
@@ -50,9 +50,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), -10, 0, 0, 0, 0, 0, 8, false, "LrgStat");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), -10, 0, 0, 0, 0, 0, 8, false, "LrgStat", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, -5, 0, 0, 8, false, "LrgMove");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, -5, 0, 0, 8, false, "LrgMove", false);
 
         GameManager.Instance.FocusOnUniverse();
     }
@@ -61,9 +61,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 4, false, "Steven");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 4, false, "Steven", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, 0, 0, 0, 4, false, "Robert");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, 0, 0, 0, 4, false, "Robert", false);
 
         GameManager.Instance.FocusOnUniverse();
     }
@@ -72,9 +72,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 4, false, "StaticB");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 4, false, "StaticB", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, -10, 0, 0, 4, false, "MovingB");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, -10, 0, 0, 4, false, "MovingB", false);
 
         GameManager.Instance.FocusOnUniverse();
     }
@@ -83,9 +83,9 @@ public class UIPresetSimulations : MonoBehaviour
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "StaticB");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "StaticB", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 5), 10, 0, 10, 0, 7.5, 0, 8, false, "MovingB");
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 5), 10, 0, 10, 0, 7.5, 0, 8, false, "MovingB", false);
 
         GameManager.Instance.FocusOnUniverse();
     }

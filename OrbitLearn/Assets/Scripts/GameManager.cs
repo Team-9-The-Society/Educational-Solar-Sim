@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public int BodyCount = 0;
     private int tapCount = 0;
     public bool gamePaused = false;
+    public bool uiPanelPriority = false;
 
     public static RuntimePlatform platform
     {
@@ -122,13 +123,13 @@ public class GameManager : MonoBehaviour
             RefreshUniverseCam();
         //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
             //Increment taps
             tapCount++;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && !uiPanelPriority)//////
             {
                 //If a body has been tapped
                 if (hit.collider != null)
@@ -187,7 +188,7 @@ public class GameManager : MonoBehaviour
     //Attemps to spawn a new body at 0,0,0 if the max number of planets has not been reached.
     public void TrySpawnNewBody()
     {
-        if (BodyCount < 50)
+        if (BodyCount < 25)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();
@@ -209,9 +210,9 @@ public class GameManager : MonoBehaviour
         button.transform.SetParent(spawnPanel.transform);
         button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
     }
-    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name)
+    public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name, bool glowState)
     {
-        if (BodyCount < 50)
+        if (BodyCount < 25)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();
@@ -227,7 +228,6 @@ public class GameManager : MonoBehaviour
 
             SimBodies.Add(bodyRef);
             BodyCount++;
-
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
@@ -239,10 +239,20 @@ public class GameManager : MonoBehaviour
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
+            if (glowState!= bodyRef.lightArray[0].enabled)
+            {
+                bodyRef.flipLight();
+
+            }
 
         }
     }
 
+    //Flips the panel priority bool
+    public void ChangePanelPriority()
+    {
+        uiPanelPriority = !uiPanelPriority;
+    }
 
     //Deletes a body and all associated references
     public void DeleteBody(Body b)

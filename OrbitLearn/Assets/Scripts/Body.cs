@@ -1,10 +1,3 @@
-/*  Created by Logan Edmund, 10/14/21
- *  
- *  Object classifier for planetary bodies.
- * 
- * 
- */
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +7,14 @@ public class Body : MonoBehaviour
 {
     [Header("Planet name and velocities")]
     public string bodyName;
-
+    public GameObject body;
     private Rigidbody rb;
 
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
 
+    [Header("Planet Spotlight")]
+    public Light[] lightArray;
 
     [Header("Debug - Force Change Current Velocity")]
     public double dxVel;
@@ -55,5 +50,13 @@ public class Body : MonoBehaviour
     public Rigidbody returnRigBody()
     {
         return rb;
+    }
+
+    public void flipLight()
+    {
+        foreach(Light l in lightArray)
+        {
+            l.enabled = !l.enabled;
+        }
     }
 }
