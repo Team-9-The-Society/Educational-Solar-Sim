@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
             RefreshUniverseCam();
         //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
             //Increment taps
             tapCount++;
