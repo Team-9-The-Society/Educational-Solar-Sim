@@ -54,29 +54,9 @@ public class Body : MonoBehaviour
 
     public void flipLight()
     {
-        for(int i =0; i<4; i++)
+        foreach(Light l in lightArray)
         {
-            float position = 0;
-            switch (i)
-            {
-                case 0:
-                    position = (float)1.5 + (float)body.transform.localScale.x - (float)1;
-                    lightArray[i].transform.position = new Vector3((float)0, (float)position, (float)0);
-                    break;
-                case 1:
-                    position = (float)1.5 + (float)body.transform.localScale.x - (float)1;
-                    lightArray[i].transform.position = new Vector3((float)position, (float)0, (float)0);
-                    break;
-                case 2:
-                    position = (float)-1.5 - (float)body.transform.localScale.x + (float)1;
-                    lightArray[i].transform.position = new Vector3((float)0, (float)position, (float)0);
-                    break;
-                case 3:
-                    position = (float)-1.5 - (float)body.transform.localScale.x + (float)1;
-                    lightArray[i].transform.position = new Vector3((float)position, (float)0, (float)0);
-                    break;
-            }
-            lightArray[i].enabled = !lightArray[i].enabled;
+            l.enabled = !l.enabled;
         }
     }
 }
