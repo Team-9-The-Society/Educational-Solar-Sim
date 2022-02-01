@@ -4437,6 +4437,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 311817774939699187, guid: e747f7848da9e0240b5cc68000b8aea4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 311817774939699190, guid: e747f7848da9e0240b5cc68000b8aea4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5169,6 +5174,8 @@ MonoBehaviour:
   BodiesDescriptionPanel: {fileID: 1268627246}
   BodyInfoPanel: {fileID: 991992081}
   PresetSimulationsPanel: {fileID: 1726274066}
+  PauseButton: {fileID: 1968783080007383751}
+  paused: 0
 --- !u!224 &2630625499430499870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5979,4 +5986,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSE/PLAY
+  m_Text: PAUSE

@@ -18,6 +18,10 @@ public class UISliderMenu : MonoBehaviour
     public GameObject BodiesDescriptionPanel;
     public GameObject BodyInfoPanel;
     public GameObject PresetSimulationsPanel;
+    public GameObject PauseButton;
+
+    [Header("Management Variables")]
+    public bool paused = false;
 
     private void Awake()
     {
@@ -132,6 +136,21 @@ public class UISliderMenu : MonoBehaviour
 
     public void TogglePause()
     {
+        DisplayPause();
         gameManagerReference.TogglePause();
     }
+    public void DisplayPause()
+    {
+        if (!paused)
+        {
+            paused = true;
+            PauseButton.GetComponentInChildren<Text>().text = "PLAY";
+        }
+        else
+        {
+            paused = false;
+            PauseButton.GetComponentInChildren<Text>().text = "PAUSE";
+        }
+    }
+
 }

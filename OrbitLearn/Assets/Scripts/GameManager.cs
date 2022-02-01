@@ -348,12 +348,10 @@ public class GameManager : MonoBehaviour
         if (gamePaused)
         {
             Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.LateUpdate;
-            PauseIcon.SetActive(true);
         }
         else
         {
             Camera.main.GetComponent<CinemachineBrain>().m_UpdateMethod = CinemachineBrain.UpdateMethod.FixedUpdate;
-            PauseIcon.SetActive(false);
         }
 
     }
