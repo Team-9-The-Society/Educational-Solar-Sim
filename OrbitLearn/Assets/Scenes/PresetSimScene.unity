@@ -2403,7 +2403,7 @@ PrefabInstance:
     - target: {fileID: 1376227493220696949, guid: fe740d39a5c3e004489c7889b1b4def7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -272.22443
+      value: -87.49963
       objectReference: {fileID: 0}
     - target: {fileID: 2883205230598049634, guid: fe740d39a5c3e004489c7889b1b4def7,
         type: 3}
@@ -4161,7 +4161,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 3.1298227e-20
+      value: -3.1298227e-20
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -4171,7 +4171,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.790675e-25
+      value: -5.790675e-25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c, type: 3}
@@ -4431,6 +4431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 311817774939699187, guid: e747f7848da9e0240b5cc68000b8aea4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 311817774939699190, guid: e747f7848da9e0240b5cc68000b8aea4,
         type: 3}
@@ -5164,6 +5169,8 @@ MonoBehaviour:
   BodiesDescriptionPanel: {fileID: 1268627246}
   BodyInfoPanel: {fileID: 991992081}
   PresetSimulationsPanel: {fileID: 1726274066}
+  PauseButton: {fileID: 1968783080007383751}
+  paused: 0
 --- !u!224 &2630625499430499870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5974,4 +5981,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PAUSE/PLAY
+  m_Text: PAUSE
