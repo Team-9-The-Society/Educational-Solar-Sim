@@ -13,10 +13,15 @@ public class UISliderMenu : MonoBehaviour
 
     [Header("Panel References")]
     public GameObject PanelMenu;
+    public GameObject PanelHideHint;
     public GameObject BodyInfoInputPanel;
     public GameObject BodiesDescriptionPanel;
     public GameObject BodyInfoPanel;
     public GameObject PresetSimulationsPanel;
+    public GameObject PauseButton;
+
+    [Header("Management Variables")]
+    public bool paused = false;
 
     private void Awake()
     {
@@ -38,7 +43,19 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference = gm;
     }
    
+    public void ChangePanelPrior()
+    {
+        gameManagerReference.ChangePanelPriority();
+    }
 
+    public void MaybeChangePanelPrior()
+    {
+        //This method only changes panel priority if uipanelpriority is true. Only use for hamburger button.
+        if (gameManagerReference.uiPanelPriority)
+        {
+            gameManagerReference.ChangePanelPriority();
+        }
+    }
 
     public void ResetScene()
     {
@@ -101,6 +118,8 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
         BodyInfoPanel.SetActive(false);
+        PanelHideHint.SetActive(false);
+
     }
 
     public void LoadHomeScene()
@@ -117,6 +136,21 @@ public class UISliderMenu : MonoBehaviour
 
     public void TogglePause()
     {
+        DisplayPause();
         gameManagerReference.TogglePause();
     }
+    public void DisplayPause()
+    {
+        if (!paused)
+        {
+            paused = true;
+            PauseButton.GetComponentInChildren<Text>().text = "PLAY";
+        }
+        else
+        {
+            paused = false;
+            PauseButton.GetComponentInChildren<Text>().text = "PAUSE";
+        }
+    }
+
 }

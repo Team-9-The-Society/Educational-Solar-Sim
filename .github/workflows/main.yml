@@ -63,11 +63,6 @@ jobs:
         uses: maierj/fastlane-action@v2.0.1
         with:
           lane: 'android internal'
-      # Uncomment to upload to alpha branch
-      #    - name: Upload to Google Play Alpha
-      #      uses: maierj/fastlane-action@v2.0.1
-      #      with:
-      #        lane: 'android alpha'
       - name: Cleanup to avoid storage limit
         if: always()
         uses: geekyeggo/delete-artifact@v1
