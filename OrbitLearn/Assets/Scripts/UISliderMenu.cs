@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading.Tasks;
+using System;
 
 public class UISliderMenu : MonoBehaviour
 {
@@ -139,18 +141,35 @@ public class UISliderMenu : MonoBehaviour
         DisplayPause();
         gameManagerReference.TogglePause();
     }
-    public void DisplayPause()
+
+    public async void DisplayPause()
     {
         if (!paused)
         {
             paused = true;
-            PauseButton.GetComponentInChildren<Text>().text = "PLAY";
+            await Task.Delay(TimeSpan.FromSeconds(0.5f));
+            UpdatePauseButton("PLAY", Color.red);
         }
         else
         {
             paused = false;
-            PauseButton.GetComponentInChildren<Text>().text = "PAUSE";
+            await Task.Delay(TimeSpan.FromSeconds(0.25f));
+            UpdatePauseButton("PAUSE", Color.white);
         }
+    }
+
+    public void UpdatePauseButton(string buttonText, Color color)
+    {
+        ColorBlock cb = PauseButton.GetComponent<Button>().colors;
+        Button buttonColor = PauseButton.GetComponent<Button>();
+
+        cb.normalColor = color;
+        cb.highlightedColor = color;
+        cb.pressedColor = color;
+        buttonColor.colors = cb;
+
+        PauseButton.GetComponentInChildren<Text>().text = buttonText;
+        PauseButton.GetComponentInChildren<Text>().color = color;
     }
 
 }
