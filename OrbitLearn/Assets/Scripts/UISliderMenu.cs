@@ -58,7 +58,9 @@ public class UISliderMenu : MonoBehaviour
             gameManagerReference.ChangePanelPriority();
         }
     }
-
+    /// <summary>
+    /// //sgwregwegwegwegw
+    /// </summary>
     public void ResetScene()
     {
         gameManagerReference.DeleteAllBodies();
