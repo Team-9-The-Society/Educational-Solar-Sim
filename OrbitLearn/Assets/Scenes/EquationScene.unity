@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -461,8 +461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.3071, y: -994.8601}
-  m_SizeDelta: {x: 756.18, y: 3251.2246}
+  m_AnchoredPosition: {x: -7.3071, y: -1218}
+  m_SizeDelta: {x: 756.18, y: 3700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233869206
 MonoBehaviour:
@@ -612,7 +612,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 9.05545, w: 24.63061}
+  m_margin: {x: 0, y: 0, z: 9.05545, w: -78.37318}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -924,8 +924,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2074230004}
   m_HandleRect: {fileID: 2074230003}
   m_Direction: 2
-  m_Value: 0.99999875
-  m_Size: 0.38800758
+  m_Value: 0.9994874
+  m_Size: 0.34094596
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
