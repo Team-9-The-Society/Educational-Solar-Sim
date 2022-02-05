@@ -15,9 +15,9 @@ public class MoveCameraOnTouch: MonoBehaviour
     {
         //Touch touch = Input.GetTouch(0);
 
-        if (axisName == "Mouse X")
+        if (axisName == "Mouse X" )
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0)&& !GameManager.Instance.uiPanelPriority)
             {
                 return UnityEngine.Input.GetAxis("Mouse X");
             }
@@ -28,7 +28,7 @@ public class MoveCameraOnTouch: MonoBehaviour
         }
         else if (axisName == "Mouse Y")
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && !GameManager.Instance.uiPanelPriority)
             {
                 return UnityEngine.Input.GetAxis("Mouse Y");
             }
