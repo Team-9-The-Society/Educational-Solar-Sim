@@ -1397,7 +1397,7 @@ PrefabInstance:
     - target: {fileID: 358674525274277337, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowIdleMenu
+      value: HidePresetSimsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 358674525274277337, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
@@ -1417,7 +1417,7 @@ PrefabInstance:
     - target: {fileID: 358674525523764394, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowIdleMenu
+      value: HidePresetSimsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 358674525523764394, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
@@ -1437,7 +1437,7 @@ PrefabInstance:
     - target: {fileID: 358674526104551671, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowIdleMenu
+      value: HidePresetSimsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 358674526104551671, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
@@ -1457,12 +1457,22 @@ PrefabInstance:
     - target: {fileID: 358674526622099053, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowIdleMenu
+      value: HidePresetSimsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 358674526622099053, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: ChangePanelPrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
@@ -1476,13 +1486,38 @@ PrefabInstance:
       objectReference: {fileID: 879353357}
     - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 879353357}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowIdleMenu
+      value: HidePresetSimsPanel
       objectReference: {fileID: 0}
     - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: ChangePanelPrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: HidePresetSimsPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UISliderMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 358674526700747421, guid: 3eae12c88cf05a9459729b8218d36a5a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2657861692582671843, guid: 3eae12c88cf05a9459729b8218d36a5a,
         type: 3}
