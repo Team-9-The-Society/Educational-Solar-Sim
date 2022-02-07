@@ -847,6 +847,41 @@ PrefabInstance:
       propertyPath: m_Text
       value: PAUSE
       objectReference: {fileID: 0}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 879353357}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: HideAllPanels
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UISliderMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600983081776522756, guid: 624719b68fdf33543b092fed9b7fda83,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624719b68fdf33543b092fed9b7fda83, type: 3}
 --- !u!1 &96664983
