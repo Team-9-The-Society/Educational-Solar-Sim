@@ -53,8 +53,10 @@ public class MainMenu : MonoBehaviour
         gameManagerReference.LoadNewScene(SceneHandler.Scene.EquationScene);
     }
 
-    //Here lies former preset sim load.
-    //Here lies former preset sim load.
+    public void LoadPresetScene()
+    {
+        gameManagerReference.LoadNewScene(SceneHandler.Scene.PresetSimScene);
+    }
 
     public void NotImplemented()
     {

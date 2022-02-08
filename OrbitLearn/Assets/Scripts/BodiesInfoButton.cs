@@ -89,7 +89,7 @@ public class BodiesInfoButton : MonoBehaviour
         {
             return (float)-455.5 * (loopCount - panelExpansionCount) - 1325 + screenplier + (float)2.8 * panelExpansionCount;
         }
-        return (float)-455.5 * (loopCount - panelExpansionCount) - 1350 + screenplier + (float)2.8 * panelExpansionCount;
+        return (float)-455.5 * (loopCount - panelExpansionCount) - 1500 + screenplier + (float)2.8 * panelExpansionCount;
     }
 
     public void spawnButtons(int count)
