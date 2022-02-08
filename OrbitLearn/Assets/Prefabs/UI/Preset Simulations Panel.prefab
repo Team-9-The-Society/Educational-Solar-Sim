@@ -609,7 +609,7 @@ PrefabInstance:
     - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
         type: 3}
       propertyPath: m_text
-      value: Large Body Collision
+      value: Circular Orbit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
@@ -854,7 +854,7 @@ PrefabInstance:
     - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
         type: 3}
       propertyPath: m_text
-      value: Circular Orbit
+      value: Dual Elliptical Moons
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
@@ -1099,7 +1099,7 @@ PrefabInstance:
     - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
         type: 3}
       propertyPath: m_text
-      value: Two Body Collision
+      value: Gravity Slingshot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
@@ -1344,7 +1344,7 @@ PrefabInstance:
     - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
         type: 3}
       propertyPath: m_text
-      value: One Body Launch
+      value: Dual Circular Moons
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
@@ -1589,7 +1589,7 @@ PrefabInstance:
     - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
         type: 3}
       propertyPath: m_text
-      value: Basic Elliptical Orbit
+      value: Elliptical Orbit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
