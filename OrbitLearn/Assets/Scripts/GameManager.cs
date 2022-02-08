@@ -1,12 +1,3 @@
-/*  Created by Logan Edmund, 10/14/21
- *  
- *  Handles overarching functions of the program
- * 
- * 
- * 
- */
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
