@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'OrbitLearn/**'
-    branches: [ main, develop, test-build ]
+    branches: [ main, develop ]
 
 jobs:
   buildForAndroidPlatform:
