@@ -101,7 +101,7 @@ public class BodyPromptScript : MonoBehaviour
 
                 r.mass = (float)mass;
                 r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
-
+                passedBody.updateLight();
                 ClearInputsAndValues();
                 HidePanel();
                 editMode = false;

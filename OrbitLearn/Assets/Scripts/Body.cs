@@ -24,6 +24,12 @@ public class Body : MonoBehaviour
 
     void Start()
     {
+        updateLight();
+    }
+
+    //Updates the range of the spot lights based on the current size of the body
+    public void updateLight()
+    {
         foreach (Light l in lightArray)
         {
             l.range = l.range + body.transform.localScale.x;
@@ -60,7 +66,7 @@ public class Body : MonoBehaviour
     {
         return rb;
     }
-
+    //Turns the light on or off depending on whatever the opposite  state of the lights currently are. 
     public void flipLight()
     {
         foreach(Light l in lightArray)
