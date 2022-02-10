@@ -22,7 +22,7 @@ public class Body : MonoBehaviour
     public double dzVel;
     public bool DebugSetNewVelocity;
 
-    void Update()
+    void Start()
     {
         foreach (Light l in lightArray)
         {
