@@ -43,7 +43,7 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(Math.Pow(10,3), 10, 0, 0, 0, 5, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
     public void Simulation2() //Circular Orbit
@@ -54,7 +54,7 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), 15, 0, 0, 0, 4.5, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
     public void Simulation3() //Slingshot
@@ -65,7 +65,7 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), -15, -30, 0, 0, 7, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
     public void Simulation4() //Circular Opposing Moons
@@ -78,7 +78,7 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), -15, 0, 0, 0, -4.5, 0, 3, false, "Ipo", false);
         
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
     public void Simulation5() //Inner/Outer Elliptical Moons
@@ -91,7 +91,7 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 2), -22, 0, 0, 0, -3.6, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
     public void HidePanel() => this.gameObject.SetActive(false);

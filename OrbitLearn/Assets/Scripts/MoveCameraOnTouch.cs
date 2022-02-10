@@ -5,6 +5,10 @@ using Cinemachine;
 
 public class MoveCameraOnTouch: MonoBehaviour
 {
+    public float TouchSensitivityX = 100f;
+    public float TouchSensitivityY = 100f;
+
+
     void Start()
     {
         CinemachineCore.GetInputAxis = GetAxisCustom;
@@ -15,28 +19,34 @@ public class MoveCameraOnTouch: MonoBehaviour
     {
         //Touch touch = Input.GetTouch(0);
 
-        if (axisName == "Mouse X" )
+        if (Input.GetMouseButton(0) && !GameManager.Instance.uiPanelPriority)
         {
-            if (Input.GetMouseButton(0)&& !GameManager.Instance.uiPanelPriority)
+            switch (axisName)
             {
-                return UnityEngine.Input.GetAxis("Mouse X");
-            }
-            else
-            {
-                return 0;
+                case "Mouse X":
+                    if (Input.touchCount > 0)
+                    {
+                        return Input.touches[0].deltaPosition.x / TouchSensitivityX;
+                    }
+                    else
+                    {
+                        return Input.GetAxis(axisName);
+                    }
+                case "Mouse Y":
+                    if (Input.touchCount > 0)
+                    {
+                        return Input.touches[0].deltaPosition.y / TouchSensitivityY;
+                    }
+                    else
+                    {
+                        return Input.GetAxis(axisName);
+                    }
+                default:
+                    Debug.LogError("Input <" + axisName + "> not recognyzed.", this);
+                    break;
             }
         }
-        else if (axisName == "Mouse Y")
-        {
-            if (Input.GetMouseButton(0) && !GameManager.Instance.uiPanelPriority)
-            {
-                return UnityEngine.Input.GetAxis("Mouse Y");
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        return UnityEngine.Input.GetAxis(axisName);
+            
+        return 0f;
     }
 }
