@@ -583,6 +583,9 @@ public class GameManager : MonoBehaviour
     public void ShowBodyInfo(Body b)
     {
         focusedBody = b;
+        //If the slider menu is open, and someone clicks on a body, now the slider menu is moved back to starting position.
+        if(!SliderMenu.isOpen)
+            SliderMenu.ShowIdleMenu();
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
         DisplayHintMessage("Quickly tap on the body again to focus.", "");
