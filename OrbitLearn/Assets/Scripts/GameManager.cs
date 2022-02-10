@@ -30,9 +30,15 @@ public class GameManager : MonoBehaviour
 
     [Header("Management Variables")]
     public List<Body> SimBodies;
+    public enum CamState { Universe, Body}
+    public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
     private int tapCount = 0;
+
+    public bool doubleTapReady = false;
+    private Coroutine doubleTapCheck = null;
+
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
 
@@ -112,52 +118,100 @@ public class GameManager : MonoBehaviour
     {
         if (UniverseCam != null)
             RefreshUniverseCam();
-        //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
 
         if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
-            //Increment taps
-            tapCount++;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit) && !uiPanelPriority)//////
+            if (CurrCamState == CamState.Universe)
             {
-                //If a body has been tapped
-                if (hit.collider != null)
+                //Check to see if object is tapped
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    //Attempts to get reference to Body component
-                    Body b = hit.collider.gameObject.GetComponent<Body>();
-                    if (tapCount >= 2 && focusedBody == b)
+                    //If a body has been tapped
+                    if (hit.collider != null)
                     {
-                        ActivatePlanetCam(b.planetCam);
-                    }
-                    else if (tapCount == 1 && b != null)
-                    {
-                        ShowBodyInfo(b);
+                        //Attempt to get reference to Body component
+                        Body b = hit.collider.gameObject.GetComponent<Body>();
+                        //If the body component exists, then zoom in and display relevant information.
+                        if (b != null)
+                        {
+                            ShowBodyInfo(b);
+                            ActivateBodyCam(b.planetCam);
+                        }
                     }
                 }
-            }
-            //Otherwise, if the focused body is not equal to null
-            else if (focusedBody != null)
-            {
-                focusedBody = null;
-            }
-            else
-            {
-                tapCount = 0;
-                HideBodyInfo();
-                if (UniverseCam != null)
-                    FocusOnUniverse();
-            }
-        }
 
+                //If the player taps empty space otherwise, do nothing
+                else
+                {
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PresetSimulations.Simulation1();
-        }
-       
+                }
+
+            }
+            else if (CurrCamState == CamState.Body)
+            {
+                //Check to see if object is tapped
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    //If a body has been tapped
+                    if (hit.collider != null)
+                    {
+                        //Attempt to get reference to Body component
+                        Body b = hit.collider.gameObject.GetComponent<Body>();
+                        //If the body component exists...
+                        if (b != null)
+                        {
+                            //If the active body has been tapped, do [thing]
+                            if (b == focusedBody)
+                            {
+
+                            }
+                            //If a body other than the active planet has been tapped (likely erroneously), do nothing
+                            else
+                            {
+                                //lol
+                            }
+                        }
+                    }
+                }
+
+                //If empty space is tapped...
+                else
+                {
+                    //...check for a doubletap. If doubletap, zoom out and clear the screen.
+                    if (doubleTapReady)
+                    {
+                        focusedBody = null;
+                        HideBodyInfo();
+                        if (UniverseCam != null)
+                            ActivateUniverseCam();
+                    }
+                    else
+                    {
+                        if (doubleTapCheck != null)
+                            StopCoroutine(doubleTapCheck);
+                        doubleTapCheck = StartCoroutine(DoubleTap());
+                    }
+                }
+
+            }
+        }       
     }
+
+    private IEnumerator DoubleTap()
+    {
+        Debug.Log("New run of Doubletap()");
+        doubleTapReady = true;
+        yield return new WaitForSeconds(0.75f);
+        doubleTapReady = false;
+    }
+
+
 
     //uses a fixed update cycle to keep physics consistent
     void FixedUpdate()
@@ -168,14 +222,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Unfocuses on a selected body, if any, and zooms out to a universe view
-    public void FocusOnUniverse()
-    {
-        BodyInfoPanel.ClearHighlightedBody();
-        BodyInfoPanel.gameObject.SetActive(false);
-        ActivateUniverseCam();
-    }
-
     //Attemps to spawn a new body at 0,0,0 if the max number of planets has not been reached.
     public void TrySpawnNewBody()
     {
@@ -184,7 +230,7 @@ public class GameManager : MonoBehaviour
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();
 
-            ActivatePlanetCam(bodyRef.planetCam);
+            ActivateBodyCam(bodyRef.planetCam);
 
             BodyInfoPanel.gameObject.SetActive(true);
             BodyInfoPanel.SetHighlightedBody(bodyRef);
@@ -210,7 +256,7 @@ public class GameManager : MonoBehaviour
 
             if (shouldFocus)
             {
-                ActivatePlanetCam(bodyRef.planetCam);
+                ActivateBodyCam(bodyRef.planetCam);
                 focusedBody = bodyRef;
                 BodyInfoPanel.gameObject.SetActive(true);
                 BodyInfoPanel.SetHighlightedBody(bodyRef);
@@ -363,17 +409,23 @@ public class GameManager : MonoBehaviour
 
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
-    public void ActivatePlanetCam(CinemachineFreeLook cam)
+    public void ActivateBodyCam(CinemachineFreeLook cam)
     {
         cam.Priority = 5;
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
+        CurrCamState = CamState.Body;
         DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
     }
 
     //Changes the priority to favor the universe over a particular planet
     public void ActivateUniverseCam()
     {
+        BodyInfoPanel.ClearHighlightedBody();
+        BodyInfoPanel.gameObject.SetActive(false);
+
+        CurrCamState = CamState.Universe;
+
         if (ActivePlanetCam != null)
         {
             ActivePlanetCam.Priority = 4;
