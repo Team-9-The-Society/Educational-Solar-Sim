@@ -431,7 +431,7 @@ public class GameManager : MonoBehaviour
                     maxDist = distance;
                 }
             }
-            maxDist += 50;
+            maxDist *= 2;
 
             simulationCenter.transform.position = centroid;
 
