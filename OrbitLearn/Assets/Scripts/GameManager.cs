@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
-    private int tapCount = 0;
 
     public bool doubleTapReady = false;
     private Coroutine doubleTapCheck = null;
@@ -203,6 +202,8 @@ public class GameManager : MonoBehaviour
         }       
     }
 
+
+    //Checks for a doubletap from the user. Ends the doubletap state after time has passed.
     private IEnumerator DoubleTap()
     {
         Debug.Log("New run of Doubletap()");
