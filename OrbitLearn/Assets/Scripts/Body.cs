@@ -22,6 +22,14 @@ public class Body : MonoBehaviour
     public double dzVel;
     public bool DebugSetNewVelocity;
 
+    void Start()
+    {
+        foreach (Light l in lightArray)
+        {
+            l.range = l.range + body.transform.localScale.x;
+        }
+    }
+
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
