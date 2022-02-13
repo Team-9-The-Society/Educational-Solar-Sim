@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public Body focusedBody;
     public int BodyCount = 0;
     private int tapCount = 0;
+    private int bodyClickCount = 0;
 
     public bool doubleTapReady = false;
     private Coroutine doubleTapCheck = null;
@@ -406,7 +407,10 @@ public class GameManager : MonoBehaviour
         HintDisplay.gameObject.SetActive(false);
     }
 
-
+    public string GenerateFunSpaceFact(int clickCount)
+    {
+        return "Banana";
+    }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
     public void ActivateBodyCam(CinemachineFreeLook cam)
@@ -415,7 +419,15 @@ public class GameManager : MonoBehaviour
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
         CurrCamState = CamState.Body;
-        DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
+        if (bodyClickCount > 1)
+        {
+            DisplayHintMessage(GenerateFunSpaceFact(bodyClickCount), GenerateFunSpaceFact(bodyClickCount+1));
+        }
+        else
+        {
+            DisplayHintMessage("Tap twice outside of the body to unfocus.", "TEST");
+        }
+        bodyClickCount++;
     }
 
     //Changes the priority to favor the universe over a particular planet
@@ -588,7 +600,7 @@ public class GameManager : MonoBehaviour
             SliderMenu.ShowIdleMenu();
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
-        DisplayHintMessage("Quickly tap on the body again to focus.", "");
+        //DisplayHintMessage("Quickly tap on the body again to focus.", "Testing");
     }
 
     //Hides Body Info Panel
