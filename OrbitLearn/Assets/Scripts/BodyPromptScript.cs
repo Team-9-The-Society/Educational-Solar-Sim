@@ -82,7 +82,8 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
-                if (passedBody.lightArray[0].enabled != glowToggle.isOn)
+                //Check here
+                if ((passedBody.returnLayer() == 6 && glowToggle.isOn) || (passedBody.returnLayer() == 3 && !glowToggle.isOn))
                 {
                     passedBody.flipLight();
                 }
