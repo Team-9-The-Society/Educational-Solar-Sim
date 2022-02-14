@@ -276,7 +276,7 @@ public class GameManager : MonoBehaviour
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
-            if (glowState && bodyRef.returnLayer() == 6)
+            if (glowState)
             {
                 bodyRef.flipLight();
 

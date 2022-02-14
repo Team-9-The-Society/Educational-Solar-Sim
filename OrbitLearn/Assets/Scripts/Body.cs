@@ -9,7 +9,8 @@ public class Body : MonoBehaviour
     public string bodyName;
     public GameObject body;
     private Rigidbody rb;
-    private Light radiant; 
+    [Header("Reference to Planet's Radiant Light Object")]
+    public Light radiant; 
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
 
@@ -52,16 +53,17 @@ public class Body : MonoBehaviour
 
     public void flipLight()
     {
-        if(body.layer == 3)
+        if (body.layer == 3)
         {
             body.layer = 6;
-            radiant.enable = !radiant.enable;
+            radiant.enabled = false;
         }
         else
         {
             body.layer = 3;
-            radiant.enable = radiant.enable;
+            radiant.enabled = true;
         }
+        Debug.Log("Test Radient: " + radiant.enabled);
     }
 
     public int returnLayer()
