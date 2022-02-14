@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 using TMPro;
+using System;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Management Variables")]
     public List<Body> SimBodies;
-    public enum CamState { Universe, Body}
+    public enum CamState { Universe, Body }
     public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
@@ -43,6 +45,10 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
 
+    private string[] coolFacts = new string[52];
+    private int[] factCollisions = new int[52];
+    private float highLoadBalance = 0;
+    private float load = 0;
     public static RuntimePlatform platform
     {
         get
@@ -75,6 +81,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         SimBodies = new List<Body>();
+        LoadFunFacts();
 
         TryLocateUIReferences();
     }
@@ -406,15 +413,105 @@ public class GameManager : MonoBehaviour
         HintDisplay.ClearMessageText();
         HintDisplay.gameObject.SetActive(false);
     }
-    private int HashItUp(int tablesize, int coprime)
+    private void LoadFunFacts()
     {
-        return 0;
+        coolFacts[0] = "a";
+        coolFacts[1] = "b";
+        coolFacts[2] = "c";
+        coolFacts[3] = "d";
+        coolFacts[4] = "e";
+        coolFacts[5] = "f";
+        coolFacts[6] = "g";
+        coolFacts[7] = "h";
+        coolFacts[8] = "i";
+        coolFacts[9] = "j";
+        coolFacts[10] = "k";
+        coolFacts[11] = "l";
+        coolFacts[12] = "m";
+        coolFacts[13] = "n";
+        coolFacts[14] = "o";
+        coolFacts[15] = "p";
+        coolFacts[16] = "q";
+        coolFacts[17] = "r";
+        coolFacts[18] = "s";
+        coolFacts[19] = "t";
+        coolFacts[20] = "u";
+        coolFacts[21] = "v";
+        coolFacts[22] = "w";
+        coolFacts[23] = "x";
+        coolFacts[24] = "y";
+        coolFacts[25] = "z";
+        coolFacts[26] = "A";
+        coolFacts[27] = "B";
+        coolFacts[28] = "C";
+        coolFacts[29] = "D";
+        coolFacts[30] = "E";
+        coolFacts[31] = "F";
+        coolFacts[32] = "G";
+        coolFacts[33] = "H";
+        coolFacts[34] = "I";
+        coolFacts[35] = "J";
+        coolFacts[36] = "K";
+        coolFacts[37] = "L";
+        coolFacts[38] = "M";
+        coolFacts[39] = "N";
+        coolFacts[40] = "O";
+        coolFacts[41] = "P";
+        coolFacts[42] = "Q";
+        coolFacts[43] = "R";
+        coolFacts[44] = "S";
+        coolFacts[45] = "T";
+        coolFacts[46] = "U";
+        coolFacts[47] = "V";
+        coolFacts[48] = "W";
+        coolFacts[49] = "X";
+        coolFacts[50] = "Y";
+        coolFacts[51] = "Z";
+    }
+    private int SecondHash(int key, int coprime)
+    {
+        return coprime - (key % coprime);
+    }
+
+    private void LoadReset(int [] collisionArray)
+    {
+        for (int i =0; i < collisionArray.Length; i++)
+        {
+            collisionArray[i] = 0;
+        }
+    }
+
+    /// <summary>
+    /// This is a reusable hash algorithm. Keep track of YOUR OWN LOAD AND LoadBalance if you are using it!
+    /// </summary>
+    /// <param name="tablesize"> size of your table/array</param>
+    /// <param name="coprime">double hash base</param>
+    /// <param name="key">the current element</param>
+    /// <param name="loadBalance">% of the table/array that is currently taken up</param>
+    /// <param name="collisionArray">array to mark what is and isnt taken up.</param>
+    /// <returns></returns>
+    private int HashItUp(int tablesize, int coprime, int key, float loadBalance, int [] collisionArray)
+    {
+        
+        int apple = 0;
+        int num = 0;
+        do
+        {
+            num = ((key + apple*(SecondHash(key, coprime)))%(tablesize-1));
+            apple++;
+
+        } while (collisionArray[num] == 50);
+        collisionArray[num] = 50;
+        
+        return num;
     }
     public string GenerateFunSpaceFact(int clickCount)
     {
-        int tablesize = 0, coprime = 0;
-        int getAddress = HashItUp(tablesize, coprime);
-        return "Banana";
+        int tablesize = 52;
+        int coprime = 31;
+        int getAddress = HashItUp(tablesize, coprime, clickCount, highLoadBalance, factCollisions);
+        
+        return coolFacts[getAddress];
     }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
@@ -424,9 +521,19 @@ public class GameManager : MonoBehaviour
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
         CurrCamState = CamState.Body;
+        int invBodyCount = Math.Abs(coolFacts.Length - bodyClickCount);
         if (bodyClickCount > 1)
         {
-            DisplayHintMessage(GenerateFunSpaceFact(bodyClickCount), GenerateFunSpaceFact(bodyClickCount+1));
+            if (highLoadBalance >= .75)
+            {
+                load = 0;
+                highLoadBalance = 0;
+                LoadReset(factCollisions);
+                Debug.Log("LOAD RESET" +bodyClickCount);
+            }
+            DisplayHintMessage(GenerateFunSpaceFact(bodyClickCount), GenerateFunSpaceFact(invBodyCount));
+            load+=2;
+            highLoadBalance = load / ((float)coolFacts.Length-3);
         }
         else
         {
