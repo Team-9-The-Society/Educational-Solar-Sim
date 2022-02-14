@@ -416,11 +416,11 @@ public class GameManager : MonoBehaviour
     }
     private void LoadFunFacts()
     {
-        coolFacts[0] = "a";
-        coolFacts[1] = "b";
-        coolFacts[2] = "c";
-        coolFacts[3] = "d";
-        coolFacts[4] = "e";
+        coolFacts[0] = "Our neighbor galaxy is Andromeda.";
+        coolFacts[1] = "In 2008 NASA confirmed water on Mars";
+        coolFacts[2] = "Mercury orbits our Sun in appr. 88 days.";
+        coolFacts[3] = "Venus' surface can reach 450 Degrees C";
+        coolFacts[4] = "Haley's comet won't pass us again 'til 2061";
         coolFacts[5] = "f";
         coolFacts[6] = "g";
         coolFacts[7] = "h";
