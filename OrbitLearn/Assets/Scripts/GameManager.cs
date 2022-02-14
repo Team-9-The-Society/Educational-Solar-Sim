@@ -406,9 +406,14 @@ public class GameManager : MonoBehaviour
         HintDisplay.ClearMessageText();
         HintDisplay.gameObject.SetActive(false);
     }
-
+    private int HashItUp(int tablesize, int coprime)
+    {
+        return 0;
+    }
     public string GenerateFunSpaceFact(int clickCount)
     {
+        int tablesize = 0, coprime = 0;
+        int getAddress = HashItUp(tablesize, coprime);
         return "Banana";
     }
     #region Camera Functions
