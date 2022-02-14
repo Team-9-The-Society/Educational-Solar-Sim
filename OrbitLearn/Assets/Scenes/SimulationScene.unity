@@ -1879,7 +1879,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608564377}
-  m_LocalRotation: {x: -0.049813718, y: 0.000000019921753, z: 7.3421264e-10, w: 0.99875855}
+  m_LocalRotation: {x: -0.049813718, y: 0.000000019919526, z: 7.3406814e-10, w: 0.99875855}
   m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3481,12 +3481,12 @@ PrefabInstance:
     - target: {fileID: 3689151797378685771, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017321318
+      value: 0.000000017318756
       objectReference: {fileID: 0}
     - target: {fileID: 3689151797378685771, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.639114e-10
+      value: 8.6378366e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3689151797772466574, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -3571,12 +3571,12 @@ PrefabInstance:
     - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000018186654
+      value: 0.000000018184206
       objectReference: {fileID: 0}
     - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000018008344
+      value: 0.000000001800592
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798298187084, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -3689,6 +3689,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940642032155606778, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
+      propertyPath: m_margin.x
+      value: -18.773254
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940642032155606778, guid: a04fc2805f561b44e8b0038b4fde3f1b,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -29.121704
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940642032155606778, guid: a04fc2805f561b44e8b0038b4fde3f1b,
+        type: 3}
       propertyPath: m_fontSizeBase
       value: 39.5
       objectReference: {fileID: 0}
@@ -3721,6 +3731,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_margin.w
       value: 9.94718
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940642032558786562, guid: a04fc2805f561b44e8b0038b4fde3f1b,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -22.054718
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940642032558786562, guid: a04fc2805f561b44e8b0038b4fde3f1b,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -20.887817
       objectReference: {fileID: 0}
     - target: {fileID: 8940642032558786562, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
