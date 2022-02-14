@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     private int[] factCollisions = new int[52];
     private float highLoadBalance = 0;
     private float load = 0;
+    HashItUp hashObject;
     public static RuntimePlatform platform
     {
         get
@@ -82,7 +83,7 @@ public class GameManager : MonoBehaviour
 
         SimBodies = new List<Body>();
         LoadFunFacts();
-
+        hashObject = new HashItUp(factCollisions.Length, 31, 0, highLoadBalance, factCollisions);
         TryLocateUIReferences();
     }
     public List<Body> getList()
@@ -468,55 +469,10 @@ public class GameManager : MonoBehaviour
         coolFacts[50] = "Y";
         coolFacts[51] = "Z";
     }
-    private int SecondHash(int key, int coprime)
+   
+    public string GenerateFunSpaceFact(int address)
     {
-        return coprime - (key % coprime);
-    }
-
-    private void LoadReset(int [] collisionArray)
-    {
-        load = 0;
-        highLoadBalance = 0;
-        
-        for (int i =0; i < collisionArray.Length; i++)
-        {
-            collisionArray[i] = 0;
-        }
-        
-        
-    }
-
-    /// <summary>
-    /// This is a reusable hash algorithm. Keep track of YOUR OWN LOAD AND LoadBalance if you are using it!
-    /// </summary>
-    /// <param name="tablesize"> size of your table/array</param>
-    /// <param name="coprime">double hash base</param>
-    /// <param name="key">the current element</param>
-    /// <param name="loadBalance">% of the table/array that is currently taken up</param>
-    /// <param name="collisionArray">array to mark what is and isnt taken up.</param>
-    /// <returns></returns>
-    private int HashItUp(int tablesize, int coprime, int key, float loadBalance, int [] collisionArray)
-    {
-        
-        int apple = 0;
-        int num = 0;
-        do
-        {
-            num = ((key + apple*(SecondHash(key, coprime)))%(tablesize-1));
-            apple++;
-
-        } while (collisionArray[num] == 50);
-        collisionArray[num] = 50;
-        
-        return num;
-    }
-    public string GenerateFunSpaceFact(int clickCount)
-    {
-        int tablesize = 52;
-        int coprime = 31;
-        int getAddress = HashItUp(tablesize, coprime, clickCount, highLoadBalance, factCollisions);
-        
-        return coolFacts[getAddress];
+        return coolFacts[address];
     }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
@@ -527,16 +483,19 @@ public class GameManager : MonoBehaviour
         UniverseCam.Priority = 4;
         CurrCamState = CamState.Body;
         int ran = UnityEngine.Random.Range(0, factCollisions.Length - 1);
-        int invRan = Math.Abs(coolFacts.Length - ran);
+
+        hashObject.ChangeKey(ran);
+        
         if (bodyClickCount > 0)
         {
-            if (highLoadBalance >= .75)
+            if (highLoadBalance > .70)
             {
-                LoadReset(factCollisions);
+                hashObject.PublicLoadReset();
             }
-            DisplayHintMessage(GenerateFunSpaceFact(ran), GenerateFunSpaceFact(invRan));
-            load += 2;
-            highLoadBalance = load / ((float)coolFacts.Length - 3);
+            DisplayHintMessage(GenerateFunSpaceFact(hashObject.HashItOut(0)), GenerateFunSpaceFact(hashObject.HashItOut(1)));
+            hashObject.ManualIncrementAndLoadBalance(2);
+            load = hashObject.getLoad();
+            highLoadBalance = hashObject.getLoadBalance();
         }
         else
         {
