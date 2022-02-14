@@ -475,10 +475,15 @@ public class GameManager : MonoBehaviour
 
     private void LoadReset(int [] collisionArray)
     {
+        load = 0;
+        highLoadBalance = 0;
+        
         for (int i =0; i < collisionArray.Length; i++)
         {
             collisionArray[i] = 0;
         }
+        
+        
     }
 
     /// <summary>
@@ -521,23 +526,21 @@ public class GameManager : MonoBehaviour
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
         CurrCamState = CamState.Body;
-        int invBodyCount = Math.Abs(coolFacts.Length - bodyClickCount);
-        if (bodyClickCount > 1)
+        int ran = UnityEngine.Random.Range(0, factCollisions.Length - 1);
+        int invRan = Math.Abs(coolFacts.Length - ran);
+        if (bodyClickCount > 0)
         {
             if (highLoadBalance >= .75)
             {
-                load = 0;
-                highLoadBalance = 0;
                 LoadReset(factCollisions);
-                Debug.Log("LOAD RESET" +bodyClickCount);
             }
-            DisplayHintMessage(GenerateFunSpaceFact(bodyClickCount), GenerateFunSpaceFact(invBodyCount));
-            load+=2;
-            highLoadBalance = load / ((float)coolFacts.Length-3);
+            DisplayHintMessage(GenerateFunSpaceFact(ran), GenerateFunSpaceFact(invRan));
+            load += 2;
+            highLoadBalance = load / ((float)coolFacts.Length - 3);
         }
         else
         {
-            DisplayHintMessage("Tap twice outside of the body to unfocus.", "TEST");
+            DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
         }
         bodyClickCount++;
     }
