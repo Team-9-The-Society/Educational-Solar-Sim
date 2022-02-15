@@ -1879,7 +1879,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608564377}
-  m_LocalRotation: {x: -0.049813718, y: 0.000000020496541, z: 7.711982e-10, w: 0.99875855}
+  m_LocalRotation: {x: -0.049813718, y: 0.000000022328805, z: 8.856224e-10, w: 0.99875855}
   m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3576,12 +3576,12 @@ PrefabInstance:
     - target: {fileID: 3689151797378685771, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017979488
+      value: 0.000000020043332
       objectReference: {fileID: 0}
     - target: {fileID: 3689151797378685771, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.967382e-10
+      value: 9.996737e-10
       objectReference: {fileID: 0}
     - target: {fileID: 3689151797772466574, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -3666,12 +3666,12 @@ PrefabInstance:
     - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000018822897
+      value: -0.00000002082697
       objectReference: {fileID: 0}
     - target: {fileID: 3689151797793819355, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000018638349
+      value: -0.0000000020622772
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798298187084, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -3903,12 +3903,12 @@ PrefabInstance:
     - target: {fileID: 8940642032155606780, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: -31
       objectReference: {fileID: 0}
     - target: {fileID: 8940642032558786560, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 8940642032558786562, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
@@ -3993,7 +3993,7 @@ PrefabInstance:
     - target: {fileID: 8940642032806179995, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 138.4153
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 8940642032806179995, guid: a04fc2805f561b44e8b0038b4fde3f1b,
         type: 3}
