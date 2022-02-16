@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public UIPresetSimulations PresetSimulations;
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
+    public UIFilePanel FilePanel;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -648,6 +649,12 @@ public class GameManager : MonoBehaviour
 
                 simulationCenter = b.UniverseCenter;
 
+                if(b.FileRef != null)
+                {
+                    FilePanel = b.FileRef;
+                    FilePanel.ActivateUIElement(this);
+                    FilePanel.gameObject.SetActive(false);
+                }
 
             }
         }
