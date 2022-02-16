@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public GameObject emptyBodyPrefab;
 
 
+    [Header("Backend Import Variable")]
+    public string importString;
+
     [Header("Management Variables")]
     public List<Body> SimBodies;
     public enum CamState { Universe, Body }
@@ -385,6 +388,21 @@ public class GameManager : MonoBehaviour
         }
 
         return;
+    }
+
+    public void SetImportString(string filename)
+    {
+        importString = filename;
+        /*
+         * Whatever else you need to call on the backend
+         */
+    }
+
+    public void ExportSimulation()
+    {
+        /*
+         * Whatever you need to call on the backend
+         */
     }
 
     public void TogglePause()
