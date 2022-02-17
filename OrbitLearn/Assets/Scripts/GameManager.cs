@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
 
-    private string[] coolFacts = new string[52];
-    private int[] factCollisions = new int[52];
+    private string[] coolFacts;
+    private int[] factCollisions;
     private float highLoadBalance = 0;
     private float load = 0;
     HashItUp hashObject;
@@ -435,58 +435,64 @@ public class GameManager : MonoBehaviour
     }
     private void LoadFunFacts()
     {
-        coolFacts[0] = "Our neighbor galaxy is Andromeda.";
-        coolFacts[1] = "In 2008 NASA confirmed water on Mars";
-        coolFacts[2] = "Mercury orbits our Sun in appr. 88 days.";
-        coolFacts[3] = "Venus' surface can reach 450 Degrees C";
-        coolFacts[4] = "Haley's comet won't pass us again 'til 2061.";
-        coolFacts[5] = "Our solar system is 4.57 billion years old.";
-        coolFacts[6] = "Footprints left on the Moon won’t disappear.";
-        coolFacts[7] = "There are 79 known moons orbiting Jupiter.";
-        coolFacts[8] = "Earth is the only planet not named after a god.";
-        coolFacts[9] = "Pluto is smaller than the United States";
-        coolFacts[10] = "A season on Uranus is 21 Earth years.";
-        coolFacts[11] = "Neptune’s moon, Triton, orbits it backwards.";
-        coolFacts[12] = "A day on Pluto is lasts for 153.6 hours long.";
-        coolFacts[13] = "Saturn is the 2nd largest planet.";
-        coolFacts[14] = "Only 5% of the universe is visible from Earth.";
-        coolFacts[15] = "Outer Space is only 62 miles away.";
-        coolFacts[16] = "On Venus, it snows metal & rains sulfuric acid.";
-        coolFacts[17] = "Space is completely silent.";
-        coolFacts[18] = "Exoplanets orbit around other stars.";
-        coolFacts[19] = "Venus is the hottest planet in our solar system. ";
-        coolFacts[20] = "Astronauts can’t burp in space.";
-        coolFacts[21] = "Uranus was originally called “George’s Star”.";
-        coolFacts[22] = "A sunset on Mars is blue.";
-        coolFacts[23] = "The Earth weighs ~81 times more than the Moon.";
-        coolFacts[24] = "Gennady Padalka has spent 879 days in space";
-        coolFacts[25] = "There is no wind or weather on Mercury.";
-        coolFacts[26] = "Jupiter’s Red Spot is shrinking.";
-        coolFacts[27] = "A day on Mercury is ~58 Earth days.";
-        coolFacts[28] = "As space has no gravity, pens won’t work.";
-        coolFacts[29] = "The center of a comet is called a 'nucleus'";
-        coolFacts[30] = "There are 5 Dwarf Planets in our Solar System.";
-        coolFacts[31] = "Nobody knows how many stars are in space.";
-        coolFacts[32] = "A full NASA space suit costs $12,000,000.";
-        coolFacts[33] = "Neutron stars can spin 600 times per second.";
-        coolFacts[34] = "One day on Venus is longer than one year.";
-        coolFacts[35] = "There is floating water in space.";
-        coolFacts[36] = "The largest known asteroid is 965km wide.";
-        coolFacts[37] = "The Moon was once a piece of the Earth.";
-        coolFacts[38] = "The universe is around 13.8 billion years old";
-        coolFacts[39] = "Mars and Earth have roughly the same landmass.";
-        coolFacts[40] = "Only 18 missions to Mars have been successful.";
-        coolFacts[41] = "Pieces of Mars have fallen to Earth.";
-        coolFacts[42] = "One day Mars will have a ring.";
-        coolFacts[43] = "A year on Neptune lasts 165 Earth years.";
-        coolFacts[44] = "Neptune has 6 faint rings.";
-        coolFacts[45] = "Neptune is the most distant planet from the Sun.";
-        coolFacts[46] = "Neptune spins on its axis very rapidly.";
-        coolFacts[47] = "Only one spacecraft has flown by Uranus.";
-        coolFacts[48] = "Uranus hits the coldest temps of any planet.";
-        coolFacts[49] = "Jupiter has the shortest day of all the planets.";
-        coolFacts[50] = "Eight spacecraft have visited Jupiter.";
-        coolFacts[51] = "A year on Venus takes 225 Earth days.";
+        coolFacts = new string[]
+        {
+            "Our neighbor galaxy is Andromeda.",
+            "In 2008 NASA confirmed water on Mars",
+            "Mercury orbits our Sun in appr. 88 days.",
+            "Venus' surface can reach 450 Degrees C",
+            "Haley's comet won't pass us again 'til 2061.",
+            "Our solar system is 4.57 billion years old.",
+            "Footprints left on the Moon won’t disappear.",
+            "There are 79 known moons orbiting Jupiter.",
+            "Earth is the only planet not named after a god.",
+            "Pluto is smaller than the United States",
+             "A season on Uranus is 21 Earth years.",
+             "Neptune’s moon, Triton, orbits it backwards.",
+             "A day on Pluto is lasts for 153.6 hours long.",
+             "Saturn is the 2nd largest planet.",
+             "Only 5% of the universe is visible from Earth.",
+             "Outer Space is only 62 miles away.",
+             "On Venus, it snows metal & rains sulfuric acid.",
+             "Space is completely silent.",
+             "Exoplanets orbit around other stars.",
+             "Venus is the hottest planet in our solar system. ",
+             "Astronauts can’t burp in space.",
+             "Uranus was originally called “George’s Star”.",
+             "A sunset on Mars is blue.",
+             "The Earth weighs ~81 times more than the Moon.",
+             "Gennady Padalka has spent 879 days in space",
+             "There is no wind or weather on Mercury.",
+             "Jupiter’s Red Spot is shrinking.",
+             "A day on Mercury is ~58 Earth days.",
+             "As space has no gravity, pens won’t work.",
+             "The center of a comet is called a 'nucleus'",
+             "There are 5 Dwarf Planets in our Solar System.",
+             "Nobody knows how many stars are in space.",
+             "A full NASA space suit costs $12,000,000.",
+             "Neutron stars can spin 600 times per second.",
+             "One day on Venus is longer than one year.",
+             "There is floating water in space.",
+             "The largest known asteroid is 965km wide.",
+             "The Moon was once a piece of the Earth.",
+             "The universe is around 13.8 billion years old",
+             "Mars and Earth have roughly the same landmass.",
+             "Only 18 missions to Mars have been successful.",
+             "Pieces of Mars have fallen to Earth.",
+             "One day Mars will have a ring.",
+             "A year on Neptune lasts 165 Earth years.",
+             "Neptune has 6 faint rings.",
+             "Neptune is the most distant planet from the Sun.",
+             "Neptune spins on its axis very rapidly.",
+             "Only one spacecraft has flown by Uranus.",
+             "Uranus hits the coldest temps of any planet.",
+             "Jupiter has the shortest day of all the planets.",
+             "Eight spacecraft have visited Jupiter.",
+             "A year on Venus takes 225 Earth days.",
+             "A year on Earth takes 364 ish Earth days."
+        };
+
+        factCollisions = new int[coolFacts.Length];
     }
    
     public string GenerateFunSpaceFact(int address)
