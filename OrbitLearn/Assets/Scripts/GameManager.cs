@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
+    public RotationDisplay RotDisplay;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
                         {
                             ShowBodyInfo(b);
                             ActivateBodyCam(b.planetCam);
+                            RotDisplay.gameObject.SetActive(false);
                         }
                     }
                 }
@@ -202,7 +204,10 @@ public class GameManager : MonoBehaviour
                         focusedBody = null;
                         HideBodyInfo();
                         if (UniverseCam != null)
+                        {
                             ActivateUniverseCam();
+                            RotDisplay.gameObject.SetActive(true);
+                        }
                     }
                     else
                     {
@@ -678,6 +683,12 @@ public class GameManager : MonoBehaviour
                     FilePanel = b.FileRef;
                     FilePanel.ActivateUIElement(this);
                     FilePanel.gameObject.SetActive(false);
+                }
+                if(b.RotDisplayRef != null)
+                {
+                    RotDisplay = b.RotDisplayRef;
+                    RotDisplay.ActivateUIElement(this);
+                    RotDisplay.gameObject.SetActive(true);
                 }
 
             }
