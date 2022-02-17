@@ -21,6 +21,7 @@ public class UISliderMenu : MonoBehaviour
     public GameObject BodyInfoPanel;
     public GameObject PresetSimulationsPanel;
     public GameObject PauseButton;
+    public GameObject FilePanel;
 
     [Header("Management Variables")]
     public bool paused = false;
@@ -101,6 +102,10 @@ public class UISliderMenu : MonoBehaviour
         else
             Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
     }
+    public void ShowFilePanel()
+    {
+        FilePanel.SetActive(true);
+    }
 
     //Hides the list of preset simulations
     public void HidePresetSimsPanel()
@@ -124,7 +129,7 @@ public class UISliderMenu : MonoBehaviour
         BodiesDescriptionPanel.SetActive(false);
         BodyInfoPanel.SetActive(false);
         PanelHideHint.SetActive(false);
-
+        FilePanel.SetActive(false);
     }
 
     public void LoadHomeScene()
