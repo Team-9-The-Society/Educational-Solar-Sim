@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 using TMPro;
+using System;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -30,10 +32,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Management Variables")]
     public List<Body> SimBodies;
-    public enum CamState { Universe, Body}
+    public enum CamState { Universe, Body }
     public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
+    private int tapCount = 0;
+    private int bodyClickCount = 0;
 
     public bool doubleTapReady = false;
     private Coroutine doubleTapCheck = null;
@@ -41,6 +45,11 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
 
+    private string[] coolFacts = new string[52];
+    private int[] factCollisions = new int[52];
+    private float highLoadBalance = 0;
+    private float load = 0;
+    HashItUp hashObject;
     public static RuntimePlatform platform
     {
         get
@@ -73,7 +82,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
         SimBodies = new List<Body>();
-
+        LoadFunFacts();
+        hashObject = new HashItUp(factCollisions.Length, 31, 0, highLoadBalance, factCollisions);
         TryLocateUIReferences();
     }
     public List<Body> getList()
@@ -277,7 +287,7 @@ public class GameManager : MonoBehaviour
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
-            if (glowState!= bodyRef.lightArray[0].enabled)
+            if (glowState)
             {
                 bodyRef.flipLight();
 
@@ -406,8 +416,66 @@ public class GameManager : MonoBehaviour
         HintDisplay.ClearMessageText();
         HintDisplay.gameObject.SetActive(false);
     }
-
-
+    private void LoadFunFacts()
+    {
+        coolFacts[0] = "Our neighbor galaxy is Andromeda.";
+        coolFacts[1] = "In 2008 NASA confirmed water on Mars";
+        coolFacts[2] = "Mercury orbits our Sun in appr. 88 days.";
+        coolFacts[3] = "Venus' surface can reach 450 Degrees C";
+        coolFacts[4] = "Haley's comet won't pass us again 'til 2061.";
+        coolFacts[5] = "Our solar system is 4.57 billion years old.";
+        coolFacts[6] = "Footprints left on the Moon wont disappear.";
+        coolFacts[7] = "There are 79 known moons orbiting Jupiter.";
+        coolFacts[8] = "Earth is the only planet not named after a god.";
+        coolFacts[9] = "Pluto is smaller than the United States";
+        coolFacts[10] = "A season on Uranus is 21 Earth years.";
+        coolFacts[11] = "Neptunes moon, Triton, orbits it backwards.";
+        coolFacts[12] = "A day on Pluto is lasts for 153.6 hours long.";
+        coolFacts[13] = "Saturn is the 2nd largest planet.";
+        coolFacts[14] = "Only 5% of the universe is visible from Earth.";
+        coolFacts[15] = "Outer Space is only 62 miles away.";
+        coolFacts[16] = "On Venus, it snows metal & rains sulfuric acid.";
+        coolFacts[17] = "Space is completely silent.";
+        coolFacts[18] = "Exoplanets orbit around other stars.";
+        coolFacts[19] = "Venus is the hottest planet in our solar system. ";
+        coolFacts[20] = "Astronauts cant burp in space.";
+        coolFacts[21] = "Uranus was originally called Georges Star.";
+        coolFacts[22] = "A sunset on Mars is blue.";
+        coolFacts[23] = "The Earth weighs ~81 times more than the Moon.";
+        coolFacts[24] = "Gennady Padalka has spent 879 days in space";
+        coolFacts[25] = "There is no wind or weather on Mercury.";
+        coolFacts[26] = "Jupiters Red Spot is shrinking.";
+        coolFacts[27] = "A day on Mercury is ~58 Earth days.";
+        coolFacts[28] = "As space has no gravity, pens wont work.";
+        coolFacts[29] = "The center of a comet is called a 'nucleus'";
+        coolFacts[30] = "There are 5 Dwarf Planets in our Solar System.";
+        coolFacts[31] = "Nobody knows how many stars are in space.";
+        coolFacts[32] = "A full NASA space suit costs $12,000,000.";
+        coolFacts[33] = "Neutron stars can spin 600 times per second.";
+        coolFacts[34] = "One day on Venus is longer than one year.";
+        coolFacts[35] = "There is floating water in space.";
+        coolFacts[36] = "The largest known asteroid is 965km wide.";
+        coolFacts[37] = "The Moon was once a piece of the Earth.";
+        coolFacts[38] = "The universe is around 13.8 billion years old";
+        coolFacts[39] = "Mars and Earth have roughly the same landmass.";
+        coolFacts[40] = "Only 18 missions to Mars have been successful.";
+        coolFacts[41] = "Pieces of Mars have fallen to Earth.";
+        coolFacts[42] = "One day Mars will have a ring.";
+        coolFacts[43] = "A year on Neptune lasts 165 Earth years.";
+        coolFacts[44] = "Neptune has 6 faint rings.";
+        coolFacts[45] = "Neptune is the most distant planet from the Sun.";
+        coolFacts[46] = "Neptune spins on its axis very rapidly.";
+        coolFacts[47] = "Only one spacecraft has flown by Uranus.";
+        coolFacts[48] = "Uranus hits the coldest temps of any planet.";
+        coolFacts[49] = "Jupiter has the shortest day of all the planets.";
+        coolFacts[50] = "Eight spacecraft have visited Jupiter.";
+        coolFacts[51] = "A year on Venus takes 225 Earth days.";
+    }
+   
+    public string GenerateFunSpaceFact(int address)
+    {
+        return coolFacts[address];
+    }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
     public void ActivateBodyCam(CinemachineFreeLook cam)
@@ -416,7 +484,26 @@ public class GameManager : MonoBehaviour
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
         CurrCamState = CamState.Body;
-        DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
+        int ran = UnityEngine.Random.Range(0, factCollisions.Length - 1);
+
+        hashObject.ChangeKey(ran);
+        
+        if (bodyClickCount > 0)
+        {
+            if (highLoadBalance > .70)
+            {
+                hashObject.PublicLoadReset();
+            }
+            DisplayHintMessage(GenerateFunSpaceFact(hashObject.HashItOut(0)), GenerateFunSpaceFact(hashObject.HashItOut(1)));
+            hashObject.ManualIncrementAndLoadBalance(2);
+            load = hashObject.getLoad();
+            highLoadBalance = hashObject.getLoadBalance();
+        }
+        else
+        {
+            DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
+        }
+        bodyClickCount++;
     }
 
     //Changes the priority to favor the universe over a particular planet
@@ -584,9 +671,12 @@ public class GameManager : MonoBehaviour
     public void ShowBodyInfo(Body b)
     {
         focusedBody = b;
+        //If the slider menu is open, and someone clicks on a body, now the slider menu is moved back to starting position.
+        if(!SliderMenu.isOpen)
+            SliderMenu.ShowIdleMenu();
         BodyInfoPanel.gameObject.SetActive(true);
         BodyInfoPanel.SetHighlightedBody(b);
-        DisplayHintMessage("Quickly tap on the body again to focus.", "");
+        //DisplayHintMessage("Quickly tap on the body again to focus.", "Testing");
     }
 
     //Hides Body Info Panel

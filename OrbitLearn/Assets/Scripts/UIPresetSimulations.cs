@@ -87,9 +87,9 @@ public class UIPresetSimulations : MonoBehaviour
 
         GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "Aur", false);
 
-        GameManager.Instance.TrySpawnNewBody(5*Math.Pow(10, 6), 13, 8, 0, -2.5, 3.8, 0, 4.5, false, "Eln", false);
+        GameManager.Instance.TrySpawnNewBody(5*Math.Pow(10, 6), 13, 8, 0, -2.2, 2.8, 2, 4.5, false, "Eln", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 2), -22, 0, 0, 0, -3.6, 0, 3, false, "Eos", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 2), -22, 0, 0, 0, -3.8, 0, 3, false, "Eos", false);
 
         GameManager.Instance.ActivateUniverseCam();
     }

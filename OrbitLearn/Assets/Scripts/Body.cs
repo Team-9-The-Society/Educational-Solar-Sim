@@ -9,12 +9,10 @@ public class Body : MonoBehaviour
     public string bodyName;
     public GameObject body;
     private Rigidbody rb;
-
+    [Header("Reference to Planet's Radiant Light Object")]
+    public Light radiant; 
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
-
-    [Header("Planet Spotlight")]
-    public Light[] lightArray;
 
     [Header("Debug - Force Change Current Velocity")]
     public double dxVel;
@@ -22,14 +20,6 @@ public class Body : MonoBehaviour
     public double dzVel;
     public bool DebugSetNewVelocity;
 
-    void Start()
-    {
-        foreach (Light l in lightArray)
-        {
-            l.range = l.range + body.transform.localScale.x;
-            l.intensity = (float)2.2 + ((float)body.transform.localScale.x / (float)2);
-        }
-    }
 
     private void Awake()
     {
@@ -63,9 +53,21 @@ public class Body : MonoBehaviour
 
     public void flipLight()
     {
-        foreach(Light l in lightArray)
+        if (body.layer == 3)
         {
-            l.enabled = !l.enabled;
+            body.layer = 6;
+            radiant.enabled = false;
         }
+        else
+        {
+            body.layer = 3;
+            radiant.enabled = true;
+        }
+        Debug.Log("Test Radient: " + radiant.enabled);
+    }
+
+    public int returnLayer()
+    {
+        return body.layer;
     }
 }

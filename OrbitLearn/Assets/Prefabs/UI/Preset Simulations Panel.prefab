@@ -611,6 +611,26 @@ PrefabInstance:
       propertyPath: m_text
       value: Circular Orbit
       objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 27.739746
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 311.9085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 29.794067
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 338.7177
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
 --- !u!224 &1080313178976700952 stripped
@@ -855,6 +875,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Dual Elliptical Moons
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 9.663422
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 325.99585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 16.17984
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 382.08533
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
@@ -1101,6 +1141,26 @@ PrefabInstance:
       propertyPath: m_text
       value: Gravity Slingshot
       objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 6.213257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 305.54013
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -0.15924072
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 345.47186
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
 --- !u!224 &1080313179465018498 stripped
@@ -1346,6 +1406,26 @@ PrefabInstance:
       propertyPath: m_text
       value: Dual Circular Moons
       objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 17.603271
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 318.96896
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 31.899841
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 351.2532
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}
 --- !u!224 &1080313178146033462 stripped
@@ -1590,6 +1670,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Elliptical Orbit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 22.198975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 317.39062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 32.06726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: 47a684e0e79aa684b9aa0fab56749b1a,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 365.58728
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a684e0e79aa684b9aa0fab56749b1a, type: 3}

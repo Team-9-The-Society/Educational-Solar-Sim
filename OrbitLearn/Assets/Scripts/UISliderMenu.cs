@@ -24,6 +24,7 @@ public class UISliderMenu : MonoBehaviour
 
     [Header("Management Variables")]
     public bool paused = false;
+    public bool isOpen = false;
 
     private void Awake()
     {
@@ -70,8 +71,8 @@ public class UISliderMenu : MonoBehaviour
     //Triggers the panel sliding in/out of the frame
     public void ShowIdleMenu()
     {
-            bool isOpen = animator.GetBool("show");
-            animator.SetBool("show", !isOpen);
+        isOpen = animator.GetBool("show");
+        animator.SetBool("show", !isOpen);
     }
 
 
