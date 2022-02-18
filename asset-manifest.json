@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a1b30042.chunk.css",
+    "main.js": "/static/js/main.2a83a81e.chunk.js",
+    "main.js.map": "/static/js/main.2a83a81e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.602bef71.js",
+    "runtime-main.js.map": "/static/js/runtime-main.602bef71.js.map",
+    "static/css/2.92abccde.chunk.css": "/static/css/2.92abccde.chunk.css",
+    "static/js/2.756e5370.chunk.js": "/static/js/2.756e5370.chunk.js",
+    "static/js/2.756e5370.chunk.js.map": "/static/js/2.756e5370.chunk.js.map",
+    "static/js/3.f0e5a195.chunk.js": "/static/js/3.f0e5a195.chunk.js",
+    "static/js/3.f0e5a195.chunk.js.map": "/static/js/3.f0e5a195.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.92abccde.chunk.css.map": "/static/css/2.92abccde.chunk.css.map",
+    "static/css/main.a1b30042.chunk.css.map": "/static/css/main.a1b30042.chunk.css.map",
+    "static/js/2.756e5370.chunk.js.LICENSE.txt": "/static/js/2.756e5370.chunk.js.LICENSE.txt",
+    "static/media/MiddleSchoolGravityWorksheet.57f52058.pdf": "/static/media/MiddleSchoolGravityWorksheet.57f52058.pdf",
+    "static/media/OrbitLearnIcon.62d2a2f1.png": "/static/media/OrbitLearnIcon.62d2a2f1.png",
+    "static/media/TextLogo.3bc26de3.png": "/static/media/TextLogo.3bc26de3.png",
+    "static/media/about.aee0f771.png": "/static/media/about.aee0f771.png",
+    "static/media/google-play-badge.f902960a.png": "/static/media/google-play-badge.f902960a.png",
+    "static/media/style.css": "/static/media/pre.d4812f51.svg",
+    "static/media/logo.61386a82.png": "/static/media/logo.61386a82.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.602bef71.js",
+    "static/css/2.92abccde.chunk.css",
+    "static/js/2.756e5370.chunk.js",
+    "static/css/main.a1b30042.chunk.css",
+    "static/js/main.2a83a81e.chunk.js"
+  ]
+}
