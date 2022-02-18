@@ -696,7 +696,7 @@ public class GameManager : MonoBehaviour
                 {
                     RotDisplay = b.RotDisplayRef;
                     RotDisplay.ActivateUIElement(this);
-                    RotDisplay.gameObject.SetActive(true);
+                    RotDisplay.gameObject.SetActive(false);
                 }
 
             }
