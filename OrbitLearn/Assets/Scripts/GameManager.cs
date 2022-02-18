@@ -153,7 +153,6 @@ public class GameManager : MonoBehaviour
                         {
                             ShowBodyInfo(b);
                             ActivateBodyCam(b.planetCam);
-                            RotDisplay.gameObject.SetActive(false);
                         }
                     }
                 }
@@ -206,7 +205,6 @@ public class GameManager : MonoBehaviour
                         if (UniverseCam != null)
                         {
                             ActivateUniverseCam();
-                            RotDisplay.gameObject.SetActive(true);
                         }
                     }
                     else
@@ -308,7 +306,17 @@ public class GameManager : MonoBehaviour
     {
         uiPanelPriority = !uiPanelPriority;
     }
-
+    public void ChangeRotDisplay()
+    {
+        if (RotDisplay.gameObject.activeSelf)
+        {
+            RotDisplay.gameObject.SetActive(false);
+        }
+        else
+        {
+            RotDisplay.gameObject.SetActive(true);
+        }
+    }
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
