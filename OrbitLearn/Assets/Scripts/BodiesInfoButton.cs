@@ -144,7 +144,7 @@ public class BodiesInfoButton : MonoBehaviour
 
             button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
             button.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth/textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
-            buttonCenterUniv.GetComponentInChildren<TMP_Text>().text = "Set Univ. Center";
+            buttonCenterUniv.GetComponentInChildren<TMP_Text>().text = "Set univ";
             buttonCenterUniv.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth / textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
             
             
