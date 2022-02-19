@@ -677,10 +677,40 @@ public class GameManager : MonoBehaviour
         }
         else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
         {
+            float massMax = 0;
+            float xCenter = 0;
+            float yCenter = 0;
+            float zCenter = 0;
+
+            foreach (Body b in SimBodies)
+            {
+                xCenter += (b.gameObject.transform.position.x);
+                yCenter += (b.gameObject.transform.position.y);
+                zCenter += (b.gameObject.transform.position.z);
+            }
+
+            xCenter = xCenter / SimBodies.Count;
+            yCenter = yCenter / SimBodies.Count;
+            zCenter = zCenter / SimBodies.Count;
+
+            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+
+            float maxDist = 25;
+            foreach (Body b in SimBodies)
+            {
+                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                if (maxDist < distance)
+                {
+                    maxDist = distance;
+                }
+            }
+            maxDist *= 2;
+
+
             simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
         }
         else
         {
