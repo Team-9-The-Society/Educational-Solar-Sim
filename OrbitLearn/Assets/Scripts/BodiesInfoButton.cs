@@ -53,7 +53,7 @@ public class BodiesInfoButton : MonoBehaviour
         }
         else
         {
-            Debug.Log("PauseTest");
+            //Debug.Log("PauseTest");
             displayTxt.text = iterateBodies();
         }
     }
@@ -167,17 +167,17 @@ public class BodiesInfoButton : MonoBehaviour
         //growing panel
         if (panelExpansion ==0)
         {
-            if (knownBodyCount == 0 && panelLastCount > -1)
+            if (knownBodyCount == 0 && panelLastCount > -1) //So this only occurs after a reset when the panel is opened with no bodies. This is to counter a bug where the panel text is placed odd.
             {
                 panelGrowth(1);
                 noBodyVerified = true;
             }
-            else if (knownBodyCount > 0 && noBodyVerified)
+            else if (knownBodyCount > 0 && noBodyVerified) //This is to counter the previous counter and should only occur once if the panel is opened after bodies have been added after the panel previously held 0 text
             {
                 panelGrowth(-1);
                 noBodyVerified = false;
             }
-            else
+            else //life is back to normal, everything functions as it did before the patch.
             {
                 panelGrowth(0);
             }
