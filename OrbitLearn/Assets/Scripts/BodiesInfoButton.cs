@@ -15,7 +15,8 @@ public class BodiesInfoButton : MonoBehaviour
     public int panelExpansionCount = 0;
     public int buttonCount = 0;
     public int presetFilm = 0;
-    int knownBodyCount;
+    public int knownBodyCount;
+    public bool noBodyVerified = false;
 
 
     public List<GameObject> Buttons;
@@ -57,7 +58,7 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public int calculateStepHeight()
     {//DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
-        return gameManagerReference.BodyCount - 1 - panelLastCount;//- 6 -
+        return knownBodyCount - 1 - panelLastCount;//- 6 -
 
     }
     public float[] getScreenplier()
@@ -142,17 +143,17 @@ public class BodiesInfoButton : MonoBehaviour
             //////
         }
     }
-    public void panelGrowth()
+    public void panelGrowth(int zero)
     {
         panelExpansion = 1;
 
         panelRedaction = calculateStepHeight();
        
             
-        displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -458);
+        displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction+zero) * -458);
         panelExpansionCount += panelRedaction;
             
-        panelLastCount = gameManagerReference.BodyCount - 1;
+        panelLastCount = knownBodyCount - 1;
         
 
 
@@ -163,9 +164,23 @@ public class BodiesInfoButton : MonoBehaviour
     { //DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
         knownBodyCount = gameManagerReference.BodyCount;
         //growing panel
-        if (gameManagerReference.BodyCount > 0 && panelExpansion ==0)
+        if (panelExpansion ==0)
         {
-            panelGrowth();
+            if (knownBodyCount == 0 && panelLastCount > -1)
+            {
+                panelGrowth(1);
+                noBodyVerified = true;
+            }
+            else if (knownBodyCount > 0 && noBodyVerified)
+            {
+                panelGrowth(-1);
+                noBodyVerified = false;
+            }
+            else
+            {
+                panelGrowth(0);
+            }
+            
         }
         //spawning buttons
         if (buttonSpawn == 0 && knownBodyCount > 0)
@@ -247,6 +262,7 @@ public class BodiesInfoButton : MonoBehaviour
         panelExpansion = 0;
         buttonSpawn = 0;
         Debug.Log(name + " Game Object Hidden!", this);
+        displayTxt.text = "";
         this.gameObject.SetActive(false);
 
     }
