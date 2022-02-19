@@ -93,6 +93,10 @@ public class UISliderMenu : MonoBehaviour
     {
         BodyInfoInputPanel.SetActive(true);
     }
+    public void ChangeRotDisplay()
+    {
+        gameManagerReference.ChangeRotDisplay();
+    }
 
     //Shows the list of preset simulations
     public void ShowPresetSimsPanel()
