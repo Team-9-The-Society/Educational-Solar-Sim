@@ -592,7 +592,7 @@ public class GameManager : MonoBehaviour
             UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
             UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
         }
-        else if (bodySelectedUnivCenter)
+        else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
         {
             simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
             UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
@@ -601,6 +601,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            bodySelectedUnivCenter = false;
             float massMax = 0;
             float xCenter = 0;
             float yCenter = 0;
