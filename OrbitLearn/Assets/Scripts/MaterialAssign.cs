@@ -9,7 +9,7 @@ public class MaterialAssign : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int rand = Random.Range(0, 7);
+        int rand = Random.Range(0, 22);
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = materialList[rand];
         Debug.Log(meshRenderer.material.color);
