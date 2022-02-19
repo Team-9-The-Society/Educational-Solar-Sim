@@ -43,12 +43,14 @@ public class GameManager : MonoBehaviour
     public int BodyCount = 0;
     private int tapCount = 0;
     private int bodyClickCount = 0;
+    public int bodyUnivCenter;
 
     public bool doubleTapReady = false;
     private Coroutine doubleTapCheck = null;
 
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
+    public bool bodySelectedUnivCenter = false;
 
     private string[] coolFacts;
     private int[] factCollisions;
@@ -508,6 +510,18 @@ public class GameManager : MonoBehaviour
         factCollisions = new int[coolFacts.Length];
     }
    
+    public void MakeBodyCenterOfUniv(int bodyNumber)
+    {
+        if (bodyNumber < 0 || bodyNumber > BodyCount-1)
+        {
+            bodySelectedUnivCenter = false;
+        }
+        else
+        {
+            bodyUnivCenter = bodyNumber;
+            bodySelectedUnivCenter = true;
+        }
+    }
     public string GenerateFunSpaceFact(int address)
     {
         return coolFacts[address];
@@ -574,6 +588,13 @@ public class GameManager : MonoBehaviour
         else if (SimBodies.Count == 1)
         {
             simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
+            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+        }
+        else if (bodySelectedUnivCenter)
+        {
+            simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
             UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
             UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
             UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
