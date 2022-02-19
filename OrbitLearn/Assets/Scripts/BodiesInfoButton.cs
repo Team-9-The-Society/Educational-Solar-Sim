@@ -47,12 +47,13 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void displayBodies()
     {
-        if (buttonSpawn == 1 && knownBodyCount == 0)
+        if (buttonSpawn == 1 && ((knownBodyCount == 0)|| (gameManagerReference.gamePaused)))
         {
 
         }
         else
         {
+            Debug.Log("PauseTest");
             displayTxt.text = iterateBodies();
         }
     }
