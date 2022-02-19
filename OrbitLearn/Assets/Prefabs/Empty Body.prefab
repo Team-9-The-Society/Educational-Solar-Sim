@@ -1012,7 +1012,7 @@ MonoBehaviour:
     m_RecenteringTime: 2
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
-  m_BindingMode: 5
+  m_BindingMode: 4
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 5
@@ -1157,6 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyName: Body
+  bodyNumber: 0
   body: {fileID: 8631874588233353076}
   radiant: {fileID: 8969330288567728510}
   planetCam: {fileID: 3141264369209881861}
