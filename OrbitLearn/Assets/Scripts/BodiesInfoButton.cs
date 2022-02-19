@@ -15,7 +15,9 @@ public class BodiesInfoButton : MonoBehaviour
     public int panelExpansionCount = 0;
     public int buttonCount = 0;
     public int presetFilm = 0;
-    
+    int knownBodyCount;
+
+
     public List<GameObject> Buttons;
 
     [Header("Input Field References")]
@@ -44,7 +46,14 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void displayBodies()
     {
-        displayTxt.text = iterateBodies();
+        if (buttonSpawn == 1 && knownBodyCount == 0)
+        {
+
+        }
+        else
+        {
+            displayTxt.text = iterateBodies();
+        }
     }
     public int calculateStepHeight()
     {//DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
@@ -152,7 +161,7 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public string iterateBodies()
     { //DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
-        int knownBodyCount = gameManagerReference.BodyCount;
+        knownBodyCount = gameManagerReference.BodyCount;
         //growing panel
         if (gameManagerReference.BodyCount > 0 && panelExpansion ==0)
         {
@@ -166,13 +175,18 @@ public class BodiesInfoButton : MonoBehaviour
         }
         //no buttons/bodies display
         string totalDisplay = "";
-        if (knownBodyCount == 0)
+        if (knownBodyCount == 0 )
         {
+            buttonSpawn = 1;
             totalDisplay += "No Bodies are currently displayed. Please add a body for their information to be displayed promply here.";
         }
+        else
+        {
+            //PrintOut
+            totalDisplay += iterateBodyInformation(totalDisplay);
+        }
 
-        //PrintOut
-        totalDisplay += iterateBodyInformation(totalDisplay);
+        
         
         return totalDisplay;
 
