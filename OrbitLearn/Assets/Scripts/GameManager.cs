@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using Cinemachine;
 using TMPro;
 using System;
+using Random = UnityEngine.Random;
 
 
 public class GameManager : MonoBehaviour
@@ -52,6 +53,13 @@ public class GameManager : MonoBehaviour
     public bool uiPanelPriority = false;
     public bool bodySelectedUnivCenter = false;
 
+    [Header("Rotation Variables")]
+    float rotSpeed;
+    float rotAxis;
+    Quaternion curRot;
+    Vector3 curEuler;
+    float x, y, z;
+
     private string[] coolFacts;
     private int[] factCollisions;
     private float highLoadBalance = 0;
@@ -92,6 +100,9 @@ public class GameManager : MonoBehaviour
         LoadFunFacts();
         hashObject = new HashItUp(factCollisions.Length, 31, 0, highLoadBalance, factCollisions);
         TryLocateUIReferences();
+
+        rotSpeed = Random.Range(-100.0f, 100.0f);
+        rotAxis = Random.Range(0.0f, 100.0f);
     }
     public List<Body> getList()
     {
@@ -135,7 +146,26 @@ public class GameManager : MonoBehaviour
         if (UniverseCam != null)
             RefreshUniverseCam();
 
-        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
+        foreach (Body b in SimBodies)
+        {
+            if (rotAxis > 90)
+            {
+                x = 1;
+            }
+            else if (rotAxis > 80)
+            {
+                z = 1;
+            }
+            else
+            {
+                y = 1;
+            }
+            curEuler += new Vector3(x, y, z) * Time.deltaTime * rotSpeed;
+            curRot.eulerAngles = curEuler;
+            b.transform.rotation = curRot;
+        }
+
+            if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
             if (CurrCamState == CamState.Universe)
             {
@@ -383,35 +413,11 @@ public class GameManager : MonoBehaviour
             position[i, 0] = b.gameObject.transform.position.x;
             position[i, 1] = b.gameObject.transform.position.y;
             position[i, 2] = b.gameObject.transform.position.z;
-
             Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
 
             i++;
         }
 
-        /* Can be uncommented once libraries are functional
-        try{
-            switch(ApplicationUtil.platform)
-            {
-                case RuntimePlatform.Android:
-                    //Android library
-                    break;
-                case RuntimePlatform.WindowsPlayer:
-                    //DLL library
-                    break;
-                default:
-                    force = nBody.UpdateForce(position, mass, numBodies);
-                    break;
-            }
-        }
-        //Catch case if the libraries fail
-        catch
-        {
-            force = nBody.UpdateForce(position, mass, numBodies);
-        }
-        */
-
-        //once libraries are added, remove this line
         force = nBody.UpdateForce(position, mass, numBodies);
         i = 0;
         foreach (Body b in SimBodies)
