@@ -10,6 +10,7 @@ using UnityEngine;
 public class RotationDisplay : MonoBehaviour
 {
     public Quaternion rotOriginal = Quaternion.Euler(0, 0, 0);
+    private GameManager gameManagerReference;
     private void Awake()
     {
         //Transform cam = Camera.main.transform;
@@ -17,6 +18,16 @@ public class RotationDisplay : MonoBehaviour
         //rotOriginal = this.transform.rotation;
     }
 
+    public void ActivateUIElement(GameManager g)
+    {
+        SetGameManRef(g.GetComponent<GameManager>());
+    }
+
+    //Sets the reference to the game manager
+    public void SetGameManRef(GameManager gm)
+    {
+        gameManagerReference = gm;
+    }
 
     // Update is called once per frame
     void Update()

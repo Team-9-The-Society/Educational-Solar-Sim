@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
+    public RotationDisplay RotDisplay;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -42,12 +43,14 @@ public class GameManager : MonoBehaviour
     public int BodyCount = 0;
     private int tapCount = 0;
     private int bodyClickCount = 0;
+    public int bodyUnivCenter;
 
     public bool doubleTapReady = false;
     private Coroutine doubleTapCheck = null;
 
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
+    public bool bodySelectedUnivCenter = false;
 
     private string[] coolFacts;
     private int[] factCollisions;
@@ -202,7 +205,9 @@ public class GameManager : MonoBehaviour
                         focusedBody = null;
                         HideBodyInfo();
                         if (UniverseCam != null)
+                        {
                             ActivateUniverseCam();
+                        }
                     }
                     else
                     {
@@ -247,10 +252,11 @@ public class GameManager : MonoBehaviour
 
             BodyInfoPanel.gameObject.SetActive(true);
             BodyInfoPanel.SetHighlightedBody(bodyRef);
-
+            bodyRef.bodyNumber = BodyCount;
             SimBodies.Add(bodyRef);
             BodyCount++;
-
+            
+            
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
@@ -275,9 +281,10 @@ public class GameManager : MonoBehaviour
                 BodyInfoPanel.SetHighlightedBody(bodyRef);
             }
 
-
+            bodyRef.bodyNumber = BodyCount;
             SimBodies.Add(bodyRef);
             BodyCount++;
+            
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
@@ -303,10 +310,35 @@ public class GameManager : MonoBehaviour
     {
         uiPanelPriority = !uiPanelPriority;
     }
-
+    public void ChangeRotDisplay()
+    {
+        if (RotDisplay.gameObject.activeSelf)
+        {
+            RotDisplay.gameObject.SetActive(false);
+        }
+        else
+        {
+            RotDisplay.gameObject.SetActive(true);
+        }
+    }
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
+        int currentcount = b.bodyNumber;
+        int iteratecount = currentcount + 1;
+        while (iteratecount < BodyCount)
+        {
+            SimBodies[iteratecount].bodyNumber -= 1;
+            iteratecount++;
+        }
+        if (currentcount < bodyUnivCenter)
+        {
+            bodyUnivCenter -= 1;
+        }
+        else if (currentcount == bodyUnivCenter)
+        {
+            bodySelectedUnivCenter = false;
+        }
         SimBodies.Remove(b);
         BodyCount--;
         ActivateUniverseCam();
@@ -333,6 +365,7 @@ public class GameManager : MonoBehaviour
             DeleteBody(bodies[j]);
         }
         SimBodies = new List<Body>();
+        bodySelectedUnivCenter = false;
     }
 
     public void UpdateForces()
@@ -495,6 +528,18 @@ public class GameManager : MonoBehaviour
         factCollisions = new int[coolFacts.Length];
     }
    
+    public void MakeBodyCenterOfUniv(int bodyNumber)
+    {
+        if (bodyNumber < 0 || bodyNumber > BodyCount-1)
+        {
+            bodySelectedUnivCenter = false;
+        }
+        else
+        {
+            bodyUnivCenter = bodyNumber;
+            bodySelectedUnivCenter = true;
+        }
+    }
     public string GenerateFunSpaceFact(int address)
     {
         return coolFacts[address];
@@ -565,8 +610,16 @@ public class GameManager : MonoBehaviour
             UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
             UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
         }
+        else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
+        {
+            simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
+            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+        }
         else
         {
+            bodySelectedUnivCenter = false;
             float massMax = 0;
             float xCenter = 0;
             float yCenter = 0;
@@ -678,6 +731,12 @@ public class GameManager : MonoBehaviour
                     FilePanel = b.FileRef;
                     FilePanel.ActivateUIElement(this);
                     FilePanel.gameObject.SetActive(false);
+                }
+                if(b.RotDisplayRef != null)
+                {
+                    RotDisplay = b.RotDisplayRef;
+                    RotDisplay.ActivateUIElement(this);
+                    RotDisplay.gameObject.SetActive(false);
                 }
 
             }
