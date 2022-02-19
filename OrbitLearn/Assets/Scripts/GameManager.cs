@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
 
-    [Header("Rotation")]
+    [Header("Rotation Variables")]
     float rotSpeed;
     float rotAxis;
     Quaternion curRot;
