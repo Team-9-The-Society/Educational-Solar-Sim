@@ -252,10 +252,11 @@ public class GameManager : MonoBehaviour
 
             BodyInfoPanel.gameObject.SetActive(true);
             BodyInfoPanel.SetHighlightedBody(bodyRef);
-
+            bodyRef.bodyNumber = BodyCount;
             SimBodies.Add(bodyRef);
             BodyCount++;
-
+            
+            
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
@@ -280,9 +281,10 @@ public class GameManager : MonoBehaviour
                 BodyInfoPanel.SetHighlightedBody(bodyRef);
             }
 
-
+            bodyRef.bodyNumber = BodyCount;
             SimBodies.Add(bodyRef);
             BodyCount++;
+            
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
@@ -322,6 +324,21 @@ public class GameManager : MonoBehaviour
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
+        int currentcount = b.bodyNumber;
+        int iteratecount = currentcount + 1;
+        while (iteratecount < BodyCount)
+        {
+            SimBodies[iteratecount].bodyNumber -= 1;
+            iteratecount++;
+        }
+        if (currentcount < bodyUnivCenter)
+        {
+            bodyUnivCenter -= 1;
+        }
+        else if (currentcount == bodyUnivCenter)
+        {
+            bodySelectedUnivCenter = false;
+        }
         SimBodies.Remove(b);
         BodyCount--;
         ActivateUniverseCam();
@@ -348,6 +365,7 @@ public class GameManager : MonoBehaviour
             DeleteBody(bodies[j]);
         }
         SimBodies = new List<Body>();
+        bodySelectedUnivCenter = false;
     }
 
     public void UpdateForces()
