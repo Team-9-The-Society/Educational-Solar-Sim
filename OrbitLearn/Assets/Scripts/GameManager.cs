@@ -429,19 +429,78 @@ public class GameManager : MonoBehaviour
         return;
     }
 
-    public void SetImportString(string filename)
+    public void SetImportString(string simString)
     {
-        importString = filename;
-        /*
-         * Whatever else you need to call on the backend
-         */
+        GameManager.Instance.DeleteAllBodies();
+
+        
+
+        simString = simString.Split('}')[0];
+        simString = simString.Split('{')[1];
+
+        string[] simStringList = simString.Split(';');
+
+        Array.Copy(simStringList, simStringList, simStringList.Length - 1);
+
+        
+        for (int i = 0; i < simStringList.Length; i++)
+        {
+            string[] bodyStringList = simStringList[i].Split('[');
+
+            string name = bodyStringList[0].Substring(0, bodyStringList[0].Length - 1);
+
+            bodyStringList = bodyStringList[1].Split(']')[0].Split(',');
+
+            Dictionary<string, string> attr = new Dictionary<string, string>();
+
+            for ( int j =0; j< bodyStringList.Length-1; j++)
+            {
+                string str = bodyStringList[j];
+                string[] broken = str.Split(':');
+                Debug.Log(broken[0]);
+                attr.Add(broken[0],broken[1]);
+            }
+
+
+            TrySpawnNewBody(double.Parse(attr["m"]), double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]), double.Parse(attr["vx"]), double.Parse(attr["vy"]), double.Parse(attr["vz"]), double.Parse(attr["s"]), false, name, bool.Parse(attr["glow"]));
+
+
+        }
+
+
     }
 
     public void ExportSimulation()
     {
-        /*
-         * Whatever you need to call on the backend
-         */
+
+        String simEx = "{";
+
+
+        foreach (Body b in SimBodies)
+        {
+            simEx += b.bodyName + ":[";
+
+            simEx += "px:" + b.gameObject.transform.position.x + ",";
+            simEx += "py:" + b.gameObject.transform.position.y + ",";
+            simEx += "pz:" + b.gameObject.transform.position.z + ",";
+
+            simEx += "vx:" + b.gameObject.GetComponent<Rigidbody>().velocity[0] + ",";
+            simEx += "vy:" + b.gameObject.GetComponent<Rigidbody>().velocity[1] + ",";
+            simEx += "vz:" + b.gameObject.GetComponent<Rigidbody>().velocity[2] + ",";
+
+            simEx += "m:" + b.gameObject.GetComponent<Rigidbody>().mass + ",";
+
+            simEx += "s:" + b.gameObject.transform.localScale[0] + ",";
+            
+            simEx += "glow:" + b.radiant.enabled + ",";
+
+
+            simEx += "];";
+        }
+
+        simEx += "}end";
+
+        GUIUtility.systemCopyBuffer = simEx;
     }
 
     public void TogglePause()
