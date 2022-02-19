@@ -127,19 +127,30 @@ public class BodiesInfoButton : MonoBehaviour
         {
             int num = loopCount;
             GameObject button = Instantiate(buttonPrefab);
+            GameObject buttonCenterUniv = Instantiate(buttonPrefab);
 
             button.GetComponent<Button>().onClick.AddListener(() => FocusOnPlanet(num));
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
+            buttonCenterUniv.GetComponent<Button>().onClick.AddListener(() => SetUniverseCenter(num));
+            buttonCenterUniv.transform.SetParent(buttonPanel.transform);//Setting button parent
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);//372
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, buttonYPlacement(num, screenplier));//Changing text
+            float yaxis = buttonYPlacement(num, screenplier);
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yaxis);//Changing text
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
+            buttonCenterUniv.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yaxis-150);//Changing text
+            buttonCenterUniv.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
 
-          
+
             button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
             button.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth/textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
+            buttonCenterUniv.GetComponentInChildren<TMP_Text>().text = "Set Univ. Center";
+            buttonCenterUniv.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth / textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
+            
+            
             Buttons.Add(button);
-            buttonCount++;
+            Buttons.Add(buttonCenterUniv);
+            buttonCount += 2;
             
             //////
         }
@@ -267,6 +278,13 @@ public class BodiesInfoButton : MonoBehaviour
         this.gameObject.SetActive(false);
 
     }
+
+
+    public void SetUniverseCenter(int i)
+    {
+        gameManagerReference.MakeBodyCenterOfUniv(i);
+    }
+
 
     public void FocusOnPlanet(int i)
     {
