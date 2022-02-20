@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
     public RotationDisplay RotDisplay;
+    public Animator animator;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
     public bool bodySelectedUnivCenter = false;
+    public float transitionDelayTime = 1.0f;
 
     [Header("Rotation Variables")]
     float rotSpeed;
@@ -95,6 +97,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
+        animator = GameObject.Find("Transition").GetComponent<Animator>();
 
         SimBodies = new List<Body>();
         LoadFunFacts();
@@ -135,7 +138,16 @@ public class GameManager : MonoBehaviour
 
         ClearUIReferences();
         SimBodies.Clear();
+
+        StartCoroutine(DelayLoadLevel(targetScene));
+    }
+
+    private IEnumerator DelayLoadLevel(SceneHandler.Scene targetScene)
+    {
+        animator.SetTrigger("TriggerOutTransition");
+        yield return new WaitForSeconds(transitionDelayTime);
         SceneHandler.Load(targetScene);
+        animator.SetTrigger("TriggerInTransition");
     }
 
 
