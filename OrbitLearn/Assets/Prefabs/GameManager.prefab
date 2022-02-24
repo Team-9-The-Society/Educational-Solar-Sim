@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1656841667575371981}
   - component: {fileID: 8953310710186130915}
   - component: {fileID: 1731485825975876050}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TransitionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8953310710186130915
 MonoBehaviour:
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 3279076393972056551}
   - component: {fileID: 8831714903593640468}
   - component: {fileID: 7118312252649577215}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
