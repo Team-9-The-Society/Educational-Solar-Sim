@@ -849,16 +849,38 @@ public class GameManager : MonoBehaviour
         simulationCenter = null;
     }
 
+    private IEnumerator MaybeShowIdleMenu()
+    {
+        yield return new WaitForSeconds(0.15f);
+        if (SliderMenu.isOpen)
+        {
+            SliderMenu.ShowIdleMenu();
+        }
+        
+        
+    }
+    private IEnumerator BodyInfoPanelDisplay()
+    {
+        yield return new WaitForSeconds(0.10f);
+        if (!uiPanelPriority)
+        {
+            BodyInfoPanel.gameObject.SetActive(true);
+        }
+    }
 
     //Displays the Body Info Panel for the input Body
     public void ShowBodyInfo(Body b)
     {
         focusedBody = b;
         //If the slider menu is open, and someone clicks on a body, now the slider menu is moved back to starting position.
-        if(!SliderMenu.isOpen)
-            SliderMenu.ShowIdleMenu();
-        BodyInfoPanel.gameObject.SetActive(true);
+        if (SliderMenu.isOpen)
+        {
+            StartCoroutine(MaybeShowIdleMenu());
+        }
         BodyInfoPanel.SetHighlightedBody(b);
+        // yield return new WaitForSeconds(0.05f);
+        StartCoroutine(BodyInfoPanelDisplay());
+        
         //DisplayHintMessage("Quickly tap on the body again to focus.", "Testing");
     }
 

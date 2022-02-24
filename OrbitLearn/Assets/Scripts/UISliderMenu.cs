@@ -23,6 +23,13 @@ public class UISliderMenu : MonoBehaviour
     public GameObject PauseButton;
     public GameObject FilePanel;
 
+
+    public Button LoadButton;
+    public Button HomeButton;
+    public Button AddButton;
+    public Button BodiesButton;
+    public Button TemplateButton;
+
     [Header("Management Variables")]
     public bool paused = false;
     public bool isOpen = false;
@@ -34,7 +41,6 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
     }
-
 
     public void ActivateUIElement(GameManager g)
     {
@@ -68,12 +74,42 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference.DeleteAllBodies();
     }
 
+    public void ChangeButtonInteractability()
+    {
+        if (LoadButton != null)
+        {
+            LoadButton.interactable = isOpen;
+        }
+        if (HomeButton != null)
+        {
+            HomeButton.interactable = isOpen;
+        }
+        if (AddButton != null)
+        {
+            AddButton.interactable = isOpen;
+        }
+        if (BodiesButton != null)
+        {
+            BodiesButton.interactable = isOpen;
+        }
+        if (TemplateButton != null)
+        {
+            TemplateButton.interactable = isOpen;
+        }
+        AddButton.interactable = isOpen;
+        HomeButton.interactable = isOpen;
+        BodiesButton.interactable = isOpen;
+        TemplateButton.interactable = isOpen;
+    }
 
     //Triggers the panel sliding in/out of the frame
     public void ShowIdleMenu()
     {
-        isOpen = animator.GetBool("show");
-        animator.SetBool("show", !isOpen);
+        isOpen = !isOpen;
+        ChangeButtonInteractability();
+        //Debug.Log(this.Controls[0]);
+        //isOpen = animator.GetBool("show");
+        animator.SetBool("show", isOpen);
     }
 
 
