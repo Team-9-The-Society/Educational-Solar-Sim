@@ -532,7 +532,11 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator HintPanelDelay(string msg1, string msg2)
     {
-        yield return new WaitForSeconds(0.13f);
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.13f);
+        }
+        
         if (!uiPanelPriority)
         {
             HintDisplay.gameObject.SetActive(true);
@@ -871,7 +875,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator MaybeShowIdleMenu()
     {
-        yield return new WaitForSeconds(0.15f);
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.15f);
+        }
+        
         if (SliderMenu.isOpen)
         {
             SliderMenu.ShowIdleMenu();
@@ -881,7 +889,11 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator BodyInfoPanelDisplay()
     {
-        yield return new WaitForSeconds(0.13f);
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.13f);
+        }
+        
         if (!uiPanelPriority)
         {
             BodyInfoPanel.gameObject.SetActive(true);
