@@ -23,6 +23,13 @@ public class UISliderMenu : MonoBehaviour
     public GameObject PauseButton;
     public GameObject FilePanel;
 
+
+    public Button LoadButton;
+    public Button HomeButton;
+    public Button AddButton;
+    public Button BodiesButton;
+    public Button TemplateButton;
+
     [Header("Management Variables")]
     public bool paused = false;
     public bool isOpen = false;
@@ -34,7 +41,6 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
     }
-
 
     public void ActivateUIElement(GameManager g)
     {
@@ -68,12 +74,38 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference.DeleteAllBodies();
     }
 
+    public void ChangeButtonInteractability()
+    {
+        if (LoadButton != null)
+        {
+            LoadButton.interactable = isOpen;
+        }
+        if (HomeButton != null)
+        {
+            HomeButton.interactable = isOpen;
+        }
+        if (AddButton != null)
+        {
+            AddButton.interactable = isOpen;
+        }
+        if (BodiesButton != null)
+        {
+            BodiesButton.interactable = isOpen;
+        }
+        if (TemplateButton != null)
+        {
+            TemplateButton.interactable = isOpen;
+        }
+    }
 
     //Triggers the panel sliding in/out of the frame
     public void ShowIdleMenu()
     {
-        isOpen = animator.GetBool("show");
-        animator.SetBool("show", !isOpen);
+        isOpen = !isOpen;
+        ChangeButtonInteractability();
+        //Debug.Log(this.Controls[0]);
+        //isOpen = animator.GetBool("show");
+        animator.SetBool("show", isOpen);
     }
 
 
@@ -154,31 +186,32 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference.TogglePause();
     }
 
-    public async void DisplayPause()
+    public void DisplayPause()//async
     {
         if (!paused)
         {
             paused = true;
-            await Task.Delay(TimeSpan.FromSeconds(0.5f));
+            //await Task.Delay(TimeSpan.FromSeconds(0.50f));
             UpdatePauseButton("PLAY", Color.red);
         }
         else
         {
             paused = false;
-            await Task.Delay(TimeSpan.FromSeconds(0.25f));
+            //await Task.Delay(TimeSpan.FromSeconds(0.25f));
             UpdatePauseButton("PAUSE", Color.white);
         }
     }
 
     public void UpdatePauseButton(string buttonText, Color color)
     {
-        ColorBlock cb = PauseButton.GetComponent<Button>().colors;
+        /*ColorBlock cb = PauseButton.GetComponent<Button>().colors;
         Button buttonColor = PauseButton.GetComponent<Button>();
 
         cb.normalColor = color;
         cb.highlightedColor = color;
         cb.pressedColor = color;
-        buttonColor.colors = cb;
+        buttonColor.colors = cb;*/
+        PauseButton.GetComponentInChildren<Image>().color = color;
 
         PauseButton.GetComponentInChildren<Text>().text = buttonText;
         PauseButton.GetComponentInChildren<Text>().color = color;

@@ -530,12 +530,23 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public IEnumerator HintPanelDelay(string msg1, string msg2)
+    {
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.13f);
+        }
+        
+        if (!uiPanelPriority)
+        {
+            HintDisplay.gameObject.SetActive(true);
+            HintDisplay.SetMessageText(msg1, msg2);
+        }
+    }
 
     public void DisplayHintMessage(string msg1, string msg2)
     {
-        HintDisplay.gameObject.SetActive(true);
-        HintDisplay.SetMessageText(msg1, msg2);
-
+        StartCoroutine(HintPanelDelay(msg1, msg2));
     }
 
     public void HideHintMessage()
@@ -623,6 +634,7 @@ public class GameManager : MonoBehaviour
     }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
+    
     public void ActivateBodyCam(CinemachineFreeLook cam)
     {
         cam.Priority = 5;
@@ -672,96 +684,99 @@ public class GameManager : MonoBehaviour
     //Increase the size of the Universe Cam orbit based on planetary positions
     public void RefreshUniverseCam()
     {
-        //Set position of the UniverseCenter
-        if (SimBodies.Count == 0)
+        if (UniverseCam != null && simulationCenter != null)
         {
-            simulationCenter.transform.position = new Vector3(0, 0, 0);
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
-        }
-        else if (SimBodies.Count == 1)
-        {
-            simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
-        }
-        else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
-        {
-            float massMax = 0;
-            float xCenter = 0;
-            float yCenter = 0;
-            float zCenter = 0;
-
-            foreach (Body b in SimBodies)
+            //Set position of the UniverseCenter
+            if (SimBodies.Count == 0)
             {
-                xCenter += (b.gameObject.transform.position.x);
-                yCenter += (b.gameObject.transform.position.y);
-                zCenter += (b.gameObject.transform.position.z);
+                simulationCenter.transform.position = new Vector3(0, 0, 0);
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
             }
-
-            xCenter = xCenter / SimBodies.Count;
-            yCenter = yCenter / SimBodies.Count;
-            zCenter = zCenter / SimBodies.Count;
-
-            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
-
-            float maxDist = 25;
-            foreach (Body b in SimBodies)
+            else if (SimBodies.Count == 1)
             {
-                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
-                if (maxDist < distance)
+                simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+            }
+            else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
+            {
+                float massMax = 0;
+                float xCenter = 0;
+                float yCenter = 0;
+                float zCenter = 0;
+
+                foreach (Body b in SimBodies)
                 {
-                    maxDist = distance;
+                    xCenter += (b.gameObject.transform.position.x);
+                    yCenter += (b.gameObject.transform.position.y);
+                    zCenter += (b.gameObject.transform.position.z);
                 }
-            }
-            maxDist *= 2;
 
+                xCenter = xCenter / SimBodies.Count;
+                yCenter = yCenter / SimBodies.Count;
+                zCenter = zCenter / SimBodies.Count;
 
-            simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
-        }
-        else
-        {
-            bodySelectedUnivCenter = false;
-            float massMax = 0;
-            float xCenter = 0;
-            float yCenter = 0;
-            float zCenter = 0;
+                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
 
-            foreach (Body b in SimBodies)
-            {
-                xCenter += (b.gameObject.transform.position.x);
-                yCenter += (b.gameObject.transform.position.y);
-                zCenter += (b.gameObject.transform.position.z);
-            }
-
-            xCenter = xCenter / SimBodies.Count;
-            yCenter = yCenter / SimBodies.Count;
-            zCenter = zCenter / SimBodies.Count;
-
-            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
-
-            float maxDist = 25;
-            foreach (Body b in SimBodies)
-            {
-                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
-                if (maxDist < distance)
+                float maxDist = 25;
+                foreach (Body b in SimBodies)
                 {
-                    maxDist = distance;
+                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    if (maxDist < distance)
+                    {
+                        maxDist = distance;
+                    }
                 }
+                maxDist *= 2;
+
+
+                simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
             }
-            maxDist *= 2;
+            else
+            {
+                bodySelectedUnivCenter = false;
+                float massMax = 0;
+                float xCenter = 0;
+                float yCenter = 0;
+                float zCenter = 0;
 
-            simulationCenter.transform.position = centroid;
+                foreach (Body b in SimBodies)
+                {
+                    xCenter += (b.gameObject.transform.position.x);
+                    yCenter += (b.gameObject.transform.position.y);
+                    zCenter += (b.gameObject.transform.position.z);
+                }
 
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+                xCenter = xCenter / SimBodies.Count;
+                yCenter = yCenter / SimBodies.Count;
+                zCenter = zCenter / SimBodies.Count;
 
+                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+
+                float maxDist = 25;
+                foreach (Body b in SimBodies)
+                {
+                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    if (maxDist < distance)
+                    {
+                        maxDist = distance;
+                    }
+                }
+                maxDist *= 2;
+
+                simulationCenter.transform.position = centroid;
+
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+
+            }
         }
 
 
@@ -861,16 +876,46 @@ public class GameManager : MonoBehaviour
         simulationCenter = null;
     }
 
+    private IEnumerator MaybeShowIdleMenu()
+    {
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.15f);
+        }
+        
+        if (SliderMenu.isOpen)
+        {
+            SliderMenu.ShowIdleMenu();
+        }
+        
+        
+    }
+    private IEnumerator BodyInfoPanelDisplay()
+    {
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.13f);
+        }
+        
+        if (!uiPanelPriority)
+        {
+            BodyInfoPanel.gameObject.SetActive(true);
+        }
+    }
 
     //Displays the Body Info Panel for the input Body
     public void ShowBodyInfo(Body b)
     {
         focusedBody = b;
         //If the slider menu is open, and someone clicks on a body, now the slider menu is moved back to starting position.
-        if(!SliderMenu.isOpen)
-            SliderMenu.ShowIdleMenu();
-        BodyInfoPanel.gameObject.SetActive(true);
+        if (SliderMenu.isOpen)
+        {
+            StartCoroutine(MaybeShowIdleMenu());
+        }
         BodyInfoPanel.SetHighlightedBody(b);
+        // yield return new WaitForSeconds(0.05f);
+        StartCoroutine(BodyInfoPanelDisplay());
+        
         //DisplayHintMessage("Quickly tap on the body again to focus.", "Testing");
     }
 
