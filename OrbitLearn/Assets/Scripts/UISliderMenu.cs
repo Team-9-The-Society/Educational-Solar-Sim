@@ -96,10 +96,6 @@ public class UISliderMenu : MonoBehaviour
         {
             TemplateButton.interactable = isOpen;
         }
-        AddButton.interactable = isOpen;
-        HomeButton.interactable = isOpen;
-        BodiesButton.interactable = isOpen;
-        TemplateButton.interactable = isOpen;
     }
 
     //Triggers the panel sliding in/out of the frame
