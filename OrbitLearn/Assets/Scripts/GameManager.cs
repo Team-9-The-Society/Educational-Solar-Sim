@@ -684,96 +684,99 @@ public class GameManager : MonoBehaviour
     //Increase the size of the Universe Cam orbit based on planetary positions
     public void RefreshUniverseCam()
     {
-        //Set position of the UniverseCenter
-        if (SimBodies.Count == 0)
+        if (UniverseCam != null && simulationCenter != null)
         {
-            simulationCenter.transform.position = new Vector3(0, 0, 0);
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
-        }
-        else if (SimBodies.Count == 1)
-        {
-            simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
-        }
-        else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
-        {
-            float massMax = 0;
-            float xCenter = 0;
-            float yCenter = 0;
-            float zCenter = 0;
-
-            foreach (Body b in SimBodies)
+            //Set position of the UniverseCenter
+            if (SimBodies.Count == 0)
             {
-                xCenter += (b.gameObject.transform.position.x);
-                yCenter += (b.gameObject.transform.position.y);
-                zCenter += (b.gameObject.transform.position.z);
+                simulationCenter.transform.position = new Vector3(0, 0, 0);
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
             }
-
-            xCenter = xCenter / SimBodies.Count;
-            yCenter = yCenter / SimBodies.Count;
-            zCenter = zCenter / SimBodies.Count;
-
-            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
-
-            float maxDist = 25;
-            foreach (Body b in SimBodies)
+            else if (SimBodies.Count == 1)
             {
-                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
-                if (maxDist < distance)
+                simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+            }
+            else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
+            {
+                float massMax = 0;
+                float xCenter = 0;
+                float yCenter = 0;
+                float zCenter = 0;
+
+                foreach (Body b in SimBodies)
                 {
-                    maxDist = distance;
+                    xCenter += (b.gameObject.transform.position.x);
+                    yCenter += (b.gameObject.transform.position.y);
+                    zCenter += (b.gameObject.transform.position.z);
                 }
-            }
-            maxDist *= 2;
 
+                xCenter = xCenter / SimBodies.Count;
+                yCenter = yCenter / SimBodies.Count;
+                zCenter = zCenter / SimBodies.Count;
 
-            simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
-        }
-        else
-        {
-            bodySelectedUnivCenter = false;
-            float massMax = 0;
-            float xCenter = 0;
-            float yCenter = 0;
-            float zCenter = 0;
+                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
 
-            foreach (Body b in SimBodies)
-            {
-                xCenter += (b.gameObject.transform.position.x);
-                yCenter += (b.gameObject.transform.position.y);
-                zCenter += (b.gameObject.transform.position.z);
-            }
-
-            xCenter = xCenter / SimBodies.Count;
-            yCenter = yCenter / SimBodies.Count;
-            zCenter = zCenter / SimBodies.Count;
-
-            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
-
-            float maxDist = 25;
-            foreach (Body b in SimBodies)
-            {
-                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
-                if (maxDist < distance)
+                float maxDist = 25;
+                foreach (Body b in SimBodies)
                 {
-                    maxDist = distance;
+                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    if (maxDist < distance)
+                    {
+                        maxDist = distance;
+                    }
                 }
+                maxDist *= 2;
+
+
+                simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
             }
-            maxDist *= 2;
+            else
+            {
+                bodySelectedUnivCenter = false;
+                float massMax = 0;
+                float xCenter = 0;
+                float yCenter = 0;
+                float zCenter = 0;
 
-            simulationCenter.transform.position = centroid;
+                foreach (Body b in SimBodies)
+                {
+                    xCenter += (b.gameObject.transform.position.x);
+                    yCenter += (b.gameObject.transform.position.y);
+                    zCenter += (b.gameObject.transform.position.z);
+                }
 
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+                xCenter = xCenter / SimBodies.Count;
+                yCenter = yCenter / SimBodies.Count;
+                zCenter = zCenter / SimBodies.Count;
 
+                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+
+                float maxDist = 25;
+                foreach (Body b in SimBodies)
+                {
+                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    if (maxDist < distance)
+                    {
+                        maxDist = distance;
+                    }
+                }
+                maxDist *= 2;
+
+                simulationCenter.transform.position = centroid;
+
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+
+            }
         }
 
 
