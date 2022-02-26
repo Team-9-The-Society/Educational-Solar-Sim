@@ -518,12 +518,19 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public IEnumerator HintPanelDelay(string msg1, string msg2)
+    {
+        yield return new WaitForSeconds(0.13f);
+        if (!uiPanelPriority)
+        {
+            HintDisplay.gameObject.SetActive(true);
+            HintDisplay.SetMessageText(msg1, msg2);
+        }
+    }
 
     public void DisplayHintMessage(string msg1, string msg2)
     {
-        HintDisplay.gameObject.SetActive(true);
-        HintDisplay.SetMessageText(msg1, msg2);
-
+        StartCoroutine(HintPanelDelay(msg1, msg2));
     }
 
     public void HideHintMessage()
@@ -611,6 +618,7 @@ public class GameManager : MonoBehaviour
     }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
+    
     public void ActivateBodyCam(CinemachineFreeLook cam)
     {
         cam.Priority = 5;
@@ -861,7 +869,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator BodyInfoPanelDisplay()
     {
-        yield return new WaitForSeconds(0.10f);
+        yield return new WaitForSeconds(0.13f);
         if (!uiPanelPriority)
         {
             BodyInfoPanel.gameObject.SetActive(true);

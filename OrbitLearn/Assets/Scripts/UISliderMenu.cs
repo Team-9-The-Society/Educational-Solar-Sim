@@ -190,31 +190,32 @@ public class UISliderMenu : MonoBehaviour
         gameManagerReference.TogglePause();
     }
 
-    public async void DisplayPause()
+    public void DisplayPause()//async
     {
         if (!paused)
         {
             paused = true;
-            await Task.Delay(TimeSpan.FromSeconds(0.5f));
+            //await Task.Delay(TimeSpan.FromSeconds(0.50f));
             UpdatePauseButton("PLAY", Color.red);
         }
         else
         {
             paused = false;
-            await Task.Delay(TimeSpan.FromSeconds(0.25f));
+            //await Task.Delay(TimeSpan.FromSeconds(0.25f));
             UpdatePauseButton("PAUSE", Color.white);
         }
     }
 
     public void UpdatePauseButton(string buttonText, Color color)
     {
-        ColorBlock cb = PauseButton.GetComponent<Button>().colors;
+        /*ColorBlock cb = PauseButton.GetComponent<Button>().colors;
         Button buttonColor = PauseButton.GetComponent<Button>();
 
         cb.normalColor = color;
         cb.highlightedColor = color;
         cb.pressedColor = color;
-        buttonColor.colors = cb;
+        buttonColor.colors = cb;*/
+        PauseButton.GetComponentInChildren<Image>().color = color;
 
         PauseButton.GetComponentInChildren<Text>().text = buttonText;
         PauseButton.GetComponentInChildren<Text>().color = color;
