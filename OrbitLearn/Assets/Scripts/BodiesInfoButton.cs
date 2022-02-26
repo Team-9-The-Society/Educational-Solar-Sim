@@ -283,6 +283,7 @@ public class BodiesInfoButton : MonoBehaviour
     public void SetUniverseCenter(int i)
     {
         gameManagerReference.MakeBodyCenterOfUniv(i);
+        gameManagerReference.ActivateUniverseCam();
     }
 
 
