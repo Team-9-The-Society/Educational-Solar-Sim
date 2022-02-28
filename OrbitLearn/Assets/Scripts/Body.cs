@@ -71,4 +71,16 @@ public class Body : MonoBehaviour
     {
         return body.layer;
     }
+
+    public bool IsEqual(Body comparer)
+    {
+        if (comparer.bodyNumber == this.bodyNumber)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

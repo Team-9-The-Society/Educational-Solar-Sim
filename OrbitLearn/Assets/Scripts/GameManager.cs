@@ -226,9 +226,9 @@ public class GameManager : MonoBehaviour
                         if (b != null)
                         {
                             //If the active body has been tapped, do [thing]
-                            if (b == focusedBody)
+                            if (b.IsEqual(focusedBody))
                             {
-
+                                ShowBodyInfo(b);
                             }
                             //If a body other than the active planet has been tapped (likely erroneously), do nothing
                             else
@@ -242,15 +242,18 @@ public class GameManager : MonoBehaviour
                 //If empty space is tapped...
                 else
                 {
+                    HideBodyInfo();
                     //...check for a doubletap. If doubletap, zoom out and clear the screen.
                     if (doubleTapReady)
                     {
-                        focusedBody = null;
+                        
                         HideBodyInfo();
                         if (UniverseCam != null)
                         {
+                            focusedBody = null;
                             ActivateUniverseCam();
                         }
+                        //doubleTapReady = false;
                     }
                     else
                     {
@@ -268,7 +271,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("New run of Doubletap()");
         doubleTapReady = true;
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSecondsRealtime(0.75f);
         doubleTapReady = false;
     }
 
@@ -533,10 +536,8 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator HintPanelDelay(string msg1, string msg2)
     {
-        if (!gamePaused)
-        {
-            yield return new WaitForSeconds(0.13f);
-        }
+        yield return new WaitForSecondsRealtime(0.13f);
+        
         
         if (!uiPanelPriority&&UniverseCam.Priority == 4)
         {
@@ -884,10 +885,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator MaybeShowIdleMenu()
     {
-        if (!gamePaused)
-        {
-            yield return new WaitForSeconds(0.15f);
-        }
+        yield return new WaitForSecondsRealtime(0.15f);
+        
         
         if (SliderMenu.isOpen)
         {
@@ -898,19 +897,17 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator BodyInfoPanelDisplay()
     {
-        if (!gamePaused)
-        {
-            yield return new WaitForSeconds(0.13f);
-        }
+        yield return new WaitForSecondsRealtime(0.13f);
+        
         
         if (!uiPanelPriority&&UniverseCam.Priority == 4)
         {
             BodyInfoPanel.gameObject.SetActive(true);
         }
-        else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
+        /*else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
         {
             BodyInfoPanel.gameObject.SetActive(true);
-        }
+        }*/
     }
 
     //Displays the Body Info Panel for the input Body
@@ -935,7 +932,7 @@ public class GameManager : MonoBehaviour
         if (BodyInfoPanel != null)
         {
             BodyInfoPanel.ClearHighlightedBody();
-            focusedBody = null;
+           // focusedBody = null;
             BodyInfoPanel.gameObject.SetActive(false);
         }
         if (HintDisplay != null)
