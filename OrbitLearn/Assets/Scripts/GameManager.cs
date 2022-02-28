@@ -228,12 +228,23 @@ public class GameManager : MonoBehaviour
                             //If the active body has been tapped, do [thing]
                             if (b.IsEqual(focusedBody))
                             {
-                                ShowBodyInfo(b);
+                                Debug.Log("KeptHittingDis");
+                                if (!BodyInfoPanel.gameObject.activeSelf)
+                                {
+                                    ShowBodyInfo(b);
+
+                                    SetHintPanel();
+                                }
                             }
                             //If a body other than the active planet has been tapped (likely erroneously), do nothing
                             else
                             {
                                 //lol
+                                HideHintMessage();
+                                HideBodyInfo();
+                                ActivateUniverseCam();
+                                ActivateBodyCam(b.planetCam);
+                                ShowBodyInfo(b);
                             }
                         }
                     }
@@ -242,7 +253,7 @@ public class GameManager : MonoBehaviour
                 //If empty space is tapped...
                 else
                 {
-                    HideBodyInfo();
+                    StartCoroutine(DelayedHidePanel());
                     //...check for a doubletap. If doubletap, zoom out and clear the screen.
                     if (doubleTapReady)
                     {
@@ -275,7 +286,11 @@ public class GameManager : MonoBehaviour
         doubleTapReady = false;
     }
 
-
+    public IEnumerator DelayedHidePanel()
+    {
+        yield return new WaitForSecondsRealtime(0.13f);
+        HideBodyInfo();
+    }
 
     //uses a fixed update cycle to keep physics consistent
     void FixedUpdate()
@@ -642,16 +657,12 @@ public class GameManager : MonoBehaviour
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
     
-    public void ActivateBodyCam(CinemachineFreeLook cam)
+    public void SetHintPanel()
     {
-        cam.Priority = 5;
-        ActivePlanetCam = cam;
-        UniverseCam.Priority = 4;
-        CurrCamState = CamState.Body;
         int ran = UnityEngine.Random.Range(0, factCollisions.Length - 1);
 
         hashObject.ChangeKey(ran);
-        
+
         if (bodyClickCount > 0)
         {
             if (highLoadBalance > .70)
@@ -668,6 +679,15 @@ public class GameManager : MonoBehaviour
             DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
         }
         bodyClickCount++;
+    }
+
+    public void ActivateBodyCam(CinemachineFreeLook cam)
+    {
+        cam.Priority = 5;
+        ActivePlanetCam = cam;
+        UniverseCam.Priority = 4;
+        CurrCamState = CamState.Body;
+        SetHintPanel();
     }
 
     //Changes the priority to favor the universe over a particular planet
