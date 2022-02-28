@@ -195,8 +195,9 @@ public class GameManager : MonoBehaviour
                         //If the body component exists, then zoom in and display relevant information.
                         if (b != null)
                         {
-                            ShowBodyInfo(b);
+                            
                             ActivateBodyCam(b.planetCam);
+                            ShowBodyInfo(b);
                         }
                     }
                 }
@@ -537,7 +538,12 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.13f);
         }
         
-        if (!uiPanelPriority)
+        if (!uiPanelPriority&&UniverseCam.Priority == 4)
+        {
+            HintDisplay.gameObject.SetActive(true);
+            HintDisplay.SetMessageText(msg1, msg2);
+        }
+        else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
         {
             HintDisplay.gameObject.SetActive(true);
             HintDisplay.SetMessageText(msg1, msg2);
@@ -897,7 +903,11 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.13f);
         }
         
-        if (!uiPanelPriority)
+        if (!uiPanelPriority&&UniverseCam.Priority == 4)
+        {
+            BodyInfoPanel.gameObject.SetActive(true);
+        }
+        else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
         {
             BodyInfoPanel.gameObject.SetActive(true);
         }
