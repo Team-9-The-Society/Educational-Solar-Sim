@@ -1,42 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class MoveCameraOnTouch: MonoBehaviour
+public class MoveCameraOnTouch : MonoBehaviour
 {
+    public float TouchSensitivityX = 100f;
+    public float TouchSensitivityY = 100f;
+    public GameObject VitFreeLook;
+
     void Start()
     {
         CinemachineCore.GetInputAxis = GetAxisCustom;
         CinemachineImpulseManager.Instance.IgnoreTimeScale = true;
-
     }
+
     public float GetAxisCustom(string axisName)
     {
-        //Touch touch = Input.GetTouch(0);
+        if (Input.GetMouseButton(0) && !GameManager.Instance.uiPanelPriority)
+        {
+            var FreeLookComponent = VitFreeLook.GetComponent<CinemachineFreeLook>();
 
-        if (axisName == "Mouse X")
-        {
-            if (Input.GetMouseButton(0))
+            if (GameManager.Instance.gamePaused)
             {
-                return UnityEngine.Input.GetAxis("Mouse X");
+                FreeLookComponent.m_YAxis.m_MaxSpeed = 0.005f;
+                FreeLookComponent.m_XAxis.m_MaxSpeed = 1.5f;
             }
             else
             {
-                return 0;
+                FreeLookComponent.m_YAxis.m_MaxSpeed = 0.1f;
+                FreeLookComponent.m_XAxis.m_MaxSpeed = 15f;
             }
-        }
-        else if (axisName == "Mouse Y")
-        {
-            if (Input.GetMouseButton(0))
+
+            if (Input.touchCount > 0)
             {
-                return UnityEngine.Input.GetAxis("Mouse Y");
+                switch (axisName)
+                {
+                    case "Mouse X":
+                        return Input.touches[0].deltaPosition.x / TouchSensitivityX;
+                    case "Mouse Y":
+                        return Input.touches[0].deltaPosition.y / TouchSensitivityY;
+                    default:
+                        Debug.LogError("Input <" + axisName + "> not recognyzed.", this);
+                        break;
+                }
             }
             else
             {
-                return 0;
+                return Input.GetAxis(axisName);
             }
         }
-        return UnityEngine.Input.GetAxis(axisName);
+        return 0f;
     }
 }

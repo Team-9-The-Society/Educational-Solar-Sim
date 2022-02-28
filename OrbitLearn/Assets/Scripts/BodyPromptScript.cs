@@ -82,7 +82,8 @@ public class BodyPromptScript : MonoBehaviour
         {
             if (goodInput)
             {
-                if (passedBody.lightArray[0].enabled != glowToggle.isOn)
+                //Check here
+                if ((passedBody.returnLayer() == 6 && glowToggle.isOn) || (passedBody.returnLayer() == 3 && !glowToggle.isOn))
                 {
                     passedBody.flipLight();
                 }
@@ -136,7 +137,7 @@ public class BodyPromptScript : MonoBehaviour
         zVel = 0;
 
         size = 1;
-        glowToggle.isOn = true;
+        glowToggle.isOn = false;
     }
 
     public void SetInput(string variable)
@@ -224,6 +225,14 @@ public class BodyPromptScript : MonoBehaviour
         zPosInput.text = passedBody.gameObject.transform.position.z.ToString("#.00");
         massInput.text = passedBody.returnRigBody().mass.ToString("E2");
         sizeInput.value = passedBody.transform.localScale.x;
+       if(passedBody.returnLayer() == 3)
+        {
+            glowToggle.isOn = true;
+        }
+       else
+        {
+            glowToggle.isOn = false;
+        }
     }
 
     public void finalCheck()

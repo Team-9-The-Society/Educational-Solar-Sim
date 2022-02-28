@@ -21,4 +21,6 @@ public class UIRefHandler : MonoBehaviour
     public GameObject UniverseCenter;
     public UIHintDisplay HintDisplayRef;
     public GameObject PauseDisplayRef;
+    public UIFilePanel FileRef;
+    public RotationDisplay RotDisplayRef;
 }

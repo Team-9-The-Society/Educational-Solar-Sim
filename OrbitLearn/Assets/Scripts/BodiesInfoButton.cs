@@ -15,7 +15,10 @@ public class BodiesInfoButton : MonoBehaviour
     public int panelExpansionCount = 0;
     public int buttonCount = 0;
     public int presetFilm = 0;
-    
+    public int knownBodyCount;
+    public bool noBodyVerified = false;
+
+
     public List<GameObject> Buttons;
 
     [Header("Input Field References")]
@@ -44,11 +47,19 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void displayBodies()
     {
-        displayTxt.text = iterateBodies();
+        if (buttonSpawn == 1 && ((knownBodyCount == 0)|| (gameManagerReference.gamePaused)))
+        {
+
+        }
+        else
+        {
+            //Debug.Log("PauseTest");
+            displayTxt.text = iterateBodies();
+        }
     }
     public int calculateStepHeight()
     {//DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
-        return gameManagerReference.BodyCount - 1 - panelLastCount;//- 6 -
+        return knownBodyCount - 1 - panelLastCount;//- 6 -
 
     }
     public float[] getScreenplier()
@@ -89,7 +100,7 @@ public class BodiesInfoButton : MonoBehaviour
         {
             return (float)-455.5 * (loopCount - panelExpansionCount) - 1325 + screenplier + (float)2.8 * panelExpansionCount;
         }
-        return (float)-455.5 * (loopCount - panelExpansionCount) - 1500 + screenplier + (float)2.8 * panelExpansionCount;
+        return (float)-455.5 * (loopCount - panelExpansionCount) - 1350 + screenplier + (float)2.8 * panelExpansionCount;
     }
 
     public void spawnButtons(int count)
@@ -116,34 +127,45 @@ public class BodiesInfoButton : MonoBehaviour
         {
             int num = loopCount;
             GameObject button = Instantiate(buttonPrefab);
+            GameObject buttonCenterUniv = Instantiate(buttonPrefab);
 
             button.GetComponent<Button>().onClick.AddListener(() => FocusOnPlanet(num));
             button.transform.SetParent(buttonPanel.transform);//Setting button parent
+            buttonCenterUniv.GetComponent<Button>().onClick.AddListener(() => SetUniverseCenter(num));
+            buttonCenterUniv.transform.SetParent(buttonPanel.transform);//Setting button parent
 
             //Debug.Log(panelExpansionCount + " panelExpansionCount!", this);//372
-            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, buttonYPlacement(num, screenplier));//Changing text
+            float yaxis = buttonYPlacement(num, screenplier);
+            button.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yaxis);//Changing text
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
+            buttonCenterUniv.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPosition, yaxis-150);//Changing text
+            buttonCenterUniv.GetComponent<RectTransform>().sizeDelta = new Vector2(offsetWidth, offsetHeight);
 
-          
+
             button.GetComponentInChildren<TMP_Text>().text = tmp[num].bodyName;
             button.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth/textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
+            buttonCenterUniv.GetComponentInChildren<TMP_Text>().text = "Set univ";
+            buttonCenterUniv.GetComponentInChildren<TMP_Text>().fontSize = offsetWidth / textSizeIndex;//((float)Screen.width * (float)Screen.height) / (baseHeightDisplay * baseWidthDisplay);
+            
+            
             Buttons.Add(button);
-            buttonCount++;
+            Buttons.Add(buttonCenterUniv);
+            buttonCount += 2;
             
             //////
         }
     }
-    public void panelGrowth()
+    public void panelGrowth(int zero)
     {
         panelExpansion = 1;
 
         panelRedaction = calculateStepHeight();
        
             
-        displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction) * -458);
+        displayTxt.GetComponent<RectTransform>().offsetMin += new Vector2(0, (panelRedaction+zero) * -458);
         panelExpansionCount += panelRedaction;
             
-        panelLastCount = gameManagerReference.BodyCount - 1;
+        panelLastCount = knownBodyCount - 1;
         
 
 
@@ -152,11 +174,25 @@ public class BodiesInfoButton : MonoBehaviour
     }
     public string iterateBodies()
     { //DO NOT CHANGE THE MATHHHHHH OR YOU WILL BE SORRY
-        int knownBodyCount = gameManagerReference.BodyCount;
+        knownBodyCount = gameManagerReference.BodyCount;
         //growing panel
-        if (gameManagerReference.BodyCount > 0 && panelExpansion ==0)
+        if (panelExpansion ==0)
         {
-            panelGrowth();
+            if (knownBodyCount == 0 && panelLastCount > -1) //So this only occurs after a reset when the panel is opened with no bodies. This is to counter a bug where the panel text is placed odd.
+            {
+                panelGrowth(1);
+                noBodyVerified = true;
+            }
+            else if (knownBodyCount > 0 && noBodyVerified) //This is to counter the previous counter and should only occur once if the panel is opened after bodies have been added after the panel previously held 0 text
+            {
+                panelGrowth(-1);
+                noBodyVerified = false;
+            }
+            else //life is back to normal, everything functions as it did before the patch.
+            {
+                panelGrowth(0);
+            }
+            
         }
         //spawning buttons
         if (buttonSpawn == 0 && knownBodyCount > 0)
@@ -166,13 +202,18 @@ public class BodiesInfoButton : MonoBehaviour
         }
         //no buttons/bodies display
         string totalDisplay = "";
-        if (knownBodyCount == 0)
+        if (knownBodyCount == 0 )
         {
+            buttonSpawn = 1;
             totalDisplay += "No Bodies are currently displayed. Please add a body for their information to be displayed promply here.";
         }
+        else
+        {
+            //PrintOut
+            totalDisplay += iterateBodyInformation(totalDisplay);
+        }
 
-        //PrintOut
-        totalDisplay += iterateBodyInformation(totalDisplay);
+        
         
         return totalDisplay;
 
@@ -233,9 +274,18 @@ public class BodiesInfoButton : MonoBehaviour
         panelExpansion = 0;
         buttonSpawn = 0;
         Debug.Log(name + " Game Object Hidden!", this);
+        displayTxt.text = "";
         this.gameObject.SetActive(false);
 
     }
+
+
+    public void SetUniverseCenter(int i)
+    {
+        gameManagerReference.MakeBodyCenterOfUniv(i);
+        gameManagerReference.ActivateUniverseCam();
+    }
+
 
     public void FocusOnPlanet(int i)
     {
@@ -243,7 +293,7 @@ public class BodiesInfoButton : MonoBehaviour
         {
             Debug.LogWarning("Running FocusOnPlanet for i=" + i);
             gameManagerReference.ShowBodyInfo(gameManagerReference.SimBodies[i]);
-            gameManagerReference.ActivatePlanetCam(gameManagerReference.SimBodies[i].planetCam);
+            gameManagerReference.ActivateBodyCam(gameManagerReference.SimBodies[i].planetCam);
             gameManagerReference.ChangePanelPriority();
             HidePanel();
         }

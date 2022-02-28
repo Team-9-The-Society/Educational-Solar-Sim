@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading.Tasks;
+using System;
 
 public class UISliderMenu : MonoBehaviour
 {
@@ -19,9 +21,18 @@ public class UISliderMenu : MonoBehaviour
     public GameObject BodyInfoPanel;
     public GameObject PresetSimulationsPanel;
     public GameObject PauseButton;
+    public GameObject FilePanel;
+
+
+    public Button LoadButton;
+    public Button HomeButton;
+    public Button AddButton;
+    public Button BodiesButton;
+    public Button TemplateButton;
 
     [Header("Management Variables")]
     public bool paused = false;
+    public bool isOpen = false;
 
     private void Awake()
     {
@@ -30,7 +41,6 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoInputPanel.SetActive(false);
         BodiesDescriptionPanel.SetActive(false);
     }
-
 
     public void ActivateUIElement(GameManager g)
     {
@@ -56,18 +66,46 @@ public class UISliderMenu : MonoBehaviour
             gameManagerReference.ChangePanelPriority();
         }
     }
-
+    /// <summary>
+    /// //sgwregwegwegwegw
+    /// </summary>
     public void ResetScene()
     {
         gameManagerReference.DeleteAllBodies();
     }
 
+    public void ChangeButtonInteractability()
+    {
+        if (LoadButton != null)
+        {
+            LoadButton.interactable = isOpen;
+        }
+        if (HomeButton != null)
+        {
+            HomeButton.interactable = isOpen;
+        }
+        if (AddButton != null)
+        {
+            AddButton.interactable = isOpen;
+        }
+        if (BodiesButton != null)
+        {
+            BodiesButton.interactable = isOpen;
+        }
+        if (TemplateButton != null)
+        {
+            TemplateButton.interactable = isOpen;
+        }
+    }
 
     //Triggers the panel sliding in/out of the frame
     public void ShowIdleMenu()
     {
-            bool isOpen = animator.GetBool("show");
-            animator.SetBool("show", !isOpen);
+        isOpen = !isOpen;
+        ChangeButtonInteractability();
+        //Debug.Log(this.Controls[0]);
+        //isOpen = animator.GetBool("show");
+        animator.SetBool("show", isOpen);
     }
 
 
@@ -87,6 +125,10 @@ public class UISliderMenu : MonoBehaviour
     {
         BodyInfoInputPanel.SetActive(true);
     }
+    public void ChangeRotDisplay()
+    {
+        gameManagerReference.ChangeRotDisplay();
+    }
 
     //Shows the list of preset simulations
     public void ShowPresetSimsPanel()
@@ -95,6 +137,10 @@ public class UISliderMenu : MonoBehaviour
             PresetSimulationsPanel.SetActive(true);
         else
             Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
+    }
+    public void ShowFilePanel()
+    {
+        FilePanel.SetActive(true);
     }
 
     //Hides the list of preset simulations
@@ -119,7 +165,7 @@ public class UISliderMenu : MonoBehaviour
         BodiesDescriptionPanel.SetActive(false);
         BodyInfoPanel.SetActive(false);
         PanelHideHint.SetActive(false);
-
+        FilePanel.SetActive(false);
     }
 
     public void LoadHomeScene()
@@ -139,18 +185,36 @@ public class UISliderMenu : MonoBehaviour
         DisplayPause();
         gameManagerReference.TogglePause();
     }
-    public void DisplayPause()
+
+    public void DisplayPause()//async
     {
         if (!paused)
         {
             paused = true;
-            PauseButton.GetComponentInChildren<Text>().text = "PLAY";
+            //await Task.Delay(TimeSpan.FromSeconds(0.50f));
+            UpdatePauseButton("PLAY", Color.red);
         }
         else
         {
             paused = false;
-            PauseButton.GetComponentInChildren<Text>().text = "PAUSE";
+            //await Task.Delay(TimeSpan.FromSeconds(0.25f));
+            UpdatePauseButton("PAUSE", Color.white);
         }
+    }
+
+    public void UpdatePauseButton(string buttonText, Color color)
+    {
+        /*ColorBlock cb = PauseButton.GetComponent<Button>().colors;
+        Button buttonColor = PauseButton.GetComponent<Button>();
+
+        cb.normalColor = color;
+        cb.highlightedColor = color;
+        cb.pressedColor = color;
+        buttonColor.colors = cb;*/
+        PauseButton.GetComponentInChildren<Image>().color = color;
+
+        PauseButton.GetComponentInChildren<Text>().text = buttonText;
+        PauseButton.GetComponentInChildren<Text>().color = color;
     }
 
 }

@@ -32,62 +32,66 @@ public class UIPresetSimulations : MonoBehaviour
 
 
 
-    public void Simulation1() //current preset orbit
+    public void Simulation1() //elliptical orbit
     {
 
 
         GameManager.Instance.DeleteAllBodies();
 
         //(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name)
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,9), 0, 0, 0, 0, 0, 0, 5.906, false, "LrgStat", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,9), 0, 0, 0, 0, 0, 0, 8, false, "Aur", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,8), 20, 15, 0, 0, 0, 5, 3.458, false, "LrgMove", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10,3), 10, 0, 0, 0, 5, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
-    public void Simulation2() //large body collision
+    public void Simulation2() //Circular Orbit
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), -10, 0, 0, 0, 0, 0, 8, false, "LrgStat", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "Aur", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, -5, 0, 0, 8, false, "LrgMove", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), 15, 0, 0, 0, 4.5, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
-    public void Simulation3() //small body collision
+    public void Simulation3() //Slingshot
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 4, false, "Steven", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "Aur", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, 0, 0, 0, 4, false, "Robert", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), -15, -30, 0, 0, 7, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.ActivateUniverseCam();
     }
 
-    public void Simulation4() //large body and small body collision
+    public void Simulation4() //Circular Opposing Moons
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 4, false, "StaticB", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "Aur", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 10, 0, 0, -10, 0, 0, 4, false, "MovingB", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), 15, 0, 0, 0, 4.5, 0, 3, false, "Eos", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 3), -15, 0, 0, 0, -4.5, 0, 3, false, "Ipo", false);
+        
+        GameManager.Instance.ActivateUniverseCam();
     }
 
-    public void Simulation5() //circular orbit
+    public void Simulation5() //Inner/Outer Elliptical Moons
     {
         GameManager.Instance.DeleteAllBodies();
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "StaticB", false);
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 9), 0, 0, 0, 0, 0, 0, 8, false, "Aur", false);
 
-        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 5), 10, 0, 10, 0, 7.5, 0, 8, false, "MovingB", false);
+        GameManager.Instance.TrySpawnNewBody(5*Math.Pow(10, 6), 13, 8, 0, -2.2, 2.8, 2, 4.5, false, "Eln", false);
 
-        GameManager.Instance.FocusOnUniverse();
+        GameManager.Instance.TrySpawnNewBody(Math.Pow(10, 2), -22, 0, 0, 0, -3.8, 0, 3, false, "Eos", false);
+
+        GameManager.Instance.ActivateUniverseCam();
     }
 
     public void HidePanel() => this.gameObject.SetActive(false);

@@ -125,6 +125,8 @@ MonoBehaviour:
   BodyInputPanelRef: {fileID: 0}
   PresetSimulationsRef: {fileID: 0}
   UniverseCenter: {fileID: 0}
+  HintDisplayRef: {fileID: 0}
+  PauseDisplayRef: {fileID: 0}
 --- !u!114 &-4791136349079628720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b820e6b4f786b2549bbc46e720a9d093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TouchSensitivityX: 100
+  TouchSensitivityY: 100
 --- !u!1 &3689151797793819354
 GameObject:
   m_ObjectHideFlags: 3

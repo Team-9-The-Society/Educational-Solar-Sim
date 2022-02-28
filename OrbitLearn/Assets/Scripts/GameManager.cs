@@ -1,12 +1,3 @@
-/*  Created by Logan Edmund, 10/14/21
- *  
- *  Handles overarching functions of the program
- * 
- * 
- * 
- */
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +6,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 using TMPro;
+using System;
+using Random = UnityEngine.Random;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +21,9 @@ public class GameManager : MonoBehaviour
     public UIPresetSimulations PresetSimulations;
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
+    public UIFilePanel FilePanel;
+    public RotationDisplay RotDisplay;
+    public Animator animator;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -37,14 +34,39 @@ public class GameManager : MonoBehaviour
     public GameObject emptyBodyPrefab;
 
 
+    [Header("Backend Import Variable")]
+    public string importString;
+
     [Header("Management Variables")]
     public List<Body> SimBodies;
+    public enum CamState { Universe, Body }
+    public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
     private int tapCount = 0;
+    private int bodyClickCount = 0;
+    public int bodyUnivCenter;
+
+    public bool doubleTapReady = false;
+    private Coroutine doubleTapCheck = null;
+
     public bool gamePaused = false;
     public bool uiPanelPriority = false;
+    public bool bodySelectedUnivCenter = false;
+    public float transitionDelayTime = 1.0f;
 
+    [Header("Rotation Variables")]
+    float rotSpeed;
+    float rotAxis;
+    Quaternion curRot;
+    Vector3 curEuler;
+    float x, y, z;
+
+    private string[] coolFacts;
+    private int[] factCollisions;
+    private float highLoadBalance = 0;
+    private float load = 0;
+    HashItUp hashObject;
     public static RuntimePlatform platform
     {
         get
@@ -75,10 +97,15 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
+        animator = GameObject.Find("Transition").GetComponent<Animator>();
 
         SimBodies = new List<Body>();
-
+        LoadFunFacts();
+        hashObject = new HashItUp(factCollisions.Length, 31, 0, highLoadBalance, factCollisions);
         TryLocateUIReferences();
+
+        rotSpeed = Random.Range(-100.0f, 100.0f);
+        rotAxis = Random.Range(0.0f, 100.0f);
     }
     public List<Body> getList()
     {
@@ -111,7 +138,16 @@ public class GameManager : MonoBehaviour
 
         ClearUIReferences();
         SimBodies.Clear();
+
+        StartCoroutine(DelayLoadLevel(targetScene));
+    }
+
+    private IEnumerator DelayLoadLevel(SceneHandler.Scene targetScene)
+    {
+        animator.SetTrigger("TriggerOutTransition");
+        yield return new WaitForSeconds(transitionDelayTime);
         SceneHandler.Load(targetScene);
+        animator.SetTrigger("TriggerInTransition");
     }
 
 
@@ -121,52 +157,121 @@ public class GameManager : MonoBehaviour
     {
         if (UniverseCam != null)
             RefreshUniverseCam();
-        //Debug.Log("Pointer over UI: " + IsPointerOverUIElement());
 
-        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
+        foreach (Body b in SimBodies)
         {
-            //Increment taps
-            tapCount++;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit) && !uiPanelPriority)//////
+            if (rotAxis > 90)
             {
-                //If a body has been tapped
-                if (hit.collider != null)
-                {
-                    //Attempts to get reference to Body component
-                    Body b = hit.collider.gameObject.GetComponent<Body>();
-                    if (tapCount >= 2 && focusedBody == b)
-                    {
-                        ActivatePlanetCam(b.planetCam);
-                    }
-                    else if (tapCount == 1 && b != null)
-                    {
-                        ShowBodyInfo(b);
-                    }
-                }
+                x = 1;
             }
-            //Otherwise, if the focused body is not equal to null
-            else if (focusedBody != null)
+            else if (rotAxis > 80)
             {
-                focusedBody = null;
+                z = 1;
             }
             else
             {
-                tapCount = 0;
-                HideBodyInfo();
-                if (UniverseCam != null)
-                    FocusOnUniverse();
+                y = 1;
             }
+            curEuler += new Vector3(x, y, z) * Time.deltaTime * rotSpeed;
+            curRot.eulerAngles = curEuler;
+            b.transform.rotation = curRot;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
-            PresetSimulations.Simulation1();
-        }
-       
+            if (CurrCamState == CamState.Universe)
+            {
+                //Check to see if object is tapped
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    //If a body has been tapped
+                    if (hit.collider != null)
+                    {
+                        //Attempt to get reference to Body component
+                        Body b = hit.collider.gameObject.GetComponent<Body>();
+                        //If the body component exists, then zoom in and display relevant information.
+                        if (b != null)
+                        {
+                            ShowBodyInfo(b);
+                            ActivateBodyCam(b.planetCam);
+                        }
+                    }
+                }
+
+                //If the player taps empty space otherwise, do nothing
+                else
+                {
+
+                }
+
+            }
+            else if (CurrCamState == CamState.Body)
+            {
+                //Check to see if object is tapped
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    //If a body has been tapped
+                    if (hit.collider != null)
+                    {
+                        //Attempt to get reference to Body component
+                        Body b = hit.collider.gameObject.GetComponent<Body>();
+                        //If the body component exists...
+                        if (b != null)
+                        {
+                            //If the active body has been tapped, do [thing]
+                            if (b == focusedBody)
+                            {
+
+                            }
+                            //If a body other than the active planet has been tapped (likely erroneously), do nothing
+                            else
+                            {
+                                //lol
+                            }
+                        }
+                    }
+                }
+
+                //If empty space is tapped...
+                else
+                {
+                    //...check for a doubletap. If doubletap, zoom out and clear the screen.
+                    if (doubleTapReady)
+                    {
+                        focusedBody = null;
+                        HideBodyInfo();
+                        if (UniverseCam != null)
+                        {
+                            ActivateUniverseCam();
+                        }
+                    }
+                    else
+                    {
+                        if (doubleTapCheck != null)
+                            StopCoroutine(doubleTapCheck);
+                        doubleTapCheck = StartCoroutine(DoubleTap());
+                    }
+                }
+
+            }
+        }       
     }
+
+    private IEnumerator DoubleTap()
+    {
+        Debug.Log("New run of Doubletap()");
+        doubleTapReady = true;
+        yield return new WaitForSeconds(0.75f);
+        doubleTapReady = false;
+    }
+
+
 
     //uses a fixed update cycle to keep physics consistent
     void FixedUpdate()
@@ -177,14 +282,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Unfocuses on a selected body, if any, and zooms out to a universe view
-    public void FocusOnUniverse()
-    {
-        BodyInfoPanel.ClearHighlightedBody();
-        BodyInfoPanel.gameObject.SetActive(false);
-        ActivateUniverseCam();
-    }
-
     //Attemps to spawn a new body at 0,0,0 if the max number of planets has not been reached.
     public void TrySpawnNewBody()
     {
@@ -193,14 +290,15 @@ public class GameManager : MonoBehaviour
             GameObject b = Instantiate(emptyBodyPrefab, null, true);
             Body bodyRef = b.GetComponent<Body>();
 
-            ActivatePlanetCam(bodyRef.planetCam);
+            ActivateBodyCam(bodyRef.planetCam);
 
             BodyInfoPanel.gameObject.SetActive(true);
             BodyInfoPanel.SetHighlightedBody(bodyRef);
-
+            bodyRef.bodyNumber = BodyCount;
             SimBodies.Add(bodyRef);
             BodyCount++;
-
+            
+            
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
@@ -219,15 +317,16 @@ public class GameManager : MonoBehaviour
 
             if (shouldFocus)
             {
-                ActivatePlanetCam(bodyRef.planetCam);
+                ActivateBodyCam(bodyRef.planetCam);
                 focusedBody = bodyRef;
                 BodyInfoPanel.gameObject.SetActive(true);
                 BodyInfoPanel.SetHighlightedBody(bodyRef);
             }
 
-
+            bodyRef.bodyNumber = BodyCount;
             SimBodies.Add(bodyRef);
             BodyCount++;
+            
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
@@ -239,7 +338,7 @@ public class GameManager : MonoBehaviour
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
-            if (glowState!= bodyRef.lightArray[0].enabled)
+            if (glowState)
             {
                 bodyRef.flipLight();
 
@@ -253,10 +352,35 @@ public class GameManager : MonoBehaviour
     {
         uiPanelPriority = !uiPanelPriority;
     }
-
+    public void ChangeRotDisplay()
+    {
+        if (RotDisplay.gameObject.activeSelf)
+        {
+            RotDisplay.gameObject.SetActive(false);
+        }
+        else
+        {
+            RotDisplay.gameObject.SetActive(true);
+        }
+    }
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
+        int currentcount = b.bodyNumber;
+        int iteratecount = currentcount + 1;
+        while (iteratecount < BodyCount)
+        {
+            SimBodies[iteratecount].bodyNumber -= 1;
+            iteratecount++;
+        }
+        if (currentcount < bodyUnivCenter)
+        {
+            bodyUnivCenter -= 1;
+        }
+        else if (currentcount == bodyUnivCenter)
+        {
+            bodySelectedUnivCenter = false;
+        }
         SimBodies.Remove(b);
         BodyCount--;
         ActivateUniverseCam();
@@ -283,6 +407,7 @@ public class GameManager : MonoBehaviour
             DeleteBody(bodies[j]);
         }
         SimBodies = new List<Body>();
+        bodySelectedUnivCenter = false;
     }
 
     public void UpdateForces()
@@ -300,35 +425,11 @@ public class GameManager : MonoBehaviour
             position[i, 0] = b.gameObject.transform.position.x;
             position[i, 1] = b.gameObject.transform.position.y;
             position[i, 2] = b.gameObject.transform.position.z;
-
             Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
 
             i++;
         }
 
-        /* Can be uncommented once libraries are functional
-        try{
-            switch(ApplicationUtil.platform)
-            {
-                case RuntimePlatform.Android:
-                    //Android library
-                    break;
-                case RuntimePlatform.WindowsPlayer:
-                    //DLL library
-                    break;
-                default:
-                    force = nBody.UpdateForce(position, mass, numBodies);
-                    break;
-            }
-        }
-        //Catch case if the libraries fail
-        catch
-        {
-            force = nBody.UpdateForce(position, mass, numBodies);
-        }
-        */
-
-        //once libraries are added, remove this line
         force = nBody.UpdateForce(position, mass, numBodies);
         i = 0;
         foreach (Body b in SimBodies)
@@ -338,6 +439,80 @@ public class GameManager : MonoBehaviour
         }
 
         return;
+    }
+
+    public void SetImportString(string simString)
+    {
+        GameManager.Instance.DeleteAllBodies();
+
+        
+
+        simString = simString.Split('}')[0];
+        simString = simString.Split('{')[1];
+
+        string[] simStringList = simString.Split(';');
+
+        Array.Copy(simStringList, simStringList, simStringList.Length - 1);
+
+        
+        for (int i = 0; i < simStringList.Length; i++)
+        {
+            string[] bodyStringList = simStringList[i].Split('[');
+
+            string name = bodyStringList[0].Substring(0, bodyStringList[0].Length - 1);
+
+            bodyStringList = bodyStringList[1].Split(']')[0].Split(',');
+
+            Dictionary<string, string> attr = new Dictionary<string, string>();
+
+            for ( int j =0; j< bodyStringList.Length-1; j++)
+            {
+                string str = bodyStringList[j];
+                string[] broken = str.Split(':');
+                Debug.Log(broken[0]);
+                attr.Add(broken[0],broken[1]);
+            }
+
+
+            TrySpawnNewBody(double.Parse(attr["m"]), double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]), double.Parse(attr["vx"]), double.Parse(attr["vy"]), double.Parse(attr["vz"]), double.Parse(attr["s"]), false, name, bool.Parse(attr["glow"]));
+
+
+        }
+
+
+    }
+
+    public void ExportSimulation()
+    {
+
+        String simEx = "{";
+
+
+        foreach (Body b in SimBodies)
+        {
+            simEx += b.bodyName + ":[";
+
+            simEx += "px:" + b.gameObject.transform.position.x + ",";
+            simEx += "py:" + b.gameObject.transform.position.y + ",";
+            simEx += "pz:" + b.gameObject.transform.position.z + ",";
+
+            simEx += "vx:" + b.gameObject.GetComponent<Rigidbody>().velocity[0] + ",";
+            simEx += "vy:" + b.gameObject.GetComponent<Rigidbody>().velocity[1] + ",";
+            simEx += "vz:" + b.gameObject.GetComponent<Rigidbody>().velocity[2] + ",";
+
+            simEx += "m:" + b.gameObject.GetComponent<Rigidbody>().mass + ",";
+
+            simEx += "s:" + b.gameObject.transform.localScale[0] + ",";
+            
+            simEx += "glow:" + b.radiant.enabled + ",";
+
+
+            simEx += "];";
+        }
+
+        simEx += "}end";
+
+        GUIUtility.systemCopyBuffer = simEx;
     }
 
     public void TogglePause()
@@ -355,12 +530,23 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public IEnumerator HintPanelDelay(string msg1, string msg2)
+    {
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.13f);
+        }
+        
+        if (!uiPanelPriority)
+        {
+            HintDisplay.gameObject.SetActive(true);
+            HintDisplay.SetMessageText(msg1, msg2);
+        }
+    }
 
     public void DisplayHintMessage(string msg1, string msg2)
     {
-        HintDisplay.gameObject.SetActive(true);
-        HintDisplay.SetMessageText(msg1, msg2);
-
+        StartCoroutine(HintPanelDelay(msg1, msg2));
     }
 
     public void HideHintMessage()
@@ -368,21 +554,123 @@ public class GameManager : MonoBehaviour
         HintDisplay.ClearMessageText();
         HintDisplay.gameObject.SetActive(false);
     }
+    private void LoadFunFacts()
+    {
+        coolFacts = new string[]
+        {
+            "Our neighbor galaxy is Andromeda.",
+            "In 2008 NASA confirmed water on Mars",
+            "Mercury orbits our Sun in appr. 88 days.",
+            "Venus' surface can reach 450 Degrees C",
+            "Haley's comet won't pass us again 'til 2061.",
+            "Our solar system is 4.57 billion years old.",
+            "Footprints left on the Moon won’t disappear.",
+            "There are 79 known moons orbiting Jupiter.",
+            "Earth is the only planet not named after a god.",
+            "Pluto is smaller than the United States",
+             "A season on Uranus is 21 Earth years.",
+             "Neptune’s moon, Triton, orbits it backwards.",
+             "A day on Pluto is lasts for 153.6 hours long.",
+             "Saturn is the 2nd largest planet.",
+             "Only 5% of the universe is visible from Earth.",
+             "Outer Space is only 62 miles away.",
+             "On Venus, it snows metal & rains sulfuric acid.",
+             "Space is completely silent.",
+             "Exoplanets orbit around other stars.",
+             "Venus is the hottest planet in our solar system. ",
+             "Astronauts can’t burp in space.",
+             "Uranus was originally called “George’s Star”.",
+             "A sunset on Mars is blue.",
+             "The Earth weighs ~81 times more than the Moon.",
+             "Gennady Padalka has spent 879 days in space",
+             "There is no wind or weather on Mercury.",
+             "Jupiter’s Red Spot is shrinking.",
+             "A day on Mercury is ~58 Earth days.",
+             "As space has no gravity, pens won’t work.",
+             "The center of a comet is called a 'nucleus'",
+             "There are 5 Dwarf Planets in our Solar System.",
+             "Nobody knows how many stars are in space.",
+             "A full NASA space suit costs $12,000,000.",
+             "Neutron stars can spin 600 times per second.",
+             "One day on Venus is longer than one year.",
+             "There is floating water in space.",
+             "The largest known asteroid is 965km wide.",
+             "The Moon was once a piece of the Earth.",
+             "The universe is around 13.8 billion years old",
+             "Mars and Earth have roughly the same landmass.",
+             "Only 18 missions to Mars have been successful.",
+             "Pieces of Mars have fallen to Earth.",
+             "One day Mars will have a ring.",
+             "A year on Neptune lasts 165 Earth years.",
+             "Neptune has 6 faint rings.",
+             "Neptune is the most distant planet from the Sun.",
+             "Neptune spins on its axis very rapidly.",
+             "Only one spacecraft has flown by Uranus.",
+             "Uranus hits the coldest temps of any planet.",
+             "Jupiter has the shortest day of all the planets.",
+             "Eight spacecraft have visited Jupiter.",
+             "A year on Venus takes 225 Earth days.",
+             "A year on Earth takes 364 ish Earth days."
+        };
 
-
+        factCollisions = new int[coolFacts.Length];
+    }
+   
+    public void MakeBodyCenterOfUniv(int bodyNumber)
+    {
+        if (bodyNumber < 0 || bodyNumber > BodyCount-1)
+        {
+            bodySelectedUnivCenter = false;
+        }
+        else
+        {
+            bodyUnivCenter = bodyNumber;
+            bodySelectedUnivCenter = true;
+        }
+    }
+    public string GenerateFunSpaceFact(int address)
+    {
+        return coolFacts[address];
+    }
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
-    public void ActivatePlanetCam(CinemachineFreeLook cam)
+    
+    public void ActivateBodyCam(CinemachineFreeLook cam)
     {
         cam.Priority = 5;
         ActivePlanetCam = cam;
         UniverseCam.Priority = 4;
-        DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
+        CurrCamState = CamState.Body;
+        int ran = UnityEngine.Random.Range(0, factCollisions.Length - 1);
+
+        hashObject.ChangeKey(ran);
+        
+        if (bodyClickCount > 0)
+        {
+            if (highLoadBalance > .70)
+            {
+                hashObject.PublicLoadReset();
+            }
+            DisplayHintMessage(GenerateFunSpaceFact(hashObject.HashItOut(0)), GenerateFunSpaceFact(hashObject.HashItOut(1)));
+            hashObject.ManualIncrementAndLoadBalance(2);
+            load = hashObject.getLoad();
+            highLoadBalance = hashObject.getLoadBalance();
+        }
+        else
+        {
+            DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
+        }
+        bodyClickCount++;
     }
 
     //Changes the priority to favor the universe over a particular planet
     public void ActivateUniverseCam()
     {
+        BodyInfoPanel.ClearHighlightedBody();
+        BodyInfoPanel.gameObject.SetActive(false);
+
+        CurrCamState = CamState.Universe;
+
         if (ActivePlanetCam != null)
         {
             ActivePlanetCam.Priority = 4;
@@ -396,58 +684,99 @@ public class GameManager : MonoBehaviour
     //Increase the size of the Universe Cam orbit based on planetary positions
     public void RefreshUniverseCam()
     {
-        //Set position of the UniverseCenter
-        if (SimBodies.Count == 0)
+        if (UniverseCam != null && simulationCenter != null)
         {
-            simulationCenter.transform.position = new Vector3(0, 0, 0);
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
-        }
-        else if (SimBodies.Count == 1)
-        {
-            simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
-        }
-        else
-        {
-            float massMax = 0;
-            float xCenter = 0;
-            float yCenter = 0;
-            float zCenter = 0;
-
-            foreach (Body b in SimBodies)
+            //Set position of the UniverseCenter
+            if (SimBodies.Count == 0)
             {
-                xCenter += (b.gameObject.transform.position.x);
-                yCenter += (b.gameObject.transform.position.y);
-                zCenter += (b.gameObject.transform.position.z);
+                simulationCenter.transform.position = new Vector3(0, 0, 0);
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
             }
-
-            xCenter = xCenter / SimBodies.Count;
-            yCenter = yCenter / SimBodies.Count;
-            zCenter = zCenter / SimBodies.Count;
-
-            Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
-
-            float maxDist = 25;
-            foreach (Body b in SimBodies)
+            else if (SimBodies.Count == 1)
             {
-                float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
-                if (maxDist < distance)
+                simulationCenter.transform.position = SimBodies[0].gameObject.transform.position;
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(30, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, 30);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-30, 0.1f);
+            }
+            else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
+            {
+                float massMax = 0;
+                float xCenter = 0;
+                float yCenter = 0;
+                float zCenter = 0;
+
+                foreach (Body b in SimBodies)
                 {
-                    maxDist = distance;
+                    xCenter += (b.gameObject.transform.position.x);
+                    yCenter += (b.gameObject.transform.position.y);
+                    zCenter += (b.gameObject.transform.position.z);
                 }
+
+                xCenter = xCenter / SimBodies.Count;
+                yCenter = yCenter / SimBodies.Count;
+                zCenter = zCenter / SimBodies.Count;
+
+                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+
+                float maxDist = 25;
+                foreach (Body b in SimBodies)
+                {
+                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    if (maxDist < distance)
+                    {
+                        maxDist = distance;
+                    }
+                }
+                maxDist *= 2;
+
+
+                simulationCenter.transform.position = SimBodies[bodyUnivCenter].gameObject.transform.position;
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
             }
-            maxDist += 50;
+            else
+            {
+                bodySelectedUnivCenter = false;
+                float massMax = 0;
+                float xCenter = 0;
+                float yCenter = 0;
+                float zCenter = 0;
 
-            simulationCenter.transform.position = centroid;
+                foreach (Body b in SimBodies)
+                {
+                    xCenter += (b.gameObject.transform.position.x);
+                    yCenter += (b.gameObject.transform.position.y);
+                    zCenter += (b.gameObject.transform.position.z);
+                }
 
-            UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
-            UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
-            UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+                xCenter = xCenter / SimBodies.Count;
+                yCenter = yCenter / SimBodies.Count;
+                zCenter = zCenter / SimBodies.Count;
 
+                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+
+                float maxDist = 25;
+                foreach (Body b in SimBodies)
+                {
+                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    if (maxDist < distance)
+                    {
+                        maxDist = distance;
+                    }
+                }
+                maxDist *= 2;
+
+                simulationCenter.transform.position = centroid;
+
+                UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
+                UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
+                UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+
+            }
         }
 
 
@@ -519,6 +848,18 @@ public class GameManager : MonoBehaviour
 
                 simulationCenter = b.UniverseCenter;
 
+                if(b.FileRef != null)
+                {
+                    FilePanel = b.FileRef;
+                    FilePanel.ActivateUIElement(this);
+                    FilePanel.gameObject.SetActive(false);
+                }
+                if(b.RotDisplayRef != null)
+                {
+                    RotDisplay = b.RotDisplayRef;
+                    RotDisplay.ActivateUIElement(this);
+                    RotDisplay.gameObject.SetActive(false);
+                }
 
             }
         }
@@ -535,14 +876,47 @@ public class GameManager : MonoBehaviour
         simulationCenter = null;
     }
 
+    private IEnumerator MaybeShowIdleMenu()
+    {
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.15f);
+        }
+        
+        if (SliderMenu.isOpen)
+        {
+            SliderMenu.ShowIdleMenu();
+        }
+        
+        
+    }
+    private IEnumerator BodyInfoPanelDisplay()
+    {
+        if (!gamePaused)
+        {
+            yield return new WaitForSeconds(0.13f);
+        }
+        
+        if (!uiPanelPriority)
+        {
+            BodyInfoPanel.gameObject.SetActive(true);
+        }
+    }
 
     //Displays the Body Info Panel for the input Body
     public void ShowBodyInfo(Body b)
     {
         focusedBody = b;
-        BodyInfoPanel.gameObject.SetActive(true);
+        //If the slider menu is open, and someone clicks on a body, now the slider menu is moved back to starting position.
+        if (SliderMenu.isOpen)
+        {
+            StartCoroutine(MaybeShowIdleMenu());
+        }
         BodyInfoPanel.SetHighlightedBody(b);
-        DisplayHintMessage("Quickly tap on the body again to focus.", "");
+        // yield return new WaitForSeconds(0.05f);
+        StartCoroutine(BodyInfoPanelDisplay());
+        
+        //DisplayHintMessage("Quickly tap on the body again to focus.", "Testing");
     }
 
     //Hides Body Info Panel
