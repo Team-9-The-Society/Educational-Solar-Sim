@@ -11,13 +11,13 @@ public class BodyIcon : MonoBehaviour
     public SpriteRenderer rend;
     public float turnOffDistance;
 
-    private void Start()
+    void Start()
     {
         cam = Camera.main.transform;
         GetComponentInParent<Canvas>().worldCamera = Camera.main;
     }
 
-    private void LateUpdate()
+    void LateUpdate()
     {
         if (cam == null)
             cam = Camera.main.transform;
