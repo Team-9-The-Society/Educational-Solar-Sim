@@ -10,12 +10,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 
     private GameManager gameManagerReference;
 
+    public Button StartSim;
+    public Button Info;
+    public Button Equations;
+
+    public bool isOpen = true;
 
     private void Awake()
     {
@@ -51,6 +57,30 @@ public class MainMenu : MonoBehaviour
     public void LoadEquationsScene()
     {
         gameManagerReference.LoadNewScene(SceneHandler.Scene.EquationScene);
+    }
+
+
+    public void ChangeButtonInteractability()
+    {
+        if (StartSim != null)
+        {
+            StartSim.interactable = isOpen;
+        }
+        if (Info != null)
+        {
+            Info.interactable = isOpen;
+        }
+        if (Equations != null)
+        {
+            Equations.interactable = isOpen;
+        }
+    }
+
+    //Triggers the panel sliding in/out of the frame
+    public void ShowIdleMenu()
+    {
+        isOpen = !isOpen;
+        ChangeButtonInteractability();
     }
 
     //Here lies former preset sim load.
