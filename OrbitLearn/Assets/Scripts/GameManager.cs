@@ -310,6 +310,16 @@ public class GameManager : MonoBehaviour
     }
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name, bool glowState)
     {
+        //Limits the body mass so that if it's under the min or over the max it will set it to the min/max 
+        if(mass > Math.Pow(10, 9))
+        {
+            mass = Math.Pow(10, 9);
+        }
+        else if(mass < Math.Pow(10, -7))
+        {
+            mass = Math.Pow(10, -7);
+        }
+
         if (BodyCount < 25)
         {
             GameObject b = Instantiate(emptyBodyPrefab, null, true);

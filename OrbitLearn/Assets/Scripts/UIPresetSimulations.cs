@@ -1,12 +1,3 @@
-/*      Created by Logan Edmund,11/6/21
- *      Modified on 11/27/21
- * 
- *      Script used to hold and manage the information passed tothe GameManager to create/reset preset simulation scenarios
- * 
- * 
- */
-
-
 using System.Collections;
 using System.Collections.Generic;
 using System;
