@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public Button StartSim;
     public Button Info;
     public Button Equations;
+    public Button MenuMain;
 
     public bool isOpen = true;
 
@@ -74,6 +75,11 @@ public class MainMenu : MonoBehaviour
         {
             Equations.interactable = isOpen;
         }
+        if (MenuMain != null)
+        {
+            MenuMain.interactable = isOpen;
+        }
+
     }
 
     //Triggers the panel sliding in/out of the frame
