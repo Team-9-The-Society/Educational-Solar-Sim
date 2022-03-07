@@ -349,11 +349,18 @@ public class GameManager : MonoBehaviour
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
+
             bodyRef.bodyName = name;
+
             float camOrbit = (float)((scal * 8) + 27) / 7;
             bodyRef.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
             bodyRef.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
             bodyRef.planetCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-camOrbit, 0.1f);
+
+            bodyRef.planetCam.m_XAxis.m_SpeedMode = (Cinemachine.AxisState.SpeedMode)1;
+            bodyRef.planetCam.m_YAxis.m_SpeedMode = (Cinemachine.AxisState.SpeedMode)1;
+            bodyRef.planetCam.m_YAxis.m_MaxSpeed = 0.1f;
+            bodyRef.planetCam.m_XAxis.m_MaxSpeed = 15f;
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
