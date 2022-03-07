@@ -282,6 +282,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Checks if a number is within a range, and if it exceeds the range it will force number to closest number in range
+    public double limitRange(double number, double max, double min)
+    {
+        if (number > max)
+        {
+            number = max;
+        }
+        else if (number < min)
+        {
+            number = min;
+        }
+        return number;
+    }
+
     //Attemps to spawn a new body at 0,0,0 if the max number of planets has not been reached.
     public void TrySpawnNewBody()
     {
@@ -310,15 +324,10 @@ public class GameManager : MonoBehaviour
     }
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name, bool glowState)
     {
-        //Limits the body mass so that if it's under the min or over the max it will set it to the min/max 
-        if(mass > Math.Pow(10, 9))
-        {
-            mass = Math.Pow(10, 9);
-        }
-        else if(mass < Math.Pow(10, -7))
-        {
-            mass = Math.Pow(10, -7);
-        }
+        mass = limitRange(mass, Math.Pow(10, 9), Math.Pow(10, -7));
+        xVel = limitRange(xVel, 200, -200);
+        yVel = limitRange(yVel, 200, -200);
+        zVel = limitRange(zVel, 200, -200);
 
         if (BodyCount < 25)
         {
