@@ -18,10 +18,18 @@ public class MoveCameraOnTouch : MonoBehaviour
         if (Input.GetMouseButton(0) && !GameManager.Instance.uiPanelPriority)
         {
             var FreeLookComponent = VitFreeLook.GetComponent<CinemachineFreeLook>();
-            if (Input.touchCount > 0)
+            if (GameManager.Instance.gamePaused)
+            {
+                FreeLookComponent.m_YAxis.m_MaxSpeed = 0.05f;
+                FreeLookComponent.m_XAxis.m_MaxSpeed = 7.5f;
+            }
+            else
             {
                 FreeLookComponent.m_YAxis.m_MaxSpeed = 0.1f;
                 FreeLookComponent.m_XAxis.m_MaxSpeed = 15f;
+            }
+            if (Input.touchCount > 0)
+            {
                 switch (axisName)
                 {
                     case "Mouse X":
@@ -35,16 +43,6 @@ public class MoveCameraOnTouch : MonoBehaviour
             }
             else
             {
-                if (GameManager.Instance.gamePaused)
-                {
-                    FreeLookComponent.m_YAxis.m_MaxSpeed = 0.005f;
-                    FreeLookComponent.m_XAxis.m_MaxSpeed = 1.5f;
-                }
-                else
-                {
-                    FreeLookComponent.m_YAxis.m_MaxSpeed = 0.1f;
-                    FreeLookComponent.m_XAxis.m_MaxSpeed = 15f;
-                }
                 return Input.GetAxis(axisName);
             }
         }

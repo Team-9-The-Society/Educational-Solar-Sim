@@ -558,18 +558,16 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator HintPanelDelay(string msg1, string msg2)
     {
-        yield return new WaitForSecondsRealtime(0.13f);
+        yield return new WaitForSecondsRealtime(0.17f);
         
         
         if (!uiPanelPriority&&UniverseCam.Priority == 4)
         {
-            HintDisplay.gameObject.SetActive(true);
-            HintDisplay.SetMessageText(msg1, msg2);
-        }
-        else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
-        {
-            HintDisplay.gameObject.SetActive(true);
-            HintDisplay.SetMessageText(msg1, msg2);
+            if (!SliderMenu.isOpen)
+            {
+                HintDisplay.gameObject.SetActive(true);
+                HintDisplay.SetMessageText(msg1, msg2);
+            }
         }
     }
 
@@ -924,12 +922,15 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator BodyInfoPanelDisplay()
     {
-        yield return new WaitForSecondsRealtime(0.13f);
+        yield return new WaitForSecondsRealtime(0.17f);
         
         
         if (!uiPanelPriority&&UniverseCam.Priority == 4)
         {
-            BodyInfoPanel.gameObject.SetActive(true);
+            if (!SliderMenu.isOpen)
+            {
+                BodyInfoPanel.gameObject.SetActive(true);
+            }
         }
         /*else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
         {
