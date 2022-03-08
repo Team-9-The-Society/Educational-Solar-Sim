@@ -195,8 +195,9 @@ public class GameManager : MonoBehaviour
                         //If the body component exists, then zoom in and display relevant information.
                         if (b != null)
                         {
-                            ShowBodyInfo(b);
+                            
                             ActivateBodyCam(b.planetCam);
+                            ShowBodyInfo(b);
                         }
                     }
                 }
@@ -225,14 +226,25 @@ public class GameManager : MonoBehaviour
                         if (b != null)
                         {
                             //If the active body has been tapped, do [thing]
-                            if (b == focusedBody)
+                            if (b.IsEqual(focusedBody))
                             {
+                                Debug.Log("KeptHittingDis");
+                                if (!BodyInfoPanel.gameObject.activeSelf)
+                                {
+                                    ShowBodyInfo(b);
 
+                                    SetHintPanel();
+                                }
                             }
                             //If a body other than the active planet has been tapped (likely erroneously), do nothing
                             else
                             {
                                 //lol
+                                HideHintMessage();
+                                HideBodyInfo();
+                                ActivateUniverseCam();
+                                ActivateBodyCam(b.planetCam);
+                                ShowBodyInfo(b);
                             }
                         }
                     }
@@ -241,15 +253,18 @@ public class GameManager : MonoBehaviour
                 //If empty space is tapped...
                 else
                 {
+                    StartCoroutine(DelayedHidePanel());
                     //...check for a doubletap. If doubletap, zoom out and clear the screen.
                     if (doubleTapReady)
                     {
-                        focusedBody = null;
+                        
                         HideBodyInfo();
                         if (UniverseCam != null)
                         {
+                            focusedBody = null;
                             ActivateUniverseCam();
                         }
+                        //doubleTapReady = false;
                     }
                     else
                     {
@@ -267,11 +282,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("New run of Doubletap()");
         doubleTapReady = true;
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSecondsRealtime(0.75f);
         doubleTapReady = false;
     }
 
-
+    public IEnumerator DelayedHidePanel()
+    {
+        yield return new WaitForSecondsRealtime(0.13f);
+        HideBodyInfo();
+    }
 
     //uses a fixed update cycle to keep physics consistent
     void FixedUpdate()
@@ -349,11 +368,18 @@ public class GameManager : MonoBehaviour
             Rigidbody r = b.gameObject.GetComponent<Rigidbody>();
             b.transform.position = new Vector3((float)xLoc, (float)yLoc, (float)zLoc);
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
+
             bodyRef.bodyName = name;
+
             float camOrbit = (float)((scal * 8) + 27) / 7;
             bodyRef.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
             bodyRef.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
             bodyRef.planetCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-camOrbit, 0.1f);
+
+            bodyRef.planetCam.m_XAxis.m_SpeedMode = (Cinemachine.AxisState.SpeedMode)1;
+            bodyRef.planetCam.m_YAxis.m_SpeedMode = (Cinemachine.AxisState.SpeedMode)1;
+            bodyRef.planetCam.m_YAxis.m_MaxSpeed = 0.1f;
+            bodyRef.planetCam.m_XAxis.m_MaxSpeed = 15f;
 
             r.mass = (float)mass;
             r.velocity = (new Vector3((float)xVel, (float)yVel, (float)zVel));
@@ -551,15 +577,16 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator HintPanelDelay(string msg1, string msg2)
     {
-        if (!gamePaused)
-        {
-            yield return new WaitForSeconds(0.13f);
-        }
+        yield return new WaitForSecondsRealtime(0.17f);
         
-        if (!uiPanelPriority)
+        
+        if (!uiPanelPriority&&UniverseCam.Priority == 4)
         {
-            HintDisplay.gameObject.SetActive(true);
-            HintDisplay.SetMessageText(msg1, msg2);
+            if (!SliderMenu.isOpen)
+            {
+                HintDisplay.gameObject.SetActive(true);
+                HintDisplay.SetMessageText(msg1, msg2);
+            }
         }
     }
 
@@ -654,16 +681,12 @@ public class GameManager : MonoBehaviour
     #region Camera Functions
     //Changes the priority to favor a particular planet cam over the universe cam
     
-    public void ActivateBodyCam(CinemachineFreeLook cam)
+    public void SetHintPanel()
     {
-        cam.Priority = 5;
-        ActivePlanetCam = cam;
-        UniverseCam.Priority = 4;
-        CurrCamState = CamState.Body;
         int ran = UnityEngine.Random.Range(0, factCollisions.Length - 1);
 
         hashObject.ChangeKey(ran);
-        
+
         if (bodyClickCount > 0)
         {
             if (highLoadBalance > .70)
@@ -680,6 +703,15 @@ public class GameManager : MonoBehaviour
             DisplayHintMessage("Tap twice outside of the body to unfocus.", "");
         }
         bodyClickCount++;
+    }
+
+    public void ActivateBodyCam(CinemachineFreeLook cam)
+    {
+        cam.Priority = 5;
+        ActivePlanetCam = cam;
+        UniverseCam.Priority = 4;
+        CurrCamState = CamState.Body;
+        SetHintPanel();
     }
 
     //Changes the priority to favor the universe over a particular planet
@@ -897,10 +929,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator MaybeShowIdleMenu()
     {
-        if (!gamePaused)
-        {
-            yield return new WaitForSeconds(0.15f);
-        }
+        yield return new WaitForSecondsRealtime(0.15f);
+        
         
         if (SliderMenu.isOpen)
         {
@@ -911,15 +941,20 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator BodyInfoPanelDisplay()
     {
-        if (!gamePaused)
-        {
-            yield return new WaitForSeconds(0.13f);
-        }
+        yield return new WaitForSecondsRealtime(0.17f);
         
-        if (!uiPanelPriority)
+        
+        if (!uiPanelPriority&&UniverseCam.Priority == 4)
+        {
+            if (!SliderMenu.isOpen)
+            {
+                BodyInfoPanel.gameObject.SetActive(true);
+            }
+        }
+        /*else if (gamePaused && !BodiesPanel.noBodyVerified && uiPanelPriority)
         {
             BodyInfoPanel.gameObject.SetActive(true);
-        }
+        }*/
     }
 
     //Displays the Body Info Panel for the input Body
@@ -944,7 +979,7 @@ public class GameManager : MonoBehaviour
         if (BodyInfoPanel != null)
         {
             BodyInfoPanel.ClearHighlightedBody();
-            focusedBody = null;
+           // focusedBody = null;
             BodyInfoPanel.gameObject.SetActive(false);
         }
         if (HintDisplay != null)
