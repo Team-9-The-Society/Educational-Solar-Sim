@@ -1,10 +1,3 @@
-/*  Created by Logan Edmund, 10/16/21
- * 
- *  User interacts with this panel to trigger the spawning of a new body
- * 
- * 
- */
-
 
 using System.Collections;
 using System.Collections.Generic;
