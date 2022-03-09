@@ -99,6 +99,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeScaleSmallest
       objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3034463235826570595, guid: e7e6c9fdb5875d84f84549f76746d6b6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -204,6 +249,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_text
+      value: 0.1x
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e6c9fdb5875d84f84549f76746d6b6, type: 3}
 --- !u!224 &3036524500501221599 stripped
@@ -229,6 +279,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TimeScaleLargest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312839976373002124, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3034463235826570595, guid: e7e6c9fdb5875d84f84549f76746d6b6,
         type: 3}
@@ -334,6 +389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_text
+      value: 4x
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e6c9fdb5875d84f84549f76746d6b6, type: 3}
@@ -466,6 +526,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_text
+      value: 1x
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e6c9fdb5875d84f84549f76746d6b6, type: 3}
 --- !u!224 &1437359419484132029 stripped
@@ -596,6 +661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_text
+      value: 2x
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e6c9fdb5875d84f84549f76746d6b6, type: 3}
@@ -903,6 +973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710030512461463492, guid: e7e6c9fdb5875d84f84549f76746d6b6,
+        type: 3}
+      propertyPath: m_text
+      value: 0.5x
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7e6c9fdb5875d84f84549f76746d6b6, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0014415674, g: 0.0013888229, b: 0.0013739478, a: 1}
+  m_IndirectSpecularColor: {r: 0.001441596, g: 0.0013888016, b: 0.0013739044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1158,7 +1158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2058
+  m_Name: pb_Mesh-10558
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1673,7 +1673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2078
+  m_Name: pb_Mesh-10578
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3690,8 +3690,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608564377}
-  m_LocalRotation: {x: -0.0355466, y: -0.6996932, z: -0.034897644, w: 0.7127047}
-  m_LocalPosition: {x: 29.99491, y: 0, z: -0.5526978}
+  m_LocalRotation: {x: -0.035546605, y: -0.6996932, z: -0.034897644, w: 0.7127048}
+  m_LocalPosition: {x: 29.994907, y: 0, z: -0.5526978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1700207305}
@@ -3880,7 +3880,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2068
+  m_Name: pb_Mesh-10568
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4934,7 +4934,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2038
+  m_Name: pb_Mesh-10538
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10523,7 +10523,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2048
+  m_Name: pb_Mesh-10548
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10687,7 +10687,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2088
+  m_Name: pb_Mesh-10588
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11286,7 +11286,7 @@ PrefabInstance:
     - target: {fileID: 3689151798298187087, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.99491
+      value: 29.994907
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798298187087, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -11311,7 +11311,7 @@ PrefabInstance:
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.99491
+      value: -29.994907
       objectReference: {fileID: 0}
     - target: {fileID: 3689151798617971918, guid: 4a21cb7ab8d7c6a40b1fd408d84e040c,
         type: 3}
@@ -11550,7 +11550,7 @@ PrefabInstance:
     - target: {fileID: 112756131596965767, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 112756131596965767, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -11567,6 +11567,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 882139255823748019, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 768118778229801379, guid: 438413353da229d43acb752cf179b5af,
+        type: 3}
     - target: {fileID: 1427821426994483491, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_Name
@@ -11577,6 +11583,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1697461767532550740, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Name
+      value: TimeScaleSlow
+      objectReference: {fileID: 0}
     - target: {fileID: 1870904035377944658, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11650,7 +11661,7 @@ PrefabInstance:
     - target: {fileID: 1870904035377944658, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1870904035377944658, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -11740,7 +11751,7 @@ PrefabInstance:
     - target: {fileID: 2317006874307762736, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2317006874307762736, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -11756,6 +11767,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850140850409865089, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_text
+      value: 5x
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281649244881569284, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1789018939545600007, guid: 438413353da229d43acb752cf179b5af,
+        type: 3}
+    - target: {fileID: 3341662457211459638, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Name
+      value: TimeScaleFast
       objectReference: {fileID: 0}
     - target: {fileID: 3631682238610634940, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -11862,6 +11889,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3885652985363155409, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1789018939545600007, guid: 438413353da229d43acb752cf179b5af,
+        type: 3}
+    - target: {fileID: 3907336776930334691, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Name
+      value: TimeScaleFastest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937433225419223408, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_text
+      value: 1x
+      objectReference: {fileID: 0}
     - target: {fileID: 5236417305086484425, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11935,7 +11978,7 @@ PrefabInstance:
     - target: {fileID: 5236417305086484425, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5236417305086484425, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -11951,6 +11994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692946520985418360, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_text
+      value: 0.5x
       objectReference: {fileID: 0}
     - target: {fileID: 5993949921592531189, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -12110,7 +12158,7 @@ PrefabInstance:
     - target: {fileID: 6449809301384974648, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6449809301384974648, guid: ae12915c1268c4345b16b54bce40ccb2,
         type: 3}
@@ -12126,6 +12174,38 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7255624767761190474, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1789018939545600007, guid: 438413353da229d43acb752cf179b5af,
+        type: 3}
+    - target: {fileID: 7938546937372528988, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Name
+      value: TimeScaleStandard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977659248063854543, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_text
+      value: 10x
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473530259290063035, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3032063969117701977, guid: 438413353da229d43acb752cf179b5af,
+        type: 3}
+    - target: {fileID: 8561352262787348506, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_text
+      value: 2x
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151961821521272749, guid: ae12915c1268c4345b16b54bce40ccb2,
+        type: 3}
+      propertyPath: m_Name
+      value: TimeScaleFaster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae12915c1268c4345b16b54bce40ccb2, type: 3}
