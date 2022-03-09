@@ -22,6 +22,7 @@ public class UISliderMenu : MonoBehaviour
     public GameObject PresetSimulationsPanel;
     public GameObject PauseButton;
     public GameObject FilePanel;
+    public GameObject TimePanel;
 
 
     public Button LoadButton;
@@ -140,7 +141,18 @@ public class UISliderMenu : MonoBehaviour
     }
     public void ShowFilePanel()
     {
-        FilePanel.SetActive(true);
+        if (FilePanel != null)
+        {
+            FilePanel.SetActive(true);
+        }
+    }
+
+    public void ShowTimePanel()
+    {
+        if (TimePanel != null)
+        {
+            TimePanel.SetActive(true);
+        }
     }
 
     //Hides the list of preset simulations

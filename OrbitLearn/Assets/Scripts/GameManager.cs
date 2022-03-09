@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
+    public UITimePanel TimePanel;
     public RotationDisplay RotDisplay;
     public Animator animator;
 
@@ -910,6 +911,12 @@ public class GameManager : MonoBehaviour
                     RotDisplay = b.RotDisplayRef;
                     RotDisplay.ActivateUIElement(this);
                     RotDisplay.gameObject.SetActive(false);
+                }
+                if (b.TimeRef != null)
+                {
+                    TimePanel = b.TimeRef;
+                    TimePanel.ActivateUIElement(this);
+                    TimePanel.gameObject.SetActive(false);
                 }
 
             }
