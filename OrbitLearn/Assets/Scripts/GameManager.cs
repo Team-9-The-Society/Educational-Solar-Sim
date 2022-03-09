@@ -487,6 +487,19 @@ public class GameManager : MonoBehaviour
         return;
     }
 
+    public void ChangeTimeScaling(float scale)
+    {
+        /*
+         * Implement here
+         * .1
+         * .5
+         * 1
+         * 1.5
+         * and 2 
+         * are the scales currently sent. change them if you wish in the time panel button on clicks
+         */
+    }
+
     public void SetImportString(string simString)
     {
         GameManager.Instance.DeleteAllBodies();

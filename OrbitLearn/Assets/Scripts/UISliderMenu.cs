@@ -30,6 +30,7 @@ public class UISliderMenu : MonoBehaviour
     public Button AddButton;
     public Button BodiesButton;
     public Button TemplateButton;
+    public Button TimeButton;
 
     [Header("Management Variables")]
     public bool paused = false;
@@ -96,6 +97,10 @@ public class UISliderMenu : MonoBehaviour
         if (TemplateButton != null)
         {
             TemplateButton.interactable = isOpen;
+        }
+        if (TimeButton != null)
+        {
+            TimeButton.interactable = isOpen;
         }
     }
 
@@ -178,6 +183,7 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoPanel.SetActive(false);
         PanelHideHint.SetActive(false);
         FilePanel.SetActive(false);
+        TimePanel.SetActive(false);
     }
 
     public void LoadHomeScene()

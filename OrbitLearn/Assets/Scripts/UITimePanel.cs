@@ -21,4 +21,9 @@ public class UITimePanel : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
+    public void ChangeTimeScale(float scale)
+    {
+        gameManagerReference.ChangeTimeScaling(scale);
+    }
 }
