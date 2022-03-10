@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
+    public UITimePanel TimePanel;
     public RotationDisplay RotDisplay;
     public Animator animator;
 
@@ -335,12 +336,14 @@ public class GameManager : MonoBehaviour
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
+
     public void SpawnNewButton(GameObject prefab, GameObject spawnPanel)
     {
         GameObject button = Instantiate(prefab, null, true);
         button.transform.SetParent(spawnPanel.transform);
         button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
     }
+
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name, bool glowState)
     {
         mass = limitRange(mass, Math.Pow(10, 9), Math.Pow(10, -7));
@@ -397,6 +400,7 @@ public class GameManager : MonoBehaviour
     {
         uiPanelPriority = !uiPanelPriority;
     }
+
     public void ChangeRotDisplay()
     {
         if (RotDisplay.gameObject.activeSelf)
@@ -408,6 +412,7 @@ public class GameManager : MonoBehaviour
             RotDisplay.gameObject.SetActive(true);
         }
     }
+
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
@@ -484,6 +489,11 @@ public class GameManager : MonoBehaviour
         }
 
         return;
+    }
+
+    public void ChangeTimeScaling(float scale)
+    {
+        Time.timeScale = scale;
     }
 
     public void SetImportString(string simString)
@@ -575,6 +585,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
     public IEnumerator HintPanelDelay(string msg1, string msg2)
     {
         yield return new WaitForSecondsRealtime(0.17f);
@@ -910,6 +921,12 @@ public class GameManager : MonoBehaviour
                     RotDisplay = b.RotDisplayRef;
                     RotDisplay.ActivateUIElement(this);
                     RotDisplay.gameObject.SetActive(false);
+                }
+                if (b.TimeRef != null)
+                {
+                    TimePanel = b.TimeRef;
+                    TimePanel.ActivateUIElement(this);
+                    TimePanel.gameObject.SetActive(false);
                 }
 
             }
