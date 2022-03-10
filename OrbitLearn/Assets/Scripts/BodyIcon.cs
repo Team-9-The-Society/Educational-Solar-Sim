@@ -39,5 +39,10 @@ public class BodyIcon : MonoBehaviour
 
     }
 
+    public void SetName(string s)
+    {
+        nameDisplay.GetComponent<TMP_Text>().text = s;
+    }
+
 
 }

@@ -15,6 +15,9 @@ public class Body : MonoBehaviour
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
 
+    [Header("Reference to Planet's Icon")]
+    public BodyIcon icon;
+
     [Header("Debug - Force Change Current Velocity")]
     public double dxVel;
     public double dyVel;

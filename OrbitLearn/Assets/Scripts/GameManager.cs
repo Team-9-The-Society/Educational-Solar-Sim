@@ -371,6 +371,7 @@ public class GameManager : MonoBehaviour
             b.transform.localScale = new Vector3((float)scal, (float)scal, (float)scal);
 
             bodyRef.bodyName = name;
+            bodyRef.icon.SetName(name);
 
             float camOrbit = (float)((scal * 8) + 27) / 7;
             bodyRef.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);

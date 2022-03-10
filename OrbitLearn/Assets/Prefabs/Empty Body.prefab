@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157837504914746124}
-  m_LocalRotation: {x: 0.25707924, y: 0.000000023688392, z: -0.0000000063015873, w: 0.9663904}
+  m_LocalRotation: {x: 0.2570792, y: -0.0000000056639387, z: 0.000000001506721, w: 0.9663904}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -903,7 +903,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517374595335785924}
-  m_LocalRotation: {x: 0.20956996, y: 0.000000018810125, z: -0.0000000040315635, w: 0.9777937}
+  m_LocalRotation: {x: 0.20956996, y: 0.000000018810129, z: -0.000000004031564, w: 0.9777937}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -977,7 +977,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7101566083543216561}
-  m_LocalRotation: {x: 0.3048995, y: -0.000000019336106, z: 0.0000000061903247, w: 0.95238453}
+  m_LocalRotation: {x: 0.30489954, y: -0.000000011163707, z: 0.0000000035739864, w: 0.95238453}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1297,6 +1297,7 @@ MonoBehaviour:
   body: {fileID: 8631874588233353076}
   radiant: {fileID: 8969330288567728510}
   planetCam: {fileID: 3141264369209881861}
+  icon: {fileID: 7843023670771552901}
   dxVel: 0
   dyVel: 0
   dzVel: 0
