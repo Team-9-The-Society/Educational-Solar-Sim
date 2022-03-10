@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class BodyIcon : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class BodyIcon : MonoBehaviour
 
     public SphereCollider planetCollider;
     public SpriteRenderer rend;
+    public GameObject nameDisplay;
     public float turnOffDistance;
 
     private void Start()
@@ -24,15 +23,17 @@ public class BodyIcon : MonoBehaviour
         else
             transform.LookAt(transform.position + cam.forward);
 
-        if (Vector3.Distance(cam.position, this.transform.position) < turnOffDistance)
+        if (Vector3.Distance(cam.transform.position, this.transform.position) < turnOffDistance)
         {
             rend.enabled = false;
-            //planetCollider.radius = 0.5f;
+            nameDisplay.SetActive(false);
+            planetCollider.radius = 0.55f;
         }
         else
         {
             rend.enabled = true;
-            //planetCollider.radius = 3;
+            nameDisplay.SetActive(true);
+            planetCollider.radius = 2.55f;
         }
 
 

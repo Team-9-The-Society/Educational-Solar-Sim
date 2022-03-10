@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Camera References")]
     public GameObject simulationCenter;
+    public Vector3 universeCenterByPosition;
     public CinemachineFreeLook UniverseCam;
     public CinemachineFreeLook ActivePlanetCam;
 
@@ -770,12 +771,12 @@ public class GameManager : MonoBehaviour
                 yCenter = yCenter / SimBodies.Count;
                 zCenter = zCenter / SimBodies.Count;
 
-                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+                universeCenterByPosition = new Vector3(xCenter, yCenter, zCenter);
 
                 float maxDist = 25;
                 foreach (Body b in SimBodies)
                 {
-                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    float distance = Vector3.Distance(b.gameObject.transform.position, universeCenterByPosition);
                     if (maxDist < distance)
                     {
                         maxDist = distance;
@@ -808,12 +809,12 @@ public class GameManager : MonoBehaviour
                 yCenter = yCenter / SimBodies.Count;
                 zCenter = zCenter / SimBodies.Count;
 
-                Vector3 centroid = new Vector3(xCenter, yCenter, zCenter);
+                universeCenterByPosition = new Vector3(xCenter, yCenter, zCenter);
 
                 float maxDist = 25;
                 foreach (Body b in SimBodies)
                 {
-                    float distance = Vector3.Distance(b.gameObject.transform.position, centroid);
+                    float distance = Vector3.Distance(b.gameObject.transform.position, universeCenterByPosition);
                     if (maxDist < distance)
                     {
                         maxDist = distance;
@@ -821,7 +822,7 @@ public class GameManager : MonoBehaviour
                 }
                 maxDist *= 2;
 
-                simulationCenter.transform.position = centroid;
+                simulationCenter.transform.position = universeCenterByPosition;
 
                 UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
                 UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
