@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("UI References")]
+    public TextMeshProUGUI versionNum;
     public UIBodyInformationPanel BodyInfoPanel;
     public BodiesInfoButton BodiesPanel;
     public UISliderMenu SliderMenu;
@@ -88,7 +89,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -122,7 +122,13 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Running OnSceneLoaded");
+        Debug.Log("Running OnSceneLoaded: " + scene.name);
+
+        if (scene.name == "HomeScene")
+        {
+            versionNum = GameObject.Find("VersionNumberText").GetComponent<TextMeshProUGUI>();
+            SetVersionNumber();
+        }
 
         TryLocateUIReferences();
 
@@ -300,6 +306,13 @@ public class GameManager : MonoBehaviour
         {
             UpdateForces();
         }
+    }
+
+    private void SetVersionNumber()
+    {
+        Debug.Log("Application Version : " + Application.version);
+        
+        versionNum.text = "Version " + Application.version;
     }
 
     //Checks if a number is within a range, and if it exceeds the range it will force number to closest number in range
@@ -861,6 +874,7 @@ public class GameManager : MonoBehaviour
             if (b != null)
             {
                 Debug.Log("Found ReferenceHandler");
+
                 if (b.SliderRef != null)
                 {
                     SliderMenu = b.SliderRef;
