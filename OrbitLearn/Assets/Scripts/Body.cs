@@ -22,11 +22,11 @@ public class Body : MonoBehaviour
     public bool DebugSetNewVelocity;
 
     [Header("Rotation")]
-    float rotSpeed;
-    float rotAxis;
-    Quaternion curRot;
-    Vector3 curEuler;
-    float x, y, z;
+    public float rotSpeed;
+    public float rotAxis;
+    public Quaternion curRot;
+    public Vector3 curEuler;
+    public float x, y, z;
 
 
     private void Awake()
