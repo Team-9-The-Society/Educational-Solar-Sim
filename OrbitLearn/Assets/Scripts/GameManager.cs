@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("UI References")]
+    public TextMeshProUGUI versionNum;
     public UIBodyInformationPanel BodyInfoPanel;
     public BodiesInfoButton BodiesPanel;
     public UISliderMenu SliderMenu;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     public UIHintDisplay HintDisplay;
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
+    public UITimePanel TimePanel;
     public RotationDisplay RotDisplay;
     public Animator animator;
 
@@ -88,7 +90,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -122,7 +123,13 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Running OnSceneLoaded");
+        Debug.Log("Running OnSceneLoaded: " + scene.name);
+
+        if (scene.name == "HomeScene")
+        {
+            versionNum = GameObject.Find("VersionNumberText").GetComponent<TextMeshProUGUI>();
+            SetVersionNumber();
+        }
 
         TryLocateUIReferences();
 
@@ -302,6 +309,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetVersionNumber()
+    {
+        Debug.Log("Application Version : " + Application.version);
+        
+        versionNum.text = "Version " + Application.version;
+    }
+
     //Checks if a number is within a range, and if it exceeds the range it will force number to closest number in range
     public double limitRange(double number, double max, double min)
     {
@@ -336,12 +350,14 @@ public class GameManager : MonoBehaviour
             b.transform.position.Set(0f, 0f, 0f);
         }
     }
+
     public void SpawnNewButton(GameObject prefab, GameObject spawnPanel)
     {
         GameObject button = Instantiate(prefab, null, true);
         button.transform.SetParent(spawnPanel.transform);
         button.transform.GetChild(0).GetComponent<TMP_Text>().text = "Testing";
     }
+
     public void TrySpawnNewBody(double mass, double xLoc, double yLoc, double zLoc, double xVel, double yVel, double zVel, double scal, bool shouldFocus, string name, bool glowState)
     {
         mass = limitRange(mass, Math.Pow(10, 9), Math.Pow(10, -7));
@@ -399,6 +415,7 @@ public class GameManager : MonoBehaviour
     {
         uiPanelPriority = !uiPanelPriority;
     }
+
     public void ChangeRotDisplay()
     {
         if (RotDisplay.gameObject.activeSelf)
@@ -410,6 +427,7 @@ public class GameManager : MonoBehaviour
             RotDisplay.gameObject.SetActive(true);
         }
     }
+
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
@@ -486,6 +504,11 @@ public class GameManager : MonoBehaviour
         }
 
         return;
+    }
+
+    public void ChangeTimeScaling(float scale)
+    {
+        Time.timeScale = scale;
     }
 
     public void SetImportString(string simString)
@@ -577,6 +600,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
     public IEnumerator HintPanelDelay(string msg1, string msg2)
     {
         yield return new WaitForSecondsRealtime(0.17f);
@@ -607,58 +631,58 @@ public class GameManager : MonoBehaviour
         coolFacts = new string[]
         {
             "Our neighbor galaxy is Andromeda.",
-            "In 2008 NASA confirmed water on Mars",
+            "In 2008 NASA confirmed water on Mars.",
             "Mercury orbits our Sun in appr. 88 days.",
-            "Venus' surface can reach 450 Degrees C",
-            "Haley's comet won't pass us again 'til 2061.",
+            "Venus' surface can reach 450 Degrees C.",
+            "Halley's comet won't pass us again 'til 2061.",
             "Our solar system is 4.57 billion years old.",
-            "Footprints left on the Moon won’t disappear.",
+            "Footprints left on the Moon won't disappear.",
             "There are 79 known moons orbiting Jupiter.",
             "Earth is the only planet not named after a god.",
-            "Pluto is smaller than the United States",
-             "A season on Uranus is 21 Earth years.",
-             "Neptune’s moon, Triton, orbits it backwards.",
-             "A day on Pluto is lasts for 153.6 hours long.",
-             "Saturn is the 2nd largest planet.",
-             "Only 5% of the universe is visible from Earth.",
+            "Pluto is one third water.",
+             "One season on Uranus is 21 years on Earth.",
+             "The moon Triton orbits Neptune backwards.",
+             "Pluto rotates once every 6.4 Earth days.",
+             "Saturn orbits the Sun once every 29.4 Earth years.",
+             "Only 5 percent of the universe is visible from Earth.",
              "Outer Space is only 62 miles away.",
              "On Venus, it snows metal & rains sulfuric acid.",
-             "Space is completely silent.",
-             "Exoplanets orbit around other stars.",
-             "Venus is the hottest planet in our solar system. ",
-             "Astronauts can’t burp in space.",
-             "Uranus was originally called “George’s Star”.",
+             "Saturn has 150 moons and smaller moonlets.",
+             "Saturn consists mostly of hydrogen.",
+             "Venus is the hottest planet in our solar system.",
+             "Astronauts can't burp in space.",
+             "Uranus was originally called 'George's Star'.",
              "A sunset on Mars is blue.",
-             "The Earth weighs ~81 times more than the Moon.",
-             "Gennady Padalka has spent 879 days in space",
+             "The Earth weighs approximately 81 times more than the Moon.",
+             "Gennady Padalka has spent 879 days in space.",
              "There is no wind or weather on Mercury.",
-             "Jupiter’s Red Spot is shrinking.",
-             "A day on Mercury is ~58 Earth days.",
-             "As space has no gravity, pens won’t work.",
-             "The center of a comet is called a 'nucleus'",
+             "Jupiter's Red Spot is shrinking.",
+             "A day on Mercury is approximately 58 Earth days.",
+             "Since space has no gravity, pens will not work.",
+             "The center of a comet is called a 'nucleus'.",
              "There are 5 Dwarf Planets in our Solar System.",
-             "Nobody knows how many stars are in space.",
+             "Jupiter's moon Ganymede is the largest moon in the solar system.",
              "A full NASA space suit costs $12,000,000.",
              "Neutron stars can spin 600 times per second.",
-             "One day on Venus is longer than one year.",
-             "There is floating water in space.",
+             "A day on Venus lasts 243 Earth days.",
+             "There are mountains on Pluto.",
              "The largest known asteroid is 965km wide.",
              "The Moon was once a piece of the Earth.",
-             "The universe is around 13.8 billion years old",
+             "The universe is around 13.8 billion years old.",
              "Mars and Earth have roughly the same landmass.",
              "Only 18 missions to Mars have been successful.",
              "Pieces of Mars have fallen to Earth.",
              "One day Mars will have a ring.",
              "A year on Neptune lasts 165 Earth years.",
-             "Neptune has 6 faint rings.",
+             "There is a volcano on Mars three times the size of Everest.",
              "Neptune is the most distant planet from the Sun.",
-             "Neptune spins on its axis very rapidly.",
+             "99 percent of our solar system's mass is the Sun.",
              "Only one spacecraft has flown by Uranus.",
-             "Uranus hits the coldest temps of any planet.",
+             "Uranus hits the coldest temperatures of any planet.",
              "Jupiter has the shortest day of all the planets.",
-             "Eight spacecraft have visited Jupiter.",
-             "A year on Venus takes 225 Earth days.",
-             "A year on Earth takes 364 ish Earth days."
+             "Eight spacecrafts have visited Jupiter.",
+             "A year on Venus lasts 225 Earth days.",
+             "The position of the North Star will change over time."
         };
 
         factCollisions = new int[coolFacts.Length];
@@ -852,6 +876,7 @@ public class GameManager : MonoBehaviour
             if (b != null)
             {
                 Debug.Log("Found ReferenceHandler");
+
                 if (b.SliderRef != null)
                 {
                     SliderMenu = b.SliderRef;
@@ -912,6 +937,12 @@ public class GameManager : MonoBehaviour
                     RotDisplay = b.RotDisplayRef;
                     RotDisplay.ActivateUIElement(this);
                     RotDisplay.gameObject.SetActive(false);
+                }
+                if (b.TimeRef != null)
+                {
+                    TimePanel = b.TimeRef;
+                    TimePanel.ActivateUIElement(this);
+                    TimePanel.gameObject.SetActive(false);
                 }
 
             }
