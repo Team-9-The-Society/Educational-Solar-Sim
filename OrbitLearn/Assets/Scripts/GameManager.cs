@@ -57,6 +57,9 @@ public class GameManager : MonoBehaviour
     public bool bodySelectedUnivCenter = false;
     public float transitionDelayTime = 1.0f;
 
+    public double localBoundary = 1000;
+    public double globalBoundary = 100000;
+
     [Header("Rotation Variables")]
     float rotSpeed;
     float rotAxis;
@@ -490,6 +493,15 @@ public class GameManager : MonoBehaviour
             position[i, 2] = b.gameObject.transform.position.z;
             Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
 
+
+            //Test for bodies outside local and global maximums
+
+            if (isOutOfBounds(new double[] { position[i,0], position[i, 1], position[i, 2] }))//test if body violates bounds
+            {
+                DeleteBody(b);//delete body
+            }
+
+
             i++;
         }
 
@@ -542,8 +554,10 @@ public class GameManager : MonoBehaviour
             }
 
 
-            TrySpawnNewBody(double.Parse(attr["m"]), double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]), double.Parse(attr["vx"]), double.Parse(attr["vy"]), double.Parse(attr["vz"]), double.Parse(attr["s"]), false, name, bool.Parse(attr["glow"]));
-
+            if (!isOutOfBounds(new double[] { double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]) }))
+            {
+                TrySpawnNewBody(double.Parse(attr["m"]), double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]), double.Parse(attr["vx"]), double.Parse(attr["vy"]), double.Parse(attr["vz"]), double.Parse(attr["s"]), false, name, bool.Parse(attr["glow"]));
+            }
 
         }
 
@@ -1049,5 +1063,30 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public bool isOutOfBounds(double[] pos)
+    {   
+        if(simulationCenter != null)
+        {
+            double distanceSquared = 0;
+            for (int k = 0; k < 3; k++)
+            {
+                distanceSquared += Math.Pow(pos[k] - simulationCenter.transform.position[k], 2);
+            }
+            double distance = Math.Sqrt(distanceSquared);
+            if(distance > localBoundary)
+            {
+                return true;
+            }
+        }
 
+        for (int k = 0; k < 3; k++)
+        {
+            if(Math.Abs(pos[k]) > globalBoundary)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
