@@ -57,9 +57,12 @@ public class GameManager : MonoBehaviour
     public bool uiPanelPriority = false;
     public bool bodySelectedUnivCenter = false;
     public float transitionDelayTime = 1.0f;
+    public double localBoundary = 1000;
+    public double globalBoundary = 100000;
     private float centroidX;
     private float centroidY;
     private float centroidZ;
+
     [Header("Rotation Variables")]
     float rotSpeed;
     float rotAxis;
@@ -309,6 +312,21 @@ public class GameManager : MonoBehaviour
         {
             UpdateForces();
         }
+
+        List<Body> die = new List<Body>();
+        foreach (Body b in SimBodies)
+        {
+            //Test for bodies outside local and global maximums
+            if (isOutOfBounds(new double[] { b.gameObject.transform.position.x, b.gameObject.transform.position.y, b.gameObject.transform.position.z}))//test if body violates bounds
+            {
+                die.Add(b);//delete body
+            }
+        }
+
+        foreach(Body b in die)
+        {
+            DeleteBody(b);
+        }
     }
 
     private void SetVersionNumber()
@@ -505,6 +523,10 @@ public class GameManager : MonoBehaviour
             position[i, 2] = b.gameObject.transform.position.z;
             Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
 
+
+
+
+
             i++;
         }
 
@@ -557,8 +579,10 @@ public class GameManager : MonoBehaviour
             }
 
 
-            TrySpawnNewBody(double.Parse(attr["m"]), double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]), double.Parse(attr["vx"]), double.Parse(attr["vy"]), double.Parse(attr["vz"]), double.Parse(attr["s"]), false, name, bool.Parse(attr["glow"]));
-
+            if (!isOutOfBounds(new double[] { double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]) }))
+            {
+                TrySpawnNewBody(double.Parse(attr["m"]), double.Parse(attr["px"]), double.Parse(attr["py"]), double.Parse(attr["pz"]), double.Parse(attr["vx"]), double.Parse(attr["vy"]), double.Parse(attr["vz"]), double.Parse(attr["s"]), false, name, bool.Parse(attr["glow"]));
+            }
 
         }
 
@@ -1074,5 +1098,30 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public bool isOutOfBounds(double[] pos)
+    {   
+        if(simulationCenter != null)
+        {
+            double distanceSquared = 0;
+            for (int k = 0; k < 3; k++)
+            {
+                distanceSquared += Math.Pow(pos[k] - simulationCenter.transform.position[k], 2);
+            }
+            double distance = Math.Sqrt(distanceSquared);
+            if(distance > localBoundary)
+            {
+                return true;
+            }
+        }
 
+        for (int k = 0; k < 3; k++)
+        {
+            if(Math.Abs(pos[k]) > globalBoundary)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
