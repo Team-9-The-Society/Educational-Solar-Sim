@@ -309,6 +309,21 @@ public class GameManager : MonoBehaviour
         {
             UpdateForces();
         }
+
+        List<Body> die = new List<Body>();
+        foreach (Body b in SimBodies)
+        {
+            //Test for bodies outside local and global maximums
+            if (isOutOfBounds(new double[] { b.gameObject.transform.position.x, b.gameObject.transform.position.y, b.gameObject.transform.position.z}))//test if body violates bounds
+            {
+                die.Add(b);//delete body
+            }
+        }
+
+        foreach(Body b in die)
+        {
+            DeleteBody(b);
+        }
     }
 
     private void SetVersionNumber()
@@ -494,12 +509,7 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
 
 
-            //Test for bodies outside local and global maximums
 
-            if (isOutOfBounds(new double[] { position[i,0], position[i, 1], position[i, 2] }))//test if body violates bounds
-            {
-                DeleteBody(b);//delete body
-            }
 
 
             i++;
