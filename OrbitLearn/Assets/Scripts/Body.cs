@@ -8,6 +8,7 @@ public class Body : MonoBehaviour
     [Header("Planet name and velocities")]
     public string bodyName;
     public int bodyNumber;
+    public int materialAssignNumber;
     public GameObject body;
     private Rigidbody rb;
     [Header("Reference to Planet's Radiant Light Object")]

@@ -13,8 +13,12 @@ public class MaterialAssign : MonoBehaviour
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = materialList[rand];
         Debug.Log(meshRenderer.material.color);
+
         tail.startColor = meshRenderer.material.color;
         tail.endColor = meshRenderer.material.color;
+
+        Body thisBody = GetComponent<Body>();
+        thisBody.materialAssignNumber = rand;
     }
 
     
