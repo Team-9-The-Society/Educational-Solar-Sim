@@ -51,7 +51,7 @@ public class BodyIcon : MonoBehaviour
 
             rend.enabled = true;
             nameDisplay.SetActive(true);
-            planetCollider.radius = 2.55f;
+            planetCollider.radius = tmpLocalScale.x * 2.5f;
         }
 
 
