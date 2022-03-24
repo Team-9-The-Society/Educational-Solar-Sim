@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
                     //If a body has been tapped
-                    if (hit.collider != null)
+                    if (hit.collider != null || (hit.collider != null && hit.collider.isTrigger))
                     {
                         //Attempt to get reference to Body component
                         Body b = hit.collider.gameObject.GetComponent<Body>();
