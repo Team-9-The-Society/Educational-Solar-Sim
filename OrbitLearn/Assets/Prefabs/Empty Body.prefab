@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbe6631599d6d647839c7e185b61615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetCollider: {fileID: 8631874588233353078}
+  planetCollider: {fileID: 1062461471164793512}
   rend: {fileID: 7822691175240283184}
   nameDisplay: {fileID: 3665253284890946326}
   turnOffDistance: 60
@@ -1178,6 +1178,7 @@ GameObject:
   - component: {fileID: 8631874588233353074}
   - component: {fileID: 2623832404433044523}
   - component: {fileID: 5858256224340202020}
+  - component: {fileID: 1062461471164793512}
   m_Layer: 6
   m_Name: Empty Body
   m_TagString: Untagged
@@ -1446,3 +1447,16 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!135 &1062461471164793512
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8631874588233353076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.55
+  m_Center: {x: 0, y: 0, z: 0}
