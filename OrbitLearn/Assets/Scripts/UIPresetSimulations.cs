@@ -28,7 +28,6 @@ public class UIPresetSimulations : MonoBehaviour
         gameManagerReference = gm;
     }
 
-
     public void HideFilePanel()
     {
         this.gameObject.SetActive(false);
@@ -37,7 +36,15 @@ public class UIPresetSimulations : MonoBehaviour
 
     public void ExportSim()
     {
-        gameManagerReference.ExportSimulation();
+        if (gameManagerReference.BodyCount == 0)
+        {
+            gameManagerReference.DisplayExportHint("There is nothing to export!", "Please add a body or select a template.");
+        }
+        else
+        {
+            gameManagerReference.ExportSimulation();
+            gameManagerReference.DisplayExportHint("", "Successfully exported to clipboard.");
+        }
     }
 
 

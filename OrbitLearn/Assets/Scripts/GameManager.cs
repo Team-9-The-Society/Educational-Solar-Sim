@@ -488,6 +488,12 @@ public class GameManager : MonoBehaviour
         BodyInfoPanel.gameObject.SetActive(false);
     }
 
+    public void DisplayExportHint(string msg1, string msg2)
+    {
+        HintDisplay.gameObject.SetActive(true);
+        HintDisplay.SetMessageText(msg1, msg2);
+    }
+
     public void DeleteAllBodies()
     {
         Body[] bodies = new Body[SimBodies.Count];
