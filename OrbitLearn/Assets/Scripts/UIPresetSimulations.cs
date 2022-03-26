@@ -43,16 +43,16 @@ public class UIPresetSimulations : MonoBehaviour
 
     public void SendInput()
     {
-        if (name != null)
+        if (fileImportName != "")
         {
             gameManagerReference.SetImportString(fileImportName);
         }
+        //fileImportName = "";
     }
 
     public void SetInput()
     {
         fileImportName = file.text;
-
     }
 
     public void Simulation1() //elliptical orbit
