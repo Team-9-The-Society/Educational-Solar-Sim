@@ -10,6 +10,14 @@ public class UIPresetSimulations : MonoBehaviour
 
     private GameManager gameManagerReference;
 
+
+    [Header("Input Field References")]
+    public TMP_InputField file;
+
+
+    [Header("Input Variables")]
+    public string fileImportName;
+
     public void ActivateUIElement(GameManager g)
     {
         SetGameManRef(g.GetComponent<GameManager>());
@@ -21,7 +29,31 @@ public class UIPresetSimulations : MonoBehaviour
     }
 
 
+    public void HideFilePanel()
+    {
+        this.gameObject.SetActive(false);
+    }
 
+
+    public void ExportSim()
+    {
+        gameManagerReference.ExportSimulation();
+    }
+
+
+    public void SendInput()
+    {
+        if (fileImportName != "")
+        {
+            gameManagerReference.SetImportString(fileImportName);
+        }
+        //fileImportName = "";
+    }
+
+    public void SetInput()
+    {
+        fileImportName = file.text;
+    }
 
     public void Simulation1() //elliptical orbit
     {
