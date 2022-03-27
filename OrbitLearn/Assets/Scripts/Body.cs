@@ -32,34 +32,37 @@ public class Body : MonoBehaviour
     public Vector3 curEuler;
     public float x, y, z;
 
-
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        MaterialAssign material = GetComponent<MaterialAssign>();
+        materialAssignNumber = material.GetMaterial();
         rotSpeed = Random.Range(-100.0f, 100.0f);
         rotAxis = Random.Range(0.0f, 100.0f);
-
         x = 0;
-        y = 0;
+        y = 1;
         z = 0;
-        if (rotAxis > 80)
+        if ((7 <= materialAssignNumber && materialAssignNumber <= 12) || (18 <= materialAssignNumber))
         {
-            x = rotAxis / 10;
+            if (rotAxis > 80)
+            {
+                x = rotAxis / 10;
+            }
+            else if (rotAxis > 60)
+            {
+                z = rotAxis / 10;
+            }
+            else
+            {
+                y = rotAxis / 10;
+            }
+            curEuler += new Vector3(20, 0, 0) * Time.deltaTime * rotSpeed;
+            curRot.eulerAngles = curEuler;
+            rb.transform.rotation = curRot;
+            curEuler = new Vector3(0, 0, 0) * Time.deltaTime * rotSpeed;
+            curRot.eulerAngles = curEuler;
+            rb.transform.rotation = curRot;
         }
-        else if (rotAxis > 60)
-        {
-            z = rotAxis / 10;
-        }
-        else
-        {
-            y = rotAxis / 10;
-        }
-        curEuler += new Vector3(20, 0, 0) * Time.deltaTime * rotSpeed;
-        curRot.eulerAngles = curEuler;
-        rb.transform.rotation = curRot;
-        curEuler = new Vector3(0, 0, 0) * Time.deltaTime * rotSpeed;
-        curRot.eulerAngles = curEuler;
-        rb.transform.rotation = curRot;
     }
 
 

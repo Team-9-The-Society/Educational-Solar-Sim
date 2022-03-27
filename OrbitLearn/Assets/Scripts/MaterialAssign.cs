@@ -7,7 +7,7 @@ public class MaterialAssign : MonoBehaviour
     public Material[] materialList;
     public TrailRenderer tail;
     // Start is called before the first frame update
-    void Start()
+    public int GetMaterial()
     {
         int rand = Random.Range(0, 22);
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
@@ -17,9 +17,7 @@ public class MaterialAssign : MonoBehaviour
         tail.startColor = meshRenderer.material.color;
         tail.endColor = meshRenderer.material.color;
 
-        Body thisBody = GetComponent<Body>();
-        thisBody.materialAssignNumber = rand;
+        return rand;
     }
-
     
 }
