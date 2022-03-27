@@ -65,13 +65,6 @@ public class GameManager : MonoBehaviour
     private float centroidZ;
     public float cinemachineValue;
 
-    [Header("Rotation Variables")]
-    float rotSpeed;
-    float rotAxis;
-    Quaternion curRot;
-    Vector3 curEuler;
-    float x, y, z;
-
     private string[] coolFacts;
     private int[] factCollisions;
     private float highLoadBalance = 0;
@@ -112,9 +105,6 @@ public class GameManager : MonoBehaviour
         LoadFunFacts();
         hashObject = new HashItUp(factCollisions.Length, 31, 0, highLoadBalance, factCollisions);
         TryLocateUIReferences();
-
-        rotSpeed = Random.Range(-100.0f, 100.0f);
-        rotAxis = Random.Range(0.0f, 100.0f);
     }
     public List<Body> getList()
     {
@@ -173,26 +163,7 @@ public class GameManager : MonoBehaviour
         if (UniverseCam != null)
             RefreshUniverseCam();
 
-        foreach (Body b in SimBodies)
-        {
-            if (rotAxis > 90)
-            {
-                x = 1;
-            }
-            else if (rotAxis > 80)
-            {
-                z = 1;
-            }
-            else
-            {
-                y = 1;
-            }
-            curEuler += new Vector3(x, y, z) * Time.deltaTime * rotSpeed;
-            curRot.eulerAngles = curEuler;
-            b.transform.rotation = curRot;
-        }
-
-            if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
+        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
             if (CurrCamState == CamState.Universe)
             {
@@ -313,6 +284,7 @@ public class GameManager : MonoBehaviour
         if (gamePaused == false)
         {
             UpdateForces();
+            UpdateRotation();
         }
 
         List<Body> die = new List<Body>();
@@ -512,6 +484,14 @@ public class GameManager : MonoBehaviour
         }
         SimBodies = new List<Body>();
         bodySelectedUnivCenter = false;
+    }
+
+    public void UpdateRotation()
+    {
+        foreach (Body b in SimBodies)
+        {
+            b.UpdateRotation();
+        }
     }
 
     public void UpdateForces()
