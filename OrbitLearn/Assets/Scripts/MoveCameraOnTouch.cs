@@ -20,8 +20,8 @@ public class MoveCameraOnTouch : MonoBehaviour
             var FreeLookComponent = VitFreeLook.GetComponent<CinemachineFreeLook>();
             if (GameManager.Instance.gamePaused)
             {
-                FreeLookComponent.m_YAxis.m_MaxSpeed = 0.05f;
-                FreeLookComponent.m_XAxis.m_MaxSpeed = 7.5f;
+                FreeLookComponent.m_YAxis.m_MaxSpeed = 0.067f;
+                FreeLookComponent.m_XAxis.m_MaxSpeed = 10f;
             }
             else
             {
