@@ -282,10 +282,21 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void SetUniverseCenter(int i)
     {
-        gameManagerReference.MakeBodyCenterOfUniv(i);
-        gameManagerReference.ActivateUniverseCam();
+        gameManagerReference.ActivateBodyCam(gameManagerReference.SimBodies[i].planetCam);
+        
+
+        StartCoroutine(UnivCamStart(i));
+
+        
     }
 
+    private IEnumerator UnivCamStart(int i)
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        gameManagerReference.MakeBodyCenterOfUniv(i);
+        gameManagerReference.ActivateUniverseCam();
+
+    }
 
     public void FocusOnPlanet(int i)
     {

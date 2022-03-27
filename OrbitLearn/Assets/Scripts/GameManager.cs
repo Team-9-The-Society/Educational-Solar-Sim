@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Management Variables")]
     public List<Body> SimBodies;
-    public enum CamState { Universe, Body }
+    public enum CamState { Universe, Body}
     public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     private float centroidX;
     private float centroidY;
     private float centroidZ;
+    public float cinemachineValue;
 
     [Header("Rotation Variables")]
     float rotSpeed;
@@ -762,6 +763,7 @@ public class GameManager : MonoBehaviour
             bodySelectedUnivCenter = true;
         }
     }
+
     public string GenerateFunSpaceFact(int address)
     {
         return coolFacts[address];
@@ -835,6 +837,7 @@ public class GameManager : MonoBehaviour
                 centroidX=0;
                 centroidY=0;
                 centroidZ=0;
+                cinemachineValue = 30;
 }
             else if (SimBodies.Count == 1)
             {
@@ -845,6 +848,7 @@ public class GameManager : MonoBehaviour
                 centroidX = SimBodies[0].gameObject.transform.position.x;
                 centroidY = SimBodies[0].gameObject.transform.position.y;
                 centroidZ = SimBodies[0].gameObject.transform.position.z;
+                cinemachineValue = 30;
             }
             else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
             {
@@ -884,6 +888,7 @@ public class GameManager : MonoBehaviour
                 UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
                 UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
                 UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+                cinemachineValue = maxDist;
             }
             else
             {
@@ -924,7 +929,7 @@ public class GameManager : MonoBehaviour
                 UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
                 UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
                 UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
-
+                cinemachineValue = maxDist;
             }
         }
 
