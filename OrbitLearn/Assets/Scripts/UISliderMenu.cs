@@ -164,7 +164,10 @@ public class UISliderMenu : MonoBehaviour
     public void HidePresetSimsPanel()
     {
         if (PresetSimulationsPanel != null)
+        {
             PresetSimulationsPanel.SetActive(false);
+            gameManagerReference.HideHintMessage();
+        }
         else
             Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
     }

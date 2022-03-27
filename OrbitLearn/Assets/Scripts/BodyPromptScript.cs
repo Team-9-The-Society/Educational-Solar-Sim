@@ -94,7 +94,10 @@ public class BodyPromptScript : MonoBehaviour
                 {
                     bodyName = "Body" + (GameManagerReference.BodyCount);
                 }
+
                 passedBody.bodyName = bodyName;
+                passedBody.icon.SetName(bodyName);
+
                 float camOrbit = (float)((size * 8) + 27) / 7;
                 passedBody.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
                 passedBody.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
