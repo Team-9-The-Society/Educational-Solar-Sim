@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     private int tapCount = 0;
     private int bodyClickCount = 0;
     public int bodyUnivCenter;
+    public float currentTimeScale = 1.0f;
 
     public bool doubleTapReady = false;
     private Coroutine doubleTapCheck = null;
@@ -549,7 +550,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeTimeScaling(float scale)
     {
-        Time.timeScale = scale;
+        if (!gamePaused)
+        {
+            currentTimeScale = scale;
+            Time.timeScale = scale;
+        }
     }
 
     public void SetImportString(string simString)
@@ -631,7 +636,15 @@ public class GameManager : MonoBehaviour
     public void TogglePause()
     {
         gamePaused = !gamePaused;
-        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        //Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        if (gamePaused)
+        {
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = currentTimeScale;
+        }
 
         if (gamePaused)
         {
