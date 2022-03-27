@@ -191,6 +191,7 @@ public class UISliderMenu : MonoBehaviour
 
     public void LoadHomeScene()
     {
+        gameManagerReference.SetDefaultTimeScale();
         gameManagerReference.LoadNewScene(SceneHandler.Scene.HomeScene);
     }
 

@@ -633,6 +633,12 @@ public class GameManager : MonoBehaviour
         GUIUtility.systemCopyBuffer = simEx;
     }
 
+    public void SetDefaultTimeScale()
+    {
+        Time.timeScale = 1.0f;
+        currentTimeScale = 1.0f;
+    }
+
     public void TogglePause()
     {
         gamePaused = !gamePaused;
