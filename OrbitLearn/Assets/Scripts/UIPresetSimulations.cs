@@ -1,12 +1,3 @@
-/*      Created by Logan Edmund,11/6/21
- *      Modified on 11/27/21
- * 
- *      Script used to hold and manage the information passed tothe GameManager to create/reset preset simulation scenarios
- * 
- * 
- */
-
-
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -19,6 +10,14 @@ public class UIPresetSimulations : MonoBehaviour
 
     private GameManager gameManagerReference;
 
+
+    [Header("Input Field References")]
+    public TMP_InputField file;
+
+
+    [Header("Input Variables")]
+    public string fileImportName;
+
     public void ActivateUIElement(GameManager g)
     {
         SetGameManRef(g.GetComponent<GameManager>());
@@ -29,8 +28,39 @@ public class UIPresetSimulations : MonoBehaviour
         gameManagerReference = gm;
     }
 
+    public void HideFilePanel()
+    {
+        this.gameObject.SetActive(false);
+    }
 
 
+    public void ExportSim()
+    {
+        if (gameManagerReference.BodyCount == 0)
+        {
+            gameManagerReference.DisplayExportHint("There is nothing to export!", "Please add a body or select a template.");
+        }
+        else
+        {
+            gameManagerReference.ExportSimulation();
+            gameManagerReference.DisplayExportHint("", "Successfully exported to clipboard.");
+        }
+    }
+
+
+    public void SendInput()
+    {
+        if (fileImportName != "")
+        {
+            gameManagerReference.SetImportString(fileImportName);
+        }
+        //fileImportName = "";
+    }
+
+    public void SetInput()
+    {
+        fileImportName = file.text;
+    }
 
     public void Simulation1() //elliptical orbit
     {

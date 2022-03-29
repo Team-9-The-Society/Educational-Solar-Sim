@@ -23,4 +23,5 @@ public class UIRefHandler : MonoBehaviour
     public GameObject PauseDisplayRef;
     public UIFilePanel FileRef;
     public RotationDisplay RotDisplayRef;
+    public UITimePanel TimeRef;
 }

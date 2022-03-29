@@ -94,7 +94,10 @@ public class BodyPromptScript : MonoBehaviour
                 {
                     bodyName = "Body" + (GameManagerReference.BodyCount);
                 }
+
                 passedBody.bodyName = bodyName;
+                passedBody.icon.SetName(bodyName);
+
                 float camOrbit = (float)((size * 8) + 27) / 7;
                 passedBody.planetCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(camOrbit, 0.1f);
                 passedBody.planetCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, camOrbit);
@@ -160,19 +163,22 @@ public class BodyPromptScript : MonoBehaviour
                 //this takes scientific notation and converts it to a double. Input: 1E+-X (1E-4)(1E+8) where if no sign is entered it's assumed positive
                 massInput.textComponent.color = Color.black;
                 mass = parseToDouble(ref massInput);
-                checkInput(ref massInput, ref mass);
+                checkInputMass(ref massInput, ref mass);
                 break;
             case "xVel":
                 xVelInput.textComponent.color = Color.black;
                 xVel = parseToDouble(ref xVelInput);
+                checkSpeed(ref xVel, ref xVelInput);
                 break;
             case "yVel":
                 yVelInput.textComponent.color = Color.black;
-               yVel = parseToDouble(ref yVelInput);
+                yVel = parseToDouble(ref yVelInput);
+                checkSpeed(ref yVel, ref yVelInput);
                 break;
             case "zVel":
                 zVelInput.textComponent.color = Color.black;
                 zVel = parseToDouble(ref zVelInput);
+                checkSpeed(ref zVel, ref zVelInput);
                 break;
             case "size":
                 size = Convert.ToDouble(sizeInput.value);
@@ -183,9 +189,19 @@ public class BodyPromptScript : MonoBehaviour
         }
     }
 
-    public void checkInput(ref TMP_InputField inputRef, ref double mass)
+    public void checkInputMass(ref TMP_InputField inputRef, ref double mass)
     {
         if((mass <= 0 || mass > (Math.Pow(10,9))) && !inputRef.text.Equals(""))
+        {
+            inputRef.text = "Invalid Input";
+            inputRef.textComponent.color = Color.red;
+            goodInput = false;
+        }
+    }
+
+    public void checkSpeed(ref double speed, ref TMP_InputField inputRef)
+    {
+        if(speed > 200 || speed < -200)
         {
             inputRef.text = "Invalid Input";
             inputRef.textComponent.color = Color.red;

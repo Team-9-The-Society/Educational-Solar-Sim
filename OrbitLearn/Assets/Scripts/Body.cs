@@ -8,6 +8,7 @@ public class Body : MonoBehaviour
     [Header("Planet name and velocities")]
     public string bodyName;
     public int bodyNumber;
+    public int materialAssignNumber;
     public GameObject body;
     private Rigidbody rb;
     [Header("Reference to Planet's Radiant Light Object")]
@@ -15,16 +16,53 @@ public class Body : MonoBehaviour
     [Header("Reference to Planet's Orbiting Camera")]
     public CinemachineFreeLook planetCam;
 
+    [Header("Reference to Planet's Icon")]
+    public BodyIcon icon;
+
     [Header("Debug - Force Change Current Velocity")]
     public double dxVel;
     public double dyVel;
     public double dzVel;
     public bool DebugSetNewVelocity;
 
+    [Header("Rotation")]
+    public float rotSpeed;
+    public float rotAxis;
+    public Quaternion curRot;
+    public Vector3 curEuler;
+    public float x, y, z;
 
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        MaterialAssign material = GetComponent<MaterialAssign>();
+        materialAssignNumber = material.GetMaterial();
+        rotSpeed = Random.Range(-100.0f, 100.0f);
+        rotAxis = Random.Range(0.0f, 100.0f);
+        x = 0;
+        y = 1;
+        z = 0;
+        if ((7 <= materialAssignNumber && materialAssignNumber <= 12) || (18 <= materialAssignNumber))
+        {
+            if (rotAxis > 80)
+            {
+                x = rotAxis / 10;
+            }
+            else if (rotAxis > 60)
+            {
+                z = rotAxis / 10;
+            }
+            else
+            {
+                y = rotAxis / 10;
+            }
+            curEuler += new Vector3(20, 0, 0) * Time.deltaTime * rotSpeed;
+            curRot.eulerAngles = curEuler;
+            rb.transform.rotation = curRot;
+            curEuler = new Vector3(0, 0, 0) * Time.deltaTime * rotSpeed;
+            curRot.eulerAngles = curEuler;
+            rb.transform.rotation = curRot;
+        }
     }
 
 
@@ -34,6 +72,13 @@ public class Body : MonoBehaviour
         {
             DEBUGForceVelocityUpdate();
         }
+    }
+
+    public void UpdateRotation()
+    {
+        curEuler += new Vector3(x, y, z) * Time.deltaTime * rotSpeed;
+        curRot.eulerAngles = curEuler;
+        rb.transform.rotation = curRot;
     }
 
     public void ApplyForce(double xForce, double yForce, double zForce)
@@ -70,5 +115,17 @@ public class Body : MonoBehaviour
     public int returnLayer()
     {
         return body.layer;
+    }
+
+    public bool IsEqual(Body comparer)
+    {
+        if (comparer.bodyNumber == this.bodyNumber)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -22,6 +22,7 @@ public class UISliderMenu : MonoBehaviour
     public GameObject PresetSimulationsPanel;
     public GameObject PauseButton;
     public GameObject FilePanel;
+    public GameObject TimePanel;
 
 
     public Button LoadButton;
@@ -29,6 +30,7 @@ public class UISliderMenu : MonoBehaviour
     public Button AddButton;
     public Button BodiesButton;
     public Button TemplateButton;
+    public Button TimeButton;
 
     [Header("Management Variables")]
     public bool paused = false;
@@ -96,6 +98,10 @@ public class UISliderMenu : MonoBehaviour
         {
             TemplateButton.interactable = isOpen;
         }
+        if (TimeButton != null)
+        {
+            TimeButton.interactable = isOpen;
+        }
     }
 
     //Triggers the panel sliding in/out of the frame
@@ -140,14 +146,28 @@ public class UISliderMenu : MonoBehaviour
     }
     public void ShowFilePanel()
     {
-        FilePanel.SetActive(true);
+        if (FilePanel != null)
+        {
+            FilePanel.SetActive(true);
+        }
+    }
+
+    public void ShowTimePanel()
+    {
+        if (TimePanel != null)
+        {
+            TimePanel.SetActive(true);
+        }
     }
 
     //Hides the list of preset simulations
     public void HidePresetSimsPanel()
     {
         if (PresetSimulationsPanel != null)
+        {
             PresetSimulationsPanel.SetActive(false);
+            gameManagerReference.HideHintMessage();
+        }
         else
             Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
     }
@@ -166,10 +186,12 @@ public class UISliderMenu : MonoBehaviour
         BodyInfoPanel.SetActive(false);
         PanelHideHint.SetActive(false);
         FilePanel.SetActive(false);
+        TimePanel.SetActive(false);
     }
 
     public void LoadHomeScene()
     {
+        gameManagerReference.SetDefaultTimeScale();
         gameManagerReference.LoadNewScene(SceneHandler.Scene.HomeScene);
     }
 

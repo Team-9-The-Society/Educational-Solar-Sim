@@ -387,6 +387,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 806173740}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: ShowIdleMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &155332635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,6 +854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a367ebc74bc9484d96d30b53b53698d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartSim: {fileID: 0}
+  Info: {fileID: 0}
+  Equations: {fileID: 0}
+  MenuMain: {fileID: 155332634}
+  isOpen: 1
 --- !u!1 &1188132335
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +942,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2074230003}
   m_Direction: 2
   m_Value: 0.9994874
-  m_Size: 0.34094596
+  m_Size: 0.34094593
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
