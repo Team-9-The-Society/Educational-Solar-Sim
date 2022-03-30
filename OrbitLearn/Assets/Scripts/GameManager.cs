@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("UI References")]
-    public TextMeshProUGUI versionNum;
+    private TextMeshProUGUI versionNum;
     public UIBodyInformationPanel BodyInfoPanel;
     public BodiesInfoButton BodiesPanel;
     public UISliderMenu SliderMenu;
@@ -24,8 +24,9 @@ public class GameManager : MonoBehaviour
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
     public UITimePanel TimePanel;
-    public RotationDisplay RotDisplay;
-    public Animator animator;
+    private RotationDisplay RotDisplay;
+    private Animator Animator;
+    private AudioSource HomeBackgroundSound;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -46,7 +47,6 @@ public class GameManager : MonoBehaviour
     public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
-    private int tapCount = 0;
     private int bodyClickCount = 0;
     public int bodyUnivCenter;
     public float currentTimeScale = 1.0f;
@@ -99,7 +99,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
-        animator = GameObject.Find("Transition").GetComponent<Animator>();
+        Animator = GameObject.Find("Transition").GetComponent<Animator>();
+        HomeBackgroundSound = GameObject.Find("Sound").GetComponent<AudioSource>();
 
         SimBodies = new List<Body>();
         LoadFunFacts();
@@ -149,10 +150,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DelayLoadLevel(SceneHandler.Scene targetScene)
     {
-        animator.SetTrigger("TriggerOutTransition");
+        Animator.SetTrigger("TriggerOutTransition");
+        if (targetScene.ToString() == "HomeScene")
+            StartCoroutine(AudioFadeScript.FadeIn(HomeBackgroundSound, transitionDelayTime));
+        else
+            StartCoroutine(AudioFadeScript.FadeOut(HomeBackgroundSound, transitionDelayTime));
         yield return new WaitForSeconds(transitionDelayTime);
         SceneHandler.Load(targetScene);
-        animator.SetTrigger("TriggerInTransition");
+        Animator.SetTrigger("TriggerInTransition");
     }
 
 
@@ -303,12 +308,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetVersionNumber()
-    {
-        Debug.Log("Application Version : " + Application.version);
-        
-        versionNum.text = "Version " + Application.version;
-    }
+    private void SetVersionNumber() => versionNum.text = "Version " + Application.version;
 
     //Checks if a number is within a range, and if it exceeds the range it will force number to closest number in range
     public double limitRange(double number, double max, double min)
@@ -623,7 +623,6 @@ public class GameManager : MonoBehaviour
     public void TogglePause()
     {
         gamePaused = !gamePaused;
-        //Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
         if (gamePaused)
         {
             Time.timeScale = 0.0f;
@@ -832,7 +831,6 @@ public class GameManager : MonoBehaviour
             }
             else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
             {
-                float massMax = 0;
                 float xCenter = 0;
                 float yCenter = 0;
                 float zCenter = 0;
@@ -873,7 +871,6 @@ public class GameManager : MonoBehaviour
             else
             {
                 bodySelectedUnivCenter = false;
-                float massMax = 0;
                 float xCenter = 0;
                 float yCenter = 0;
                 float zCenter = 0;
@@ -926,14 +923,10 @@ public class GameManager : MonoBehaviour
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
         foreach (GameObject g in objs)
         {
-            Debug.Log("Scanning " + g.name + " for UIReferences");
-
             UIRefHandler b = g.GetComponent<UIRefHandler>();
 
             if (b != null)
             {
-                Debug.Log("Found ReferenceHandler");
-
                 if (b.SliderRef != null)
                 {
                     SliderMenu = b.SliderRef;

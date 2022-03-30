@@ -53,7 +53,6 @@ public class BodiesInfoButton : MonoBehaviour
         }
         else
         {
-            //Debug.Log("PauseTest");
             displayTxt.text = iterateBodies();
         }
     }
