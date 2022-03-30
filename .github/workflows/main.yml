@@ -23,6 +23,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           projectPath: ./OrbitLearn
+          versioning: Semantic
           targetPlatform: Android
           androidAppBundle: true
           androidKeystoreName: user.keystore
@@ -30,6 +31,7 @@ jobs:
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
+      - run: echo 'Project Version:${{ steps.myBuildStep.outputs.buildVersion }}'
       - uses: actions/upload-artifact@v2
         with:
           name: build-Android
