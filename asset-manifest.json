@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Educational-Solar-Sim/static/css/main.afcaf31a.chunk.css",
-    "main.js": "/Educational-Solar-Sim/static/js/main.f81e58e7.chunk.js",
-    "main.js.map": "/Educational-Solar-Sim/static/js/main.f81e58e7.chunk.js.map",
+    "main.css": "/Educational-Solar-Sim/static/css/main.f6cebb5e.chunk.css",
+    "main.js": "/Educational-Solar-Sim/static/js/main.e24c24f7.chunk.js",
+    "main.js.map": "/Educational-Solar-Sim/static/js/main.e24c24f7.chunk.js.map",
     "runtime-main.js": "/Educational-Solar-Sim/static/js/runtime-main.50238438.js",
     "runtime-main.js.map": "/Educational-Solar-Sim/static/js/runtime-main.50238438.js.map",
     "static/css/2.92abccde.chunk.css": "/Educational-Solar-Sim/static/css/2.92abccde.chunk.css",
-    "static/js/2.c692acf3.chunk.js": "/Educational-Solar-Sim/static/js/2.c692acf3.chunk.js",
-    "static/js/2.c692acf3.chunk.js.map": "/Educational-Solar-Sim/static/js/2.c692acf3.chunk.js.map",
+    "static/js/2.7b9cec56.chunk.js": "/Educational-Solar-Sim/static/js/2.7b9cec56.chunk.js",
+    "static/js/2.7b9cec56.chunk.js.map": "/Educational-Solar-Sim/static/js/2.7b9cec56.chunk.js.map",
     "static/js/3.b37b3489.chunk.js": "/Educational-Solar-Sim/static/js/3.b37b3489.chunk.js",
     "static/js/3.b37b3489.chunk.js.map": "/Educational-Solar-Sim/static/js/3.b37b3489.chunk.js.map",
     "index.html": "/Educational-Solar-Sim/index.html",
     "static/css/2.92abccde.chunk.css.map": "/Educational-Solar-Sim/static/css/2.92abccde.chunk.css.map",
-    "static/css/main.afcaf31a.chunk.css.map": "/Educational-Solar-Sim/static/css/main.afcaf31a.chunk.css.map",
-    "static/js/2.c692acf3.chunk.js.LICENSE.txt": "/Educational-Solar-Sim/static/js/2.c692acf3.chunk.js.LICENSE.txt",
+    "static/css/main.f6cebb5e.chunk.css.map": "/Educational-Solar-Sim/static/css/main.f6cebb5e.chunk.css.map",
+    "static/js/2.7b9cec56.chunk.js.LICENSE.txt": "/Educational-Solar-Sim/static/js/2.7b9cec56.chunk.js.LICENSE.txt",
     "static/media/7-Body-Stable-Homework.16b81906.pdf": "/Educational-Solar-Sim/static/media/7-Body-Stable-Homework.16b81906.pdf",
     "static/media/Conservation-Of-Angular-Momentum-Homework.39f9484f.pdf": "/Educational-Solar-Sim/static/media/Conservation-Of-Angular-Momentum-Homework.39f9484f.pdf",
     "static/media/Gravity-Worksheet.57f52058.pdf": "/Educational-Solar-Sim/static/media/Gravity-Worksheet.57f52058.pdf",
@@ -24,14 +24,14 @@
     "static/media/TextLogo.3bc26de3.png": "/Educational-Solar-Sim/static/media/TextLogo.3bc26de3.png",
     "static/media/about.aee0f771.png": "/Educational-Solar-Sim/static/media/about.aee0f771.png",
     "static/media/google-play-badge.f902960a.png": "/Educational-Solar-Sim/static/media/google-play-badge.f902960a.png",
-    "static/media/style.css": "/Educational-Solar-Sim/static/media/pre.4410c5ba.svg",
+    "static/media/style.css": "/Educational-Solar-Sim/static/media/pre.d4812f51.svg",
     "static/media/logo.b38c84bb.png": "/Educational-Solar-Sim/static/media/logo.b38c84bb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.50238438.js",
     "static/css/2.92abccde.chunk.css",
-    "static/js/2.c692acf3.chunk.js",
-    "static/css/main.afcaf31a.chunk.css",
-    "static/js/main.f81e58e7.chunk.js"
+    "static/js/2.7b9cec56.chunk.js",
+    "static/css/main.f6cebb5e.chunk.css",
+    "static/js/main.e24c24f7.chunk.js"
   ]
 }
