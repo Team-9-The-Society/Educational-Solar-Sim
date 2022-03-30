@@ -16,8 +16,11 @@ jobs:
       - run: cd ./OrbitLearn
       - uses: actions/cache@v2
         with:
-          path: Library
-          key: Library-Android
+          path: /Library
+          key: Library-OrbitLearn-Android
+          restore-keys: |
+            Library-OrbitLearn-
+            Library-
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -31,7 +34,6 @@ jobs:
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
-      - run: echo 'Project Version:${{ steps.myBuildStep.outputs.buildVersion }}'
       - uses: actions/upload-artifact@v2
         with:
           name: build-Android
