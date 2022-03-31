@@ -13,13 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd ./OrbitLearn
-      - uses: game-ci/unity-builder@v2
+      - uses: actions/checkout@v3
         id: unityBuildStep
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           projectPath: ./OrbitLearn
+          fetch-depth: 0
+          lfs: true
           targetPlatform: Android
           androidAppBundle: true
           androidKeystoreName: user.keystore
