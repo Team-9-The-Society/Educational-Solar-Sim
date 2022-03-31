@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     public float currentTimeScale = 1.0f;
 
     public bool doubleTapReady = false;
+    public bool limitDeletion = false;
     private Coroutine doubleTapCheck = null;
 
     public bool gamePaused = false;
@@ -436,6 +437,7 @@ public class GameManager : MonoBehaviour
     //Deletes a body and all associated references
     public void DeleteBody(Body b)
     {
+        
         int currentcount = b.bodyNumber;
         int iteratecount = currentcount + 1;
         while (iteratecount < BodyCount)
@@ -510,11 +512,6 @@ public class GameManager : MonoBehaviour
             position[i, 1] = b.gameObject.transform.position.y;
             position[i, 2] = b.gameObject.transform.position.z;
             Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
-
-
-
-
-
             i++;
         }
 
@@ -797,7 +794,16 @@ public class GameManager : MonoBehaviour
             ActivePlanetCam = null;
         }
         if (HintDisplay != null)
-            HideHintMessage();
+        {
+            if (limitDeletion)
+            {
+                limitDeletion = false;
+            }
+            else
+            {
+                HideHintMessage();
+            }
+        }
         UniverseCam.Priority = 5;
     }
 
@@ -1113,6 +1119,10 @@ public class GameManager : MonoBehaviour
             double distance = Math.Sqrt(distanceSquared);
             if(distance > localBoundary)
             {
+                if(!uiPanelPriority & !SliderMenu.isOpen) {
+                    limitDeletion = true;
+                    DisplayExportHint("Body removed from silulation", "Position too far from current simulation center.");
+                }
                 return true;
             }
         }
@@ -1121,10 +1131,14 @@ public class GameManager : MonoBehaviour
         {
             if(Math.Abs(pos[k]) > globalBoundary)
             {
+                if (!uiPanelPriority & !SliderMenu.isOpen) {
+                    limitDeletion = true;
+                    DisplayExportHint("Body removed from silulation", "Position exceeds maximum allowed value.");
+                    }
                 return true;
             }
         }
 
-        return false;
+        return false; 
     }
 }
