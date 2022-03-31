@@ -23,7 +23,7 @@ jobs:
           lfs: true
           targetPlatform: Android
           androidAppBundle: true
-          androidKeystoreName: user.keystore
+          androidKeystoreName: orbitlearn.keystore
           androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
