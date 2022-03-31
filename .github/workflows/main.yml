@@ -1,12 +1,10 @@
 # Workflow to build and publish app on Play Store
-# Test 1
 name: Deploy App CI
 
 on:
   push:
-#    paths:
-#      - 'OrbitLearn/**'
-# TEST 3!
+    paths:
+      - 'OrbitLearn/**'
     branches: [ main, develop, test-build ]
 
 jobs:
