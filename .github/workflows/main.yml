@@ -1,13 +1,11 @@
 # Workflow to build and publish app on Play Store
 name: Deploy App
 
-#on:
-#  push:
-#    paths:
-#      - 'OrbitLearn/**'
-#    branches: [ main, develop ]
-
-on: [workflow_dispatch]
+on:
+  push:
+    paths:
+      - 'OrbitLearn/**'
+    branches: [ main, develop ]
 
 jobs:
   buildForAndroidPlatform:
