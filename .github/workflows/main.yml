@@ -19,6 +19,7 @@ jobs:
           path: Library
           key: Library-Android
       - uses: game-ci/unity-builder@v2
+        id: BuildStep
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
@@ -35,6 +36,7 @@ jobs:
         with:
           name: build-Android
           path: build/Android
+      - run: echo 'Project Version:${{ steps.BuildStep.outputs.buildVersion }}'
 
   releaseToGooglePlay:
     name: Release to the Google Play Store
