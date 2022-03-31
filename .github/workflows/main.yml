@@ -20,7 +20,6 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           projectPath: ./OrbitLearn
-          versioning: Tag
           targetPlatform: Android
           androidAppBundle: true
           androidKeystoreName: user.keystore
