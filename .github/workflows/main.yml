@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'OrbitLearn/**'
-    branches: [ main, develop ]
+    branches: [ main, develop, test-build ]
 
 jobs:
   buildForAndroidPlatform:
@@ -14,8 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cd ./OrbitLearn
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-Android
       - uses: game-ci/unity-builder@v2
-        id: unityBuildStep
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
@@ -32,7 +35,6 @@ jobs:
         with:
           name: build-Android
           path: build/Android
-      - run: echo 'Project Version:${{ steps.unityBuildStep.outputs.buildVersion }}'
 
   releaseToGooglePlay:
     name: Release to the Google Play Store
