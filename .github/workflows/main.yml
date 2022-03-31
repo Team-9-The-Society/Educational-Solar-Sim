@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: cd ./OrbitLearn
       - uses: game-ci/unity-builder@v2
-        id: BuildStep
+        id: unityBuildStep
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
@@ -28,11 +28,11 @@ jobs:
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
           androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
           androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
+      - run: echo 'Project Version:${{ steps.unityBuildStep.outputs.buildVersion }}'
       - uses: actions/upload-artifact@v2
         with:
           name: build-Android
           path: build/Android
-      - run: echo 'Project Version:${{ steps.BuildStep.outputs.buildVersion }}'
 
   releaseToGooglePlay:
     name: Release to the Google Play Store
