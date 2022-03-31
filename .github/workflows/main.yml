@@ -3,8 +3,8 @@ name: Deploy App CI
 
 on:
   push:
-    paths:
-      - 'OrbitLearn/**'
+#    paths:
+#      - 'OrbitLearn/**'
     branches: [ main, develop, test-build ]
 
 jobs:
@@ -23,6 +23,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           projectPath: ./OrbitLearn
+          versioning: Tag
           targetPlatform: Android
           androidAppBundle: true
           androidKeystoreName: user.keystore
