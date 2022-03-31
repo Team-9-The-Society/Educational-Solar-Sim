@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("UI References")]
-    public TextMeshProUGUI versionNum;
+    private TextMeshProUGUI versionNum;
     public UIBodyInformationPanel BodyInfoPanel;
     public BodiesInfoButton BodiesPanel;
     public UISliderMenu SliderMenu;
@@ -24,8 +24,9 @@ public class GameManager : MonoBehaviour
     public GameObject PauseIcon;
     public UIFilePanel FilePanel;
     public UITimePanel TimePanel;
-    public RotationDisplay RotDisplay;
-    public Animator animator;
+    private RotationDisplay RotDisplay;
+    private Animator Animator;
+    private AudioSource HomeBackgroundSound;
 
     [Header("Camera References")]
     public GameObject simulationCenter;
@@ -42,13 +43,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Management Variables")]
     public List<Body> SimBodies;
-    public enum CamState { Universe, Body }
+    public enum CamState { Universe, Body}
     public CamState CurrCamState = CamState.Universe;
     public Body focusedBody;
     public int BodyCount = 0;
-    private int tapCount = 0;
     private int bodyClickCount = 0;
     public int bodyUnivCenter;
+    public float currentTimeScale = 1.0f;
 
     public bool doubleTapReady = false;
     public bool limitDeletion = false;
@@ -63,13 +64,7 @@ public class GameManager : MonoBehaviour
     private float centroidX;
     private float centroidY;
     private float centroidZ;
-
-    [Header("Rotation Variables")]
-    float rotSpeed;
-    float rotAxis;
-    Quaternion curRot;
-    Vector3 curEuler;
-    float x, y, z;
+    public float cinemachineValue;
 
     private string[] coolFacts;
     private int[] factCollisions;
@@ -105,15 +100,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
-        animator = GameObject.Find("Transition").GetComponent<Animator>();
+        Animator = GameObject.Find("Transition").GetComponent<Animator>();
+        HomeBackgroundSound = GameObject.Find("Sound").GetComponent<AudioSource>();
 
         SimBodies = new List<Body>();
         LoadFunFacts();
         hashObject = new HashItUp(factCollisions.Length, 31, 0, highLoadBalance, factCollisions);
         TryLocateUIReferences();
-
-        rotSpeed = Random.Range(-100.0f, 100.0f);
-        rotAxis = Random.Range(0.0f, 100.0f);
     }
     public List<Body> getList()
     {
@@ -158,10 +151,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DelayLoadLevel(SceneHandler.Scene targetScene)
     {
-        animator.SetTrigger("TriggerOutTransition");
+        Animator.SetTrigger("TriggerOutTransition");
+        if (targetScene.ToString() == "HomeScene")
+            StartCoroutine(AudioFadeScript.FadeIn(HomeBackgroundSound, transitionDelayTime));
+        else
+            StartCoroutine(AudioFadeScript.FadeOut(HomeBackgroundSound, transitionDelayTime));
         yield return new WaitForSeconds(transitionDelayTime);
         SceneHandler.Load(targetScene);
-        animator.SetTrigger("TriggerInTransition");
+        Animator.SetTrigger("TriggerInTransition");
     }
 
 
@@ -172,26 +169,7 @@ public class GameManager : MonoBehaviour
         if (UniverseCam != null)
             RefreshUniverseCam();
 
-        foreach (Body b in SimBodies)
-        {
-            if (rotAxis > 90)
-            {
-                x = 1;
-            }
-            else if (rotAxis > 80)
-            {
-                z = 1;
-            }
-            else
-            {
-                y = 1;
-            }
-            curEuler += new Vector3(x, y, z) * Time.deltaTime * rotSpeed;
-            curRot.eulerAngles = curEuler;
-            b.transform.rotation = curRot;
-        }
-
-            if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
+        if (Input.GetMouseButtonDown(0) && !uiPanelPriority)
         {
             if (CurrCamState == CamState.Universe)
             {
@@ -312,6 +290,7 @@ public class GameManager : MonoBehaviour
         if (gamePaused == false)
         {
             UpdateForces();
+            UpdateRotation();
         }
 
         List<Body> die = new List<Body>();
@@ -330,12 +309,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetVersionNumber()
-    {
-        Debug.Log("Application Version : " + Application.version);
-        
-        versionNum.text = "Version " + Application.version;
-    }
+    private void SetVersionNumber() => versionNum.text = "Version " + Application.version;
 
     //Checks if a number is within a range, and if it exceeds the range it will force number to closest number in range
     public double limitRange(double number, double max, double min)
@@ -514,6 +488,14 @@ public class GameManager : MonoBehaviour
         bodySelectedUnivCenter = false;
     }
 
+    public void UpdateRotation()
+    {
+        foreach (Body b in SimBodies)
+        {
+            b.UpdateRotation();
+        }
+    }
+
     public void UpdateForces()
     {
         NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder
@@ -546,7 +528,11 @@ public class GameManager : MonoBehaviour
 
     public void ChangeTimeScaling(float scale)
     {
-        Time.timeScale = scale;
+        if (!gamePaused)
+        {
+            currentTimeScale = scale;
+            Time.timeScale = scale;
+        }
     }
 
     public void SetImportString(string simString)
@@ -625,10 +611,23 @@ public class GameManager : MonoBehaviour
         GUIUtility.systemCopyBuffer = simEx;
     }
 
+    public void SetDefaultTimeScale()
+    {
+        Time.timeScale = 1.0f;
+        currentTimeScale = 1.0f;
+    }
+
     public void TogglePause()
     {
         gamePaused = !gamePaused;
-        Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
+        if (gamePaused)
+        {
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Time.timeScale = currentTimeScale;
+        }
 
         if (gamePaused)
         {
@@ -740,6 +739,7 @@ public class GameManager : MonoBehaviour
             bodySelectedUnivCenter = true;
         }
     }
+
     public string GenerateFunSpaceFact(int address)
     {
         return coolFacts[address];
@@ -822,6 +822,7 @@ public class GameManager : MonoBehaviour
                 centroidX=0;
                 centroidY=0;
                 centroidZ=0;
+                cinemachineValue = 30;
 }
             else if (SimBodies.Count == 1)
             {
@@ -832,10 +833,10 @@ public class GameManager : MonoBehaviour
                 centroidX = SimBodies[0].gameObject.transform.position.x;
                 centroidY = SimBodies[0].gameObject.transform.position.y;
                 centroidZ = SimBodies[0].gameObject.transform.position.z;
+                cinemachineValue = 30;
             }
             else if (bodySelectedUnivCenter && BodyCount > bodyUnivCenter)
             {
-                float massMax = 0;
                 float xCenter = 0;
                 float yCenter = 0;
                 float zCenter = 0;
@@ -871,11 +872,11 @@ public class GameManager : MonoBehaviour
                 UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
                 UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
                 UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
+                cinemachineValue = maxDist;
             }
             else
             {
                 bodySelectedUnivCenter = false;
-                float massMax = 0;
                 float xCenter = 0;
                 float yCenter = 0;
                 float zCenter = 0;
@@ -911,7 +912,7 @@ public class GameManager : MonoBehaviour
                 UniverseCam.m_Orbits[0] = new CinemachineFreeLook.Orbit(maxDist, 0.1f);
                 UniverseCam.m_Orbits[1] = new CinemachineFreeLook.Orbit(0, maxDist);
                 UniverseCam.m_Orbits[2] = new CinemachineFreeLook.Orbit(-maxDist, 0.1f);
-
+                cinemachineValue = maxDist;
             }
         }
 
@@ -928,14 +929,10 @@ public class GameManager : MonoBehaviour
         GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
         foreach (GameObject g in objs)
         {
-            Debug.Log("Scanning " + g.name + " for UIReferences");
-
             UIRefHandler b = g.GetComponent<UIRefHandler>();
 
             if (b != null)
             {
-                Debug.Log("Found ReferenceHandler");
-
                 if (b.SliderRef != null)
                 {
                     SliderMenu = b.SliderRef;
