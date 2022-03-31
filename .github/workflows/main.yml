@@ -14,12 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cd ./OrbitLearn
-      - uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
       - uses: game-ci/unity-builder@v2
         id: BuildStep
         env:
