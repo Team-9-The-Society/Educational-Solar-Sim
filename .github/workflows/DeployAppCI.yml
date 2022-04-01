@@ -1,5 +1,5 @@
 # Workflow to build and publish app on Play Store
-name: Deploy App CI Auto
+name: Deploy App CI
 
 on:
   push:
