@@ -523,39 +523,45 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\r\n<b><style=\"h2\">1. <u>v = v\u2092 + a*t \r\n</b></u></style>\r\nThere
-    are multiple ways to find the velocity of an object. This equation is concerned
-    with finding the VELOCITY of an object when a force of ACCELERATION has been
-    applied to the object over TIME. \r\n\r\nv - Velocity\r\nv\u2092 - Initial Velocity\r\na
-    - Acceleration\r\nt - Elapsed Time\r\n \r\n<b><style=\"h2\">2. <u>v\xB2 = v\u2092\xB2
-    + 2a*x\r\n</b></u></style>\r\nYou can also find the VELOCITY of an object as
-    it travels over a set DISTANCE by using the force of ACCELERATION.\r\n\r\nv -
-    Velocity\r\nv\u2092 - Initial Velocity\r\na - Acceleration\r\nx - Distance\r\n\r\n<b><style=\"h2\">3.
-    <u>\u0394x = (v + v\u2092)/2*t\r\n</b></u></style>\r\nThe DISTANCE TRAVELLED
-    of an object can be determined with the object's FINAL VELOCITY, INITIAL VELOCITY,
-    and TIME elapsed.\r\n\r\nt makes a very similar format as a <link=https://www.mathsisfun.com/algebra/quadratic-equation.html><i>quadratic
-    equation</i></link> here.\r\n\r\nx - Distance\r\nv - Final Velocity\r\nv\u2092
-    - Initial Velocity\r\nt - Time\r\n\r\n<b><style=\"h2\">4. <u>\u0394x = v\u2092t
-    + (1/2)*a*t\xB2\r\n</b></u></style>\r\nThis is an alternate method of finding
-    the distance travelled by an object as it in in motion. The DISTANCE TRAVELLED
-    of an object can be determined with the object's INITIAL VELOCITY, ACCELERATION,
-    and TIME elapsed.\r\n\r\nx - Distance\r\nv\u2092 - Initial Velocity\r\na - Acceleration\r\nt
-    - Time\r\n \r\n<b><style=\"h2\">5. <u>F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThe
-    GRAVITATIONAL FORCE one object exerts on another can be described by this equation.
-    The FORCE can be found using the GRAVITATIONAL CONSTANT, MASS of both objects,
-    and the RADIUS between the objects.\r\n\r\nF - Total Force\r\nG - Gravitational
-    Constant\r\n(On Earth, G is equal to  6.67408 \xD7 10e-11)\r\nm - Mass of Object
-    1\r\nM - Mass of Object 2\r\nr - Radius\r\n\r\n<b><style=\"h2\">6. <u>F = m*a\r\n</b></u></style>\r\nThe
-    FORCE of an object can be found by multiplying its MASS by its ACCELERATION\r\n\r\nF
-    - Force\r\nm - Mass\r\na - Acceleration\r\n\r\n<b><style=\"h2\"><u>Units in the
-    Metric System\r\n</b></u></style>\r\n1. Time is measured in seconds\r\n2. Distance
-    is measured in meters\r\n3. Velocity is measured in meters per second\r\n4. Acceleration
-    is measured in meters per second per second \r\n5. Force is measured in <link=https://en.wikipedia.org/wiki/Newton_(unit)><i>newtons</i></link>\r\n6.
-    Mass is measured in kilograms\r\n\r\n<b><style=\"h2\"><u>Additional Info\r\n</b></u></style>\r\nThe
-    <link=https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas><i>kinematic
-    equations</i></link> used in the simulation can be found here, explained in further
-    detail.\r\n\r\nThe <link=https://www.physicsclassroom.com/class/circles/Lesson-3/Newton-s-Law-of-Universal-Gravitation><i>gravitational
-    force equation</i></link> can be found here, explained in further detail."
+  m_text: "\n<b><style=\"h2\"><u>1. v = v\u2092 + at \r\n</b></u></style>\r\nThis
+    equation is used to find a final velocity over time. The output v represents
+    the final velocity calculated, the input v\u2092 represents the initial velocity
+    of an object, a represents acceleration which is a change in velocity over time,
+    and lastly t represents the time period calculated over.\n \r\n<b><style=\"h2\"><u>2.
+    v\xB2 = v\u2092\xB2 + 2ax \r\n</b></u></style>\r\nThis equation is used describe
+    the final velocity over a displacement [The value multiplied by itself]. The
+    output v\xB2 represents the square of the final velocity, the input v\u2092\xB2
+    represents the initial velocity of an object, a still represents the acceleration
+    which is a change in the velocity over time, and lastly x represents the displacement
+    of the object.\r\n\n<b><style=\"h2\"><u>3. \u0394x = (v + v\u2092)/2*t \r\n</b></u></style>\r\nThis
+    equation is used to describe the displacement of an object. The output \u0394x
+    represents the displacement [Change from starting position from final position]
+    of the object, the input v represents the final velocity, v\u2092 still represents
+    the inital velocity of an object, and the input t still represents the overall
+    measured time. \r\n\n<b><style=\"h2\"><u>4. \u0394x = v\u2092t + (1/2)*a*t\xB2
+    \r\n</b></u></style>\r\nThis equation is used to describe the displacement of
+    an object. The output \u0394x represents the displacement [Change from starting
+    position from final position] of the object, the input v\u2092 still represents
+    the initial velocity of an object, and the input t still represents the overall
+    measured time, and a still represents the acceleration which is a change in the
+    velocity over time. \r\n\n<b><style=\"h2\"><u>5. F = G*(m*M)/r\xB2\r\n</b></u></style>\r\nThis
+    equation is used to describe the Force of gravity. The output F represents the
+    Force of gravity on the object, the input G is the gravitational constant [SEE
+    FOOT NOTE], m is the mass of the current object, M is the mass of the second
+    object (not itself), and r represents the radius between the two objects.\r\n\n<b><style=\"h2\"><u>6.
+    F = ma \r\n</b></u></style>\r\nThis equation is used to describe a Force. The
+    output F represents the Force of the object, the input m represents the mass
+    of the object, and a represents the acceleration of the object.\r\n\n<b><style=\"h2\"><u>Units
+    in the Metric System\r\n</b></u></style>\r\n1. Time is measured in seconds\r\n2.
+    Distance is measured in meters\r\n3. Velocity is measured in meters per second\r\n4.
+    Acceleration is measured in meters per second per second \r\n5. Force is measured
+    in <link=https://en.wikipedia.org/wiki/Newton_(unit)><i>newtons</i></link>\r\n6.
+    Mass is measured in kilograms\r\n\n<b><style=\"h2\"><u>Notes\r\n</b></u></style>\r\n1.
+    t makes a very similar format as a <link=https://www.mathsisfun.com/algebra/quadratic-equation.html><i>quadratic
+    equation</i></link> for formula 3. \r\n2. G is the gravitational constant which
+    is equal to  6.67408 \xD7 10e-11.\r\n3. The <link=https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas><i>kinematic
+    equations</i></link> used.\r\n4. The <link=https://www.physicsclassroom.com/class/circles/Lesson-3/Newton-s-Law-of-Universal-Gravitation><i>gravitational
+    force equation</i></link>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
