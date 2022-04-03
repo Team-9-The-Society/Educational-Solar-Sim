@@ -959,7 +959,6 @@ MonoBehaviour:
   BodyInfoPanel: {fileID: 0}
   PresetSimulationsPanel: {fileID: 0}
   PauseButton: {fileID: 0}
-  FilePanel: {fileID: 0}
   TimePanel: {fileID: 0}
   LoadButton: {fileID: 0}
   HomeButton: {fileID: 0}
@@ -1748,7 +1747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7121792927652871397, guid: 438413353da229d43acb752cf179b5af,
+  m_Sprite: {fileID: 4201271676786819327, guid: ce218ba5db8bb6e44a53b2b813a7ec54,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
