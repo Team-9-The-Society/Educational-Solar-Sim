@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 155332635}
   - component: {fileID: 155332634}
   m_Layer: 5
-  m_Name: Home Screen Button
+  m_Name: HomeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2380756760794730923, guid: 438413353da229d43acb752cf179b5af,
+  m_Sprite: {fileID: 5736886973634924034, guid: ce218ba5db8bb6e44a53b2b813a7ec54,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2074230003}
   m_Direction: 2
   m_Value: 0.9994874
-  m_Size: 0.34094593
+  m_Size: 0.34094596
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

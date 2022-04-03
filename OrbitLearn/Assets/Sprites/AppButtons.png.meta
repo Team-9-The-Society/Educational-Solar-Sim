@@ -1,136 +1,166 @@
 fileFormatVersion: 2
-guid: 438413353da229d43acb752cf179b5af
+guid: ce218ba5db8bb6e44a53b2b813a7ec54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7396710240065390323
-    second: App buttons transparent with stars_0
+      213: -5760310910825054407
+    second: AppButtonsWithBurger_0
   - first:
-      213: -3879771018340260945
-    second: App buttons transparent with stars_1
+      213: -7679826767114169907
+    second: AppButtonsWithBurger_1
   - first:
-      213: 3071188505351600235
-    second: App buttons transparent with stars_2
+      213: 3263836653785721343
+    second: AppButtonsWithBurger_2
   - first:
-      213: 9123754908454095531
-    second: App buttons transparent with stars_3
+      213: -11969095745069335
+    second: AppButton-Pointed
   - first:
-      213: -7483376755041904863
-    second: App buttons transparent with stars_4
+      213: 8862944974896185101
+    second: AppButton-Rounded
   - first:
-      213: -6164633848100481711
-    second: App buttons transparent with stars_5
+      213: -4173071346574917332
+    second: AppButton-RoundedWhite
   - first:
-      213: 5386009605429058590
-    second: App buttons transparent with stars_6
+      213: 5843827292698810007
+    second: AppButton-Pointed-RightArrow
   - first:
-      213: -3032063969117701977
-    second: App buttons transparent with stars_7
+      213: -1059620312392666632
+    second: AppButton-Rounded-RightArrow
   - first:
-      213: -5866282426236968778
-    second: App buttons transparent with stars_8
+      213: -5048810990918720448
+    second: AppButton-RoundedWhite-RightArrow
   - first:
-      213: -4204341556111925331
-    second: App buttons transparent with stars_9
+      213: 6292283237643278889
+    second: AppButton-Pointed-Minus
   - first:
-      213: -1877141857848259268
-    second: App buttons transparent with stars_10
+      213: -7588647526934853296
+    second: AppButtonsWithBurger_10
   - first:
-      213: -1049480383774404982
-    second: App buttons transparent with stars_11
+      213: 8925446063009603302
+    second: AppButtonsWithBurger_11
   - first:
-      213: 437747450726987012
-    second: App buttons transparent with stars_12
+      213: 1219723148512262943
+    second: AppButton-Rounded-Minus
   - first:
-      213: 112497183140409665
-    second: App buttons transparent with stars_13
+      213: -9180008248627036560
+    second: AppButton-RoundedWhite-Minus
   - first:
-      213: -4172408356848998679
-    second: App buttons transparent with stars_14
+      213: 6208003776858972134
+    second: AppButton-Pointed-Plus
   - first:
-      213: 1229892004925352680
-    second: App buttons transparent with stars_15
+      213: 4523455363803584966
+    second: AppButtonsWithBurger_15
   - first:
-      213: 7121792927652871397
-    second: App buttons transparent with stars_16
+      213: 4201271676786819327
+    second: AppButton-Rounded-Plus
   - first:
-      213: -8895254189860952450
-    second: App buttons transparent with stars_17
+      213: 3495651345118926658
+    second: AppButton-RoundedWhite-Plus
   - first:
-      213: -7068521113779811759
-    second: App buttons transparent with stars_18
+      213: 4838815190545005142
+    second: AppButtonsWithBurger_18
   - first:
-      213: 5890067700480868968
-    second: App buttons transparent with stars_19
+      213: 8405367357437469852
+    second: AppButtonsWithBurger_19
   - first:
-      213: 8450425256152522195
-    second: App buttons transparent with stars_20
+      213: -4406913943988728245
+    second: AppButtonsWithBurger_20
   - first:
-      213: -7494903656173399449
-    second: App buttons transparent with stars_21
+      213: -8869032158951200404
+    second: AppButton-Rounded-X
   - first:
-      213: 7704611360827335303
-    second: App buttons transparent with stars_22
+      213: -399505533583639
+    second: AppButton-RoundedWhite-X
   - first:
-      213: 4884693340705790200
-    second: App buttons transparent with stars_23
+      213: -97651828860317586
+    second: AppButton-Pointed-X
   - first:
-      213: -7774935919072772262
-    second: App buttons transparent with stars_24
+      213: 8399224575783927837
+    second: AppButtonsWithBurger_24
   - first:
-      213: -1346925146419859520
-    second: App buttons transparent with stars_25
+      213: 3387232713538602147
+    second: AppButton-Pointed-LeftArrow
   - first:
-      213: 768118778229801379
-    second: App buttons transparent with stars_26
+      213: 4771099766729184440
+    second: AppButtonsWithBurger_26
   - first:
-      213: -2285048362616891595
-    second: App buttons transparent with stars_27
+      213: -5238095863743114754
+    second: AppButtonsWithBurger_27
   - first:
-      213: 6938339073112836342
-    second: App buttons transparent with stars_28
+      213: 1065679743078542119
+    second: AppButton-Rounded-LeftArrow
   - first:
-      213: -6276061883171003028
-    second: App buttons transparent with stars_29
+      213: 6596196436707640351
+    second: AppButton-Rounded-PausePlay
   - first:
-      213: -8275625090637982548
-    second: App buttons transparent with stars_30
+      213: -8869982696870622892
+    second: AppButton-RoundedWhite-LeftArrow
   - first:
-      213: -926234921678590768
-    second: App buttons transparent with stars_31
+      213: -6922343507128982641
+    second: AppButton-Pointed-PausePlay
   - first:
-      213: -216078221464854560
-    second: App buttons transparent with stars_32
+      213: 5608362218399858641
+    second: AppButton-RoundedWhite-PausePlay
   - first:
-      213: -1789018939545600007
-    second: App buttons transparent with stars_33
+      213: 564901817595063315
+    second: AppButton-Pointed-DoubleRightArrow
   - first:
-      213: -897164225182383430
-    second: App buttons transparent with stars_34
+      213: -1070923049015079872
+    second: AppButtonsWithBurger_34
   - first:
-      213: 1571508824233600749
-    second: App buttons transparent with stars_35
+      213: 3732071346631889839
+    second: AppButton-Rounded-DoubleRightArrow
   - first:
-      213: -7354720111123863082
-    second: App buttons transparent with stars_36
+      213: 6311730656086142736
+    second: AppButton-RoundedWhite-DoubleRightArrow
   - first:
-      213: -2380756760794730923
-    second: App buttons transparent with stars_37
+      213: 5736886973634924034
+    second: AppButtonSmall-Light-Home
   - first:
-      213: 6307722734508606774
-    second: App buttons transparent with stars_38
+      213: 4858724340619096300
+    second: AppButtonsWithBurger_38
   - first:
-      213: 8023818201845074343
-    second: App buttons transparent with stars_39
+      213: -7912374977094866106
+    second: AppButtonSmall-Mid-Home
   - first:
-      213: 6489725508406606362
-    second: App buttons transparent with stars_40
+      213: -8319614675388744844
+    second: AppButtonSmall-Dark-Home
   - first:
-      213: -3576600681878969469
-    second: App buttons transparent with stars_41
+      213: 5201846341711264173
+    second: AppButtonSmall-Light-Hamburger
   - first:
-      213: -7795154926002294178
-    second: App buttons transparent with stars_42
+      213: 8629750413935060622
+    second: AppButtonSmall-Mid-Hamburger
+  - first:
+      213: 6507340578862529247
+    second: AppButtonSmall-Dark-Hamburger
+  - first:
+      213: -7418917502800763468
+    second: AppButtonsWithBurger_44
+  - first:
+      213: -216351944455333587
+    second: AppButtonSmall-Light
+  - first:
+      213: 3666416608076815828
+    second: AppButtonsWithBurger_46
+  - first:
+      213: -9197328491241764331
+    second: AppButtonSmall-Mid
+  - first:
+      213: 6431696385308225571
+    second: AppButtonSmall-Dark
+  - first:
+      213: 2752561249375472088
+    second: AppButtonSmall-Light-Pause
+  - first:
+      213: 9071397384134456633
+    second: AppButtonsWithBurger_50
+  - first:
+      213: -8966384083156190617
+    second: AppButtonSmall-Mid-Pause
+  - first:
+      213: -7411471365108105181
+    second: AppButtonSmall-Dark-Pause
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -232,70 +262,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: App buttons transparent with stars_0
-      rect:
-        serializedVersion: 2
-        x: 2022
-        y: 9195
-        width: 103
-        height: 1182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f6879d16c466a660800000000000000
-      internalID: 7396710240065390323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: App buttons transparent with stars_1
-      rect:
-        serializedVersion: 2
-        x: 4810
-        y: 9252
-        width: 1467
-        height: 1161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa329f190d8482ac0800000000000000
-      internalID: -3879771018340260945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: App buttons transparent with stars_2
-      rect:
-        serializedVersion: 2
-        x: 7866
-        y: 9067
-        width: 1295
-        height: 1374
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b68bebb7cad0f9a20800000000000000
-      internalID: 3071188505351600235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: App buttons transparent with stars_3
+      name: AppButton-Pointed
       rect:
         serializedVersion: 2
         x: 680
@@ -303,20 +270,20 @@ TextureImporter:
         width: 2706
         height: 744
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baa0220efb61e9e70800000000000000
-      internalID: 9123754908454095531
+      spriteID: 9ee15dbbb2a75dff0800000000000000
+      internalID: -11969095745069335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_4
+      name: AppButton-Rounded
       rect:
         serializedVersion: 2
         x: 3920
@@ -324,20 +291,20 @@ TextureImporter:
         width: 2813
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 127df4b6d74b52890800000000000000
-      internalID: -7483376755041904863
+      spriteID: d0f358c2f718ffa70800000000000000
+      internalID: 8862944974896185101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_5
+      name: AppButton-RoundedWhite
       rect:
         serializedVersion: 2
         x: 7281
@@ -345,41 +312,41 @@ TextureImporter:
         width: 2813
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1551f914d22d27aa0800000000000000
-      internalID: -6164633848100481711
+      spriteID: c218a0d58b54616c0800000000000000
+      internalID: -4173071346574917332
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_6
+      name: AppButton-Pointed-RightArrow
       rect:
         serializedVersion: 2
         x: 659
-        y: 7188
+        y: 7187
         width: 2706
-        height: 740
+        height: 741
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1cd0782333feba40800000000000000
-      internalID: 5386009605429058590
+      spriteID: 7969b06f5f1791150800000000000000
+      internalID: 5843827292698810007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_7
+      name: AppButton-Rounded-RightArrow
       rect:
         serializedVersion: 2
         x: 3920
@@ -387,20 +354,20 @@ TextureImporter:
         width: 2817
         height: 786
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a87a7872e1fbe5d0800000000000000
-      internalID: -3032063969117701977
+      spriteID: 8f1fb03a0f87b41f0800000000000000
+      internalID: -1059620312392666632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_8
+      name: AppButton-RoundedWhite-RightArrow
       rect:
         serializedVersion: 2
         x: 7331
@@ -408,20 +375,20 @@ TextureImporter:
         width: 2813
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b06708d637c69ea0800000000000000
-      internalID: -5866282426236968778
+      spriteID: 044a33c47250fe9b0800000000000000
+      internalID: -5048810990918720448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_9
+      name: AppButton-Pointed-Minus
       rect:
         serializedVersion: 2
         x: 677
@@ -429,20 +396,20 @@ TextureImporter:
         width: 2702
         height: 741
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daf198951ad27a5c0800000000000000
-      internalID: -4204341556111925331
+      spriteID: 92a5fd5444ea25750800000000000000
+      internalID: 6292283237643278889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_10
+      name: AppButtonsWithBurger_10
       rect:
         serializedVersion: 2
         x: 2849
@@ -450,20 +417,20 @@ TextureImporter:
         width: 15
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3d00f10d6d03f5e0800000000000000
-      internalID: -1877141857848259268
+      spriteID: 059c667d745bfa690800000000000000
+      internalID: -7588647526934853296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_11
+      name: AppButtonsWithBurger_11
       rect:
         serializedVersion: 2
         x: 2870
@@ -471,20 +438,20 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8ec26eb62f7f61f0800000000000000
-      internalID: -1049480383774404982
+      spriteID: 6ee989fb7ed8ddb70800000000000000
+      internalID: 8925446063009603302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_12
+      name: AppButton-Rounded-Minus
       rect:
         serializedVersion: 2
         x: 3984
@@ -492,20 +459,20 @@ TextureImporter:
         width: 2813
         height: 788
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4053ae5bcf0331600800000000000000
-      internalID: 437747450726987012
+      spriteID: f1bf46fbdb35de010800000000000000
+      internalID: 1219723148512262943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_13
+      name: AppButton-RoundedWhite-Minus
       rect:
         serializedVersion: 2
         x: 7331
@@ -513,20 +480,20 @@ TextureImporter:
         width: 2813
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 141f05f879baf8100800000000000000
-      internalID: 112497183140409665
+      spriteID: 07efd69b22f0a9080800000000000000
+      internalID: -9180008248627036560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_14
+      name: AppButton-Pointed-Plus
       rect:
         serializedVersion: 2
         x: 688
@@ -534,20 +501,20 @@ TextureImporter:
         width: 2705
         height: 744
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e6e420b4b0a816c0800000000000000
-      internalID: -4172408356848998679
+      spriteID: 6ef56fb2b82472650800000000000000
+      internalID: 6208003776858972134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_15
+      name: AppButtonsWithBurger_15
       rect:
         serializedVersion: 2
         x: 3397
@@ -555,20 +522,20 @@ TextureImporter:
         width: 17
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ea2ba12344711110800000000000000
-      internalID: 1229892004925352680
+      spriteID: 6c919d4efaa86ce30800000000000000
+      internalID: 4523455363803584966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_16
+      name: AppButton-Rounded-Plus
       rect:
         serializedVersion: 2
         x: 3999
@@ -576,62 +543,83 @@ TextureImporter:
         width: 2812
         height: 788
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ec73a05fe0b5d260800000000000000
-      internalID: 7121792927652871397
+      spriteID: ff0c9cba45aed4a30800000000000000
+      internalID: 4201271676786819327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_17
+      name: AppButton-RoundedWhite-Plus
       rect:
         serializedVersion: 2
         x: 7402
         y: 5329
         width: 2813
-        height: 789
+        height: 790
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7668828175bd8480800000000000000
-      internalID: -8895254189860952450
+      spriteID: 2471e6ca06c038030800000000000000
+      internalID: 3495651345118926658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_18
+      name: AppButtonsWithBurger_18
+      rect:
+        serializedVersion: 2
+        x: 2129
+        y: 5176
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65af23657cce62340800000000000000
+      internalID: 4838815190545005142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_19
       rect:
         serializedVersion: 2
         x: 1813
         y: 5130
-        width: 19
-        height: 19
+        width: 20
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15a4ec56f7197ed90800000000000000
-      internalID: -7068521113779811759
+      spriteID: c9469baf31dd5a470800000000000000
+      internalID: 8405367357437469852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_19
+      name: AppButtonsWithBurger_20
       rect:
         serializedVersion: 2
         x: 2863
@@ -639,20 +627,20 @@ TextureImporter:
         width: 14
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8620a2edd59bdb150800000000000000
-      internalID: 5890067700480868968
+      spriteID: b4e06d4ed1f77d2c0800000000000000
+      internalID: -4406913943988728245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_20
+      name: AppButton-Rounded-X
       rect:
         serializedVersion: 2
         x: 4006
@@ -660,20 +648,20 @@ TextureImporter:
         width: 2812
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ddd5f98ff0f54570800000000000000
-      internalID: 8450425256152522195
+      spriteID: c69a238dd3edae480800000000000000
+      internalID: -8869032158951200404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_21
+      name: AppButton-RoundedWhite-X
       rect:
         serializedVersion: 2
         x: 7402
@@ -681,20 +669,20 @@ TextureImporter:
         width: 2813
         height: 790
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 762120c95d0ccf790800000000000000
-      internalID: -7494903656173399449
+      spriteID: 9eeb59ed6a49efff0800000000000000
+      internalID: -399505533583639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_22
+      name: AppButton-Pointed-X
       rect:
         serializedVersion: 2
         x: 684
@@ -702,20 +690,41 @@ TextureImporter:
         width: 2709
         height: 741
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7826d8e36374cea60800000000000000
-      internalID: 7704611360827335303
+      spriteID: e601d15dd2215aef0800000000000000
+      internalID: -97651828860317586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_23
+      name: AppButtonsWithBurger_24
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 4350
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10055c204a009470800000000000000
+      internalID: 8399224575783927837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-LeftArrow
       rect:
         serializedVersion: 2
         x: 602
@@ -723,20 +732,20 @@ TextureImporter:
         width: 2706
         height: 741
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f81c7196bae9c340800000000000000
-      internalID: 4884693340705790200
+      spriteID: 3a40d06e43ed10f20800000000000000
+      internalID: 3387232713538602147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_24
+      name: AppButtonsWithBurger_26
       rect:
         serializedVersion: 2
         x: 1104
@@ -744,20 +753,20 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ffd3899f0e91490800000000000000
-      internalID: -7774935919072772262
+      spriteID: 8b497df95f9563240800000000000000
+      internalID: 4771099766729184440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_25
+      name: AppButtonsWithBurger_27
       rect:
         serializedVersion: 2
         x: 1118
@@ -765,20 +774,20 @@ TextureImporter:
         width: 14
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cf6a9437b2ce4de0800000000000000
-      internalID: -1346925146419859520
+      spriteID: ef11626809b8e47b0800000000000000
+      internalID: -5238095863743114754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_26
+      name: AppButton-Rounded-LeftArrow
       rect:
         serializedVersion: 2
         x: 4034
@@ -786,20 +795,20 @@ TextureImporter:
         width: 2813
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a1c1b985f7e8aa00800000000000000
-      internalID: 768118778229801379
+      spriteID: 72ba682841e0ace00800000000000000
+      internalID: 1065679743078542119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_27
+      name: AppButton-Rounded-PausePlay
       rect:
         serializedVersion: 2
         x: 4034
@@ -807,20 +816,20 @@ TextureImporter:
         width: 2813
         height: 783
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 537d1a3fe90e940e0800000000000000
-      internalID: -2285048362616891595
+      spriteID: f1408a606b56a8b50800000000000000
+      internalID: 6596196436707640351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_28
+      name: AppButton-RoundedWhite-LeftArrow
       rect:
         serializedVersion: 2
         x: 7452
@@ -828,20 +837,20 @@ TextureImporter:
         width: 2813
         height: 784
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f88a1840aee94060800000000000000
-      internalID: 6938339073112836342
+      spriteID: 4594a2d7bbd77e480800000000000000
+      internalID: -8869982696870622892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_29
+      name: AppButton-Pointed-PausePlay
       rect:
         serializedVersion: 2
         x: 673
@@ -849,41 +858,41 @@ TextureImporter:
         width: 2706
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c65293128f2f6e8a0800000000000000
-      internalID: -6276061883171003028
+      spriteID: f836854a145eeef90800000000000000
+      internalID: -6922343507128982641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_30
+      name: AppButton-RoundedWhite-PausePlay
       rect:
         serializedVersion: 2
         x: 7431
-        y: 2553
+        y: 2547
         width: 2813
-        height: 783
+        height: 789
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca4963283d2172d80800000000000000
-      internalID: -8275625090637982548
+      spriteID: 1dff17729b7e4dd40800000000000000
+      internalID: 5608362218399858641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_31
+      name: AppButton-Pointed-DoubleRightArrow
       rect:
         serializedVersion: 2
         x: 652
@@ -891,20 +900,20 @@ TextureImporter:
         width: 2706
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dc29c20f3a5523f0800000000000000
-      internalID: -926234921678590768
+      spriteID: 31ce9bac53fe6d700800000000000000
+      internalID: 564901817595063315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_32
+      name: AppButtonsWithBurger_34
       rect:
         serializedVersion: 2
         x: 2827
@@ -912,41 +921,41 @@ TextureImporter:
         width: 14
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef93ed9006500df0800000000000000
-      internalID: -216078221464854560
+      spriteID: 04c8da139215321f0800000000000000
+      internalID: -1070923049015079872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_33
+      name: AppButton-Rounded-DoubleRightArrow
       rect:
         serializedVersion: 2
         x: 4056
-        y: 1791
+        y: 1787
         width: 2812
-        height: 783
+        height: 787
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ff30fbc0c02c27e0800000000000000
-      internalID: -1789018939545600007
+      spriteID: fa3586ccd1bfac330800000000000000
+      internalID: 3732071346631889839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_34
+      name: AppButton-RoundedWhite-DoubleRightArrow
       rect:
         serializedVersion: 2
         x: 7431
@@ -954,20 +963,20 @@ TextureImporter:
         width: 2813
         height: 790
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab2c0dcf3e1ac83f0800000000000000
-      internalID: -897164225182383430
+      spriteID: 01f25f93795c79750800000000000000
+      internalID: 6311730656086142736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_35
+      name: AppButtonSmall-Light-Home
       rect:
         serializedVersion: 2
         x: 4283
@@ -975,20 +984,20 @@ TextureImporter:
         width: 776
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de6e5dd03fe1fc510800000000000000
-      internalID: 1571508824233600749
+      spriteID: 20e4314ae448d9f40800000000000000
+      internalID: 5736886973634924034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_36
+      name: AppButtonsWithBurger_38
       rect:
         serializedVersion: 2
         x: 5063
@@ -996,20 +1005,20 @@ TextureImporter:
         width: 14
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d96a02a609cee990800000000000000
-      internalID: -7354720111123863082
+      spriteID: ce035209b08ad6340800000000000000
+      internalID: 4858724340619096300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_37
+      name: AppButtonSmall-Mid-Home
       rect:
         serializedVersion: 2
         x: 5067
@@ -1017,20 +1026,20 @@ TextureImporter:
         width: 783
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55e6830075ad5fed0800000000000000
-      internalID: -2380756760794730923
+      spriteID: 64b229041e8913290800000000000000
+      internalID: -7912374977094866106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_38
+      name: AppButtonSmall-Dark-Home
       rect:
         serializedVersion: 2
         x: 5879
@@ -1038,20 +1047,104 @@ TextureImporter:
         width: 776
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6358a044868898750800000000000000
-      internalID: 6307722734508606774
+      spriteID: 47bb35d288aca8c80800000000000000
+      internalID: -8319614675388744844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_39
+      name: AppButtonSmall-Light-Hamburger
+      rect:
+        serializedVersion: 2
+        x: 6826
+        y: 894
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da97dddefaba03840800000000000000
+      internalID: 5201846341711264173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Mid-Hamburger
+      rect:
+        serializedVersion: 2
+        x: 7645
+        y: 879
+        width: 776
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8621e2774803c770800000000000000
+      internalID: 8629750413935060622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Dark-Hamburger
+      rect:
+        serializedVersion: 2
+        x: 8456
+        y: 887
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaf59377c7be4a50800000000000000
+      internalID: 6507340578862529247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_44
+      rect:
+        serializedVersion: 2
+        x: 7618
+        y: 995
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5e1ab96d5ba0990800000000000000
+      internalID: -7418917502800763468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Light
       rect:
         serializedVersion: 2
         x: 4276
@@ -1059,41 +1152,41 @@ TextureImporter:
         width: 776
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a90a4f74245a5f60800000000000000
-      internalID: 8023818201845074343
+      spriteID: d2956448d0d5ffcf0800000000000000
+      internalID: -216351944455333587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_40
+      name: AppButtonsWithBurger_46
       rect:
         serializedVersion: 2
-        x: 5054
+        x: 5061
         y: 233
         width: 11
-        height: 11
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1afd5247f2201a50800000000000000
-      internalID: 6489725508406606362
+      spriteID: 4ddd203ca7ab1e230800000000000000
+      internalID: 3666416608076815828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_41
+      name: AppButtonSmall-Mid
       rect:
         serializedVersion: 2
         x: 5067
@@ -1101,20 +1194,20 @@ TextureImporter:
         width: 776
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3832f2521ac5d5ec0800000000000000
-      internalID: -3576600681878969469
+      spriteID: 51a84fc77768c5080800000000000000
+      internalID: -9197328491241764331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: App buttons transparent with stars_42
+      name: AppButtonSmall-Dark
       rect:
         serializedVersion: 2
         x: 5871
@@ -1122,14 +1215,98 @@ TextureImporter:
         width: 776
         height: 740
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e523f7235eb02d390800000000000000
-      internalID: -7795154926002294178
+      spriteID: 320f57d29c9f14950800000000000000
+      internalID: 6431696385308225571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Light-Pause
+      rect:
+        serializedVersion: 2
+        x: 6847
+        y: 111
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9c7836fdf033620800000000000000
+      internalID: 2752561249375472088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_50
+      rect:
+        serializedVersion: 2
+        x: 7632
+        y: 219
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935fdb9cbd314ed70800000000000000
+      internalID: 9071397384134456633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Mid-Pause
+      rect:
+        serializedVersion: 2
+        x: 7637
+        y: 103
+        width: 777
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a32cbae21019380800000000000000
+      internalID: -8966384083156190617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Dark-Pause
+      rect:
+        serializedVersion: 2
+        x: 8442
+        y: 118
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32080c3af0a252990800000000000000
+      internalID: -7411471365108105181
       vertices: []
       indices: 
       edges: []
@@ -1137,7 +1314,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d6ac6ea374681b240b9502d4115d9ac6
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
