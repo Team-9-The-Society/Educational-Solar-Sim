@@ -496,10 +496,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private int UpdateForceCallCount = 0;
+
     public void UpdateForces()
     {
-        NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder
         int numBodies = SimBodies.Count;
+        if (numBodies < 2) return;
+
+        UpdateForceCallCount++;
+        string debugMsg = "UpdateForces\n";
+        NBody nBody = new NBody(); //The NBody.cs file needs to be in /assets/scripts folder
         double[] mass = new double[numBodies];
         double[,] position = new double[numBodies, 3];
         double[,] force;
@@ -511,17 +517,24 @@ public class GameManager : MonoBehaviour
             position[i, 0] = b.gameObject.transform.position.x;
             position[i, 1] = b.gameObject.transform.position.y;
             position[i, 2] = b.gameObject.transform.position.z;
-            Debug.Log($"Body {i} mass={mass[i]} @ ({position[i,0]},{position[i, 1]},{position[i, 2]})");
+            
+            debugMsg += $"Body {b.bodyName} mass={mass[i]} @ ({position[i, 0]}, {position[i, 1]}, {position[i, 2]})\n";
             i++;
         }
+
+
 
         force = nBody.UpdateForce(position, mass, numBodies);
         i = 0;
         foreach (Body b in SimBodies)
         {
             b.ApplyForce(force[i, 0], force[i, 1], force[i, 2]);
+            debugMsg += $"Body {b.bodyName} ApplyForce={force[i, 0]}, {force[i, 1]}, {force[i, 2]}\n";
             i++;
         }
+
+        if (UpdateForceCallCount % 150 == 0)
+            Debug.Log(debugMsg);
 
         return;
     }
