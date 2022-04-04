@@ -263,13 +263,28 @@ public class BodiesInfoButton : MonoBehaviour
         buttonCount--;
     }
 
-    public void HidePanel()
+
+    public void OutofBoundsCheck()
+    {
+        DeleteAllButtons();
+        buttonSpawn = 0;
+        panelExpansion = 0;
+    }
+
+    public void DeleteAllButtons()
     {
         while (buttonCount > 0)
         {
             GameObject dumb = Buttons[0];
             killButton(ref dumb);
         }
+    }
+
+
+
+    public void HidePanel()
+    {
+        DeleteAllButtons();
         panelExpansion = 0;
         buttonSpawn = 0;
         Debug.Log(name + " Game Object Hidden!", this);
