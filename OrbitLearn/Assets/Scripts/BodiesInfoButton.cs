@@ -305,7 +305,7 @@ public class BodiesInfoButton : MonoBehaviour
     {
         try
         {
-            Debug.LogWarning("Running FocusOnPlanet for i=" + i);
+            //Debug.LogWarning("Running FocusOnPlanet for i=" + i);
             gameManagerReference.ShowBodyInfo(gameManagerReference.SimBodies[i]);
             gameManagerReference.ActivateBodyCam(gameManagerReference.SimBodies[i].planetCam);
             gameManagerReference.ChangePanelPriority();
