@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Random = UnityEngine.Random;
 
 public class Body : MonoBehaviour
 {
@@ -47,10 +49,12 @@ public class Body : MonoBehaviour
             if (rotAxis > 80)
             {
                 x = rotAxis / 10;
+                y = 0;
             }
             else if (rotAxis > 60)
             {
                 z = rotAxis / 10;
+                y = 0;
             }
             else
             {
@@ -83,7 +87,6 @@ public class Body : MonoBehaviour
 
     public void ApplyForce(double xForce, double yForce, double zForce)
     {
-        Debug.Log($"Forced applied to {gameObject.name}: {xForce}, {yForce}, {zForce}");
         rb.AddForce(new Vector3((float)xForce, (float)yForce, (float)zForce), ForceMode.Force);
     }
 

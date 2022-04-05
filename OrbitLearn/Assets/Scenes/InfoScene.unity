@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 269245791}
   - component: {fileID: 269245790}
   m_Layer: 5
-  m_Name: TransitionButtons
+  m_Name: HomeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2380756760794730923, guid: 438413353da229d43acb752cf179b5af,
+  m_Sprite: {fileID: 5736886973634924034, guid: ce218ba5db8bb6e44a53b2b813a7ec54,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1344,15 +1344,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bfc826227e7b834ca4a168dff239e95, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

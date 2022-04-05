@@ -21,7 +21,6 @@ public class UISliderMenu : MonoBehaviour
     public GameObject BodyInfoPanel;
     public GameObject PresetSimulationsPanel;
     public GameObject PauseButton;
-    public GameObject FilePanel;
     public GameObject TimePanel;
 
 
@@ -144,13 +143,6 @@ public class UISliderMenu : MonoBehaviour
         else
             Debug.LogError("PresetSimulationsPanel reference on " + name + " is null!");
     }
-    public void ShowFilePanel()
-    {
-        if (FilePanel != null)
-        {
-            FilePanel.SetActive(true);
-        }
-    }
 
     public void ShowTimePanel()
     {
@@ -185,7 +177,6 @@ public class UISliderMenu : MonoBehaviour
         BodiesDescriptionPanel.SetActive(false);
         BodyInfoPanel.SetActive(false);
         PanelHideHint.SetActive(false);
-        FilePanel.SetActive(false);
         TimePanel.SetActive(false);
     }
 
