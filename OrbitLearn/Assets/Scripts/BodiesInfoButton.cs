@@ -204,7 +204,7 @@ public class BodiesInfoButton : MonoBehaviour
         if (knownBodyCount == 0 )
         {
             buttonSpawn = 1;
-            totalDisplay += "No Bodies are currently displayed. Please add a body for their information to be displayed promply here.";
+            totalDisplay += "There are no bodies in the simulation yet! Add some, then come back.";
         }
         else
         {
