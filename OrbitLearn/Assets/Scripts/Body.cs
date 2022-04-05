@@ -49,10 +49,12 @@ public class Body : MonoBehaviour
             if (rotAxis > 80)
             {
                 x = rotAxis / 10;
+                y = 0;
             }
             else if (rotAxis > 60)
             {
                 z = rotAxis / 10;
+                y = 0;
             }
             else
             {
