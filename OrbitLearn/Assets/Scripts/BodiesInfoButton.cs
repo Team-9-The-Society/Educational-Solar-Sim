@@ -263,13 +263,28 @@ public class BodiesInfoButton : MonoBehaviour
         buttonCount--;
     }
 
-    public void HidePanel()
+
+    public void OutofBoundsCheck()
+    {
+        DeleteAllButtons();
+        buttonSpawn = 0;
+        panelExpansion = 0;
+    }
+
+    public void DeleteAllButtons()
     {
         while (buttonCount > 0)
         {
             GameObject dumb = Buttons[0];
             killButton(ref dumb);
         }
+    }
+
+
+
+    public void HidePanel()
+    {
+        DeleteAllButtons();
         panelExpansion = 0;
         buttonSpawn = 0;
         Debug.Log(name + " Game Object Hidden!", this);
@@ -281,27 +296,16 @@ public class BodiesInfoButton : MonoBehaviour
 
     public void SetUniverseCenter(int i)
     {
-        gameManagerReference.ActivateBodyCam(gameManagerReference.SimBodies[i].planetCam);
-        
-
-        StartCoroutine(UnivCamStart(i));
-
-        
-    }
-
-    private IEnumerator UnivCamStart(int i)
-    {
-        yield return new WaitForSecondsRealtime(1.5f);
-        gameManagerReference.MakeBodyCenterOfUniv(i);
         gameManagerReference.ActivateUniverseCam();
 
+        gameManagerReference.MakeBodyCenterOfUniv(i);
     }
 
     public void FocusOnPlanet(int i)
     {
         try
         {
-            Debug.LogWarning("Running FocusOnPlanet for i=" + i);
+            //Debug.LogWarning("Running FocusOnPlanet for i=" + i);
             gameManagerReference.ShowBodyInfo(gameManagerReference.SimBodies[i]);
             gameManagerReference.ActivateBodyCam(gameManagerReference.SimBodies[i].planetCam);
             gameManagerReference.ChangePanelPriority();
