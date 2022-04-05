@@ -306,6 +306,10 @@ public class GameManager : MonoBehaviour
         foreach(Body b in die)
         {
             DeleteBody(b);
+            if (BodiesPanel.gameObject.activeSelf)
+            {
+                BodiesPanel.OutofBoundsCheck();
+            }
         }
     }
 

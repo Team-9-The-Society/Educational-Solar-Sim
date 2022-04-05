@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d056ac30ecc9e542b26e06133f23602, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.0014371083, g: 0.001384888, b: 0.0013701947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,26 +277,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n<b><style=\"h2\"><u>Description: \r\n</b></u></style>\r\nThis app is
-    designed to be an educational app about the N-Body simulation. An N-body simulation
-    approximates the motion of particles, often specifically particles that interact
-    with one another through some type of physical forces. One example of a physical
-    force is gravity. \r\n\r\n<b><style=\"h2\"><u>Creators: \r\n</b></u></style>\r\n<indent=2%>\u2022Ryan
-    Derr</indent>\r\n<indent=2%>\u2022Logan Edmund </indent>\r\n<indent=2%>\u2022Sam
-    Gurka </indent>\r\n<indent=2%>\u2022Sam Ketner </indent>\r\n<indent=2%>\u2022Kacy
-    Luker </indent>\r\n<indent=2%>\u2022Brendan Moore </indent>\r\n<indent=2%>\u2022Dale
-    Peasley </indent>\r\n\r\n<b><style=\"h2\"><u>GitHub Repositroy: \r\n</b></u></style>\r\nA
-    link to our GitHub repository can be found <link=\"https://github.com/Team-9-The-Society/Educational-Solar-Sim\"><i>here</i></link>\r\n\r\n<b><style=\"h2\"><u>App
-    Icon Designer: \r\n</b></u></style>\r\r\nCredit to <i><link=https://www.instagram.com/medahlia_art/?utm_medium=copy_link>Medahlia_Art</link></i>
-    for designing the app's icon and other general art!\n\r\n<b><style=\"h2\"><u>Physics
+  m_text: "\n<b><style=\"h2\"><u>About: \r\n</b></u></style>\r\nOrbitLearn was designed
+    by a group of college students with the goal of providing an easily-accessible
+    N-Body simulator to students. \nAn N-body simulation approximates the motion
+    of particles that interact with one another through physical forces such as gravity.\r\n\n<b><style=\"h2\"><u>Other
+    Resources:\r\n</b></u></style>\r\nPrinceton University has a thorough explanation
+    of how an N-Body Simulation is calculated and represented <link=\"https://physics.princeton.edu//~fpretori/Nbody/intro.htm\"><i>here.</i></link>
+    For more information about N-Body simulatons in general, click <link=https://en.wikipedia.org/wiki/N-body_simulation><i>here</link></i>.
+    \r\n\r\n<b><style=\"h2\"><u>GitHub Repository: \r\n</b></u></style>\r\nThis is
+    an open-source project. A link to our GitHub repository can be found <link=\"https://github.com/Team-9-The-Society/Educational-Solar-Sim\"><i>here.</i></link>\r\n\n<b><style=\"h2\"><u>Creators:
+    \r\n</b></u></style>\r\n<indent=2%>\u2022Ryan Derr</indent>\r\n<indent=2%>\u2022Logan
+    Edmund </indent>\r\n<indent=2%>\u2022Sam Gurka </indent>\r\n<indent=2%>\u2022Sam
+    Ketner </indent>\r\n<indent=2%>\u2022Kacy Luker </indent>\r\n<indent=2%>\u2022Brendan
+    Moore </indent>\r\n<indent=2%>\u2022Dale Peasley </indent>\r\n\r\n<b><style=\"h2\"><u>Graphic
+    Designer: \r\n</b></u></style>\r\r\nCredit to <i><link=https://www.instagram.com/medahlia_art/?utm_medium=copy_link>Medahlia_Art</link></i>
+    for designing the app's icon and other graphics!\n\r\n<b><style=\"h2\"><u>Physics
     Expert:\r\n</b></u></style>\r\nProfessor Jerry McCoy helped out with physics
-    calculations and forces. Professor McCoy obtained his MS, and teaches physics
-    at the University of Tulsa. More information about Professor McCoy can be found
-    <link=\"https://faculty.utulsa.edu/faculty/jerry-mccoy/\"><i>here</i></link>.\r\n\r\n\r\n<b><style=\"h2\"><u>Resource
-    Information:\r\n</b></u></style>\r\nIf you have any questions, or want to learn
-    more about the N-Body simulation click <link=\"https://physics.princeton.edu//~fpretori/Nbody/intro.htm\"><i>here</i></link>
-    for more information pertaining to the N-Body Simulation or <link=https://en.wikipedia.org/wiki/N-body_simulation><i>here</link><i>.
-    \r\n"
+    calculations and forces. Professor McCoy obtained his Master's Degree in Science
+    at the University of Tulsa and is currently a professor of physics. More information
+    about Professor McCoy can be found <link=\"https://faculty.utulsa.edu/faculty/jerry-mccoy/\"><i>here</i></link>."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -687,7 +686,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1032312174}
   - component: {fileID: 1032312176}
-  - component: {fileID: 1032312175}
   m_Layer: 5
   m_Name: Screen
   m_TagString: Untagged
@@ -716,36 +714,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1032312175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032312173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.41176474, g: 0.41176474, b: 0.41176474, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bfc826227e7b834ca4a168dff239e95, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1032312176
 CanvasRenderer:
   m_ObjectHideFlags: 0
