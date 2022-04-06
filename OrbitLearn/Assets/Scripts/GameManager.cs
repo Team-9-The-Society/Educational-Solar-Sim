@@ -1138,7 +1138,7 @@ public class GameManager : MonoBehaviour
             {
                 if(!uiPanelPriority & !SliderMenu.isOpen) {
                     limitDeletion = true;
-                    DisplayExportHint("Body removed from silulation", "Position too far from current simulation center.");
+                    DisplayExportHint("Body removed from simulation", "Position too far from current simulation center.");
                 }
                 return true;
             }
@@ -1150,7 +1150,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!uiPanelPriority & !SliderMenu.isOpen) {
                     limitDeletion = true;
-                    DisplayExportHint("Body removed from silulation", "Position exceeds maximum allowed value.");
+                    DisplayExportHint("Body removed from simulation", "Position exceeds maximum allowed value.");
                     }
                 return true;
             }
