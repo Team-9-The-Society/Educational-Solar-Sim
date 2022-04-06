@@ -47,7 +47,6 @@ public class BodyIcon : MonoBehaviour
 
             // Apply new scale
             planetIconTransform.localScale = tmpLocalScale;
-            Debug.Log($"tmpLocalScale {tmpLocalScale.x}\nplanetIconTransform.localScale {canvasTransform.localScale}");
 
             rend.enabled = true;
             nameDisplay.SetActive(true);
