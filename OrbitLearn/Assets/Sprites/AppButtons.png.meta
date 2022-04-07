@@ -1,0 +1,1329 @@
+fileFormatVersion: 2
+guid: ce218ba5db8bb6e44a53b2b813a7ec54
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5760310910825054407
+    second: AppButtonsWithBurger_0
+  - first:
+      213: -7679826767114169907
+    second: AppButtonsWithBurger_1
+  - first:
+      213: 3263836653785721343
+    second: AppButtonsWithBurger_2
+  - first:
+      213: -11969095745069335
+    second: AppButton-Pointed
+  - first:
+      213: 8862944974896185101
+    second: AppButton-Rounded
+  - first:
+      213: -4173071346574917332
+    second: AppButton-RoundedWhite
+  - first:
+      213: 5843827292698810007
+    second: AppButton-Pointed-RightArrow
+  - first:
+      213: -1059620312392666632
+    second: AppButton-Rounded-RightArrow
+  - first:
+      213: -5048810990918720448
+    second: AppButton-RoundedWhite-RightArrow
+  - first:
+      213: 6292283237643278889
+    second: AppButton-Pointed-Minus
+  - first:
+      213: -7588647526934853296
+    second: AppButtonsWithBurger_10
+  - first:
+      213: 8925446063009603302
+    second: AppButtonsWithBurger_11
+  - first:
+      213: 1219723148512262943
+    second: AppButton-Rounded-Minus
+  - first:
+      213: -9180008248627036560
+    second: AppButton-RoundedWhite-Minus
+  - first:
+      213: 6208003776858972134
+    second: AppButton-Pointed-Plus
+  - first:
+      213: 4523455363803584966
+    second: AppButtonsWithBurger_15
+  - first:
+      213: 4201271676786819327
+    second: AppButton-Rounded-Plus
+  - first:
+      213: 3495651345118926658
+    second: AppButton-RoundedWhite-Plus
+  - first:
+      213: 4838815190545005142
+    second: AppButtonsWithBurger_18
+  - first:
+      213: 8405367357437469852
+    second: AppButtonsWithBurger_19
+  - first:
+      213: -4406913943988728245
+    second: AppButtonsWithBurger_20
+  - first:
+      213: -8869032158951200404
+    second: AppButton-Rounded-X
+  - first:
+      213: -399505533583639
+    second: AppButton-RoundedWhite-X
+  - first:
+      213: -97651828860317586
+    second: AppButton-Pointed-X
+  - first:
+      213: 8399224575783927837
+    second: AppButtonsWithBurger_24
+  - first:
+      213: 3387232713538602147
+    second: AppButton-Pointed-LeftArrow
+  - first:
+      213: 4771099766729184440
+    second: AppButtonsWithBurger_26
+  - first:
+      213: -5238095863743114754
+    second: AppButtonsWithBurger_27
+  - first:
+      213: 1065679743078542119
+    second: AppButton-Rounded-LeftArrow
+  - first:
+      213: 6596196436707640351
+    second: AppButton-Rounded-PausePlay
+  - first:
+      213: -8869982696870622892
+    second: AppButton-RoundedWhite-LeftArrow
+  - first:
+      213: -6922343507128982641
+    second: AppButton-Pointed-PausePlay
+  - first:
+      213: 5608362218399858641
+    second: AppButton-RoundedWhite-PausePlay
+  - first:
+      213: 564901817595063315
+    second: AppButton-Pointed-DoubleRightArrow
+  - first:
+      213: -1070923049015079872
+    second: AppButtonsWithBurger_34
+  - first:
+      213: 3732071346631889839
+    second: AppButton-Rounded-DoubleRightArrow
+  - first:
+      213: 6311730656086142736
+    second: AppButton-RoundedWhite-DoubleRightArrow
+  - first:
+      213: 5736886973634924034
+    second: AppButtonSmall-Light-Home
+  - first:
+      213: 4858724340619096300
+    second: AppButtonsWithBurger_38
+  - first:
+      213: -7912374977094866106
+    second: AppButtonSmall-Mid-Home
+  - first:
+      213: -8319614675388744844
+    second: AppButtonSmall-Dark-Home
+  - first:
+      213: 5201846341711264173
+    second: AppButtonSmall-Light-Hamburger
+  - first:
+      213: 8629750413935060622
+    second: AppButtonSmall-Mid-Hamburger
+  - first:
+      213: 6507340578862529247
+    second: AppButtonSmall-Dark-Hamburger
+  - first:
+      213: -7418917502800763468
+    second: AppButtonsWithBurger_44
+  - first:
+      213: -216351944455333587
+    second: AppButtonSmall-Light
+  - first:
+      213: 3666416608076815828
+    second: AppButtonsWithBurger_46
+  - first:
+      213: -9197328491241764331
+    second: AppButtonSmall-Mid
+  - first:
+      213: 6431696385308225571
+    second: AppButtonSmall-Dark
+  - first:
+      213: 2752561249375472088
+    second: AppButtonSmall-Light-Pause
+  - first:
+      213: 9071397384134456633
+    second: AppButtonsWithBurger_50
+  - first:
+      213: -8966384083156190617
+    second: AppButtonSmall-Mid-Pause
+  - first:
+      213: -7411471365108105181
+    second: AppButtonSmall-Dark-Pause
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AppButton-Pointed
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 8099
+        width: 2706
+        height: 744
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee15dbbb2a75dff0800000000000000
+      internalID: -11969095745069335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 8042
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f358c2f718ffa70800000000000000
+      internalID: 8862944974896185101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite
+      rect:
+        serializedVersion: 2
+        x: 7281
+        y: 7985
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c218a0d58b54616c0800000000000000
+      internalID: -4173071346574917332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-RightArrow
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 7187
+        width: 2706
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7969b06f5f1791150800000000000000
+      internalID: 5843827292698810007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-RightArrow
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 7088
+        width: 2817
+        height: 786
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1fb03a0f87b41f0800000000000000
+      internalID: -1059620312392666632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-RightArrow
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 7038
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044a33c47250fe9b0800000000000000
+      internalID: -5048810990918720448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-Minus
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 6240
+        width: 2702
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a5fd5444ea25750800000000000000
+      internalID: 6292283237643278889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_10
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 6976
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059c667d745bfa690800000000000000
+      internalID: -7588647526934853296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_11
+      rect:
+        serializedVersion: 2
+        x: 2870
+        y: 6977
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee989fb7ed8ddb70800000000000000
+      internalID: 8925446063009603302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-Minus
+      rect:
+        serializedVersion: 2
+        x: 3984
+        y: 6221
+        width: 2813
+        height: 788
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bf46fbdb35de010800000000000000
+      internalID: 1219723148512262943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-Minus
+      rect:
+        serializedVersion: 2
+        x: 7331
+        y: 6212
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07efd69b22f0a9080800000000000000
+      internalID: -9180008248627036560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-Plus
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 5301
+        width: 2705
+        height: 744
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef56fb2b82472650800000000000000
+      internalID: 6208003776858972134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_15
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 5743
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c919d4efaa86ce30800000000000000
+      internalID: 4523455363803584966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-Plus
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 5331
+        width: 2812
+        height: 788
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0c9cba45aed4a30800000000000000
+      internalID: 4201271676786819327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-Plus
+      rect:
+        serializedVersion: 2
+        x: 7402
+        y: 5329
+        width: 2813
+        height: 790
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2471e6ca06c038030800000000000000
+      internalID: 3495651345118926658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_18
+      rect:
+        serializedVersion: 2
+        x: 2129
+        y: 5176
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65af23657cce62340800000000000000
+      internalID: 4838815190545005142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_19
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 5130
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9469baf31dd5a470800000000000000
+      internalID: 8405367357437469852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_20
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 5126
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e06d4ed1f77d2c0800000000000000
+      internalID: -4406913943988728245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-X
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 4354
+        width: 2812
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69a238dd3edae480800000000000000
+      internalID: -8869032158951200404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-X
+      rect:
+        serializedVersion: 2
+        x: 7402
+        y: 4382
+        width: 2813
+        height: 790
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eeb59ed6a49efff0800000000000000
+      internalID: -399505533583639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-X
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 4389
+        width: 2709
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e601d15dd2215aef0800000000000000
+      internalID: -97651828860317586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_24
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 4350
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10055c204a009470800000000000000
+      internalID: 8399224575783927837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-LeftArrow
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 3549
+        width: 2706
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a40d06e43ed10f20800000000000000
+      internalID: 3387232713538602147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_26
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 4286
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b497df95f9563240800000000000000
+      internalID: 4771099766729184440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_27
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 4286
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef11626809b8e47b0800000000000000
+      internalID: -5238095863743114754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-LeftArrow
+      rect:
+        serializedVersion: 2
+        x: 4034
+        y: 3556
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ba682841e0ace00800000000000000
+      internalID: 1065679743078542119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-PausePlay
+      rect:
+        serializedVersion: 2
+        x: 4034
+        y: 2674
+        width: 2813
+        height: 783
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1408a606b56a8b50800000000000000
+      internalID: 6596196436707640351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-LeftArrow
+      rect:
+        serializedVersion: 2
+        x: 7452
+        y: 3442
+        width: 2813
+        height: 784
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4594a2d7bbd77e480800000000000000
+      internalID: -8869982696870622892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-PausePlay
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 2645
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f836854a145eeef90800000000000000
+      internalID: -6922343507128982641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-PausePlay
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 2547
+        width: 2813
+        height: 789
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dff17729b7e4dd40800000000000000
+      internalID: 5608362218399858641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Pointed-DoubleRightArrow
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1677
+        width: 2706
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ce9bac53fe6d700800000000000000
+      internalID: 564901817595063315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_34
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 2414
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c8da139215321f0800000000000000
+      internalID: -1070923049015079872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-Rounded-DoubleRightArrow
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 1787
+        width: 2812
+        height: 787
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3586ccd1bfac330800000000000000
+      internalID: 3732071346631889839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButton-RoundedWhite-DoubleRightArrow
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 1720
+        width: 2813
+        height: 790
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f25f93795c79750800000000000000
+      internalID: 6311730656086142736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Light-Home
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 901
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e4314ae448d9f40800000000000000
+      internalID: 5736886973634924034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_38
+      rect:
+        serializedVersion: 2
+        x: 5063
+        y: 1011
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce035209b08ad6340800000000000000
+      internalID: 4858724340619096300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Mid-Home
+      rect:
+        serializedVersion: 2
+        x: 5067
+        y: 894
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b229041e8913290800000000000000
+      internalID: -7912374977094866106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Dark-Home
+      rect:
+        serializedVersion: 2
+        x: 5879
+        y: 894
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bb35d288aca8c80800000000000000
+      internalID: -8319614675388744844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Light-Hamburger
+      rect:
+        serializedVersion: 2
+        x: 6826
+        y: 894
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da97dddefaba03840800000000000000
+      internalID: 5201846341711264173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Mid-Hamburger
+      rect:
+        serializedVersion: 2
+        x: 7645
+        y: 879
+        width: 776
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8621e2774803c770800000000000000
+      internalID: 8629750413935060622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Dark-Hamburger
+      rect:
+        serializedVersion: 2
+        x: 8456
+        y: 887
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaf59377c7be4a50800000000000000
+      internalID: 6507340578862529247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_44
+      rect:
+        serializedVersion: 2
+        x: 7618
+        y: 995
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5e1ab96d5ba0990800000000000000
+      internalID: -7418917502800763468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Light
+      rect:
+        serializedVersion: 2
+        x: 4276
+        y: 125
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2956448d0d5ffcf0800000000000000
+      internalID: -216351944455333587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_46
+      rect:
+        serializedVersion: 2
+        x: 5061
+        y: 233
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ddd203ca7ab1e230800000000000000
+      internalID: 3666416608076815828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Mid
+      rect:
+        serializedVersion: 2
+        x: 5067
+        y: 118
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a84fc77768c5080800000000000000
+      internalID: -9197328491241764331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Dark
+      rect:
+        serializedVersion: 2
+        x: 5871
+        y: 118
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320f57d29c9f14950800000000000000
+      internalID: 6431696385308225571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Light-Pause
+      rect:
+        serializedVersion: 2
+        x: 6847
+        y: 111
+        width: 776
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9c7836fdf033620800000000000000
+      internalID: 2752561249375472088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonsWithBurger_50
+      rect:
+        serializedVersion: 2
+        x: 7632
+        y: 219
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935fdb9cbd314ed70800000000000000
+      internalID: 9071397384134456633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Mid-Pause
+      rect:
+        serializedVersion: 2
+        x: 7637
+        y: 103
+        width: 777
+        height: 741
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a32cbae21019380800000000000000
+      internalID: -8966384083156190617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AppButtonSmall-Dark-Pause
+      rect:
+        serializedVersion: 2
+        x: 8442
+        y: 118
+        width: 783
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32080c3af0a252990800000000000000
+      internalID: -7411471365108105181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
